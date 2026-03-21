@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Career Paths - TechPath</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --bg:#ded5cc;
+  --panel:#bcc7c3;
+  --card:#ffffff;
+  --border:#cfc6be;
+  --text:#2c2a28;
+  --muted:#6a625d;
+  --accent:#7a5a3a;
+  --accent-light:#94704e;
+}
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Verdana,sans-serif}
+
+body{
+  background:linear-gradient(140deg,var(--bg),var(--panel));
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* HEADER (matches homepage style) */
+header{
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #ddd2c9;
+  color:var(--accent);
+  padding:18px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:10;
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+header h1{font-size:26px;font-weight:700}
+
+nav a{
+  color:var(--text);
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:600;
+  position:relative;
+  transition:.2s;
+}
+nav a::after{
+  content:'';
+  position:absolute;
+  left:0;bottom:-3px;
+  width:0;height:2px;
+  background:var(--accent);
+  transition:.2s;
+}
+nav a:hover{color:var(--accent-light)}
+nav a:hover::after{width:100%}
+
+/* PAGE TITLE */
+.page-title{text-align:center;padding:60px 20px 20px}
+.page-title h2{font-size:34px;color:var(--accent);margin-bottom:6px}
+.page-title p{color:var(--muted)}
+
+/* BACK BUTTON */
+.back-btn{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  padding:10px 20px;
+  border-radius:10px;
+  font-weight:700;
+  text-decoration:none;
+  margin:22px 0 0 60px;
+  transition:.2s;
+}
+.back-btn:hover{background:var(--accent-light);transform:translateY(-2px)}
+
+/* GRID */
+.career-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:22px;
+  padding:40px 50px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.career-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+  text-decoration:none;
+  color:inherit;
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+  transition:.22s;
+}
+.career-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 14px 30px rgba(0,0,0,.09);
+}
+
+/* ICON BADGE (highlighted) */
+.icon-badge{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(122,90,58,.14);
+  color:var(--accent);
+  font-size:22px;
+  margin-bottom:10px;
+}
+
+.career-card h3{
+  color:var(--accent);
+  font-size:19px;
+  margin-bottom:6px;
+}
+
+.career-card p{font-size:14px;margin:4px 0;color:#4c4743}
+.salary{margin-top:6px;font-weight:700;color:var(--accent-light)}
+
+/* FOOTER */
+footer{
+  background:#c9c1b8;
+  color:#3c3631;
+  text-align:center;
+  padding:18px;
+  margin-top:40px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  header{flex-direction:column;text-align:center}
+  nav{margin-top:10px}
+  .career-container{padding:20px}
+  .page-title{padding:40px 20px 10px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>TechPath</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="career.html">Career Paths</a>
+    <a href="skills.html">Skill Roadmaps</a>
+    <a href="company.html">Company Questions</a>
+    <a href="resources.html">Resources</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<section class="page-title">
+  <h2>Explore IT Career Paths</h2>
+  <p>Find your dream role and learn what skills companies expect</p>
+</section>
+
+<a href="index.html" class="back-btn">← Back to HOME</a>
+
+<section class="career-container">
+
+  <a href="career/software.html" class="career-card">
+    <div class="icon-badge"><i class="fa-solid fa-code"></i></div>
+    <h3>Software Engineer</h3>
+    <p><b>Role:</b> Build & maintain apps.</p>
+    <p><b>Skills:</b> Java, Python, DSA.</p>
+    <p><b>Example:</b> Banking systems, tools.</p>
+    <span class="salary">₹8–10 LPA</span>
+  </a>
+
+  <a href="career/frontend.html" class="career-card">
+    <div class="icon-badge"><i class="fa-solid fa-display"></i></div>
+    <h3>Frontend Developer</h3>
+    <p><b>Role:</b> Create UI.</p>
+    <p><b>Skills:</b> HTML, CSS, JS, React.</p>
+    <p><b>Example:</b> Responsive websites.</p>
+    <span class="salary">₹6–8 LPA</span>
+  </a>
+
+  <a href="career/backend.html" class="career-card">
+    <div class="icon-badge"><i class="fa-solid fa-server"></i></div>
+    <h3>Backend Developer</h3>
+    <p><b>Role:</b> APIs & databases.</p>
+    <p><b>Skills:</b> Node, Python, SQL.</p>
+    <p><b>Example:</b> Login systems.</p>
+    <span class="salary">₹8–12 LPA</span>
+  </a>
+
+  <a href="career/fullstack.html" class="career-card">
+    <div class="icon-badge"><i class="fa-solid fa-layer-group"></i></div>
+    <h3>Full Stack Developer</h3>
+    <p><b>Role:</b> Frontend + backend.</p>
+    <p><b>Skills:</b> JS, React, Node.</p>
+    <p><b>Example:</b> Complete apps.</p>
+    <span class="salary">₹7–12 LPA</span>
+  </a>
+
+  <a href="career/devops.html" class="career-card">
+    <div class="icon-badge"><i class="fa-solid fa-gears"></i></div>
+    <h3>DevOps Engineer</h3>
+    <p><b>Role:</b> Automate deployments.</p>
+    <p><b>Skills:</b> Docker, CI/CD, Linux.</p>
+    <p><b>Example:</b> Auto-scaling servers.</p>
+    <span class="salary">₹9–15 LPA</span>
+  </a>
+
+  <a href="career/datascientist.html" class="career-card">
+    <div class="icon-badge"><i class="fa-solid fa-chart-line"></i></div>
+    <h3>Data Scientist</h3>
+    <p><b>Role:</b> Analyze & predict.</p>
+    <p><b>Skills:</b> Python, ML, Pandas.</p>
+    <p><b>Example:</b> Trend prediction.</p>
+    <span class="salary">₹10–15 LPA</span>
+  </a>
+
+  <a href="career/ai.html" class="career-card">
+    <div class="icon-badge"><i class="fa-solid fa-brain"></i></div>
+    <h3>AI / ML Engineer</h3>
+    <p><b>Role:</b> Train ML models.</p>
+    <p><b>Skills:</b> TensorFlow, PyTorch.</p>
+    <p><b>Example:</b> Recommendations.</p>
+    <span class="salary">₹12–20 LPA</span>
+  </a>
+
+  <a href="career/mobile.html" class="career-card">
+    <div class="icon-badge"><i class="fa-solid fa-mobile-screen"></i></div>
+    <h3>Mobile App Developer</h3>
+    <p><b>Role:</b> Build mobile apps.</p>
+    <p><b>Skills:</b> Kotlin, Swift, Flutter.</p>
+    <p><b>Example:</b> Chat apps.</p>
+    <span class="salary">₹6–10 LPA</span>
+  </a>
+
+  <a href="career/cloud.html" class="career-card">
+    <div class="icon-badge"><i class="fa-solid fa-cloud"></i></div>
+    <h3>Cloud Engineer</h3>
+    <p><b>Role:</b> Manage cloud systems.</p>
+    <p><b>Skills:</b> AWS, Azure, GCP.</p>
+    <p><b>Example:</b> SaaS hosting.</p>
+    <span class="salary">₹12–20 LPA</span>
+  </a>
+
+  <a href="career/security.html" class="career-card">
+    <div class="icon-badge"><i class="fa-solid fa-shield-halved"></i></div>
+    <h3>Security Engineer</h3>
+    <p><b>Role:</b> Secure systems.</p>
+    <p><b>Skills:</b> Pentesting, Networks.</p>
+    <p><b>Example:</b> Bug hunting.</p>
+    <span class="salary">₹10–18 LPA</span>
+  </a>
+
+  <a href="career/uiux.html" class="career-card">
+    <div class="icon-badge"><i class="fa-solid fa-pen-ruler"></i></div>
+    <h3>UI / UX Designer</h3>
+    <p><b>Role:</b> Design experiences.</p>
+    <p><b>Skills:</b> Figma, prototyping.</p>
+    <p><b>Example:</b> App layouts.</p>
+    <span class="salary">₹6–12 LPA</span>
+  </a>
+
+  <a href="career/product.html" class="career-card">
+    <div class="icon-badge"><i class="fa-solid fa-sitemap"></i></div>
+    <h3>Product Manager</h3>
+    <p><b>Role:</b> Drive product direction.</p>
+    <p><b>Skills:</b> planning, leadership.</p>
+    <p><b>Example:</b> Feature roadmap.</p>
+    <span class="salary">₹15–25 LPA</span>
+  </a>
+
+  <a href="career/dba.html" class="career-card">
+    <div class="icon-badge"><i class="fa-solid fa-database"></i></div>
+    <h3>Database Administrator</h3>
+    <p><b>Role:</b> Maintain databases.</p>
+    <p><b>Skills:</b> SQL, backups.</p>
+    <p><b>Example:</b> Enterprise DBs.</p>
+    <span class="salary">₹7–12 LPA</span>
+  </a>
+
+  <a href="career/architect.html" class="career-card">
+    <div class="icon-badge"><i class="fa-solid fa-diagram-project"></i></div>
+    <h3>Solutions Architect</h3>
+    <p><b>Role:</b> Design systems.</p>
+    <p><b>Skills:</b> architecture, cloud.</p>
+    <p><b>Example:</b> Large platforms.</p>
+    <span class="salary">₹20–35 LPA</span>
+  </a>
+
+</section>
+
+<section style="max-width:900px;margin:25px auto;text-align:center;">
+  <h2 style="color:var(--accent);margin-bottom:10px;">Which IT Career is Right for You?</h2>
+  <p style="color:var(--muted)">Compare roles and choose smart — not blindly.</p>
+</section>
+
+<footer>
+  Contact: kommala50@gmail.com | © 2025 TechPath
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SQL Full Roadmap - TechPath</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">
+      <span class="material-symbols-outlined">database</span>
+    </div>
+    <h1 class="brand">TechPath</h1>
+
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#">Courses</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../career.html">Career</a>
+    </nav>
+  </div>
+
+  <div class="topbar-right">
+    <div class="search-wrap">
+      <span class="material-symbols-outlined search-icon">search</span>
+      <input type="text" placeholder="Search topics..." />
+      <kbd class="kbd">Ctrl K</kbd>
+    </div>
+    <div class="avatar"></div>
+  </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main class="container">
+  
+  <!-- ACTIONS -->
+  <div class="top-actions">
+    <a class="btn btn-secondary" href="../skills.html">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Back to Skills
+    </a>
+
+    <div class="actions-right">
+      <a class="btn btn-ghost" href="#">
+        <span class="material-symbols-outlined">download</span>
+        <span class="hide-sm">Download PDF</span>
+      </a>
+
+      <a class="btn btn-ghost" href="#">
+        <span class="material-symbols-outlined">note</span>
+        <span class="hide-sm">Notes</span>
+      </a>
+
+      <a class="btn btn-ghost" href="https://www.youtube.com/watch?v=_uQrJ0TkZlc" target="_blank">
+        <span class="material-symbols-outlined">play_circle</span>
+        <span class="hide-sm">Video</span>
+      </a>
+    </div>
+  </div>
+
+  <section class="hero">
+    <h2>SQL Full Roadmap</h2>
+    <p>Learn SQL from basics to advanced database querying.</p>
+  </section>
+
+  <div class="grid">
+
+<!-- 1 -->
+<div class="card">
+  <div class="card-head">
+    <h3>1. Introduction to SQL</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  SQL (Structured Query Language) is used to interact with databases. It allows you to store, retrieve, update, and delete data efficiently, and is widely used in backend systems, analytics, and data management.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql1">Show Code</button>
+
+  <pre style="display:none;"><code id="sql1">
+SELECT "Hello SQL";
+  </code></pre>
+</div>
+
+<!-- 2 -->
+<div class="card">
+  <div class="card-head">
+    <h3>2. Database & Table Basics</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  A database stores data in structured form, and tables organize this data into rows and columns. Each table represents an entity, and each row represents a record.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql2">Show Code</button>
+
+  <pre style="display:none;"><code id="sql2">
+CREATE DATABASE mydb;
+
+CREATE TABLE users (
+  id INT,
+  name VARCHAR(50)
+);
+  </code></pre>
+</div>
+
+<!-- 3 -->
+<div class="card">
+  <div class="card-head">
+    <h3>3. SELECT Query</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  SELECT is used to retrieve data from a table. You can select specific columns or all columns using * depending on your requirement.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql3">Show Code</button>
+
+  <pre style="display:none;"><code id="sql3">
+SELECT * FROM users;
+SELECT name FROM users;
+  </code></pre>
+</div>
+
+<!-- 4 -->
+<div class="card">
+  <div class="card-head">
+    <h3>4. WHERE Clause</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  The WHERE clause filters records based on conditions. It allows retrieving only the data that matches specific criteria.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql4">Show Code</button>
+
+  <pre style="display:none;"><code id="sql4">
+SELECT * FROM users WHERE age > 18;
+  </code></pre>
+</div>
+
+<!-- 5 -->
+<div class="card">
+  <div class="card-head">
+    <h3>5. INSERT Data</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  INSERT is used to add new records into a table. You must specify values corresponding to each column.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql5">Show Code</button>
+
+  <pre style="display:none;"><code id="sql5">
+INSERT INTO users (id, name) VALUES (1, 'Ramesh');
+  </code></pre>
+</div>
+
+<!-- 6 -->
+<div class="card">
+  <div class="card-head">
+    <h3>6. UPDATE Data</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  UPDATE modifies existing records in a table. It is usually combined with WHERE to avoid updating all rows unintentionally.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql6">Show Code</button>
+
+  <pre style="display:none;"><code id="sql6">
+UPDATE users SET name = 'Sita' WHERE id = 1;
+  </code></pre>
+</div>
+
+<!-- 7 -->
+<div class="card">
+  <div class="card-head">
+    <h3>7. DELETE Data</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  DELETE removes records from a table. Using WHERE is important to avoid deleting all data accidentally.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql7">Show Code</button>
+
+  <pre style="display:none;"><code id="sql7">
+DELETE FROM users WHERE id = 1;
+  </code></pre>
+</div>
+
+<!-- 8 -->
+<div class="card">
+  <div class="card-head">
+    <h3>8. ORDER BY</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  ORDER BY is used to sort the result set in ascending or descending order based on one or more columns.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql8">Show Code</button>
+
+  <pre style="display:none;"><code id="sql8">
+SELECT * FROM users ORDER BY name ASC;
+  </code></pre>
+</div>
+
+<!-- 9 -->
+<div class="card">
+  <div class="card-head">
+    <h3>9. LIMIT Clause</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  LIMIT restricts the number of records returned by a query. It is useful when dealing with large datasets.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql9">Show Code</button>
+
+  <pre style="display:none;"><code id="sql9">
+SELECT * FROM users LIMIT 5;
+  </code></pre>
+</div>
+
+<!-- 10 -->
+<div class="card">
+  <div class="card-head">
+    <h3>10. Aggregate Functions</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Aggregate functions perform calculations on multiple rows and return a single result. Common functions include COUNT, SUM, AVG, MIN, and MAX.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql10">Show Code</button>
+
+  <pre style="display:none;"><code id="sql10">
+SELECT COUNT(*) FROM users;
+SELECT AVG(age) FROM users;
+  </code></pre>
+</div>
+
+<!-- ================= SQL ROADMAP (11–20) ================= -->
+
+<!-- 11 -->
+<div class="card">
+  <div class="card-head">
+    <h3>11. GROUP BY</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  GROUP BY is used to group rows that have the same values in specified columns. It is commonly used with aggregate functions to perform calculations on grouped data.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql11">Show Code</button>
+
+  <pre style="display:none;"><code id="sql11">
+SELECT department, COUNT(*) 
+FROM employees 
+GROUP BY department;
+  </code></pre>
+</div>
+
+<!-- 12 -->
+<div class="card">
+  <div class="card-head">
+    <h3>12. HAVING Clause</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  HAVING is used to filter grouped data after applying GROUP BY. Unlike WHERE, it works on aggregated results.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql12">Show Code</button>
+
+  <pre style="display:none;"><code id="sql12">
+SELECT department, COUNT(*) 
+FROM employees 
+GROUP BY department
+HAVING COUNT(*) > 5;
+  </code></pre>
+</div>
+
+<!-- 13 -->
+<div class="card">
+  <div class="card-head">
+    <h3>13. INNER JOIN</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  INNER JOIN combines rows from two tables based on a matching condition. It returns only the rows where the condition is satisfied in both tables.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql13">Show Code</button>
+
+  <pre style="display:none;"><code id="sql13">
+SELECT users.name, orders.amount
+FROM users
+INNER JOIN orders
+ON users.id = orders.user_id;
+  </code></pre>
+</div>
+
+<!-- 14 -->
+<div class="card">
+  <div class="card-head">
+    <h3>14. LEFT JOIN</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  LEFT JOIN returns all records from the left table and matched records from the right table. If no match exists, NULL values are returned for the right table.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql14">Show Code</button>
+
+  <pre style="display:none;"><code id="sql14">
+SELECT users.name, orders.amount
+FROM users
+LEFT JOIN orders
+ON users.id = orders.user_id;
+  </code></pre>
+</div>
+
+<!-- 15 -->
+<div class="card">
+  <div class="card-head">
+    <h3>15. RIGHT JOIN</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  RIGHT JOIN returns all records from the right table and matching records from the left table. If no match exists, NULL values appear for the left table.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql15">Show Code</button>
+
+  <pre style="display:none;"><code id="sql15">
+SELECT users.name, orders.amount
+FROM users
+RIGHT JOIN orders
+ON users.id = orders.user_id;
+  </code></pre>
+</div>
+
+<!-- 16 -->
+<div class="card">
+  <div class="card-head">
+    <h3>16. FULL JOIN</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  FULL JOIN returns all records when there is a match in either table. If there is no match, NULL values are returned for missing sides.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql16">Show Code</button>
+
+  <pre style="display:none;"><code id="sql16">
+SELECT users.name, orders.amount
+FROM users
+FULL JOIN orders
+ON users.id = orders.user_id;
+  </code></pre>
+</div>
+
+<!-- 17 -->
+<div class="card">
+  <div class="card-head">
+    <h3>17. Subqueries</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  A subquery is a query inside another query. It is used to perform operations that depend on the result of another query.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql17">Show Code</button>
+
+  <pre style="display:none;"><code id="sql17">
+SELECT name 
+FROM users 
+WHERE id IN (
+  SELECT user_id FROM orders
+);
+  </code></pre>
+</div>
+
+<!-- 18 -->
+<div class="card">
+  <div class="card-head">
+    <h3>18. Views</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  A view is a virtual table based on a query. It simplifies complex queries and improves security by restricting direct access to data.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql18">Show Code</button>
+
+  <pre style="display:none;"><code id="sql18">
+CREATE VIEW user_orders AS
+SELECT users.name, orders.amount
+FROM users
+JOIN orders ON users.id = orders.user_id;
+  </code></pre>
+</div>
+
+<!-- 19 -->
+<div class="card">
+  <div class="card-head">
+    <h3>19. Indexes</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Indexes improve query performance by allowing faster data retrieval. They are especially useful for large datasets but should be used carefully as they affect write performance.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql19">Show Code</button>
+
+  <pre style="display:none;"><code id="sql19">
+CREATE INDEX idx_name ON users(name);
+  </code></pre>
+</div>
+
+<!-- 20 -->
+<div class="card">
+  <div class="card-head">
+    <h3>20. Constraints</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Constraints enforce rules on table data to maintain integrity. Common constraints include PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL, and CHECK.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql20">Show Code</button>
+
+  <pre style="display:none;"><code id="sql20">
+CREATE TABLE users (
+  id INT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  email VARCHAR(100) UNIQUE
+);
+  </code></pre>
+</div>
+
+<!-- ================= SQL ROADMAP (21–30) ================= -->
+
+<!-- 21 -->
+<div class="card">
+  <div class="card-head">
+    <h3>21. Transactions</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Transactions ensure a group of SQL operations are executed safely. They follow ACID properties (Atomicity, Consistency, Isolation, Durability) to maintain data integrity in critical operations like banking systems.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql21">Show Code</button>
+
+  <pre style="display:none;"><code id="sql21">
+BEGIN;
+
+UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE accounts SET balance = balance + 100 WHERE id = 2;
+
+COMMIT;
+  </code></pre>
+</div>
+
+<!-- 22 -->
+<div class="card">
+  <div class="card-head">
+    <h3>22. Rollback</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  ROLLBACK is used to undo changes made during a transaction. It ensures that if an error occurs, the database can return to its previous consistent state.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql22">Show Code</button>
+
+  <pre style="display:none;"><code id="sql22">
+BEGIN;
+
+UPDATE users SET name = 'Error';
+
+ROLLBACK;
+  </code></pre>
+</div>
+
+<!-- 23 -->
+<div class="card">
+  <div class="card-head">
+    <h3>23. Stored Procedures</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Stored procedures are pre-written SQL programs stored in the database. They improve performance, reuse logic, and reduce redundancy in complex operations.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql23">Show Code</button>
+
+  <pre style="display:none;"><code id="sql23">
+CREATE PROCEDURE getUsers()
+BEGIN
+  SELECT * FROM users;
+END;
+  </code></pre>
+</div>
+
+<!-- 24 -->
+<div class="card">
+  <div class="card-head">
+    <h3>24. Triggers</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Triggers automatically execute when certain events occur on a table, such as INSERT, UPDATE, or DELETE. They are useful for enforcing rules and maintaining audit logs.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql24">Show Code</button>
+
+  <pre style="display:none;"><code id="sql24">
+CREATE TRIGGER before_insert
+BEFORE INSERT ON users
+FOR EACH ROW
+SET NEW.name = UPPER(NEW.name);
+  </code></pre>
+</div>
+
+<!-- 25 -->
+<div class="card">
+  <div class="card-head">
+    <h3>25. Normalization</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Normalization is the process of organizing data to reduce redundancy and improve data integrity. It involves dividing tables into smaller related tables using rules called normal forms.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql25">Show Code</button>
+
+  <pre style="display:none;"><code id="sql25">
+-- Example: splitting user and orders tables
+users(id, name)
+orders(id, user_id, amount)
+  </code></pre>
+</div>
+
+<!-- 26 -->
+<div class="card">
+  <div class="card-head">
+    <h3>26. Denormalization</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Denormalization combines tables to improve read performance. It reduces joins but increases redundancy, and is commonly used in high-performance systems.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql26">Show Code</button>
+
+  <pre style="display:none;"><code id="sql26">
+-- Example: storing user name directly in orders table
+orders(id, user_name, amount)
+  </code></pre>
+</div>
+
+<!-- 27 -->
+<div class="card">
+  <div class="card-head">
+    <h3>27. ACID Properties</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  ACID properties define how transactions behave to ensure reliability: Atomicity (all or nothing), Consistency (valid state), Isolation (independent execution), and Durability (permanent storage).
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql27">Show Code</button>
+
+  <pre style="display:none;"><code id="sql27">
+-- Conceptual example (no direct SQL)
+-- ACID ensures safe transactions
+  </code></pre>
+</div>
+
+<!-- 28 -->
+<div class="card">
+  <div class="card-head">
+    <h3>28. Query Optimization</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Query optimization improves performance by reducing execution time. Techniques include indexing, avoiding unnecessary joins, and writing efficient queries.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql28">Show Code</button>
+
+  <pre style="display:none;"><code id="sql28">
+EXPLAIN SELECT * FROM users WHERE name = 'Ramesh';
+  </code></pre>
+</div>
+
+<!-- 29 -->
+<div class="card">
+  <div class="card-head">
+    <h3>29. Database Design</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Database design involves planning tables, relationships, and constraints. A good design ensures scalability, performance, and maintainability of applications.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql29">Show Code</button>
+
+  <pre style="display:none;"><code id="sql29">
+-- Example schema design
+users(id, name)
+orders(id, user_id)
+  </code></pre>
+</div>
+
+<!-- 30 -->
+<div class="card">
+  <div class="card-head">
+    <h3>30. Real-world SQL Projects</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Building projects like inventory systems, banking systems, or analytics dashboards helps apply SQL concepts in real-world scenarios and strengthens understanding.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="sql30">Show Code</button>
+
+  <pre style="display:none;"><code id="sql30">
+-- Example: fetch user orders
+SELECT users.name, orders.amount
+FROM users
+JOIN orders ON users.id = orders.user_id;
+  </code></pre>
+</div>
+
+  </div>
+</main>
+
+<!-- ================= MODAL ================= -->
+<div class="code-modal" id="codeModal">
+  <div class="code-modal-box">
+    <button class="close-modal">&times;</button>
+    <pre><code id="modalCode"></code></pre>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

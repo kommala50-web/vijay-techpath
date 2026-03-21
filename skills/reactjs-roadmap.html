@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ReactJS Full Roadmap - TechPath</title>
+<link rel="stylesheet" href="../skills/style.css">
+<script defer src="../skills/script.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>TechPath</h1>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../career.html">Career Paths</a>
+    <a href="../skills.html">Skill Roadmaps</a>
+    <a href="../company.html">Company Questions</a>
+  </nav>
+</header>
+
+<section class="banner">
+  <h2>⚛️ ReactJS Full Roadmap</h2>
+  <p>Learn React from scratch — fundamentals, hooks, routing, state management, testing, TypeScript, SSR and deployment. Each card includes clear beginner-friendly explanations and short code examples.</p>
+</section>
+
+<div class="top-buttons">
+  <a href="../skills.html" class="btn">← Back to Skills</a>
+  <a href="../pdf/ReactJS_Roadmap.pdf" download="ReactJS_Roadmap.pdf" class="btn">Notes</a>
+  <a href="https://reactjs.org/docs/getting-started.html" target="_blank" class="btn">Official Docs</a>
+</div>
+
+<section class="topic-container">
+
+<!-- ========== 1. JavaScript Foundations ========== -->
+<div class="topic-card">
+  <h3>1. JavaScript Foundations (Required)</h3>
+  <p><strong>Why:</strong> React is a JavaScript library — weak JS fundamentals cause confusion later. Focus on ES6+ features (let/const, arrow functions, template strings), modules (import/export), destructuring, spread/rest, promises, async/await, and array methods (<code>map</code>, <code>filter</code>, <code>reduce</code>).</p>
+  <p><strong>Study advice:</strong> Practice by rewriting small DOM tasks in pure JS first. Understand how async code executes (event loop) — that's critical for data fetching in React.</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+// ES6 features + async example
+const users = [{id:1, name:'Vijay'}, {id:2, name:'Anita'}];
+const names = users.map(u => u.name);
+console.log(`Users: ${names.join(", ")}`);
+
+async function fetchJson(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error('Network error');
+  return res.json();
+}
+  </pre>
+</div>
+
+<!-- ========== 2. What is React & JSX ========== -->
+<div class="topic-card">
+  <h3>2. What is React & JSX</h3>
+  <p><strong>Why:</strong> Know React's goals: build UI as a tree of components, update only what changes using a virtual DOM, and keep UI logic co-located with markup. JSX looks like HTML but it's JavaScript — it's compiled to <code>React.createElement()</code>.</p>
+  <p><strong>Study advice:</strong> Read how JSX compiles and try writing small components without JSX (use <code>React.createElement</code>) once to appreciate JSX's convenience.</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+// JSX example (functional component)
+function Greeting({ name }) {
+  return <h1>Hello, {name}!</h1>;
+}
+
+// Equivalent without JSX
+// React.createElement('h1', null, `Hello, ${name}!`);
+  </pre>
+</div>
+
+<!-- ========== 3. Components & Props ========== -->
+<div class="topic-card">
+  <h3>3. Components & Props</h3>
+  <p><strong>Why:</strong> Components are the building blocks. A component should do one thing and be reusable. Props are read-only inputs passed from parent to child — they make components configurable.</p>
+  <p><strong>Study advice:</strong> Build small UI pieces (Button, Card, Avatar). Pass props and observe how re-rendering works when parent state changes.</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+function Card({ title, children }) {
+  return (
+    <div className="card">
+      <h4>{title}</h4>
+      <div>{children}</div>
+    </div>
+  );
+}
+
+// Usage
+// <Card title="Profile">Content here</Card>
+  </pre>
+</div>
+
+<!-- ========== 4. State & useState ========== -->
+<div class="topic-card">
+  <h3>4. State & useState</h3>
+  <p><strong>Why:</strong> State holds data that changes over time and affects rendering. Functional components use <code>useState</code>. Understand that state updates are asynchronous and may be batched; always update using setters provided by hooks (or immutably for objects/arrays).</p>
+  <p><strong>Study advice:</strong> Practice counters, toggles, and managing arrays/objects in state correctly (avoid mutating state directly).</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {count}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(c =&gt; c + 1)}&gt;+&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+  </pre>
+</div>
+
+<!-- ========== 5. Lifecycle & useEffect ========== -->
+<div class="topic-card">
+  <h3>5. Lifecycle & useEffect</h3>
+  <p><strong>Why:</strong> Components need to perform side effects: fetch data, subscribe to events, set timers. <code>useEffect</code> replaces lifecycle methods (componentDidMount, componentDidUpdate, componentWillUnmount). Learn dependency arrays to control when effects run.</p>
+  <p><strong>Study advice:</strong> Practice fetching data on mount, cleaning up subscriptions, and avoiding infinite loops by setting deps properly.</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+import { useEffect, useState } from 'react';
+
+function DataFetcher({ url }) {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    let cancelled = false;
+    fetch(url).then(r =&gt; r.json()).then(json =&gt; {
+      if (!cancelled) setData(json);
+    });
+    return () =&gt; { cancelled = true; };
+  }, [url]);
+  return &lt;pre&gt;{JSON.stringify(data, null, 2)}&lt;/pre&gt;;
+}
+  </pre>
+</div>
+
+<!-- ========== 6. Event Handling ========== -->
+<div class="topic-card">
+  <h3>6. Event Handling</h3>
+  <p><strong>Why:</strong> React events mirror DOM events but are synthetic for cross-browser consistency. Use functions (or inline arrow functions) for handlers. Understand how to pass arguments and how to prevent default behavior.</p>
+  <p><strong>Study advice:</strong> Build forms and interactive lists; ensure handlers are stable (avoid recreating handlers on every render unless necessary).</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+function Form() {
+  const handleSubmit = (e) =&gt; {
+    e.preventDefault();
+    // read values and submit
+  };
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input name="email" /&gt;
+      &lt;button type="submit"&gt;Send&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+  </pre>
+</div>
+
+<!-- ========== 7. Conditional Rendering & Lists ========== -->
+<div class="topic-card">
+  <h3>7. Conditional Rendering & Lists</h3>
+  <p><strong>Why:</strong> Render UI based on state: show loaders, empty states, or lists. Use keys when rendering arrays to help React diff efficiently. Keys should be stable and unique (avoid index as key for dynamic lists).</p>
+  <p><strong>Study advice:</strong> Practice rendering complex nested lists and handle empty/loading/error states explicitly.</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+// lists & conditional rendering
+function Users({ users, loading }) {
+  if (loading) return &lt;div&gt;Loading...&lt;/div&gt;;
+  if (!users.length) return &lt;div&gt;No users&lt;/div&gt;;
+  return (
+    &lt;ul&gt;
+      {users.map(u =&gt; &lt;li key={u.id}&gt;{u.name}&lt;/li&gt;)}
+    &lt;/ul&gt;
+  );
+}
+  </pre>
+</div>
+
+<!-- ========== 8. Forms & Validation ========== -->
+<div class="topic-card">
+  <h3>8. Forms & Validation</h3>
+  <p><strong>Why:</strong> Forms are one of the trickiest parts. Controlled components (state-driven inputs) provide predictability. Use libraries (React Hook Form or Formik) once forms become complex. Validate on change or on submit depending on UX needs.</p>
+  <p><strong>Study advice:</strong> Start with controlled inputs, then learn a form library for better performance and less boilerplate.</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+import { useState } from 'react';
+
+function Login() {
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const submit = (e) =&gt; {
+    e.preventDefault();
+    if (!email.includes('@')) {
+      setError('Invalid email');
+      return;
+    }
+    // proceed
+  };
+  return (
+    &lt;form onSubmit={submit}&gt;
+      &lt;input value={email} onChange={e =&gt; setEmail(e.target.value)} /&gt;
+      &lt;div&gt;{error}&lt;/div&gt;
+      &lt;button type="submit"&gt;Login&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+  </pre>
+</div>
+
+<!-- ========== 9. Styling Approaches ========== -->
+<div class="topic-card">
+  <h3>9. Styling Approaches (CSS, Modules, Tailwind, Styled)</h3>
+  <p><strong>Why:</strong> Styling strategy affects maintainability. Options: global CSS (simple), CSS Modules (scoped), Tailwind (utility-first), Styled Components (CSS-in-JS). Choose one and be consistent. For production, prefer a strategy that supports component scoping and theming.</p>
+  <p><strong>Study advice:</strong> Try 2 approaches (CSS Modules and Tailwind) and compare dev speed and bundle size implications.</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+// Tailwind-style usage (requires setup)
+&lt;button className="px-4 py-2 rounded bg-blue-600 text-white"&gt;Click&lt;/button&gt;
+
+// CSS Module example (Button.module.css -> .btn { ... })
+// import styles from './Button.module.css'
+// &lt;button className={styles.btn}&gt;Click&lt;/button&gt;
+  </pre>
+</div>
+
+<!-- ========== 10. React Router ========== -->
+<div class="topic-card">
+  <h3>10. React Router (Routing & Navigation)</h3>
+  <p><strong>Why:</strong> Single Page Apps still need navigation. React Router handles declarative routes, dynamic segments, nested routes, and navigation programmatically. Learn route params & guards for protected pages.</p>
+  <p><strong>Study advice:</strong> Build a small multi-page app with nested routes and a 404 page to understand route matching and history behavior.</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
+function App() {
+  return (
+    &lt;BrowserRouter&gt;
+      &lt;nav&gt;&lt;Link to="/"&gt;Home&lt;/Link&gt; &lt;Link to="/about"&gt;About&lt;/Link&gt;&lt;/nav&gt;
+      &lt;Routes&gt;
+        &lt;Route path="/" element={&lt;Home /&gt;} /&gt;
+        &lt;Route path="/about" element={&lt;About /&gt;} /&gt;
+      &lt;/Routes&gt;
+    &lt;/BrowserRouter&gt;
+  );
+}
+  </pre>
+</div>
+
+<!-- ========== 11. Context API ========== -->
+<div class="topic-card">
+  <h3>11. Context API (Avoid Prop Drilling)</h3>
+  <p><strong>Why:</strong> Context provides global-ish values (theme, auth) without passing props through many levels. It's not a replacement for a full state manager for very large apps, but excellent for app-level static data.</p>
+  <p><strong>Study advice:</strong> Create an AuthContext and use it across multiple components to show/hide UI based on login state.</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+import { createContext, useContext } from 'react';
+
+const AuthContext = createContext(null);
+
+function App() {
+  const user = { name: 'Vijay' };
+  return &lt;AuthContext.Provider value={user}&gt;&lt;Dashboard /&gt;&lt;/AuthContext.Provider&gt;;
+}
+
+function Dashboard() {
+  const user = useContext(AuthContext);
+  return &lt;div&gt;Hello, {user.name}&lt;/div&gt;;
+}
+  </pre>
+</div>
+
+<!-- ========== 12. Custom Hooks ========== -->
+<div class="topic-card">
+  <h3>12. Custom Hooks (Reuse Logic)</h3>
+  <p><strong>Why:</strong> When multiple components share logic (fetching, form state, subscriptions), extract it into a custom hook (function starting with <code>use</code>). This keeps components clean and code DRY.</p>
+  <p><strong>Study advice:</strong> Build and reuse a <code>useFetch</code> or <code>useLocalStorage</code> hook across pages.</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+import { useState, useEffect } from 'react';
+
+function useFetch(url) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  useEffect(() =&gt; {
+    let mounted = true;
+    fetch(url).then(r =&gt; r.json()).then(json =&gt; {
+      if (mounted) { setData(json); setLoading(false); }
+    });
+    return () =&gt; { mounted = false; };
+  }, [url]);
+  return { data, loading };
+}
+
+// Usage: const { data, loading } = useFetch('/api/users');
+  </pre>
+</div>
+
+<!-- ========== 13. Advanced Hooks (useRef, useMemo, useCallback) ========== -->
+<div class="topic-card">
+  <h3>13. Advanced Hooks (useRef, useMemo, useCallback)</h3>
+  <p><strong>Why:</strong> These hooks help with performance and imperative tasks. <code>useRef</code> stores mutable values or references to DOM nodes. <code>useMemo</code> memoizes expensive calculations. <code>useCallback</code> memoizes function references to avoid unnecessary child re-renders.</p>
+  <p><strong>Study advice:</strong> Only use memoization where there's a measurable problem. Premature optimization wastes time; learn to profile before applying.</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+import { useRef, useMemo, useCallback } from 'react';
+
+function Example({ items, onClick }) {
+  const inputRef = useRef();
+  const expensive = useMemo(() =&gt; items.reduce((a,b)=&gt;a+b,0), [items]);
+  const handler = useCallback((id) =&gt; onClick(id), [onClick]);
+  return (
+    &lt;div&gt;
+      &lt;input ref={inputRef} /&gt;
+      &lt;div&gt;Sum: {expensive}&lt;/div&gt;
+      &lt;button onClick={() =&gt; handler(1)}&gt;Call&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+  </pre>
+</div>
+
+<!-- ========== 14. State Management (Redux / Zustand / Recoil) ========== -->
+<div class="topic-card">
+  <h3>14. State Management (Redux / Zustand / Recoil)</h3>
+  <p><strong>Why:</strong> For larger apps, state needs structure: normalized stores, predictable updates, and devtools. Redux (with Redux Toolkit) is battle-tested. Zustand or Recoil are simpler alternatives. Learn patterns: single source of truth, immutability, action-based updates.</p>
+  <p><strong>Study advice:</strong> Implement a small cart using Redux Toolkit (slices) and compare with a Zustand store to understand tradeoffs.</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+// Redux Toolkit slice (very small)
+import { createSlice } from '@reduxjs/toolkit';
+const cartSlice = createSlice({
+  name: 'cart',
+  initialState: [],
+  reducers: {
+    add(state, action) { state.push(action.payload); },
+    remove(state, action) { return state.filter(i =&gt; i.id !== action.payload); }
+  }
+});
+export const { add, remove } = cartSlice.actions;
+export default cartSlice.reducer;
+  </pre>
+</div>
+
+<!-- ========== 15. Performance Optimization ========== -->
+<div class="topic-card">
+  <h3>15. Performance Optimization (profiling & fixes)</h3>
+  <p><strong>Why:</strong> Poorly structured apps re-render too much. Learn to profile with React DevTools profiler, identify hotspots, and apply fixes: memoization, virtualization (react-window), code-splitting, and avoiding heavy work on render.</p>
+  <p><strong>Study advice:</strong> Profile a slow list, add virtualization, and measure difference. Learn to avoid anti-patterns like creating new objects/functions inline when passed as props.</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+// example: react-window for large lists (concept)
+import { FixedSizeList as List } from 'react-window';
+function BigList({ items }) {
+  return (
+    &lt;List height={500} itemCount={items.length} itemSize={35} width={'100%'}&gt;
+      {({ index, style }) =&gt; &lt;div style={style}&gt;{items[index].name}&lt;/div&gt;}
+    &lt;/List&gt;
+  );
+}
+  </pre>
+</div>
+
+<!-- ========== 16. Code Splitting & Lazy Loading ========== -->
+<div class="topic-card">
+  <h3>16. Code Splitting & Lazy Loading</h3>
+  <p><strong>Why:</strong> Larger apps should split bundles so initial load is small. React's <code>lazy</code> + <code>Suspense</code> enable component-level lazy loading. Combine with route-based splitting for best results.</p>
+  <p><strong>Study advice:</strong> Lazy-load a heavy component (charts, map) and show a spinner using <code>Suspense</code>.</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+import { lazy, Suspense } from 'react';
+const Heavy = lazy(() =&gt; import('./HeavyComponent'));
+function App() {
+  return (
+    &lt;Suspense fallback=&lt;div&gt;Loading...&lt;/div&gt;&gt;
+      &lt;Heavy /&gt;
+    &lt;/Suspense&gt;
+  );
+}
+  </pre>
+</div>
+
+<!-- ========== 17. Testing (Jest & React Testing Library) ========== -->
+<div class="topic-card">
+  <h3>17. Testing (Jest & React Testing Library)</h3>
+  <p><strong>Why:</strong> Tests prevent regressions. Use Jest for unit and integration tests, and React Testing Library to test UI behavior (what the user sees, not implementation details). Aim for meaningful tests: component behavior, not snapshot spam.</p>
+  <p><strong>Study advice:</strong> Write tests for forms and async UI states (loading, success, error).</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+// RTL example (basic)
+import { render, screen, fireEvent } from '@testing-library/react';
+import Login from './Login';
+
+test('shows error on invalid email', () =&gt; {
+  render(&lt;Login /&gt;);
+  fireEvent.change(screen.getByRole('textbox'), { target: { value: 'bad' }});
+  fireEvent.click(screen.getByRole('button'));
+  expect(screen.getByText(/invalid email/i)).toBeInTheDocument();
+});
+  </pre>
+</div>
+
+<!-- ========== 18. TypeScript with React ========== -->
+<div class="topic-card">
+  <h3>18. TypeScript with React</h3>
+  <p><strong>Why:</strong> TypeScript adds static types, catching many bugs at compile time and improving IDE experience. Learn typing for props, state, hooks, and generics for reusable components.</p>
+  <p><strong>Study advice:</strong> Convert a small component to TSX, type props and state. Learn common utility types and how to type <code>useRef</code> and event handlers.</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+// TSX example
+type ButtonProps = { onClick: () =&gt; void; label: string };
+function Button({ onClick, label }: ButtonProps) {
+  return &lt;button onClick={onClick}&gt;{label}&lt;/button&gt;;
+}
+  </pre>
+</div>
+
+<!-- ========== 19. Server-Side Rendering & Next.js ========== -->
+<div class="topic-card">
+  <h3>19. Server-Side Rendering (SSR) & Next.js</h3>
+  <p><strong>Why:</strong> SSR improves first paint, SEO, and sometimes UX. Next.js is the dominant React framework for SSR, SSG, and hybrid rendering. Learn pages, data fetching methods (getServerSideProps, getStaticProps) and API routes.</p>
+  <p><strong>Study advice:</strong> Build a small blog with Next.js using static generation for posts and server-side rendering for dynamic pages.</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+// Next.js page (getStaticProps)
+export async function getStaticProps() {
+  const res = await fetch('https://api.example.com/posts');
+  const posts = await res.json();
+  return { props: { posts } };
+}
+export default function Blog({ posts }) { return &lt;div&gt;...&lt;/div&gt; }
+  </pre>
+</div>
+
+<!-- ========== 20. Build, Deploy & Best Practices ========== -->
+<div class="topic-card">
+  <h3>20. Build, Deploy & Best Practices</h3>
+  <p><strong>Why:</strong> Knowing how to build and deploy ends the loop. Learn environment variables, production builds (<code>npm run build</code>), HTTP caching, asset optimization, and common hosts (Netlify, Vercel, Firebase Hosting). Follow best practices: keep components small, favor composition over inheritance, document prop shapes, and enforce linting and formatting (ESLint, Prettier).</p>
+  <p><strong>Study advice:</strong> Deploy a project to Vercel or Netlify, enable automatic deploys from Git, and configure a simple monitoring (Sentry or browser console logs). Use CI (GitHub Actions) for running tests on push.</p>
+  <button class="toggle-code">Show Example</button>
+  <pre class="code-snippet" style="display:none;">
+// Example: simple GitHub Actions workflow (test + build)
+name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with: node-version: '18'
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+  </pre>
+</div>
+
+</section>
+
+<script>
+document.querySelectorAll('.toggle-code').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const code = btn.nextElementSibling;
+    if (code.style.display === 'none' || code.style.display === "") {
+      code.style.display = 'block';
+      code.style.maxHeight = code.scrollHeight + "px";
+    } else {
+      code.style.display = 'none';
+      code.style.maxHeight = 0;
+    }
+  });
+});
+</script>
+
+<footer>
+  Contact: kommala50@gmail.com | © 2025 TechPath
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

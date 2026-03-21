@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Algorithmic Architect | DSA Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#0b0f14",
+                        "surface": "#121720",
+                        "surface-container": "#121720",
+                        "outline-variant": "#232833",
+                        "primary": "#4be277",
+                        "secondary": "#ffb95f",
+                        "tertiary": "#ffb4ae",
+                        "on-surface": "#e0e2ea",
+                        "on-surface-variant": "#bccbb9"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #0b0f14; color: #e0e2ea; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 48px 1fr 60px 60px 60px 100px 100px 140px 48px;
+            align-items: center;
+        }
+        @media (max-width: 1024px) {
+            .problem-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+        .action-btn {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1c2025;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            color: #bccbb9;
+        }
+        .action-btn:hover {
+            background-color: #232833;
+            color: #e0e2ea;
+            transform: translateY(-1px);
+        }
+        .company-stack img {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #121720;
+            background: white;
+            object-fit: contain;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-content.open {
+            max-height: 2000px;
+        }
+        .saved .bookmark-icon {
+            font-variation-settings: 'FILL' 1;
+            color: #ffb4ae;
+        }
+        .solved-radio {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #232833;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+        }
+        .solved-radio.active {
+            border-color: #4be277;
+        }
+        .solved-radio.active::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background: #4be277;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[260px] hidden md:flex flex-col py-6 px-4 bg-[#0b0f14] border-r border-outline-variant z-50">
+<div class="mb-8 px-2">
+<h1 class="text-xl font-bold tracking-tighter text-[#e0e2ea]">Algorithmic Architect</h1>
+<p class="text-xs text-on-surface-variant mt-1 font-medium">Level: Sigma 11</p>
+</div>
+<div class="mb-6 px-2">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="w-full bg-[#121720] border-none rounded-md py-2.5 pl-9 pr-4 text-sm focus:ring-1 focus:ring-primary/40 placeholder:text-outline/40" id="sidebarSearch" placeholder="Search Companies..." type="text"/>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-primary bg-primary/10 font-bold border-r-4 border-primary rounded-l-md" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm">DSA Sheet</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#bccbb9] hover:text-[#e0e2ea] hover:bg-[#121720] transition-colors rounded-md" href="#">
+<span class="material-symbols-outlined">business_center</span>
+<span class="text-sm">Company Wise Sheets</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#bccbb9] hover:text-[#e0e2ea] hover:bg-[#121720] transition-colors rounded-md" href="#">
+<span class="material-symbols-outlined">assignment_ind</span>
+<span class="text-sm">Company Interview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#bccbb9] hover:text-[#e0e2ea] hover:bg-[#121720] transition-colors rounded-md" href="#">
+<span class="material-symbols-outlined">school</span>
+<span class="text-sm">SIGMA 11</span>
+</a>
+</nav>
+<div class="pt-6 border-t border-outline-variant space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#bccbb9] hover:text-[#e0e2ea] hover:bg-[#121720] rounded-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#bccbb9] hover:text-[#e0e2ea] hover:bg-[#121720] rounded-md" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="text-sm">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="md:ml-[260px] min-h-screen">
+<!-- Top Bar -->
+<header class="sticky top-0 w-full z-40 bg-background/80 backdrop-blur-md border-b border-outline-variant">
+<div class="flex items-center justify-between px-6 py-3 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8 flex-1">
+<span class="text-lg font-black text-[#e0e2ea] md:hidden">TDC</span>
+<div class="relative max-w-xl w-full hidden sm:block">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-[#121720] border-none rounded-full py-2 pl-11 pr-4 text-sm focus:ring-1 focus:ring-primary/40 placeholder:text-on-surface-variant/40" id="mainSearch" placeholder="Search in sheet: question, company..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-[#bccbb9] hover:text-[#e0e2ea] text-sm font-semibold" href="#">Problems</a>
+<a class="text-primary border-b-2 border-primary pb-1 text-sm font-semibold" href="#">Contests</a>
+<a class="text-[#bccbb9] hover:text-[#e0e2ea] text-sm font-semibold" href="#">Discuss</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="p-2 text-[#bccbb9] hover:bg-white/5 rounded-full"><span class="material-symbols-outlined">notifications</span></button>
+<button class="p-2 text-[#bccbb9] hover:bg-white/5 rounded-full"><span class="material-symbols-outlined">bookmark</span></button>
+<div class="h-8 w-8 rounded-full bg-primary/20 border border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">account_circle</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<section class="p-6 md:p-10 max-w-[1200px] mx-auto">
+<!-- Progress Header -->
+<div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="text-4xl md:text-5xl font-black tracking-tight text-on-surface mb-2">Striking Back.</h2>
+<p class="text-on-surface-variant font-medium">Your progress on the 180 Questions Sheet</p>
+</div>
+<div class="bg-surface p-6 rounded-xl border border-outline-variant min-w-[240px]">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-bold text-primary uppercase tracking-widest">Progress</span>
+<span class="text-2xl font-black" id="progressText">42/180</span>
+</div>
+<div class="w-full bg-[#232833] h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[23%]" id="progressBar"></div>
+</div>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+<div class="bg-surface p-6 rounded-xl border border-outline-variant">
+<p class="text-xs font-bold text-primary uppercase mb-1">Easy Solved</p>
+<p class="text-3xl font-black">18<span class="text-sm text-on-surface-variant font-medium ml-2">/ 50</span></p>
+</div>
+<div class="bg-surface p-6 rounded-xl border border-outline-variant">
+<p class="text-xs font-bold text-secondary uppercase mb-1">Medium Solved</p>
+<p class="text-3xl font-black">20<span class="text-sm text-on-surface-variant font-medium ml-2">/ 100</span></p>
+</div>
+<div class="bg-surface p-6 rounded-xl border border-outline-variant">
+<p class="text-xs font-bold text-tertiary uppercase mb-1">Hard Solved</p>
+<p class="text-3xl font-black">4<span class="text-sm text-on-surface-variant font-medium ml-2">/ 30</span></p>
+</div>
+</div>
+<!-- Accordion Main -->
+<div class="space-y-4" id="accordionContainer">
+<!-- Day 1 -->
+<div class="accordion-item bg-surface rounded-xl border border-outline-variant overflow-hidden">
+<button class="w-full px-6 py-5 flex items-center justify-between hover:bg-[#1c2025] transition-colors accordion-trigger">
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">1</div>
+<h3 class="text-lg font-bold">Day 1 : Array (Part 1)</h3>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-xs font-bold px-3 py-1 bg-primary/20 text-primary rounded-full uppercase">6 Questions</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+</div>
+</button>
+<div class="accordion-content open px-4 pb-4">
+<div class="space-y-1 mt-2">
+<!-- Header Row (Hidden on mobile) -->
+<div class="problem-grid px-4 py-2 text-[10px] font-bold text-on-surface-variant uppercase tracking-wider hidden lg:grid">
+<span>Status</span>
+<span>Problem Name</span>
+<span class="text-center">Doc</span>
+<span class="text-center">Video</span>
+<span class="text-center">Code</span>
+<span>Diff</span>
+<span>Time</span>
+<span>Companies</span>
+<span class="text-center">Save</span>
+</div>
+<!-- Problem 1 -->
+<div class="problem-row problem-grid p-4 rounded-lg hover:bg-[#1c2025] transition-colors group" data-company="google amazon microsoft" data-name="Majority Element">
+<div class="flex justify-center">
+<div class="solved-radio active"></div>
+</div>
+<div class="font-semibold text-on-surface group-hover:text-primary transition-colors pr-4 truncate">Majority Element</div>
+<div class="flex justify-center"><button class="action-btn"><span class="material-symbols-outlined text-lg">article</span></button></div>
+<div class="flex justify-center"><button class="action-btn"><span class="material-symbols-outlined text-lg">play_circle</span></button></div>
+<div class="flex justify-center"><button class="action-btn"><span class="material-symbols-outlined text-lg">code</span></button></div>
+<div><span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded-full">Easy</span></div>
+<div class="text-xs font-medium text-on-surface-variant">30 Min</div>
+<div class="company-stack flex -space-x-3">
+<img alt="Google" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnTCcLo2XBvo6fMXmrpR5eWK76mJ8sUMsyl9usncSBLjrlNN1r4Mx0_eX5XTjV0Z327ew7J9TlSyLFw6ST-MDRjdFNeFkC6afpwk_tZj5WFZZZg5b8bm155qx-OL_WVmNyg-2h-cU81OdoFCHXzAQyvLnCOLRTPiJdkREtBPWW-4PtXQlFDqeRqeApQZsxAK-4mUWdICJ_vAVNG10TUIYxCJz1O7CFqVEjokjabH-PaKWCwmsXqp6ltIqyTDVTFIGmcj6a6aCHHWZN"/>
+<img alt="Amazon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgiNgncXb7e7MIZJ8HO9O8APpTkZL1xfUMV-i7JUlV_WaBRuRR-N6FiVyinkWdWRZt-RpVZ-nWZImBL0EW-QRcgjICi1uCi9dFEytPUXqr32cDEkFLO7QkuuOs3NzbqOihl8jrZg7mvpu6Jwc4jEhAu7-FzNXiIrjL9ZkypjYBqU5GypY7HGP4_MJlQZ1HosHpJ3JjahK585kSW7srgCOet_4d5mTv1k-2dJMoE6not2OdAQyXZs84nZwAC5ch88Yk1SSYzAnl5zoY"/>
+<div class="w-6 h-6 rounded-full border-2 border-surface bg-[#1c2025] flex items-center justify-center text-[8px] font-bold text-on-surface-variant">+1</div>
+</div>
+<div class="flex justify-center">
+<button class="bookmark-btn text-on-surface-variant transition-colors hover:text-tertiary" data-id="p1">
+<span class="material-symbols-outlined bookmark-icon">bookmark</span>
+</button>
+</div>
+</div>
+<!-- Problem 2 -->
+<div class="problem-row problem-grid p-4 rounded-lg hover:bg-[#1c2025] transition-colors group" data-company="microsoft amazon facebook" data-name="Next Permutation">
+<div class="flex justify-center">
+<div class="solved-radio"></div>
+</div>
+<div class="font-semibold text-on-surface group-hover:text-primary transition-colors pr-4 truncate">Next Permutation</div>
+<div class="flex justify-center"><button class="action-btn"><span class="material-symbols-outlined text-lg">article</span></button></div>
+<div class="flex justify-center"><button class="action-btn"><span class="material-symbols-outlined text-lg">play_circle</span></button></div>
+<div class="flex justify-center"><button class="action-btn"><span class="material-symbols-outlined text-lg">code</span></button></div>
+<div><span class="px-3 py-1 bg-secondary/10 text-secondary text-[10px] font-bold uppercase rounded-full">Medium</span></div>
+<div class="text-xs font-medium text-on-surface-variant">45 Min</div>
+<div class="company-stack flex -space-x-3">
+<img alt="Microsoft" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6s0hURCk_RTxCsRKTQXpOdwA4eAHYVCeENJkOCNHnNEixTrQYxII-K8ins1jhQ6rTO3CYERdCr4F6g1UzGfPg2S4HeHy-Op70X1THywVnBw6Pe0gv1Tqmo7TgJxGKtlLITPskQAk9JtYxB4Y5N-T7E0SB48BryDD2ZkV4uI4MuaJ_pvpr8ouqCooB1SIxeolYHfJpXhxygGnJ6mf0x3y6N1hvFPzNwOFL2wAdODDrRXLWfIPCr9MbmaHIJCBXu3WhiuebMrbWkhbI"/>
+<img alt="Amazon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA8aXHiOtep9iGCIyeTYrkLJP5WG4JcJIUuxHCoTOhA3_yqXrrCRCR1WxD4aDgBiRHT8oke3aE9ZEyVtUeHePUa-bH2jlq3wO-YWyq6FJTnHT1UWLXXaryv7sMzbWdnVgxQgpzujp5Oq0jibBhN3mDVEb6rAOOupqM8979ZGnE72Q5M2r6Zu6DXL0gorscOvODZU_Dzmd9RRXmJychUE634Wj2k2chcp2W_21u2TtJ1H4HEZ5__oFfy9d12534D6uGZ_jq5s9jzBNp"/>
+<div class="w-6 h-6 rounded-full border-2 border-surface bg-[#1c2025] flex items-center justify-center text-[8px] font-bold text-on-surface-variant">+1</div>
+</div>
+<div class="flex justify-center">
+<button class="bookmark-btn text-on-surface-variant transition-colors hover:text-tertiary" data-id="p2">
+<span class="material-symbols-outlined bookmark-icon">bookmark</span>
+</button>
+</div>
+</div>
+<!-- Problem 3 -->
+<div class="problem-row problem-grid p-4 rounded-lg hover:bg-[#1c2025] transition-colors group" data-company="apple adobe" data-name="Pascal's Triangle">
+<div class="flex justify-center">
+<div class="solved-radio"></div>
+</div>
+<div class="font-semibold text-on-surface group-hover:text-primary transition-colors pr-4 truncate">Pascal's Triangle</div>
+<div class="flex justify-center"><button class="action-btn"><span class="material-symbols-outlined text-lg">article</span></button></div>
+<div class="flex justify-center"><button class="action-btn"><span class="material-symbols-outlined text-lg">play_circle</span></button></div>
+<div class="flex justify-center"><button class="action-btn"><span class="material-symbols-outlined text-lg">code</span></button></div>
+<div><span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded-full">Easy</span></div>
+<div class="text-xs font-medium text-on-surface-variant">20 Min</div>
+<div class="company-stack flex -space-x-3">
+<img alt="Apple" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIcGLd0FsemfBhArwnExpdSBZnWLp8RpLUPXLIuyp_KjbbhZ34b2GSfwwbEPIhC-XG2aEPavVs5jg54OpRysUITBLyC3EFhBJnm8oJoiIstNFflP7w8Lz9C_zgdOaN9bo65RO5MzLywOdYtQdblQOkUV8uTLHGCuExb4OhY1JOEOk1f_tyhz71iW-qdgNrXeKMCS8ZZALqZnHsNfe2qurzH2trq0EI4ql_tWJnlpoY8gWY1BsKlafrPUWoLzIYw6Nb4XNbEL2DJuvu"/>
+<img alt="Adobe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDELkdLwXQ4fIuxvlFtay-6nVrYPPueXm4zn6KlNHGmXQPxyJAcVXix4Ugq3NObzWcfok21osNO-E53ntgShbgXpwD3iZ6O0HC-QG-rUFbJj86GkXo1JIXpsLYLC0NjUmMvHLP65e7eViFZOKuw5plRIUgISH3vN99lTJjZ_-eS5xEMaW3DQdiq1X-E4ygdXJrNMdZxGoWoOokNW9xnCH0wBZceX5IYueEwx2h49mAyPd6NzeVBKGp4YlIqqENm-dSi0NcH_CDZSmoY"/>
+</div>
+<div class="flex justify-center">
+<button class="bookmark-btn text-on-surface-variant transition-colors hover:text-tertiary" data-id="p3">
+<span class="material-symbols-outlined bookmark-icon">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Day 2 -->
+<div class="accordion-item bg-surface rounded-xl border border-outline-variant overflow-hidden opacity-80">
+<button class="w-full px-6 py-5 flex items-center justify-between hover:bg-[#1c2025] transition-colors accordion-trigger">
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 rounded-full bg-[#232833] flex items-center justify-center text-on-surface-variant font-bold">2</div>
+<h3 class="text-lg font-bold">Day 2 : Array (Part 2)</h3>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-xs font-bold px-3 py-1 bg-[#232833] text-on-surface-variant rounded-full uppercase">6 Questions</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+</div>
+</button>
+<div class="accordion-content px-4 pb-4">
+<div class="p-8 text-center text-on-surface-variant text-sm font-medium">No problems to display for this day yet.</div>
+</div>
+</div>
+<!-- Day 3 -->
+<div class="accordion-item bg-surface rounded-xl border border-outline-variant overflow-hidden opacity-80">
+<button class="w-full px-6 py-5 flex items-center justify-between hover:bg-[#1c2025] transition-colors accordion-trigger">
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 rounded-full bg-[#232833] flex items-center justify-center text-on-surface-variant font-bold">3</div>
+<h3 class="text-lg font-bold">Day 3 : Array (Part 3)</h3>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-xs font-bold px-3 py-1 bg-[#232833] text-on-surface-variant rounded-full uppercase">6 Questions</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+</div>
+</button>
+<div class="accordion-content px-4 pb-4">
+<div class="p-8 text-center text-on-surface-variant text-sm font-medium">No problems to display for this day yet.</div>
+</div>
+</div>
+</div>
+<button class="fixed bottom-8 right-8 h-14 w-14 rounded-full bg-gradient-to-tr from-primary to-[#22c55e] text-[#003915] flex items-center justify-center shadow-2xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</button>
+</section>
+</main>
+<!-- Mobile Bottom Nav -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-[#0b0f14] py-3 px-6 flex items-center justify-around border-t border-outline-variant z-50">
+<a class="flex flex-col items-center text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="text-[10px] font-bold mt-1">Sheet</span>
+</a>
+<a class="flex flex-col items-center text-[#bccbb9]" href="#">
+<span class="material-symbols-outlined">business_center</span>
+<span class="text-[10px] font-medium mt-1">Companies</span>
+</a>
+<a class="flex flex-col items-center text-[#bccbb9]" href="#">
+<span class="material-symbols-outlined">assignment_ind</span>
+<span class="text-[10px] font-medium mt-1">Interview</span>
+</a>
+<a class="flex flex-col items-center text-[#bccbb9]" href="#">
+<span class="material-symbols-outlined">school</span>
+<span class="text-[10px] font-medium mt-1">Sigma</span>
+</a>
+</nav>
+<script>
+    // Accordion Logic
+    document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const content = trigger.nextElementSibling;
+            const icon = trigger.querySelector('.material-symbols-outlined:last-child');
+            const isOpen = content.classList.toggle('open');
+            icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+        });
+    });
+
+    // Search Logic
+    const searchInputs = ['mainSearch', 'sidebarSearch'];
+    searchInputs.forEach(id => {
+        document.getElementById(id).addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            document.querySelectorAll('.problem-row').forEach(row => {
+                const name = row.getAttribute('data-name').toLowerCase();
+                const companies = row.getAttribute('data-company').toLowerCase();
+                if (name.includes(query) || companies.includes(query)) {
+                    row.style.display = 'grid';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Bookmark Persistence Logic
+    const initBookmarks = () => {
+        const saved = JSON.parse(localStorage.getItem('savedProblems') || '[]');
+        document.querySelectorAll('.bookmark-btn').forEach(btn => {
+            const id = btn.getAttribute('data-id');
+            if (saved.includes(id)) {
+                btn.classList.add('saved');
+            }
+            
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                let currentSaved = JSON.parse(localStorage.getItem('savedProblems') || '[]');
+                if (currentSaved.includes(id)) {
+                    currentSaved = currentSaved.filter(i => i !== id);
+                    btn.classList.remove('saved');
+                } else {
+                    currentSaved.push(id);
+                    btn.classList.add('saved');
+                }
+                localStorage.setItem('savedProblems', JSON.stringify(currentSaved));
+            });
+        });
+    };
+
+    // Solved Toggle Logic
+    document.querySelectorAll('.solved-radio').forEach(radio => {
+        radio.addEventListener('click', (e) => {
+            e.stopPropagation();
+            radio.classList.toggle('active');
+        });
+    });
+
+    window.addEventListener('DOMContentLoaded', initBookmarks);
+</script>
+</body></html>

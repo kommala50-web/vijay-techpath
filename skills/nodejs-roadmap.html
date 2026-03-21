@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Node.js Full Roadmap - TechPath</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- ======================= NAVBAR ======================= -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">
+      <span class="material-symbols-outlined">terminal</span>
+    </div>
+    <h1 class="brand">TechPath</h1>
+
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#">Courses</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../career.html">Career</a>
+    </nav>
+  </div>
+
+  <div class="topbar-right">
+    <div class="search-wrap">
+      <span class="material-symbols-outlined search-icon">search</span>
+      <input id="searchInput" type="text" placeholder="Search topics..." />
+      <kbd class="kbd">Ctrl K</kbd>
+    </div>
+    <div class="avatar"></div>
+  </div>
+</header>  
+
+<!-- ======================= MAIN ======================= -->
+<main class="container">
+
+  <div class="top-actions">
+    <a class="btn btn-secondary" href="../skills.html">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Back to Skills
+    </a>
+
+    <div class="actions-right">
+      <a class="btn btn-ghost" href="../pdf/mongodb.pdf" download>
+        <span class="material-symbols-outlined">download</span>
+        <span class="hide-sm">Download PDF</span>
+      </a>
+
+      <a class="btn btn-ghost" href="../pdf/MongoDB_Notes.pdf" download>
+        <span class="material-symbols-outlined">note</span>
+        <span class="hide-sm">Notes</span>
+      </a>
+
+      <a class="btn btn-ghost" href="https://www.youtube.com/watch?v=ofme2o29ngU" target="_blank">
+        <span class="material-symbols-outlined">play_circle</span>
+        <span class="hide-sm">Video</span>
+      </a>
+    </div>
+  </div>
+
+<main class="container">
+  <section class="hero">
+    <h2>Node.js Full Roadmap</h2>
+    <p>Learn backend development using Node.js step by step.</p>
+  </section>
+
+  <div class="grid">
+
+<!-- 1 -->
+<div class="card">
+  <div class="card-head">
+    <h3>1. Introduction to Node.js</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Node.js allows you to run JavaScript outside the browser.<br><br>
+
+  • Used to build backend servers<br>
+  • Built on Chrome’s V8 engine<br><br>
+
+  It lets you use JavaScript for full-stack development.
+  </p>
+
+  <p><strong>Example:</strong> Run a simple Node script.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="node1">Show Code</button>
+
+  <pre style="display:none;"><code id="node1">
+console.log("Hello from Node.js");
+  </code></pre>
+</div>
+
+<!-- 2 -->
+<div class="card">
+  <div class="card-head">
+    <h3>2. Node.js vs Browser</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  JavaScript behaves differently in browser vs Node.<br><br>
+
+  • Browser → handles UI (DOM, events)<br>
+  • Node.js → handles server logic<br><br>
+
+  Node does NOT have DOM or window object.
+  </p>
+</div>
+
+<!-- 3 -->
+<div class="card">
+  <div class="card-head">
+    <h3>3. Installing Node & npm</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Node.js must be installed to run backend code.<br><br>
+
+  • npm → installs packages (libraries)<br>
+  • Used in every Node project
+  </p>
+
+  <p><strong>Example:</strong> Check installation.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="node3">Show Code</button>
+
+  <pre style="display:none;"><code id="node3">
+node -v
+npm -v
+  </code></pre>
+</div>
+
+<!-- 4 -->
+<div class="card">
+  <div class="card-head">
+    <h3>4. Event Loop</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  The event loop handles asynchronous operations.<br><br>
+
+  • Executes tasks without blocking code<br>
+  • Allows Node to handle multiple requests<br><br>
+
+  This is why Node is fast and scalable.
+  </p>
+</div>
+
+<!-- 5 -->
+<div class="card">
+  <div class="card-head">
+    <h3>5. Running JS Files</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  You can run JavaScript files using Node.<br><br>
+
+  • Used for scripts and backend apps
+  </p>
+
+  <p><strong>Example:</strong> Run file.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="node5">Show Code</button>
+
+  <pre style="display:none;"><code id="node5">
+node app.js
+  </code></pre>
+</div>
+
+<!-- 6 -->
+<div class="card">
+  <div class="card-head">
+    <h3>6. Modules</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Modules allow you to split code into smaller parts.<br><br>
+
+  • require() → import module<br>
+  • Helps keep code organized
+  </p>
+
+  <p><strong>Example:</strong> Import module.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="node6">Show Code</button>
+
+  <pre style="display:none;"><code id="node6">
+const fs = require("fs");
+  </code></pre>
+</div>
+
+<!-- 7 -->
+<div class="card">
+  <div class="card-head">
+    <h3>7. File System (fs)</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  The fs module lets you work with files.<br><br>
+
+  • Read files<br>
+  • Write files<br>
+  • Delete files
+  </p>
+
+  <p><strong>Example:</strong> Write file.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="node7">Show Code</button>
+
+  <pre style="display:none;"><code id="node7">
+const fs = require("fs");
+
+fs.writeFileSync("test.txt", "Hello World");
+  </code></pre>
+</div>
+
+<!-- 8 -->
+<div class="card">
+  <div class="card-head">
+    <h3>8. HTTP Server</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Node can create web servers using the http module.<br><br>
+
+  • Handles client requests<br>
+  • Sends responses back
+  </p>
+
+  <p><strong>Example:</strong> Basic server.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="node8">Show Code</button>
+
+  <pre style="display:none;"><code id="node8">
+const http = require("http");
+
+http.createServer((req, res) => {
+  res.end("Hello Server");
+}).listen(3000);
+  </code></pre>
+</div>
+
+<!-- 9 -->
+<div class="card">
+  <div class="card-head">
+    <h3>9. Promises</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Promises handle async operations better than callbacks.<br><br>
+
+  • then() → success<br>
+  • catch() → error
+  </p>
+</div>
+
+<!-- 10 -->
+<div class="card">
+  <div class="card-head">
+    <h3>10. Async / Await</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Async/Await simplifies asynchronous code.<br><br>
+
+  • Looks like normal code<br>
+  • Easier to read and maintain
+  </p>
+</div>
+
+<!-- 11 -->
+<div class="card">
+  <div class="card-head">
+    <h3>11. Promises</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Promises are used to handle asynchronous operations in JavaScript.<br><br>
+
+  Instead of using callbacks, promises provide a cleaner way to manage results of operations like file reading, API calls, or database queries.<br><br>
+
+  • <b>then()</b> → runs when operation is successful<br>
+  • <b>catch()</b> → handles errors<br><br>
+
+  Promises help avoid deeply nested callback code (callback hell).
+  </p>
+
+  <p><strong>Example:</strong> Basic promise usage.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="node11">Show Code</button>
+
+  <pre style="display:none;"><code id="node11">
+const promise = new Promise((resolve, reject) => {
+  resolve("Success");
+});
+
+promise.then(data => console.log(data));
+  </code></pre>
+</div>
+
+<!-- 12 -->
+<div class="card">
+  <div class="card-head">
+    <h3>12. Async / Await</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Async/Await is built on top of promises and makes asynchronous code easier to read.<br><br>
+
+  • <b>async</b> → defines a function that returns a promise<br>
+  • <b>await</b> → pauses execution until promise resolves<br><br>
+
+  This makes code look like normal synchronous code while still being asynchronous.
+  </p>
+
+  <p><strong>Example:</strong> Using async/await.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="node12">Show Code</button>
+
+  <pre style="display:none;"><code id="node12">
+async function fetchData() {
+  return "Data received";
+}
+
+fetchData().then(console.log);
+  </code></pre>
+</div>
+
+<!-- 13 -->
+<div class="card">
+  <div class="card-head">
+    <h3>13. Creating REST API</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  A REST API allows communication between frontend and backend.<br><br>
+
+  It uses HTTP methods:
+  • GET → fetch data<br>
+  • POST → create data<br>
+  • PUT → update data<br>
+  • DELETE → remove data<br><br>
+
+  REST APIs are the backbone of modern web applications.
+  </p>
+
+  <p><strong>Example:</strong> Simple GET route.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="node13">Show Code</button>
+
+  <pre style="display:none;"><code id="node13">
+app.get("/users", (req, res) => {
+  res.send("User data");
+});
+  </code></pre>
+</div>
+
+<!-- 14 -->
+<div class="card">
+  <div class="card-head">
+    <h3>14. Routing</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Routing is used to handle different URLs in your application.<br><br>
+
+  Each route represents a specific endpoint:
+  • /users → user data<br>
+  • /products → product data<br><br>
+
+  It allows your server to respond differently based on request paths.
+  </p>
+</div>
+
+<!-- 15 -->
+<div class="card">
+  <div class="card-head">
+    <h3>15. Request & Response</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Every HTTP interaction has two parts:<br><br>
+
+  • <b>Request (req)</b> → data sent by client<br>
+  • <b>Response (res)</b> → data sent back by server<br><br>
+
+  Understanding req and res is essential to control how your API behaves.
+  </p>
+</div>
+
+<!-- 16 -->
+<div class="card">
+  <div class="card-head">
+    <h3>16. JSON Handling</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  JSON (JavaScript Object Notation) is the standard data format used in APIs.<br><br>
+
+  • Used to send and receive data<br>
+  • Lightweight and easy to parse<br><br>
+
+  Most APIs communicate using JSON.
+  </p>
+</div>
+
+<!-- 17 -->
+<div class="card">
+  <div class="card-head">
+    <h3>17. Express.js</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Express is a framework built on Node.js that simplifies backend development.<br><br>
+
+  It provides tools for:
+  • Routing<br>
+  • Middleware<br>
+  • Request handling<br><br>
+
+  It removes the complexity of using raw Node.js.
+  </p>
+
+  <p><strong>Example:</strong> Basic Express server.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="node17">Show Code</button>
+
+  <pre style="display:none;"><code id="node17">
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Hello Express");
+});
+
+app.listen(3000);
+  </code></pre>
+</div>
+
+<!-- 18 -->
+<div class="card">
+  <div class="card-head">
+    <h3>18. Middleware</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Middleware functions run between request and response.<br><br>
+
+  They are used for:
+  • Logging<br>
+  • Authentication<br>
+  • Data processing<br><br>
+
+  Middleware is one of the most powerful features of Express.
+  </p>
+</div>
+
+<!-- 19 -->
+<div class="card">
+  <div class="card-head">
+    <h3>19. Error Handling</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Error handling ensures your application does not crash unexpectedly.<br><br>
+
+  • Catch runtime errors<br>
+  • Send proper error responses<br><br>
+
+  Proper error handling improves debugging and user experience.
+  </p>
+</div>
+
+<!-- 20 -->
+<div class="card">
+  <div class="card-head">
+    <h3>20. Express Router</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Express Router helps organize routes into separate files.<br><br>
+
+  • Keeps code clean<br>
+  • Makes large apps manageable<br><br>
+
+  Essential for scalable backend applications.
+  </p>
+</div>
+
+<!-- 21 -->
+<div class="card">
+  <div class="card-head">
+    <h3>21. MongoDB with Node.js</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  MongoDB is used with Node.js to store application data.<br><br>
+
+  Node.js handles server logic, while MongoDB stores and retrieves data.<br><br>
+
+  • Used for storing users, products, etc.<br>
+  • Connect using MongoDB driver or Mongoose<br><br>
+
+  This is the foundation of full-stack applications.
+  </p>
+
+  <p><strong>Example:</strong> Connect to MongoDB.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="node21">Show Code</button>
+
+  <pre style="display:none;"><code id="node21">
+const mongoose = require("mongoose");
+
+mongoose.connect("mongodb://localhost:27017/mydb")
+  .then(() => console.log("Connected"))
+  .catch(err => console.log(err));
+  </code></pre>
+</div>
+
+<!-- 22 -->
+<div class="card">
+  <div class="card-head">
+    <h3>22. Mongoose (Schema & Models)</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Mongoose adds structure to MongoDB by using schemas.<br><br>
+
+  • Schema → defines data structure<br>
+  • Model → used to interact with database<br><br>
+
+  It makes database operations easier and more organized.
+  </p>
+
+  <p><strong>Example:</strong> Create a schema.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="node22">Show Code</button>
+
+  <pre style="display:none;"><code id="node22">
+const userSchema = new mongoose.Schema({
+  name: String,
+  age: Number
+});
+
+const User = mongoose.model("User", userSchema);
+  </code></pre>
+</div>
+
+<!-- 23 -->
+<div class="card">
+  <div class="card-head">
+    <h3>23. CRUD Operations</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  CRUD stands for Create, Read, Update, Delete.<br><br>
+
+  These operations are used to manage data in the database:<br><br>
+
+  • Create → add new data<br>
+  • Read → fetch data<br>
+  • Update → modify data<br>
+  • Delete → remove data<br><br>
+
+  Every backend application depends on CRUD.
+  </p>
+
+  <p><strong>Example:</strong> Save data.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="node23">Show Code</button>
+
+  <pre style="display:none;"><code id="node23">
+const user = new User({ name: "Vijay", age: 20 });
+user.save();
+  </code></pre>
+</div>
+
+<!-- 24 -->
+<div class="card">
+  <div class="card-head">
+    <h3>24. Authentication (Login/Signup)</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Authentication verifies the identity of users.<br><br>
+
+  • Signup → create account<br>
+  • Login → verify user credentials<br><br>
+
+  It is required in almost every real-world application.
+  </p>
+</div>
+
+<!-- 25 -->
+<div class="card">
+  <div class="card-head">
+    <h3>25. Password Hashing (bcrypt)</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Passwords should never be stored as plain text.<br><br>
+
+  • Hash passwords before saving<br>
+  • Compare hashed values during login<br><br>
+
+  This protects user data from being exposed.
+  </p>
+
+  <p><strong>Example:</strong> Hash password.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="node25">Show Code</button>
+
+  <pre style="display:none;"><code id="node25">
+const bcrypt = require("bcrypt");
+
+const hashed = await bcrypt.hash("password123", 10);
+  </code></pre>
+</div>
+
+<!-- 26 -->
+<div class="card">
+  <div class="card-head">
+    <h3>26. JWT Authentication</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  JWT (JSON Web Token) is used for user authentication.<br><br>
+
+  • Generates a token after login<br>
+  • Token is sent with requests<br><br>
+
+  Used to maintain user sessions in APIs.
+  </p>
+
+  <p><strong>Example:</strong> Generate token.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="node26">Show Code</button>
+
+  <pre style="display:none;"><code id="node26">
+const jwt = require("jsonwebtoken");
+
+const token = jwt.sign({ id: 1 }, "secret");
+  </code></pre>
+</div>
+
+<!-- 27 -->
+<div class="card">
+  <div class="card-head">
+    <h3>27. Protected Routes</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Protected routes restrict access to authorized users only.<br><br>
+
+  • Check token before allowing access<br>
+  • Used for dashboards, private data<br><br>
+
+  Ensures security in backend applications.
+  </p>
+</div>
+
+<!-- 28 -->
+<div class="card">
+  <div class="card-head">
+    <h3>28. MVC Architecture</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  MVC organizes backend code into three parts:<br><br>
+
+  • Model → data & database<br>
+  • View → UI (frontend)<br>
+  • Controller → logic<br><br>
+
+  Helps maintain clean and scalable code.
+  </p>
+</div>
+
+<!-- 29 -->
+<div class="card">
+  <div class="card-head">
+    <h3>29. Environment Variables</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Environment variables store sensitive data securely.<br><br>
+
+  • API keys<br>
+  • Database URLs<br><br>
+
+  Prevents exposing secrets in code.
+  </p>
+
+  <p><strong>Example:</strong> Use dotenv.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="node29">Show Code</button>
+
+  <pre style="display:none;"><code id="node29">
+require("dotenv").config();
+
+console.log(process.env.PORT);
+  </code></pre>
+</div>
+
+<!-- 30 -->
+<div class="card">
+  <div class="card-head">
+    <h3>30. Deployment</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Deployment makes your backend available online.<br><br>
+
+  • Host server (Render, Railway, AWS)<br>
+  • Connect cloud database (MongoDB Atlas)<br><br>
+
+  This is the final step to make your app usable.
+  </p>
+</div>
+
+  </div>
+</main>
+
+<div class="code-modal" id="codeModal">
+  <div class="code-modal-box">
+    <button class="close-modal">&times;</button>
+    <pre><code id="modalCode"></code></pre>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

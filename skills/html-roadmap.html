@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HTML Full Roadmap - TechPath</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- ======================= NAVBAR ======================= -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">
+      <span class="material-symbols-outlined">terminal</span>
+    </div>
+    <h1 class="brand">TechPath</h1>
+
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#">Courses</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../career.html">Career</a>
+    </nav>
+  </div>
+
+  <div class="topbar-right">
+    <div class="search-wrap">
+      <span class="material-symbols-outlined search-icon">search</span>
+      <input id="searchInput" type="text" placeholder="Search topics..." />
+      <kbd class="kbd">Ctrl K</kbd>
+    </div>
+    <div class="avatar"></div>
+  </div>
+</header>
+
+<!-- ======================= MAIN ======================= -->
+<main class="container">
+
+  <div class="top-actions">
+    <a class="btn btn-secondary" href="../skills.html">S
+      <span class="material-symbols-outlined">arrow_back</span>
+      Back to Skills
+    </a>S
+
+    <div class="actions-right">
+      <a class="btn btn-ghost" href="../pdf/HTML-roadmap.pdf" download>
+        <span class="material-symbols-outlined">download</span> Download PDF
+      </a>
+
+      <a class="btn btn-ghost" href="../pdf/HTML_Notes.pdf" download>
+        <span class="material-symbols-outlined">note</span>
+        Notes
+      </a>
+
+      <a class="btn btn-ghost" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
+        <span class="material-symbols-outlined">link</span>
+        Reference
+      </a>
+    </div>
+  </div>
+
+  <!-- ======================= HERO ======================= -->
+  <section class="hero">
+    <h2>HTML Full Roadmap</h2>
+    <p>
+      Learn HTML from absolute basics to advanced concepts.
+      Click <b>Show Code</b> to view HTML examples.
+    </p>
+  </section>
+
+  <!-- ======================= GRID ======================= -->
+  <div class="grid" id="topicsGrid">
+
+  <div class="grid" id="topicsGrid">
+
+  <!-- 1 -->
+  <div class="card">
+    <div class="card-head">
+      <h3>1. Introduction to HTML</h3>
+      <span class="badge beginner">Beginner</span>
+    </div>
+
+    <p>
+      HTML defines the structure of a webpage using elements like headings,
+      paragraphs, links, images, and forms.
+    </p>
+
+    <button class="btn btn-ghost show-code-btn" data-code="html1">
+      <span class="material-symbols-outlined">code</span> Show Code
+    </button>
+
+    <pre style="display:none;"><code id="html1">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  </div>
+
+  <!-- 2 -->
+  <div class="card">
+    <div class="card-head">
+      <h3>2. HTML Document Structure</h3>
+      <span class="badge beginner">Beginner</span>
+    </div>
+
+    <p>
+      Every HTML page follows a fixed structure using html, head, and body tags.
+    </p>
+
+    <button class="btn btn-ghost show-code-btn" data-code="html2">
+      <span class="material-symbols-outlined">code</span> Show Code
+    </button>
+
+    <pre style="display:none;"><code id="html2">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    Page content
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  </div>
+
+  <!-- 3 -->
+  <div class="card">
+    <div class="card-head">
+      <h3>3. Headings & Paragraphs</h3>
+      <span class="badge beginner">Beginner</span>
+    </div>
+
+    <p>
+      Headings define importance and paragraphs define readable text content.
+    </p>
+
+    <button class="btn btn-ghost show-code-btn" data-code="html3">
+      <span class="material-symbols-outlined">code</span> Show Code
+    </button>
+
+    <pre style="display:none;"><code id="html3">
+&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph&lt;/p&gt;
+</code></pre>
+  </div>
+
+  <!-- 4 -->
+<div class="card">
+  <div class="card-head">
+    <h3>4. Links & Images</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    Links allow users to navigate between pages using the anchor tag.
+    Images are added using the img tag. The alt attribute improves
+    accessibility and SEO.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="html4">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="html4">
+&lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;
+
+&lt;img src="image.jpg" alt="Sample image"&gt;
+</code></pre>
+</div>
+
+<!-- 5 -->
+<div class="card">
+  <div class="card-head">
+    <h3>5. Lists</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    Lists are used to group related items. Ordered lists use numbers,
+    unordered lists use bullets, and definition lists describe terms.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="html5">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="html5">
+&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Step One&lt;/li&gt;
+  &lt;li&gt;Step Two&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+</div>
+
+<!-- 6 -->
+<div class="card">
+  <div class="card-head">
+    <h3>6. Tables</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    Tables display data in rows and columns. They are commonly used for
+    reports, schedules, and structured data.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="html6">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="html6">
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Alice&lt;/td&gt;
+    &lt;td&gt;20&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+</div>
+
+<!-- 7 -->
+<div class="card">
+  <div class="card-head">
+    <h3>7. Forms</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    Forms collect user input such as names, emails, and passwords.
+    They are widely used for login, signup, and feedback.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="html7">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="html7">
+&lt;form&gt;
+  &lt;input type="text" placeholder="Name"&gt;
+  &lt;input type="email" placeholder="Email"&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+</div>
+
+<!-- 8 -->
+<div class="card">
+  <div class="card-head">
+    <h3>8. Input Types</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    HTML provides many input types like text, email, password, number,
+    checkbox, and radio to improve user experience and validation.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="html8">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="html8">
+&lt;input type="password"&gt;
+&lt;input type="number"&gt;
+&lt;input type="checkbox"&gt;
+</code></pre>
+</div>
+
+<!-- 9 -->
+<div class="card">
+  <div class="card-head">
+    <h3>9. Semantic HTML</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    Semantic tags describe the meaning of content. They improve readability,
+    accessibility, and SEO by clearly defining page sections.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="html9">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="html9">
+&lt;header&gt;Header&lt;/header&gt;
+&lt;main&gt;Main Content&lt;/main&gt;
+&lt;footer&gt;Footer&lt;/footer&gt;
+</code></pre>
+</div>
+
+<!-- 10 -->
+<div class="card">
+  <div class="card-head">
+    <h3>10. Div & Span</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    Div is a block-level container used for layout, while span is an
+    inline container used for styling small pieces of text.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="html10">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="html10">
+&lt;div class="box"&gt;
+  This is a div
+&lt;/div&gt;
+
+&lt;span&gt;Inline text&lt;/span&gt;
+</code></pre>
+</div>
+
+<!-- 11. Semantic HTML -->
+<div class="card" data-title="Semantic HTML">
+  <div class="card-head">
+    <h3>11. Semantic HTML</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    Semantic HTML uses meaningful tags that clearly describe the role of the content
+    inside them. Instead of using generic <code>&lt;div&gt;</code> tags everywhere,
+    semantic elements like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>,
+    <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>,
+    and <code>&lt;footer&gt;</code> explain the structure of the page to browsers,
+    search engines, and screen readers. This improves accessibility, SEO, and code
+    readability.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="html11">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="html11">
+&lt;header&gt;
+  &lt;h1&gt;My Website&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;a href="#"&gt;Home&lt;/a&gt;
+    &lt;a href="#"&gt;About&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Blog Posts&lt;/h2&gt;
+    &lt;article&gt;
+      &lt;h3&gt;Post Title&lt;/h3&gt;
+      &lt;p&gt;This is a blog post.&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;© 2026 My Website&lt;/p&gt;
+&lt;/footer&gt;
+</code></pre>
+</div>
+
+<!-- 12. Tables -->
+<div class="card" data-title="HTML Tables Advanced">
+  <div class="card-head">
+    <h3>12. Tables</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    HTML tables are used to display data in rows and columns. A table is created
+    using the <code>&lt;table&gt;</code> tag, rows using <code>&lt;tr&gt;</code>,
+    headers using <code>&lt;th&gt;</code>, and data cells using <code>&lt;td&gt;</code>.
+    Tables are commonly used for reports, schedules, marks lists, and structured
+    data, but should not be used for page layout.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="html12">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="html12">
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Alice&lt;/td&gt;
+    &lt;td&gt;21&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+</div>
+
+<!-- 13. Forms -->
+<div class="card" data-title="HTML Forms">
+  <div class="card-head">
+    <h3>13. Forms</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    Forms are used to collect user input such as names, emails, passwords, and
+    feedback. The <code>&lt;form&gt;</code> element wraps input fields, and data
+    is usually sent to a server using the <code>action</code> and <code>method</code>
+    attributes. Forms are essential for login pages, signup pages, and contact forms.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="html13">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="html13">
+&lt;form&gt;
+  &lt;label&gt;Name:&lt;/label&gt;
+  &lt;input type="text" /&gt;
+
+  &lt;label&gt;Email:&lt;/label&gt;
+  &lt;input type="email" /&gt;
+
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+</div>
+
+<!-- 14. Input Types -->
+<div class="card" data-title="HTML Input Types">
+  <div class="card-head">
+    <h3>14. Input Types</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    HTML provides different input types to improve user experience and validation.
+    Common input types include text, password, email, number, checkbox, radio,
+    date, and file. Choosing the correct input type helps browsers validate data
+    automatically and provides better controls on mobile devices.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="html14">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="html14">
+&lt;input type="text" placeholder="Username" /&gt;
+&lt;input type="password" placeholder="Password" /&gt;
+&lt;input type="number" /&gt;
+&lt;input type="checkbox" /&gt; Subscribe
+</code></pre>
+</div>
+
+<!-- 15. Audio & Video -->
+<div class="card" data-title="HTML Audio Video">
+  <div class="card-head">
+    <h3>15. Audio & Video</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    HTML allows embedding audio and video directly without external plugins.
+    The <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> tags support
+    controls like play, pause, and volume. This is commonly used for tutorials,
+    music players, and media content.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="html15">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="html15">
+&lt;video controls width="300"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+</code></pre>
+</div>
+
+<!-- 16. Iframes -->
+<div class="card" data-title="HTML Iframes">
+  <div class="card-head">
+    <h3>16. Iframes</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    Iframes allow embedding another webpage inside the current page.
+    They are commonly used for embedding maps, videos, dashboards,
+    or external tools. Use iframes carefully as they can affect performance
+    and security.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="html16">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="html16">
+&lt;iframe
+  src="https://example.com"
+  width="300"
+  height="200"&gt;
+&lt;/iframe&gt;
+</code></pre>
+</div>
+
+<!-- 16. Iframes -->
+<div class="card" data-title="HTML Iframes">
+  <div class="card-head">
+    <h3>16. Iframes</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    Iframes allow embedding another webpage inside the current page.
+    They are commonly used for embedding maps, videos, dashboards,
+    or external tools. Use iframes carefully as they can affect performance
+    and security.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="html16">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="html16">
+&lt;iframe
+  src="https://example.com"
+  width="300"
+  height="200"&gt;
+&lt;/iframe&gt;
+</code></pre>
+</div>
+
+<!-- 18. Accessibility -->
+<div class="card" data-title="HTML Accessibility">
+  <div class="card-head">
+    <h3>18. Accessibility</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Accessibility ensures websites are usable by people with disabilities.
+    Using proper labels, alt text, semantic tags, and ARIA attributes helps
+    screen readers understand content. Accessibility is not optional — it is
+    a professional requirement.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="html18">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="html18">
+&lt;button aria-label="Close Menu"&gt;X&lt;/button&gt;
+&lt;img src="logo.png" alt="Company Logo"&gt;
+</code></pre>
+</div>
+
+<!-- 19. SEO -->
+<div class="card" data-title="HTML SEO">
+  <div class="card-head">
+    <h3>19. SEO Basics</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Search Engine Optimization (SEO) helps webpages rank higher in search results.
+    Proper use of headings, meta tags, alt attributes, semantic HTML, and meaningful
+    content improves visibility and discoverability.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="html19">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="html19">
+&lt;h1&gt;HTML Roadmap&lt;/h1&gt;
+&lt;meta name="description" content="Learn HTML step by step"&gt;
+&lt;img src="html.png" alt="HTML logo"&gt;
+</code></pre>
+</div>
+
+<!-- 20. Mini Project -->
+<div class="card" data-title="HTML Mini Project">
+  <div class="card-head">
+    <h3>20. Mini Project</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    A mini project helps you apply everything you learned. A simple HTML project
+    can include a structured page with header, navigation, content sections,
+    forms, images, and footer. This builds confidence and prepares you for CSS
+    and JavaScript.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="html20">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="html20">
+&lt;header&gt;My Website&lt;/header&gt;
+&lt;main&gt;
+  &lt;section&gt;About Me&lt;/section&gt;
+  &lt;section&gt;Contact Form&lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;© 2026&lt;/footer&gt;
+</code></pre>
+</div>
+</div>
+<!-- ======================= CODE MODAL ======================= -->
+<div class="code-modal" id="codeModal">
+  <div class="code-modal-box">
+    <button class="close-modal">&times;</button>
+    <pre><code id="modalCode"></code></pre>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

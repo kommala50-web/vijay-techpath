@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DBMS Full Roadmap - TechPath</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- ======================= NAVBAR ======================= -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">
+      <span class="material-symbols-outlined">terminal</span>
+    </div>
+    <h1 class="brand">TechPath</h1>
+
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#">Courses</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../career.html">Career</a>
+    </nav>
+  </div>
+
+  <div class="topbar-right">
+    <div class="search-wrap">
+      <span class="material-symbols-outlined search-icon">search</span>
+      <input id="searchInput" type="text" placeholder="Search topics..." />
+      <kbd class="kbd">Ctrl K</kbd>
+    </div>
+    <div class="avatar"></div>
+  </div>
+</header>
+
+<!-- ======================= MAIN ======================= -->
+<main class="container">
+
+  <div class="top-actions">
+    <a class="btn btn-secondary" href="../skills.html">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Back to Skills
+    </a>
+
+    <div class="actions-right">
+      <a class="btn btn-ghost" href="../pdf/dbms.pdf" download>
+        <span class="material-symbols-outlined">download</span>
+        <span class="hide-sm">Download PDF</span>
+      </a>
+
+      <a class="btn btn-ghost" href="../pdf/DBMS_Notes.pdf" download>
+        <span class="material-symbols-outlined">note</span>
+        <span class="hide-sm">Notes</span>
+      </a>
+
+      <a class="btn btn-ghost" href="https://www.geeksforgeeks.org/dbms/" target="_blank">
+        <span class="material-symbols-outlined">link</span>
+        <span class="hide-sm">Reference</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ======================= HERO ======================= -->
+  <section class="hero">
+    <h2>DBMS Full Roadmap</h2>
+    <p>
+      Learn Database Management Systems from fundamentals to advanced topics
+      including SQL, normalization, transactions, indexing, and performance.
+      Click <b>Show Code</b> to view examples.
+    </p>
+  </section>
+
+  <!-- ======================= GRID ======================= -->
+  <div class="grid" id="topicsGrid">
+
+    <!-- 1. Introduction -->
+    <div class="card" data-title="Introduction to DBMS">
+      <div class="card-head">
+        <h3>1. Introduction to DBMS</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+
+      <p><strong>Description:</strong><br>
+        Database Management Systems (DBMS) are software systems designed to store,
+        manage, and retrieve data efficiently. They provide mechanisms for data
+        integrity, security, concurrency, and backup. Types include relational
+        (RDBMS), NoSQL, hierarchical, and network databases.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="dbms1">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="dbms1">
+// Example: Creating a table in SQL
+CREATE TABLE Students (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT
+);
+</code></pre>
+    </div>
+
+    <!-- 2. ER Model -->
+    <div class="card" data-title="ER Model & Design">
+      <div class="card-head">
+        <h3>2. ER Model & Design</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+
+      <p><strong>Description:</strong><br>
+        Entity-Relationship (ER) modeling is a conceptual design tool to represent
+        data and relationships. ER diagrams consist of entities, attributes, and
+        relationships. Translating ER models to relational schemas is a key step
+        in database design.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="dbms2">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="dbms2">
+CREATE TABLE Student (
+  student_id INT PRIMARY KEY,
+  name VARCHAR(50)
+);
+
+CREATE TABLE Course (
+  course_id INT PRIMARY KEY,
+  title VARCHAR(50)
+);
+
+CREATE TABLE Enrollment (
+  student_id INT,
+  course_id INT,
+  PRIMARY KEY(student_id, course_id),
+  FOREIGN KEY(student_id) REFERENCES Student(student_id),
+  FOREIGN KEY(course_id) REFERENCES Course(course_id)
+);
+</code></pre>
+    </div>
+
+    <!-- 3. Normalization -->
+    <div class="card" data-title="Normalization">
+      <div class="card-head">
+        <h3>3. Normalization</h3>
+        <span class="badge intermediate">Intermediate</span>
+      </div>
+
+      <p><strong>Description:</strong><br>
+        Normalization organizes tables to reduce redundancy and improve data
+        integrity. Normal forms include 1NF, 2NF, 3NF, BCNF, 4NF, and 5NF.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="dbms3">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="dbms3">
+-- 1NF requires atomic values
+-- Separate rows instead of multiple values in one column
+</code></pre>
+    </div>
+
+    <!-- 4. SQL Queries -->
+    <div class="card" data-title="SQL Queries">
+      <div class="card-head">
+        <h3>4. SQL Queries</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+
+      <p><strong>Description:</strong><br>
+        SQL is used to interact with relational databases. Operations include
+        SELECT, INSERT, UPDATE, DELETE, JOINs, GROUP BY, HAVING, and subqueries.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="dbms4">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="dbms4">
+SELECT name, age FROM Students WHERE age > 20;
+
+SELECT S.name, C.title
+FROM Student S
+JOIN Enrollment E ON S.student_id = E.student_id
+JOIN Course C ON E.course_id = C.course_id;
+</code></pre>
+    </div>
+
+    <!-- 5. Transactions -->
+    <div class="card" data-title="Transactions & ACID">
+      <div class="card-head">
+        <h3>5. Transactions & ACID</h3>
+        <span class="badge intermediate">Intermediate</span>
+      </div>
+
+      <p><strong>Description:</strong><br>
+        Transactions are sequences of operations executed as a single unit.
+        ACID properties ensure reliability and consistency.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="dbms5">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="dbms5">
+BEGIN TRANSACTION;
+UPDATE Accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE Accounts SET balance = balance + 100 WHERE id = 2;
+COMMIT;
+</code></pre>
+    </div>
+
+    <!-- 6. Indexing -->
+    <div class="card" data-title="Indexing & Performance">
+      <div class="card-head">
+        <h3>6. Indexing & Performance</h3>
+        <span class="badge intermediate">Intermediate</span>
+      </div>
+
+      <p><strong>Description:</strong><br>
+        Indexes improve query performance by enabling faster searches at the cost
+        of additional storage and write overhead.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="dbms6">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="dbms6">
+CREATE INDEX idx_student_name ON Student(name);
+</code></pre>
+    </div>
+
+    <!-- 7. Views, Stored Procedures & Triggers -->
+<div class="card" data-title="Views Stored Procedures Triggers">
+  <div class="card-head">
+    <h3>7. Views, Stored Procedures & Triggers</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Views are virtual tables created from SQL queries and do not store data physically.
+    Stored procedures are reusable blocks of SQL logic stored in the database.
+    Triggers are special procedures that automatically execute in response to
+    INSERT, UPDATE, or DELETE operations on a table.
+  </p>
+
+  <p><strong>Example Question:</strong> Create a view and a trigger for logging updates.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="dbms7">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="dbms7">
+-- View example
+CREATE VIEW AdultStudents AS
+SELECT * FROM Students WHERE age >= 18;
+
+-- Trigger example
+CREATE TRIGGER log_update
+AFTER UPDATE ON Students
+FOR EACH ROW
+INSERT INTO StudentLog(student_id, change_time)
+VALUES (NEW.id, NOW());
+</code></pre>
+</div>
+
+<!-- 8. Concurrency Control -->
+<div class="card" data-title="Concurrency Control">
+  <div class="card-head">
+    <h3>8. Concurrency Control</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Concurrency control ensures that multiple transactions execute safely without
+    corrupting data. It prevents problems like lost updates, dirty reads, and
+    inconsistent data. Common techniques include locking, timestamp ordering,
+    and optimistic concurrency control.
+  </p>
+
+  <p><strong>Example Question:</strong> How do you prevent two users from updating the same record simultaneously?</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="dbms8">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="dbms8">
+-- Lock a row before updating
+SELECT * FROM Accounts WHERE id = 1 FOR UPDATE;
+</code></pre>
+</div>
+
+<!-- 9. Deadlocks & Resolution -->
+<div class="card" data-title="Deadlocks">
+  <div class="card-head">
+    <h3>9. Deadlocks & Resolution</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    A deadlock occurs when two or more transactions wait indefinitely for resources
+    held by each other. DBMS detects deadlocks using wait-for graphs or timeouts
+    and resolves them by aborting one transaction.
+  </p>
+
+  <p><strong>Example Question:</strong> How does a DBMS resolve deadlocks?</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="dbms9">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="dbms9">
+SET DEADLOCK_PRIORITY LOW;
+
+BEGIN TRANSACTION;
+UPDATE Accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE Accounts SET balance = balance + 100 WHERE id = 2;
+COMMIT;
+</code></pre>
+</div>
+
+<!-- 10. Recovery & Backup -->
+<div class="card" data-title="Recovery Backup">
+  <div class="card-head">
+    <h3>10. Recovery & Backup</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Recovery mechanisms restore databases after failures such as crashes or power loss.
+    Techniques include logging (UNDO/REDO), checkpoints, and backups.
+    Backups can be full, incremental, or differential.
+  </p>
+
+  <p><strong>Example Question:</strong> How do you back up and restore a database?</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="dbms10">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="dbms10">
+-- MySQL backup
+mysqldump -u root -p dbname > backup.sql
+
+-- Restore
+mysql -u root -p dbname < backup.sql
+</code></pre>
+</div>
+
+<!-- 11. Locking Mechanisms -->
+<div class="card" data-title="Locking Mechanisms">
+  <div class="card-head">
+    <h3>11. Locking Mechanisms</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Locks control access to database resources. Shared locks allow reading,
+    exclusive locks allow writing, and intent locks indicate future locking plans.
+    Proper locking ensures data consistency in concurrent environments.
+  </p>
+
+  <p><strong>Example Question:</strong> Difference between shared and exclusive locks?</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="dbms11">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="dbms11">
+-- Shared lock
+SELECT * FROM Accounts WHERE id = 1 LOCK IN SHARE MODE;
+
+-- Exclusive lock
+SELECT * FROM Accounts WHERE id = 1 FOR UPDATE;
+</code></pre>
+</div>
+
+<!-- 12. Two-Phase Locking (2PL) -->
+<div class="card" data-title="Two Phase Locking">
+  <div class="card-head">
+    <h3>12. Two-Phase Locking (2PL)</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Two-Phase Locking ensures serializability of transactions.
+    In the growing phase, locks are acquired.
+    In the shrinking phase, locks are released.
+    No new locks can be acquired after releasing any lock.
+  </p>
+
+  <p><strong>Example Question:</strong> How does 2PL ensure consistency?</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="dbms12">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="dbms12">
+BEGIN TRANSACTION;
+
+-- Growing phase
+SELECT * FROM Accounts WHERE id = 1 FOR UPDATE;
+SELECT * FROM Accounts WHERE id = 2 FOR UPDATE;
+
+UPDATE Accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE Accounts SET balance = balance + 100 WHERE id = 2;
+
+-- Shrinking phase
+COMMIT;
+</code></pre>
+</div>
+
+<!-- 13. Isolation Levels -->
+<div class="card" data-title="Isolation Levels">
+  <div class="card-head">
+    <h3>13. Isolation Levels</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Isolation levels define how transactions interact with each other and prevent
+    concurrency anomalies like dirty reads, non-repeatable reads, and phantom reads.
+    Common levels are Read Uncommitted, Read Committed, Repeatable Read, and Serializable.
+  </p>
+
+  <p><strong>Example Question:</strong> Which isolation level prevents dirty reads?</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="dbms13">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="dbms13">
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+</code></pre>
+</div>
+
+<!-- 14. Replication -->
+<div class="card" data-title="Replication">
+  <div class="card-head">
+    <h3>14. Replication</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Replication copies data across multiple database servers to improve availability,
+    fault tolerance, and read performance. Common types include master-slave and
+    master-master replication.
+  </p>
+
+  <p><strong>Example Question:</strong> How does replication improve availability?</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="dbms14">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="dbms14">
+CHANGE MASTER TO
+MASTER_HOST='master_host',
+MASTER_USER='replica_user',
+MASTER_PASSWORD='password';
+START SLAVE;
+</code></pre>
+</div>
+
+<!-- 15. Sharding -->
+<div class="card" data-title="Sharding">
+  <div class="card-head">
+    <h3>15. Sharding</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Sharding distributes large datasets across multiple databases or servers.
+    Each shard contains a subset of data, improving scalability and performance
+    in large-scale systems.
+  </p>
+
+  <p><strong>Example Question:</strong> How would you shard a global user database?</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="dbms15">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="dbms15">
+-- Example sharding strategy
+-- Shard 1: Users from Asia
+-- Shard 2: Users from Europe
+-- Shard 3: Users from America
+</code></pre>
+</div>
+
+<!-- 16. Indexing Strategies -->
+<div class="card" data-title="Indexing Strategies">
+  <div class="card-head">
+    <h3>16. Indexing Strategies</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Indexing strategies optimize query performance. Types include single-column,
+    composite, unique, clustered, non-clustered, full-text, and covering indexes.
+  </p>
+
+  <p><strong>Example Question:</strong> How do composite indexes improve performance?</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="dbms16">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="dbms16">
+CREATE INDEX idx_student_name_age
+ON Student(name, age);
+</code></pre>
+</div>
+
+<!-- 17. Materialized Views -->
+<div class="card" data-title="Materialized Views">
+  <div class="card-head">
+    <h3>17. Materialized Views</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Materialized views store query results physically instead of computing them
+    dynamically. They significantly improve performance for complex analytical queries
+    but require refresh mechanisms.
+  </p>
+
+  <p><strong>Example Question:</strong> When should you use a materialized view?</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="dbms17">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="dbms17">
+CREATE MATERIALIZED VIEW StudentSummary AS
+SELECT student_id, COUNT(course_id) total_courses
+FROM Enrollment
+GROUP BY student_id;
+</code></pre>
+</div>
+
+<!-- 18. Partitioning -->
+<div class="card" data-title="Partitioning">
+  <div class="card-head">
+    <h3>18. Partitioning</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Partitioning divides large tables into smaller parts for better performance
+    and manageability. Common types include range, list, hash, and composite partitioning.
+  </p>
+
+  <p><strong>Example Question:</strong> How does range partitioning work?</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="dbms18">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="dbms18">
+CREATE TABLE Sales (
+  id INT,
+  sale_date DATE
+)
+PARTITION BY RANGE (YEAR(sale_date)) (
+  PARTITION p2023 VALUES LESS THAN (2024),
+  PARTITION p2024 VALUES LESS THAN (2025)
+);
+</code></pre>
+</div>
+
+<!-- 19. NoSQL Basics -->
+<div class="card" data-title="NoSQL Basics">
+  <div class="card-head">
+    <h3>19. NoSQL Basics</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    NoSQL databases are designed for scalability and flexible schemas.
+    Types include document stores, key-value stores, column-family, and graph databases.
+  </p>
+
+  <p><strong>Example Question:</strong> When should NoSQL be preferred over RDBMS?</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="dbms19">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="dbms19">
+db.users.insertOne({
+  name: "Alice",
+  age: 22,
+  preferences: { theme: "dark" }
+});
+</code></pre>
+</div>
+
+<!-- 20. Big Data Integration -->
+<div class="card" data-title="Big Data Integration">
+  <div class="card-head">
+    <h3>20. Big Data Integration</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Modern DBMS integrates with big data systems like Hadoop and Spark
+    using ETL pipelines, streaming ingestion, and analytics engines.
+  </p>
+
+  <p><strong>Example Question:</strong> How does Spark integrate with databases?</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="dbms20">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="dbms20">
+spark.read.format("jdbc")
+.option("url","jdbc:mysql://localhost/db")
+.option("dbtable","Sales")
+.load();
+</code></pre>
+</div>
+
+<!-- 21. MongoDB Advanced Operations -->
+<div class="card" data-title="MongoDB Advanced">
+  <div class="card-head">
+    <h3>21. MongoDB Advanced Operations</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    MongoDB supports advanced operations such as aggregation pipelines,
+    indexing, replication, and sharding for large-scale applications.
+  </p>
+
+  <p><strong>Example Question:</strong> How does aggregation work in MongoDB?</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="dbms21">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="dbms21">
+db.orders.aggregate([
+  { $group: { _id: "$customer_id", total: { $sum: "$amount" } } }
+]);
+</code></pre>
+</div>
+
+<!-- 22. Advanced DBMS Topics -->
+<div class="card" data-title="Advanced DBMS Topics">
+  <div class="card-head">
+    <h3>22. Advanced DBMS Topics</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Advanced DBMS topics include distributed databases, OLAP, data warehousing,
+    in-memory databases, database security, encryption, and distributed transactions.
+  </p>
+
+  <p><strong>Example Question:</strong> How do distributed databases maintain consistency?</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="dbms22">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="dbms22">
+BEGIN DISTRIBUTED TRANSACTION;
+UPDATE Orders SET status='Processed' WHERE order_id=101;
+COMMIT;
+</code></pre>
+</div>
+
+
+
+  </div>
+</main>
+
+<!-- ======================= CODE MODAL ======================= -->
+<div class="code-modal" id="codeModal">
+  <div class="code-modal-box">
+    <button class="close-modal">&times;</button>
+    <pre><code id="modalCode"></code></pre>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

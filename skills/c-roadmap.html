@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>C Full Roadmap - TechPath</title>
+
+    <!-- Fonts + Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ======================= Header ======================= -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="logo">
+          <span class="material-symbols-outlined">terminal</span>
+        </div>
+        <h1 class="brand">TechPath</h1>
+
+        <nav class="nav">
+          <a href="../index.html">Home</a>
+          <a class="active" href="#">Courses</a>
+          <a href="../resources.html">resources</a>
+          <a href="../career.html">career</a>
+        </nav>
+      </div>
+
+      <div class="topbar-right">
+        <div class="search-wrap">
+          <span class="material-symbols-outlined search-icon">search</span>
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Search topics, tutorials..."
+          />
+          <kbd class="kbd">Ctrl K</kbd>
+        </div>
+
+        <div class="avatar" title="Profile"></div>
+      </div>
+    </header>
+
+    <!-- ======================= Main ======================= -->
+    <main class="container">
+      <div class="top-actions">
+        <a class="btn btn-secondary" href="../skills.html">
+          <span class="material-symbols-outlined">arrow_back</span>
+          Back to Skills
+        </a>
+
+        <div class="actions-right">
+          <a class="btn btn-ghost" href="../pdf/c.pdf" download="C_Roadmap.pdf">
+            <span class="material-symbols-outlined">download</span>
+            <span class="hide-sm">Download PDF</span>
+          </a>
+
+          <a
+            class="btn btn-ghost"
+            href="../pdf/C_Notes.pdf"
+            download="C_Notes.pdf"
+          >
+            <span class="material-symbols-outlined">note</span>
+            <span class="hide-sm">Notes</span>
+          </a>
+
+          <a
+            class="btn btn-ghost"
+            href="https://www.youtube.com/watch?v=irqbmMNs2Bo"
+            target="_blank"
+          >
+            <span class="material-symbols-outlined">play_circle</span>
+            <span class="hide-sm">Video Resource</span>
+          </a>
+        </div>
+      </div>
+
+      <section class="hero">
+        <h2>C Full Roadmap</h2>
+        <p>
+          Learn C from scratch to advanced concepts with explanations and example
+          code. Click "Show Code" on any card to see practical examples.
+        </p>
+      </section>
+
+      <!-- ======================= Cards ======================= -->
+      <section class="grid" id="topicsGrid">
+        <!-- 1 -->
+        <article class="card" data-title="Introduction to C">
+          <div class="card-head">
+            <h3>1. Introduction to C</h3>
+            <span class="badge beginner">Beginner</span>
+          </div>
+
+          <p>
+            <strong>Description:</strong> C is a general-purpose procedural
+            programming language. It's fast, close to hardware, and forms the
+            foundation of many modern languages. Understanding C helps in
+            learning memory management, pointers, and low-level operations.
+          </p>
+
+          <details>
+            <summary>Show Code</summary>
+            <div class="codebox">
+              <div class="codebox-top">
+                <span class="file">main.c</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+              <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    printf("Hello, C Programming!\n");
+    return 0;
+}</code></pre>
+            </div>
+          </details>
+        </article>
+
+        <!-- 2 -->
+        <article class="card" data-title="Data Types & Variables">
+          <div class="card-head">
+            <h3>2. Data Types &amp; Variables</h3>
+            <span class="badge beginner">Beginner</span>
+          </div>
+
+          <p>
+            <strong>Description:</strong> C has basic types: int, char, float,
+            double. Variables store data values. Understanding size, range, and
+            initialization is key for memory-efficient code.
+          </p>
+
+          <details>
+            <summary>Show Code</summary>
+            <div class="codebox">
+              <div class="codebox-top">
+                <span class="file">main.c</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+              <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    int a = 10;
+    char ch = 'A';
+    float f = 3.14;
+    printf("%d %c %.2f\n", a, ch, f);
+    return 0;
+}</code></pre>
+            </div>
+          </details>
+        </article>
+
+        <!-- 3 -->
+        <article class="card" data-title="Operators">
+          <div class="card-head">
+            <h3>3. Operators</h3>
+            <span class="badge intermediate">Intermediate</span>
+          </div>
+
+          <p>
+            <strong>Description:</strong> Operators are symbols that perform
+            operations on variables. Categories: arithmetic, relational, logical,
+            bitwise, assignment, and ternary. Essential for expressions and
+            calculations.
+          </p>
+
+          <details>
+            <summary>Show Code</summary>
+            <div class="codebox">
+              <div class="codebox-top">
+                <span class="file">main.c</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+              <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    int a=5, b=2;
+    printf("Sum: %d\n", a+b);
+    printf("AND: %d\n", a & b);
+    printf("Conditional: %d\n", (a>b)?a:b);
+    return 0;
+}</code></pre>
+            </div>
+          </details>
+        </article>
+
+        <!-- 4 -->
+        <article class="card" data-title="Control Statements">
+          <div class="card-head">
+            <h3>4. Control Statements</h3>
+            <span class="badge intermediate">Intermediate</span>
+          </div>
+
+          <p>
+            <strong>Description:</strong> Control statements alter the flow of
+            execution: if, if-else, switch for decisions; for, while, do-while
+            for loops; break &amp; continue to manage loops.
+          </p>
+
+          <details>
+            <summary>Show Code</summary>
+            <div class="codebox">
+              <div class="codebox-top">
+                <span class="file">main.c</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+              <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    for(int i=1;i&lt;=5;i++){
+        if(i==3) continue;
+        printf("%d ",i);
+    }
+    return 0;
+}</code></pre>
+            </div>
+          </details>
+        </article>
+
+        <!-- 5 -->
+        <article class="card" data-title="Functions">
+          <div class="card-head">
+            <h3>5. Functions</h3>
+            <span class="badge intermediate">Intermediate</span>
+          </div>
+
+          <p>
+            <strong>Description:</strong> Functions group reusable code blocks.
+            They enhance modularity and readability. Pass arguments by value,
+            return results, and declare prototypes for better structure.
+          </p>
+
+          <details>
+            <summary>Show Code</summary>
+            <div class="codebox">
+              <div class="codebox-top">
+                <span class="file">main.c</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+              <pre><code>#include &lt;stdio.h&gt;
+int sum(int a,int b){ return a+b; }
+int main(){
+    printf("Sum: %d\n", sum(3,4));
+    return 0;
+}</code></pre>
+            </div>
+          </details>
+        </article>
+
+        <!-- 6 -->
+        <article class="card" data-title="Arrays">
+          <div class="card-head">
+            <h3>6. Arrays</h3>
+            <span class="badge intermediate">Intermediate</span>
+          </div>
+
+          <p>
+            <strong>Description:</strong> Arrays are collections of elements of
+            the same type stored in contiguous memory. They allow efficient
+            storage and manipulation of multiple values using indices.
+            Understanding arrays is key to managing lists, tables, and matrices.
+          </p>
+
+          <details>
+            <summary>Show Code</summary>
+            <div class="codebox">
+              <div class="codebox-top">
+                <span class="file">main.c</span>
+                <button class="copy-btn" type="button">Copy</button>
+              </div>
+              <pre><code>#include &lt;stdio.h&gt;
+int main(){
+    int arr[5] = {1, 2, 3, 4, 5};
+    for(int i=0;i&lt;5;i++){
+        printf("%d ", arr[i]);
+    }
+    return 0;
+}
+// Output:
+// 1 2 3 4 5</code></pre>
+            </div>
+          </details>
+        </article>
+
+        <!-- 7 -->
+<article class="card" data-title="Strings">
+  <div class="card-head">
+    <h3>7. Strings</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Strings are arrays of characters ending with a
+    null character '\0'. They are used to store and manipulate text. Key
+    functions include strcpy, strcat, strlen, strcmp from string.h.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">strings.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main(){
+    char str1[20] = "Hello";
+    char str2[] = "World";
+    strcat(str1, str2); // Concatenate
+    printf("%s\n", str1);
+    printf("Length: %lu\n", strlen(str1));
+    return 0;
+}
+// Output:
+// HelloWorld
+// Length: 10</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 8 -->
+<article class="card" data-title="Pointers">
+  <div class="card-head">
+    <h3>8. Pointers</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Pointers store memory addresses of variables.
+    They allow dynamic memory management, efficient array handling, and function
+    argument passing by reference. Understanding pointers is critical for
+    advanced C programming.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">pointers.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+int main(){
+    int a = 10;
+    int *p = &a;
+    printf("Value: %d, Address: %p\n", *p, p);
+    return 0;
+}
+// Output:
+// Value: 10, Address: 0x7ffeefbff5a4 (example)</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 9 -->
+<article class="card" data-title="Advanced Pointers">
+  <div class="card-head">
+    <h3>9. Advanced Pointers</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Pointers can be used for dynamic data
+    manipulation and passing large structures efficiently. This example swaps
+    two numbers without a temporary variable using pointers, demonstrating
+    memory-level operations.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">adv_pointers.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+
+void swap(int *a, int *b){
+    *a = *a + *b;
+    *b = *a - *b;
+    *a = *a - *b;
+}
+
+int main(){
+    int x = 10, y = 20;
+    printf("Before Swap: x=%d, y=%d\n", x, y);
+    swap(&x, &y);
+    printf("After Swap: x=%d, y=%d\n", x, y);
+    return 0;
+}
+// Output:
+// Before Swap: x=10, y=20
+// After Swap: x=20, y=10</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 10 -->
+<article class="card" data-title="Structures">
+  <div class="card-head">
+    <h3>10. Structures</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Structures group variables of different types
+    under a single name. They are useful for modeling real-world entities like
+    students, books, or employees. Access members using the dot operator.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">structures.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+struct Student {
+    char name[20];
+    int age;
+};
+int main(){
+    struct Student s1 = {"Alice", 21};
+    printf("Name: %s, Age: %d\n", s1.name, s1.age);
+    return 0;
+}
+// Output:
+// Name: Alice, Age: 21</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 11 -->
+<article class="card" data-title="Advanced Structures">
+  <div class="card-head">
+    <h3>11. Advanced Structures</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Structures can represent real-world entities.
+    This example calculates total and average marks for multiple students,
+    demonstrating practical usage of grouped data.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">adv_structures.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+
+struct Student {
+    char name[20];
+    int marks[3];
+    int total;
+    float avg;
+};
+
+int main(){
+    struct Student s[3] = { {"Alice",{85,90,95}}, {"Bob",{70,80,75}}, {"Charlie",{60,65,70}} };
+
+    for(int i=0;i&lt;3;i++){
+        s[i].total = s[i].marks[0] + s[i].marks[1] + s[i].marks[2];
+        s[i].avg = s[i].total / 3.0;
+        printf("Name: %s, Total: %d, Average: %.2f\n", s[i].name, s[i].total, s[i].avg);
+    }
+    return 0;
+}
+// Output:
+// Name: Alice, Total: 270, Average: 90.00
+// Name: Bob, Total: 225, Average: 75.00
+// Name: Charlie, Total: 195, Average: 65.00</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 12 -->
+<article class="card" data-title="File Input/Output">
+  <div class="card-head">
+    <h3>12. File Input/Output</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> File I/O allows reading from and writing to
+    files. Use fopen, fprintf, fscanf, fread, fwrite, and fclose. It's
+    essential for data storage and processing outside program execution.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">fileio.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+int main(){
+    FILE *f = fopen("example.txt","w");
+    fprintf(f,"Hello C File I/O");
+    fclose(f);
+    return 0;
+}
+// Output:
+// Creates a file 'example.txt' containing: Hello C File I/O</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 13 -->
+<article class="card" data-title="Advanced File Handling">
+  <div class="card-head">
+    <h3>13. Advanced File Handling</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Files store persistent data. This example
+    writes employee records to a file and reads them back, simulating a simple
+    database operation.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">adv_file.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+
+struct Employee {
+    int id;
+    char name[20];
+    float salary;
+};
+
+int main(){
+    FILE *fp;
+    struct Employee e[2] = { {101,"Alice",50000}, {102,"Bob",60000} };
+
+    // Writing to file
+    fp = fopen("employees.txt","w");
+    for(int i=0;i&lt;2;i++)
+        fprintf(fp,"%d %s %.2f\\n", e[i].id, e[i].name, e[i].salary);
+    fclose(fp);
+
+    // Reading from file
+    struct Employee temp;
+    fp = fopen("employees.txt","r");
+    printf("Employee Records:\\n");
+    while(fscanf(fp,"%d %s %f",&temp.id,temp.name,&temp.salary) != EOF){
+        printf("ID:%d Name:%s Salary:%.2f\\n", temp.id,temp.name,temp.salary);
+    }
+    fclose(fp);
+    return 0;
+}
+// Output:
+// Employee Records:
+// ID:101 Name:Alice Salary:50000.00
+// ID:102 Name:Bob Salary:60000.00</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 14 -->
+<article class="card" data-title="Dynamic Memory Allocation">
+  <div class="card-head">
+    <h3>14. Dynamic Memory Allocation</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Allocate memory at runtime using malloc,
+    calloc, realloc, and free. Useful when array size or data is unknown at
+    compile time. Helps in memory-efficient programs.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">malloc.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int main(){
+    int arr = (int)malloc(5 * sizeof(int));
+    for(int i=0;i&lt;5;i++) arr[i] = i+1;
+    for(int i=0;i&lt;5;i++) printf("%d ", arr[i]);
+    free(arr);
+    return 0;
+}
+// Output:
+// 1 2 3 4 5</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 15 -->
+<article class="card" data-title="Advanced Dynamic Memory Allocation">
+  <div class="card-head">
+    <h3>15. Advanced Dynamic Memory Allocation</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Allocate memory at runtime for user-defined
+    data. This example dynamically stores numbers entered by the user and
+    computes their sum.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">adv_malloc.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(){
+    int n, sum=0;
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    int arr = (int)malloc(n * sizeof(int));
+    if(arr == NULL) { printf("Memory allocation failed\\n"); return 1; }
+
+    for(int i=0;i&lt;n;i++){
+        printf("Enter number %d: ", i+1);
+        scanf("%d", &arr[i]);
+        sum += arr[i];
+    }
+
+    printf("Sum of all numbers: %d\n", sum);
+    free(arr);
+    return 0;
+}
+// Output (example):
+// Enter number of elements: 4
+// Enter number 1: 10
+// Enter number 2: 20
+// Enter number 3: 30
+// Enter number 4: 40
+// Sum of all numbers: 100</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 16 -->
+<article class="card" data-title="Recursion">
+  <div class="card-head">
+    <h3>16. Recursion</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Recursion is when a function calls itself.
+    Useful for problems like factorial, Fibonacci, and tree traversal. Always
+    ensure a base case to prevent infinite recursion.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">recursion.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+int factorial(int n){
+    if(n==0) return 1;
+    return n*factorial(n-1);
+}
+int main(){
+    printf("Factorial of 5: %d\n", factorial(5));
+    return 0;
+}
+// Output:
+// Factorial of 5: 120</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 17 -->
+<article class="card" data-title="Advanced Recursion">
+  <div class="card-head">
+    <h3>17. Advanced Recursion</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Recursion allows elegant solutions for
+    repetitive problems. This example calculates factorial of a number, a common
+    combinatorial operation.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">adv_recursion.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+
+long factorial(int n){
+    if(n==0) return 1;
+    return n * factorial(n-1);
+}
+
+int main(){
+    int num = 6;
+    printf("Factorial of %d is %ld\n", num, factorial(num));
+    return 0;
+}
+// Output:
+// Factorial of 6 is 720</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 18 -->
+<article class="card" data-title="Linked List">
+  <div class="card-head">
+    <h3>18. Linked List</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> A linked list is a dynamic data structure
+    where each element (node) points to the next. Useful for inserting/deleting
+    elements without shifting memory like arrays.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">linkedlist.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+struct Node {
+    int data;
+    struct Node *next;
+};
+
+int main(){
+    struct Node *head = NULL;
+    struct Node *second = NULL;
+    struct Node *third = NULL;
+
+    head = (struct Node*)malloc(sizeof(struct Node));
+    second = (struct Node*)malloc(sizeof(struct Node));
+    third = (struct Node*)malloc(sizeof(struct Node));
+
+    head-&gt;data = 10; head-&gt;next = second;
+    second-&gt;data = 20; second-&gt;next = third;
+    third-&gt;data = 30; third-&gt;next = NULL;
+
+    struct Node *ptr = head;
+    while(ptr != NULL){
+        printf("%d ", ptr-&gt;data);
+        ptr = ptr-&gt;next;
+    }
+    return 0;
+}
+// Output:
+// 10 20 30</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 19 -->
+<article class="card" data-title="Stack">
+  <div class="card-head">
+    <h3>19. Stack</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Stack is a LIFO (Last-In-First-Out) structure.
+    Commonly used in recursion, expression evaluation, and undo operations. Push
+    adds and pop removes elements from the top.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">stack.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+#define MAX 5
+
+int stack[MAX];
+int top = -1;
+
+void push(int val){
+    if(top == MAX-1) printf("Stack Overflow\\n");
+    else stack[++top] = val;
+}
+
+int pop(){
+    if(top == -1) { printf("Stack Underflow\\n"); return -1; }
+    return stack[top--];
+}
+
+int main(){
+    push(10); push(20); push(30);
+    printf("Popped: %d\\n", pop());
+    printf("Popped: %d\\n", pop());
+    return 0;
+}
+// Output:
+// Popped: 30
+// Popped: 20</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 20 -->
+<article class="card" data-title="Queue">
+  <div class="card-head">
+    <h3>20. Queue</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Queue is a FIFO (First-In-First-Out)
+    structure. Used in scheduling, buffering, and resource management. Enqueue
+    adds and Dequeue removes elements from the front.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">queue.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+#define SIZE 5
+
+int queue[SIZE], front=-1, rear=-1;
+
+void enqueue(int val){
+    if(rear == SIZE-1) printf("Queue Full\\n");
+    else {
+        if(front == -1) front = 0;
+        queue[++rear] = val;
+    }
+}
+
+int dequeue(){
+    if(front == -1 || front &gt; rear) { printf("Queue Empty\\n"); return -1; }
+    return queue[front++];
+}
+
+int main(){
+    enqueue(10); enqueue(20); enqueue(30);
+    printf("Dequeued: %d\\n", dequeue());
+    printf("Dequeued: %d\\n", dequeue());
+    return 0;
+}
+// Output:
+// Dequeued: 10
+// Dequeued: 20</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 21 -->
+<article class="card" data-title="Matrix Operations">
+  <div class="card-head">
+    <h3>21. Matrix Operations</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Matrices are 2D arrays. Common operations
+    include addition, subtraction, and multiplication. Used in graphics,
+    simulations, and scientific computing.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">matrix.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+
+int main(){
+    int A[2][2] = {{1,2},{3,4}};
+    int B[2][2] = {{5,6},{7,8}};
+    int C[2][2];
+
+    // Addition
+    for(int i=0;i&lt;2;i++)
+        for(int j=0;j&lt;2;j++)
+            C[i][j] = A[i][j] + B[i][j];
+
+    printf("Matrix Addition:\\n");
+    for(int i=0;i&lt;2;i++){
+        for(int j=0;j&lt;2;j++)
+            printf("%d ", C[i][j]);
+        printf("\\n");
+    }
+    return 0;
+}
+// Output:
+// Matrix Addition:
+// 6 8
+// 10 12</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 22 -->
+<article class="card" data-title="Sorting Algorithms">
+  <div class="card-head">
+    <h3>22. Sorting Algorithms</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Sorting arranges data in a particular order.
+    Common algorithms: Bubble Sort, Selection Sort, Insertion Sort. Sorting is
+    crucial for efficient searching and data processing.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">sorting.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+
+int main(){
+    int arr[5] = {5,2,9,1,6}, temp;
+    // Bubble Sort
+    for(int i=0;i&lt;5-1;i++){
+        for(int j=0;j&lt;5-i-1;j++){
+            if(arr[j] &gt; arr[j+1]){
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+    printf("Sorted Array: ");
+    for(int i=0;i&lt;5;i++) printf("%d ", arr[i]);
+    return 0;
+}
+// Output:
+// Sorted Array: 1 2 5 6 9</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 23 -->
+<article class="card" data-title="Searching Algorithms">
+  <div class="card-head">
+    <h3>23. Searching Algorithms</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Searching is locating a value within a
+    dataset. Common methods: Linear Search and Binary Search. Efficient searching
+    is critical for large datasets.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">searching.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+
+int main(){
+    int arr[5] = {1,2,5,6,9}, key=5;
+    int found = -1;
+    // Linear Search
+    for(int i=0;i&lt;5;i++){
+        if(arr[i]==key){ found=i; break; }
+    }
+    if(found != -1) printf("Element %d found at index %d\\n", key, found);
+    else printf("Element not found\\n");
+    return 0;
+}
+// Output:
+// Element 5 found at index 2</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 24 -->
+<article class="card" data-title="Bitwise Operations">
+  <div class="card-head">
+    <h3>24. Bitwise Operations</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Bitwise operators manipulate individual bits
+    of data. Common operators: AND(&amp;), OR(|), XOR(^), NOT(~), shift (&lt;&lt;,
+    &gt;&gt;). Useful in encryption, compression, and low-level programming.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">bitwise.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+
+int main(){
+    int a=5, b=3;
+    printf("AND: %d\\n", a & b);
+    printf("OR: %d\\n", a | b);
+    printf("XOR: %d\\n", a ^ b);
+    printf("Left Shift: %d\\n", a &lt;&lt;1);
+    printf("Right Shift: %d\\n", a &gt;&gt;1);
+    return 0;
+}
+// Output:
+// AND: 1
+// OR: 7
+// XOR: 6
+// Left Shift: 10
+// Right Shift: 2</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 25 -->
+<article class="card" data-title="Advanced File Handling (Binary)">
+  <div class="card-head">
+    <h3>25. Advanced File Handling</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Advanced file operations include reading/writing
+    binary files, appending data, and using fseek, ftell. Useful for databases,
+    images, and storing complex data structures.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">binary_file.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+
+struct Student {
+    char name[20];
+    int age;
+};
+
+int main(){
+    struct Student s1 = {"Alice", 21};
+    FILE *f = fopen("students.dat","wb"); // write binary
+    fwrite(&amp;s1, sizeof(s1), 1, f);
+    fclose(f);
+
+    struct Student s2;
+    f = fopen("students.dat","rb"); // read binary
+    fread(&amp;s2, sizeof(s2), 1, f);
+    fclose(f);
+
+    printf("Name: %s, Age: %d\\n", s2.name, s2.age);
+    return 0;
+}
+// Output:
+// Name: Alice, Age: 21</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 26 -->
+<article class="card" data-title="Macros & Preprocessor Directives">
+  <div class="card-head">
+    <h3>26. Macros &amp; Preprocessor Directives</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Macros define reusable code snippets using
+    #define. Preprocessor directives like #include, #ifdef, #ifndef, #undef help
+    in conditional compilation and modular code.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">macros.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+#define PI 3.14159
+
+int main(){
+    printf("Value of PI: %.2f\\n", PI);
+    return 0;
+}
+// Output:
+// Value of PI: 3.14</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 27 -->
+<article class="card" data-title="Command Line Arguments">
+  <div class="card-head">
+    <h3>27. Command Line Arguments</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> C programs can accept input from the command
+    line using argc (argument count) and argv (argument vector). Useful for
+    automation and scripting.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">argv.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+
+int main(int argc, char *argv[]){
+    printf("Number of arguments: %d\\n", argc);
+    for(int i=0;i&lt;argc;i++){
+        printf("Arg %d: %s\\n", i, argv[i]);
+    }
+    return 0;
+}
+// Output (example):
+// Number of arguments: 3
+// Arg 0: ./program
+// Arg 1: test
+// Arg 2: 123</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 28 -->
+<article class="card" data-title="Multi-file Programs">
+  <div class="card-head">
+    <h3>28. Multi-file Programs</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Large programs are split across multiple
+    files. Use header files (.h) and include them with #include. Helps in
+    modularity, reusability, and team projects.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">multifile.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>// file1.h
+#ifndef FILE1_H
+#define FILE1_H
+void greet();
+#endif
+
+// file1.c
+#include &lt;stdio.h&gt;
+#include "file1.h"
+void greet(){ printf("Hello from file1!\\n"); }
+
+// main.c
+#include "file1.h"
+int main(){
+    greet();
+    return 0;
+}
+// Output:
+// Hello from file1!</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 29 -->
+<article class="card" data-title="Error Handling & Debugging">
+  <div class="card-head">
+    <h3>29. Error Handling &amp; Debugging</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Detect and handle runtime errors using return
+    values, errno, and perror. Debug using gdb, printf debugging, or IDE tools.
+    Essential for reliable programs.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">errors.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+#include &lt;errno.h&gt;
+#include &lt;string.h&gt;
+
+int main(){
+    FILE *f = fopen("nonexistent.txt","r");
+    if(!f){
+        printf("Error opening file: %s\\n", strerror(errno));
+    }
+    return 0;
+}
+// Output (example):
+// Error opening file: No such file or directory</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 30 -->
+<article class="card" data-title="Linked Lists (Simple)">
+  <div class="card-head">
+    <h3>30. Linked Lists</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Linked lists are dynamic data structures where
+    elements (nodes) point to the next node. They allow efficient
+    insertion/deletion compared to arrays. Useful in real-time applications.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">linkedlist2.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+int main(){
+    struct Node* head = (struct Node*)malloc(sizeof(struct Node));
+    struct Node* second = (struct Node*)malloc(sizeof(struct Node));
+    head-&gt;data = 1; head-&gt;next = second;
+    second-&gt;data = 2; second-&gt;next = NULL;
+
+    struct Node* ptr = head;
+    while(ptr != NULL){
+        printf("%d ", ptr-&gt;data);
+        ptr = ptr-&gt;next;
+    }
+    free(second); free(head);
+    return 0;
+}
+// Output:
+// 1 2</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 31 -->
+<article class="card" data-title="Stack & Queue Implementation">
+  <div class="card-head">
+    <h3>31. Stack &amp; Queue Implementation</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    <strong>Description:</strong> Stack (LIFO) and Queue (FIFO) are abstract
+    data types. Implement using arrays or linked lists. Useful in function call
+    management, scheduling, and task processing.
+  </p>
+
+  <details>
+    <summary>Show Code</summary>
+    <div class="codebox">
+      <div class="codebox-top">
+        <span class="file">stack_queue.c</span>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+#define SIZE 5
+int stack[SIZE], top=-1;
+
+void push(int x){ if(top&lt;SIZE-1) stack[++top]=x; }
+int pop(){ return (top&gt;=-1)?stack[top--]:-1; }
+
+int main(){
+    push(1); push(2); push(3);
+    printf("%d ", pop());
+    printf("%d ", pop());
+    return 0;
+}
+// Output:
+// 3 2</code></pre>
+    </div>
+  </details>
+</article>
+
+<!-- 13. Advanced OOP Concepts -->
+<div class="card" data-title="Advanced OOP Concepts">
+  <div class="card-head">
+    <h3>13. Advanced OOP Concepts</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Advanced OOP concepts include friend functions and classes, static members,
+    const correctness, deep vs shallow copy, copy & move constructors, and the
+    Rule of 3/5/0 for proper resource management.
+  </p>
+
+  <p><strong>Example Question:</strong> Count number of objects created using a static member.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp13">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;">
+<code id="cpp13">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Sample {
+public:
+    static int count;
+    Sample() { count++; }
+};
+
+int Sample::count = 0;
+
+int main() {
+    Sample a, b, c;
+    cout &lt;&lt; Sample::count;
+    return 0;
+}
+</code>
+  </pre>
+</div>
+
+<!-- 14. File Handling -->
+<div class="card" data-title="File Handling">
+  <div class="card-head">
+    <h3>14. File Handling</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    File handling allows reading from and writing to files using
+    <code>ifstream</code>, <code>ofstream</code>, and <code>fstream</code>.
+    Proper error checking is essential.
+  </p>
+
+  <p><strong>Example Question:</strong> Write and read data from a file.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp14">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;">
+<code id="cpp14">
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+using namespace std;
+
+int main() {
+    ofstream out("test.txt");
+    out &lt;&lt; "Hello File";
+    out.close();
+
+    ifstream in("test.txt");
+    string s;
+    in &gt;&gt; s;
+    cout &lt;&lt; s;
+    in.close();
+    return 0;
+}
+</code>
+  </pre>
+</div>
+
+<!-- 15. Exception Handling -->
+<div class="card" data-title="Exception Handling">
+  <div class="card-head">
+    <h3>15. Exception Handling</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    Exception handling manages runtime errors using
+    <code>try</code>, <code>throw</code>, and <code>catch</code>.
+    It prevents program crashes and improves robustness.
+  </p>
+
+  <p><strong>Example Question:</strong> Handle division by zero.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp15">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;">
+<code id="cpp15">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int a = 10, b = 0;
+    try {
+        if(b == 0)
+            throw "Division by zero";
+        cout &lt;&lt; a / b;
+    } catch(const char* msg) {
+        cout &lt;&lt; msg;
+    }
+    return 0;
+}
+</code>
+  </pre>
+</div>
+
+<!-- 16. Templates -->
+<div class="card" data-title="Templates">
+  <div class="card-head">
+    <h3>16. Templates</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Templates enable generic programming. Function and class templates
+    allow code reuse for multiple data types.
+  </p>
+
+  <p><strong>Example Question:</strong> Find maximum of two values using templates.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp16">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;">
+<code id="cpp16">
+#include &lt;iostream&gt;
+using namespace std;
+
+template &lt;typename T&gt;
+T getMax(T a, T b) {
+    return (a &gt; b) ? a : b;
+}
+
+int main() {
+    cout &lt;&lt; getMax(5, 9);
+    return 0;
+}
+</code>
+  </pre>
+</div>
+
+<!-- 17. Standard Template Library -->
+<div class="card" data-title="STL">
+  <div class="card-head">
+    <h3>17. Standard Template Library (STL)</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    STL provides containers, iterators, and algorithms such as
+    <code>vector</code>, <code>set</code>, <code>map</code>,
+    <code>sort</code>, and <code>accumulate</code>.
+  </p>
+
+  <p><strong>Example Question:</strong> Sort elements using vector.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp17">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;">
+<code id="cpp17">
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; v = {4,1,3,2};
+    sort(v.begin(), v.end());
+    for(int x : v) cout &lt;&lt; x &lt;&lt; " ";
+    return 0;
+}
+</code>
+  </pre>
+</div>
+
+<!-- 18. Modern C++ -->
+<div class="card" data-title="Modern C++">
+  <div class="card-head">
+    <h3>18. Modern C++ (C++11 → C++20+)</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Modern C++ introduces auto, lambda expressions, smart pointers,
+    range-based loops, nullptr, move semantics, and concurrency support.
+  </p>
+
+  <p><strong>Example Question:</strong> Use lambda to filter even numbers.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp18">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;">
+<code id="cpp18">
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; v = {1,2,3,4,5,6};
+    for_each(v.begin(), v.end(), [](int x){
+        if(x % 2 == 0) cout &lt;&lt; x &lt;&lt; " ";
+    });
+    return 0;
+}
+</code>
+  </pre>
+</div>
+        <!-- ADD YOUR REMAINING TOPICS 7 to 31 HERE IN SAME FORMAT -->
+      </section>
+    </main>
+    <!-- External JS -->
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Python Full Roadmap - TechPath</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">
+      <span class="material-symbols-outlined">terminal</span>
+    </div>
+    <h1 class="brand">TechPath</h1>
+
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#">Courses</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../career.html">Career</a>
+    </nav>
+  </div>
+
+  <div class="topbar-right">
+    <div class="search-wrap">
+      <span class="material-symbols-outlined search-icon">search</span>
+      <input id="searchInput" type="text" placeholder="Search topics..." />
+      <kbd class="kbd">Ctrl K</kbd>
+    </div>
+    <div class="avatar"></div>
+  </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main class="container">
+
+  <!-- ACTIONS -->
+  <div class="top-actions">
+    <a class="btn btn-secondary" href="../skills.html">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Back to Skills
+    </a>
+
+    <div class="actions-right">
+      <a class="btn btn-ghost" href="#">
+        <span class="material-symbols-outlined">download</span>
+        <span class="hide-sm">Download PDF</span>
+      </a>
+
+      <a class="btn btn-ghost" href="#">
+        <span class="material-symbols-outlined">note</span>
+        <span class="hide-sm">Notes</span>
+      </a>
+
+      <a class="btn btn-ghost" href="https://www.youtube.com/watch?v=_uQrJ0TkZlc" target="_blank">
+        <span class="material-symbols-outlined">play_circle</span>
+        <span class="hide-sm">Video</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h2>Python Full Roadmap</h2>
+    <p>
+      Learn Python step by step with clear explanations, real examples, and practical understanding.
+    </p>
+  </section>
+
+  <!-- GRID -->
+  <div class="grid">
+<!-- ================= PYTHON ROADMAP (1–5) ================= -->
+
+<!-- 1 -->
+<div class="card">
+  <div class="card-head">
+    <h3>1. Introduction to Python</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Python is a high-level, interpreted programming language known for readability and a large ecosystem. It is widely used in web development, data science, automation, scripting, and artificial intelligence, making it one of the most versatile and beginner-friendly languages.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py1">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py1">
+print("Hello, Python!")  # run with: python file.py
+  </code></pre>
+</div>
+
+<!-- 2 -->
+<div class="card">
+  <div class="card-head">
+    <h3>2. Installing Python & Tools</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Python can be installed from python.org or using package managers. Developers commonly use VS Code for coding, virtual environments (venv) to isolate dependencies, and pip to install libraries required for projects.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py2">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py2">
+# create virtual environment
+python -m venv venv
+
+# activate (Windows)
+venv\Scripts\activate
+
+# install packages
+pip install requests numpy pandas
+  </code></pre>
+</div>
+
+<!-- 3 -->
+<div class="card">
+  <div class="card-head">
+    <h3>3. Syntax & Variables</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Python uses indentation instead of braces to define code blocks, which makes it clean and readable. Variables are dynamically typed, meaning you don’t need to declare their type explicitly, and naming follows snake_case convention.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py3">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py3">
+name = "Ramesh"
+age = 20
+is_active = True
+
+print(f"{name} is {age} years old")
+  </code></pre>
+</div>
+
+<!-- 4 -->
+<div class="card">
+  <div class="card-head">
+    <h3>4. Data Types</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Python provides core data types such as int, float, str, bool, list, tuple, set, dict, and None. These define how data is stored and what operations can be performed, and type() can be used to inspect them.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py4">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py4">
+x = 10
+y = 3.14
+s = "text"
+lst = [1,2,3]
+tpl = (1,2)
+st = {1,2}
+d = {"a":1}
+
+print(type(x), type(s))
+  </code></pre>
+</div>
+
+<!-- 4.1 -->
+<div class="card">
+  <div class="card-head">
+    <h3>4.1 Input & Output</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Input and output allow interaction between the user and program. Python uses input() to take user input and print() to display output, and values are often converted using int() or float().
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py41">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py41">
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+
+print(f"Hello {name}, you are {age} years old.")
+  </code></pre>
+</div>
+
+<!-- 5 -->
+<div class="card">
+  <div class="card-head">
+    <h3>5. Operators</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Operators are used to perform operations on values, including arithmetic, comparison, logical, assignment, and membership operators. They are essential for calculations and decision-making in programs.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py5">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py5">
+a = 7
+b = 3
+
+print(a + b, a // b, a % b)
+print(3 in [1,2,3])
+  </code></pre>
+</div>
+
+<!-- ================= PYTHON ROADMAP (6–10) ================= -->
+
+<!-- 6 -->
+<div class="card">
+  <div class="card-head">
+    <h3>6. Control Flow</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Control flow statements allow programs to make decisions using if, elif, and else. Python uses indentation instead of braces, making the code more readable and structured while controlling execution based on conditions.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py6">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py6">
+x = 10
+
+if x > 10:
+    print("Greater")
+elif x == 10:
+    print("Equal")
+else:
+    print("Smaller")
+  </code></pre>
+</div>
+
+<!-- 6.1 -->
+<div class="card">
+  <div class="card-head">
+    <h3>6.1 Type Conversion</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Type conversion is used to convert values from one data type to another using built-in functions like int(), float(), and str(). This is especially useful when handling user input or performing calculations.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py61">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py61">
+x = "100"
+
+print(int(x) + 50)
+print(float("3.14"))
+print(str(25) + " apples")
+  </code></pre>
+</div>
+
+<!-- 7 -->
+<div class="card">
+  <div class="card-head">
+    <h3>7. Loops</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Loops are used to repeat a block of code multiple times. Python provides for loops for iterating over sequences and while loops for condition-based repetition, making programs efficient and reducing code duplication.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py7">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py7">
+for i in range(5):
+    print(i)
+
+i = 0
+while i < 5:
+    print(i)
+    i += 1
+  </code></pre>
+</div>
+
+<!-- 7.1 -->
+<div class="card">
+  <div class="card-head">
+    <h3>7.1 Nested Conditions</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Nested conditions allow placing one if statement inside another to evaluate multiple levels of logic. This is useful when decisions depend on more than one condition.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py71">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py71">
+x = 10
+
+if x > 0:
+    if x % 2 == 0:
+        print("Positive even")
+    else:
+        print("Positive odd")
+  </code></pre>
+</div>
+
+<!-- 7.2 -->
+<div class="card">
+  <div class="card-head">
+    <h3>7.2 Loop Control Statements</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Loop control statements modify the execution of loops. break exits the loop early, continue skips the current iteration, and else runs when the loop completes normally without interruption.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py72">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py72">
+for i in range(5):
+    if i == 3:
+        break
+    print(i)
+else:
+    print("Completed")
+  </code></pre>
+</div>
+
+<!-- 8 -->
+<div class="card">
+  <div class="card-head">
+    <h3>8. Functions</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Functions are reusable blocks of code that perform specific tasks. They improve code organization, reduce repetition, and can accept inputs and return outputs, making programs modular and scalable.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py8">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py8">
+def greet(name="User"):
+    return f"Hello, {name}"
+
+print(greet("Ramesh"))
+  </code></pre>
+</div>
+
+<!-- 9 -->
+<div class="card">
+  <div class="card-head">
+    <h3>9. Scope & Lifetime</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Python follows LEGB scope rules (Local, Enclosing, Global, Built-in) to determine variable access. Understanding scope helps avoid unexpected behavior and manage variable lifetimes correctly.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py9">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py9">
+x = "global"
+
+def outer():
+    x = "local"
+    print(x)
+
+outer()
+print(x)
+  </code></pre>
+</div>
+
+<!-- 10 -->
+<div class="card">
+  <div class="card-head">
+    <h3>10. Modules & Packages</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Modules and packages help organize code into separate files and folders. They improve code reusability and maintainability, allowing developers to structure large projects efficiently.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py10">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py10">
+# utils.py
+def add(a, b):
+    return a + b
+
+# main.py
+from utils import add
+print(add(2, 3))
+  </code></pre>
+</div>
+
+<!-- ================= PYTHON ROADMAP (11–20) ================= -->
+
+<!-- 11 -->
+<div class="card">
+  <div class="card-head">
+    <h3>11. Virtual Environments & pip</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Virtual environments allow you to isolate project dependencies so that different projects don’t conflict with each other. pip is Python’s package manager used to install, update, and manage external libraries required for development.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py11">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py11">
+python -m venv venv
+venv\Scripts\activate
+pip install requests
+pip freeze > requirements.txt
+  </code></pre>
+</div>
+
+<!-- 12 -->
+<div class="card">
+  <div class="card-head">
+    <h3>12. Data Structures</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Python provides powerful data structures like lists, tuples, sets, and dictionaries. Each serves a different purpose such as ordered storage, immutability, uniqueness, or key-value mapping, making data handling efficient and flexible.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py12">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py12">
+lst = [1,2,3]
+tpl = (1,2,3)
+s = {1,2,3}
+d = {"a":1, "b":2}
+
+print(lst, tpl, s, d)
+  </code></pre>
+</div>
+
+<!-- 13 -->
+<div class="card">
+  <div class="card-head">
+    <h3>13. List Comprehensions</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  List comprehensions provide a concise way to create lists using a single line of code. They are faster and more readable than traditional loops and are commonly used in real-world Python code.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py13">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py13">
+squares = [x*x for x in range(10)]
+print(squares)
+  </code></pre>
+</div>
+
+<!-- 14 -->
+<div class="card">
+  <div class="card-head">
+    <h3>14. Strings & Formatting</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Strings are immutable sequences used to handle text data. Python provides powerful formatting options like f-strings, along with methods such as split, join, strip, and replace for efficient string manipulation.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py14">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py14">
+name = "Ramesh"
+age = 20
+
+print(f"{name} is {age} years old")
+  </code></pre>
+</div>
+
+<!-- 15 -->
+<div class="card">
+  <div class="card-head">
+    <h3>15. File I/O</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  File input/output allows reading from and writing to files. Using the with statement ensures files are properly opened and closed, preventing memory leaks and improving safety.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py15">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py15">
+with open("file.txt", "w") as f:
+    f.write("Hello Python")
+
+with open("file.txt", "r") as f:
+    print(f.read())
+  </code></pre>
+</div>
+
+<!-- 16 -->
+<div class="card">
+  <div class="card-head">
+    <h3>16. Exceptions & Error Handling</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Exception handling allows programs to deal with runtime errors without crashing. Using try, except, and finally blocks ensures errors are handled gracefully and improves program stability.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py16">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py16">
+try:
+    x = int("abc")
+except ValueError:
+    print("Conversion error")
+finally:
+    print("Done")
+  </code></pre>
+</div>
+
+<!-- 16.1 -->
+<div class="card">
+  <div class="card-head">
+    <h3>16.1 Debugging & Logging</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Debugging helps identify and fix issues in code, while logging records program activity. Tools like print(), type(), and logging modules help track and understand program behavior during execution.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py161">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py161">
+x, y = 10, 20
+print(x, y, sep=" | ")
+print(type(x))
+  </code></pre>
+</div>
+
+<!-- 17 -->
+<div class="card">
+  <div class="card-head">
+    <h3>17. Classes & Objects (OOP)</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Object-Oriented Programming allows modeling real-world entities using classes and objects. It organizes code into reusable structures with attributes and methods, making applications scalable and maintainable.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py17">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py17">
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+p = Person("Ramesh")
+print(p.name)
+  </code></pre>
+</div>
+
+<!-- 18 -->
+<div class="card">
+  <div class="card-head">
+    <h3>18. Inheritance & Polymorphism</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Inheritance allows one class to reuse properties of another, while polymorphism enables the same method to behave differently in different classes. These concepts are essential for building flexible and reusable systems.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py18">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py18">
+class Animal:
+    def speak(self):
+        return "sound"
+
+class Dog(Animal):
+    def speak(self):
+        return "bark"
+
+print(Dog().speak())
+  </code></pre>
+</div>
+
+<!-- 19 -->
+<div class="card">
+  <div class="card-head">
+    <h3>19. Decorators</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Decorators allow modifying the behavior of functions without changing their code. They are commonly used for logging, timing, authentication, and caching in real-world applications.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py19">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py19">
+def decorator(func):
+    def wrapper():
+        print("Before")
+        func()
+        print("After")
+    return wrapper
+
+@decorator
+def say():
+    print("Hello")
+
+say()
+  </code></pre>
+</div>
+
+<!-- 20 -->
+<div class="card">
+  <div class="card-head">
+    <h3>20. Generators & Iterators</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Generators produce values one at a time using yield, making them memory efficient. Iterators allow looping over data structures, and together they are useful for handling large datasets and streams.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py20">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py20">
+def count(n):
+    for i in range(n):
+        yield i
+
+for i in count(3):
+    print(i)
+  </code></pre>
+</div>
+<!-- ================= PYTHON ROADMAP (21–30) ================= -->
+
+<!-- 21 -->
+<div class="card">
+  <div class="card-head">
+    <h3>21. Context Managers</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Context managers are used to manage resources like files or connections safely. The with statement ensures proper setup and cleanup, even if errors occur, making code more reliable and clean.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py21">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py21">
+with open("file.txt", "r") as f:
+    data = f.read()
+    print(data)
+  </code></pre>
+</div>
+
+<!-- 22 -->
+<div class="card">
+  <div class="card-head">
+    <h3>22. Lambda & Functional Programming</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Lambda functions are small anonymous functions used for short operations. Combined with map, filter, and reduce, they allow functional-style programming for concise and efficient data processing.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py22">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py22">
+nums = [1,2,3,4]
+
+squared = list(map(lambda x: x*x, nums))
+print(squared)
+  </code></pre>
+</div>
+
+<!-- 23 -->
+<div class="card">
+  <div class="card-head">
+    <h3>23. Regular Expressions</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Regular expressions are used for pattern matching and text validation. They are powerful tools for tasks like email validation, searching patterns, and data cleaning.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py23">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py23">
+import re
+
+pattern = r"\d+"
+print(re.findall(pattern, "Age 20, Year 2024"))
+  </code></pre>
+</div>
+
+<!-- 23.1 -->
+<div class="card">
+  <div class="card-head">
+    <h3>23.1 OS & File Paths</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Python provides os and pathlib modules to interact with the operating system, manage directories, and handle file paths in a platform-independent way.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py231">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py231">
+import os
+
+print(os.getcwd())
+print(os.listdir())
+  </code></pre>
+</div>
+
+<!-- 24 -->
+<div class="card">
+  <div class="card-head">
+    <h3>24. JSON & CSV Handling</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  JSON and CSV are common data formats used for storing and transferring data. Python provides built-in modules to read, write, and convert these formats easily.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py24">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py24">
+import json
+
+data = {"name": "Ramesh"}
+json_str = json.dumps(data)
+
+print(json.loads(json_str))
+  </code></pre>
+</div>
+
+<!-- 25 -->
+<div class="card">
+  <div class="card-head">
+    <h3>25. Date & Time</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  The datetime module is used to work with dates and times. It allows formatting, calculations, and handling time-based operations in applications.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py25">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py25">
+from datetime import datetime
+
+now = datetime.now()
+print(now)
+  </code></pre>
+</div>
+
+<!-- 26 -->
+<div class="card">
+  <div class="card-head">
+    <h3>26. Networking (Requests)</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  The requests library is used to send HTTP requests to APIs. It is widely used to fetch data from external services and integrate applications with web-based systems.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py26">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py26">
+import requests
+
+res = requests.get("https://jsonplaceholder.typicode.com/todos/1")
+print(res.json())
+  </code></pre>
+</div>
+
+<!-- 27 -->
+<div class="card">
+  <div class="card-head">
+    <h3>27. Asyncio & Concurrency</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Asyncio allows writing asynchronous code using async and await. It is useful for handling multiple tasks like network calls efficiently without blocking execution.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py27">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py27">
+import asyncio
+
+async def hello():
+    print("Hello")
+
+asyncio.run(hello())
+  </code></pre>
+</div>
+
+<!-- 28 -->
+<div class="card">
+  <div class="card-head">
+    <h3>28. Testing & Debugging</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Testing ensures your code works correctly, while debugging helps find and fix errors. Tools like unittest, pytest, and logging are essential for writing reliable applications.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py28">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py28">
+def add(a, b):
+    return a + b
+
+print(add(2, 3))
+  </code></pre>
+</div>
+
+<!-- 29 -->
+<div class="card">
+  <div class="card-head">
+    <h3>29. Packaging & Distribution</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Packaging allows you to distribute your Python code as reusable libraries. Tools like setuptools and pyproject.toml help manage dependencies and publish projects.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py29">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py29">
+# example structure
+# setup.py or pyproject.toml is used for packaging
+  </code></pre>
+</div>
+
+<!-- 30 -->
+<div class="card">
+  <div class="card-head">
+    <h3>30. NumPy (Intro)</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  NumPy provides fast numerical operations and array handling. It is the foundation for scientific computing, data analysis, and machine learning in Python.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py30">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py30">
+import numpy as np
+
+arr = np.array([1,2,3])
+print(arr * 2)
+  </code></pre>
+</div>
+<!-- ================= PYTHON ROADMAP (31–35 FINAL) ================= -->
+
+<!-- 31 -->
+<div class="card">
+  <div class="card-head">
+    <h3>31. Pandas (Intro)</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Pandas is a powerful library used for working with structured data like tables. It provides DataFrames that allow filtering, grouping, cleaning, and analyzing data efficiently, making it essential for data science and analytics.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py31">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py31">
+import pandas as pd
+
+df = pd.DataFrame({
+  "name": ["Ramesh", "Sita"],
+  "age": [20, 22]
+})
+
+print(df)
+  </code></pre>
+</div>
+
+<!-- 31.1 -->
+<div class="card">
+  <div class="card-head">
+    <h3>31.1 Command Line Arguments</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Command line arguments allow passing inputs directly when running a Python script. This is useful for building CLI tools and automation scripts that accept dynamic input from users.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py311">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py311">
+import sys
+
+print(sys.argv)
+  </code></pre>
+</div>
+
+<!-- 32 -->
+<div class="card">
+  <div class="card-head">
+    <h3>32. Web Development (Flask Intro)</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Flask is a lightweight web framework used to build backend applications and APIs. It allows defining routes, handling requests, and returning responses, making it a great starting point for web development with Python.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py32">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py32">
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello Flask"
+
+app.run()
+  </code></pre>
+</div>
+
+<!-- 33 -->
+<div class="card">
+  <div class="card-head">
+    <h3>33. Best Practices</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Writing clean and maintainable code is essential. Follow PEP8 guidelines, use meaningful variable names, write modular code, add comments, and test your applications to ensure reliability and scalability.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py33">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py33">
+# Example: clean function
+def add(a, b):
+    return a + b
+  </code></pre>
+</div>
+
+<!-- 34 -->
+<div class="card">
+  <div class="card-head">
+    <h3>34. Projects (Real-World Practice)</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Building projects is the most important step in learning Python. It helps apply concepts in real scenarios and strengthens problem-solving skills. Start with small projects and gradually build complex applications.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py34">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py34">
+# Example: simple calculator
+a = int(input())
+b = int(input())
+
+print(a + b)
+  </code></pre>
+</div>
+
+<!-- 35 -->
+<div class="card">
+  <div class="card-head">
+    <h3>35. Practice & Learning Resources</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Continuous practice is key to mastering Python. Solve problems on platforms like LeetCode and HackerRank, read official documentation, and build real-world applications to strengthen your understanding.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="py35">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="py35">
+# Example: practice loop
+for i in range(1, 6):
+    print(i)
+  </code></pre>
+</div>
+
+  </div>
+</main>
+
+<!-- MODAL -->
+<div class="code-modal" id="codeModal">
+  <div class="code-modal-box">
+    <button class="close-modal">&times;</button>
+    <pre><code id="modalCode"></code></pre>
+  </div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

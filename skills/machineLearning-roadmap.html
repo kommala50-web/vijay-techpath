@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Machine Learning Full Roadmap - TechPath</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <!-- SAME CSS AS C++, JAVA -->
+  <link rel="stylesheet" href="../skills/style.css">
+</head>
+
+<body>
+
+<!-- ================= TOPBAR ================= -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">
+      <span class="material-symbols-outlined">terminal</span>
+    </div>
+    <h1 class="brand">TechPath</h1>
+
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#">Courses</a>
+      <a href="../career.html">Career</a>
+    </nav>
+  </div>
+
+  <div class="topbar-right">
+    <div class="search-wrap">
+      <span class="material-symbols-outlined search-icon">search</span>
+      <input id="searchInput" type="text" placeholder="Search topics..." />
+      <kbd class="kbd">Ctrl K</kbd>
+    </div>
+    <div class="avatar"></div>
+  </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main class="container">
+
+  <!-- ACTION BUTTONS -->
+  <div class="top-actions">
+    <a class="btn btn-secondary" href="../skills.html">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Back to Skills
+    </a>
+
+    <div class="actions-right">
+      <a class="btn btn-ghost" href="../pdf/Machine_Learning_Roadmap.pdf" download>
+        <span class="material-symbols-outlined">download</span>
+        <span class="hide-sm">Download PDF</span>
+      </a>
+
+      <a class="btn btn-ghost" href="../pdf/ML_Notes.pdf" download>
+        <span class="material-symbols-outlined">note</span>
+        <span class="hide-sm">Notes</span>
+      </a>
+
+      <a class="btn btn-ghost" href="https://www.youtube.com/watch?v=V_xro1bcAuA" target="_blank">
+        <span class="material-symbols-outlined">play_circle</span>
+        <span class="hide-sm">Video</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h2>🤖 Machine Learning Full Roadmap</h2>
+    <p>
+      Learn Machine Learning step by step.  
+      Click <b>Show Code</b> to open examples in a popup.
+    </p>
+  </section>
+
+  <!-- GRID -->
+  <div class="grid" id="topicsGrid">
+
+    <!-- 1 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>1. Python for Machine Learning</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+      <p>
+        Python is used in ML because it is simple and has powerful libraries.
+        You must know lists, loops, functions, and basic data handling.
+      </p>
+      <button class="btn btn-ghost show-code-btn" data-code="ml1">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+      <pre style="display:none;"><code id="ml1">
+data = [1, 2, 3, 4, 5]
+squared = [x**2 for x in data]
+print(squared)
+      </code></pre>
+    </div>
+
+    <!-- 2 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>2. NumPy</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+      <p>
+        NumPy provides fast numerical operations on arrays and matrices.
+        Almost all ML libraries depend on it.
+      </p>
+      <button class="btn btn-ghost show-code-btn" data-code="ml2">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+      <pre style="display:none;"><code id="ml2">
+import numpy as np
+A = np.array([[1,2],[3,4]])
+print(np.linalg.inv(A))
+      </code></pre>
+    </div>
+
+    <!-- 3 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>3. Pandas</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+      <p>
+        Pandas is used to load, clean, and analyze datasets.
+        DataFrames make working with CSV files easy.
+      </p>
+      <button class="btn btn-ghost show-code-btn" data-code="ml3">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+      <pre style="display:none;"><code id="ml3">
+import pandas as pd
+df = pd.DataFrame({"age":[25,30], "score":[88,92]})
+print(df)
+      </code></pre>
+    </div>
+
+    <!-- 4 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>4. Train-Test Split</h3>
+        <span class="badge intermediate">Intermediate</span>
+      </div>
+      <p>
+        Data is split into training and testing sets to evaluate
+        how well a model performs on unseen data.
+      </p>
+      <button class="btn btn-ghost show-code-btn" data-code="ml4">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+      <pre style="display:none;"><code id="ml4">
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+      </code></pre>
+    </div>
+
+    <!-- 5 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>5. Linear Regression</h3>
+        <span class="badge intermediate">Intermediate</span>
+      </div>
+      <p>
+        Linear regression predicts continuous values by learning
+        a straight-line relationship between input and output.
+      </p>
+      <button class="btn btn-ghost show-code-btn" data-code="ml5">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+      <pre style="display:none;"><code id="ml5">
+from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+model.fit(X_train, y_train)
+print(model.coef_)
+      </code></pre>
+    </div>
+
+    <!-- 6 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>6. Model Evaluation</h3>
+        <span class="badge intermediate">Intermediate</span>
+      </div>
+      <p>
+        Metrics like accuracy, precision, recall, and error values
+        help measure how good a model is.
+      </p>
+      <button class="btn btn-ghost show-code-btn" data-code="ml6">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+      <pre style="display:none;"><code id="ml6">
+from sklearn.metrics import accuracy_score
+y_pred = model.predict(X_test)
+print(accuracy_score(y_test, y_pred))
+      </code></pre>
+    </div>
+
+<!-- 7. Logistic Regression -->
+<div class="card">
+  <div class="card-head">
+    <h3>7. Logistic Regression</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Logistic Regression is used for classification problems (not regression).
+  It predicts probabilities and then converts them into classes (0 or 1).
+  It uses a sigmoid function to map values between 0 and 1.
+  Example: Predict whether an email is spam or not.
+  </p>
+
+  <p><strong>Example Question:</strong> Predict if a student will pass based on study hours.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml7">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml7">
+from sklearn.linear_model import LogisticRegression
+
+model = LogisticRegression()
+model.fit(X_train, y_train)
+
+prediction = model.predict(X_test)
+print(prediction)
+  </code></pre>
+</div>
+
+<!-- 8. K-Nearest Neighbors -->
+<div class="card">
+  <div class="card-head">
+    <h3>8. K-Nearest Neighbors (KNN)</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  KNN is a simple algorithm that classifies data based on the nearest points.
+  It checks the 'K' closest neighbors and assigns the majority class.
+  It does not learn a model — it stores data and compares during prediction.
+  Example: Classifying a fruit based on size and weight.
+  </p>
+
+  <p><strong>Example Question:</strong> Classify a point using KNN.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml8">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml8">
+from sklearn.neighbors import KNeighborsClassifier
+
+model = KNeighborsClassifier(n_neighbors=3)
+model.fit(X_train, y_train)
+
+print(model.predict(X_test))
+  </code></pre>
+</div>
+
+<!-- 9. Decision Trees -->
+<div class="card">
+  <div class="card-head">
+    <h3>9. Decision Trees</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Decision Trees split data into branches based on conditions.
+  It works like a flowchart where each node is a decision.
+  It is easy to understand but can overfit if not controlled.
+  Example: Deciding whether to play cricket based on weather.
+  </p>
+
+  <p><strong>Example Question:</strong> Build a decision tree classifier.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml9">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml9">
+from sklearn.tree import DecisionTreeClassifier
+
+model = DecisionTreeClassifier()
+model.fit(X_train, y_train)
+
+print(model.predict(X_test))
+  </code></pre>
+</div>
+
+<!-- 10. Random Forest -->
+<div class="card">
+  <div class="card-head">
+    <h3>10. Random Forest</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Random Forest is an ensemble method that uses multiple decision trees.
+  It combines their outputs to give better accuracy and reduce overfitting.
+  More trees = more stability (usually).
+  Example: Predicting house prices using many decision trees.
+  </p>
+
+  <p><strong>Example Question:</strong> Train a random forest model.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml10">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml10">
+from sklearn.ensemble import RandomForestClassifier
+
+model = RandomForestClassifier(n_estimators=100)
+model.fit(X_train, y_train)
+
+print(model.predict(X_test))
+  </code></pre>
+</div>
+
+<!-- 11. Support Vector Machine -->
+<div class="card">
+  <div class="card-head">
+    <h3>11. Support Vector Machine (SVM)</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  SVM tries to find the best boundary (hyperplane) that separates data.
+  It maximizes the margin between different classes.
+  Works well for high-dimensional data but can be slower.
+  Example: Classifying images into categories.
+  </p>
+
+  <p><strong>Example Question:</strong> Train an SVM classifier.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml11">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml11">
+from sklearn.svm import SVC
+
+model = SVC(kernel='linear')
+model.fit(X_train, y_train)
+
+print(model.predict(X_test))
+  </code></pre>
+</div>    
+
+<!-- 12. Overfitting vs Underfitting -->
+<div class="card">
+  <div class="card-head">
+    <h3>12. Overfitting vs Underfitting</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Overfitting happens when a model learns the training data too well,
+  including noise and unnecessary details. As a result, it performs very well
+  on training data but poorly on new (test) data.<br><br>
+
+  Underfitting happens when a model is too simple and fails to learn
+  important patterns from the data. It performs poorly on both training
+  and test data.<br><br>
+
+  A good model should find a balance — it should generalize well to new data.
+  </p>
+
+  <p><strong>Example Question:</strong> Check if a model is overfitting using training and testing accuracy.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml12">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml12">
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+
+model = DecisionTreeClassifier()
+model.fit(X_train, y_train)
+
+# Training accuracy
+train_pred = model.predict(X_train)
+print("Train Accuracy:", accuracy_score(y_train, train_pred))
+
+# Testing accuracy
+test_pred = model.predict(X_test)
+print("Test Accuracy:", accuracy_score(y_test, test_pred))
+  </code></pre>
+</div>
+
+<!-- 13. Handling Missing Values -->
+<div class="card">
+  <div class="card-head">
+    <h3>13. Handling Missing Values</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Real-world data often contains missing values (NaN).
+  Machine learning models cannot work with missing data directly.<br><br>
+
+  Common ways:
+  - Remove rows (if few missing values)
+  - Fill with mean/median (numerical)
+  - Fill with most frequent value (categorical)<br><br>
+
+  Proper handling improves model performance.
+  </p>
+
+  <p><strong>Example Question:</strong> Fill missing values using mean.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml13">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml13">
+from sklearn.impute import SimpleImputer
+import numpy as np
+
+imputer = SimpleImputer(strategy='mean')
+X = imputer.fit_transform(X)
+
+print(X)
+  </code></pre>
+</div>
+
+<!-- 14. Feature Scaling -->
+<div class="card">
+  <div class="card-head">
+    <h3>14. Feature Scaling</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Feature scaling ensures all values are on the same scale.<br><br>
+
+  Without scaling:
+  - Some features dominate others
+  - Models like KNN and SVM perform poorly<br><br>
+
+  Methods:
+  - Normalization → 0 to 1
+  - Standardization → mean 0, std 1
+  </p>
+
+  <p><strong>Example Question:</strong> Standardize dataset.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml14">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml14">
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+
+print(X_train)
+  </code></pre>
+</div>
+
+<!-- 15. Encoding Categorical Data -->
+<div class="card">
+  <div class="card-head">
+    <h3>15. Encoding Categorical Data</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  ML models understand only numbers.
+  So categorical data must be converted.<br><br>
+
+  Methods:
+  - Label Encoding
+  - One-Hot Encoding (preferred)
+  </p>
+
+  <p><strong>Example Question:</strong> Convert categorical values to numbers.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml15">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml15">
+from sklearn.preprocessing import OneHotEncoder
+
+encoder = OneHotEncoder()
+
+X_encoded = encoder.fit_transform(X).toarray()
+
+print(X_encoded)
+  </code></pre>
+</div>
+
+<!-- 16. K-Means Clustering -->
+<div class="card">
+  <div class="card-head">
+    <h3>16. K-Means Clustering</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  K-Means groups data into K clusters based on similarity.<br><br>
+
+  Steps:
+  - Choose K clusters
+  - Assign points to nearest center
+  - Update centers repeatedly<br><br>
+
+  Example: Customer segmentation.
+  </p>
+
+  <p><strong>Example Question:</strong> Cluster data into 3 groups.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml16">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml16">
+from sklearn.cluster import KMeans
+
+model = KMeans(n_clusters=3)
+model.fit(X)
+
+print(model.labels_)
+  </code></pre>
+</div>
+
+<!-- 17. Hierarchical Clustering -->
+<div class="card">
+  <div class="card-head">
+    <h3>17. Hierarchical Clustering</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Builds a tree-like structure (dendrogram) of clusters.<br><br>
+
+  Types:
+  - Agglomerative (bottom-up)
+  - Divisive (top-down)<br><br>
+
+  No need to choose K initially.
+  </p>
+
+  <p><strong>Example Question:</strong> Perform hierarchical clustering.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml17">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml17">
+from sklearn.cluster import AgglomerativeClustering
+
+model = AgglomerativeClustering(n_clusters=3)
+
+labels = model.fit_predict(X)
+
+print(labels)
+  </code></pre>
+</div>
+
+<!-- 18. PCA -->
+<div class="card">
+  <div class="card-head">
+    <h3>18. Dimensionality Reduction (PCA)</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  PCA reduces number of features while keeping important information.<br><br>
+
+  Benefits:
+  - Faster training
+  - Less noise
+  - Better visualization
+  </p>
+
+  <p><strong>Example Question:</strong> Reduce data to 2 features.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml18">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml18">
+from sklearn.decomposition import PCA
+
+pca = PCA(n_components=2)
+
+X_reduced = pca.fit_transform(X)
+
+print(X_reduced)
+  </code></pre>
+</div>
+<!-- 19. Cross Validation -->
+<div class="card">
+  <div class="card-head">
+    <h3>19. Cross Validation</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Cross Validation is used to evaluate a model more reliably.<br><br>
+
+  Instead of splitting data once, it splits data multiple times
+  and trains the model on different parts.<br><br>
+
+  This reduces bias and gives a better estimate of performance.
+  Most common method: K-Fold Cross Validation.
+  </p>
+
+  <p><strong>Example Question:</strong> Evaluate model using cross validation.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml19">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml19">
+from sklearn.model_selection import cross_val_score
+from sklearn.linear_model import LogisticRegression
+
+model = LogisticRegression()
+
+scores = cross_val_score(model, X, y, cv=5)
+
+print(scores)
+print("Average Accuracy:", scores.mean())
+  </code></pre>
+</div>
+
+<!-- 20. Hyperparameter Tuning -->
+<div class="card">
+  <div class="card-head">
+    <h3>20. Hyperparameter Tuning</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Hyperparameters are settings you choose before training a model.<br><br>
+
+  Tuning them improves performance.<br><br>
+
+  Common methods:
+  - Grid Search → tries all combinations
+  - Random Search → tries random combinations (faster)
+  </p>
+
+  <p><strong>Example Question:</strong> Find best parameters using GridSearch.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml20">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml20">
+from sklearn.model_selection import GridSearchCV
+from sklearn.ensemble import RandomForestClassifier
+
+model = RandomForestClassifier()
+
+params = {
+    'n_estimators': [50, 100],
+    'max_depth': [None, 10]
+}
+
+grid = GridSearchCV(model, params, cv=3)
+
+grid.fit(X_train, y_train)
+
+print(grid.best_params_)
+  </code></pre>
+</div>
+
+<!-- 21. Pipeline -->
+<div class="card">
+  <div class="card-head">
+    <h3>21. Pipeline (sklearn Pipeline)</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  A pipeline automates multiple steps like preprocessing + model training.<br><br>
+
+  It ensures:
+  - Clean workflow
+  - No data leakage
+  - Easier deployment<br><br>
+
+  Pipelines are used in real-world ML systems.
+  </p>
+
+  <p><strong>Example Question:</strong> Create a pipeline with scaling + model.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml21">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml21">
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+
+pipeline = Pipeline([
+    ('scaler', StandardScaler()),
+    ('model', LogisticRegression())
+])
+
+pipeline.fit(X_train, y_train)
+
+print(pipeline.predict(X_test))
+  </code></pre>
+</div>
+<!-- 22. Feature Engineering -->
+<div class="card">
+  <div class="card-head">
+    <h3>22. Feature Engineering</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Feature Engineering means creating better input features from raw data.<br><br>
+
+  It is one of the most important parts of ML — often more important than the model itself.<br><br>
+
+  Examples:
+  - Creating new columns (age → age group)
+  - Extracting date features (day, month)
+  - Combining features<br><br>
+
+  Better features = better model performance.
+  </p>
+
+  <p><strong>Example Question:</strong> Create a new feature from existing data.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml22">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml22">
+import pandas as pd
+
+df['age_group'] = df['age'] // 10
+
+print(df)
+  </code></pre>
+</div>
+
+<!-- 23. Ensemble Learning (Boosting / XGBoost) -->
+<div class="card">
+  <div class="card-head">
+    <h3>23. Ensemble Learning (Boosting - XGBoost)</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Ensemble learning combines multiple models to improve performance.<br><br>
+
+  Boosting builds models sequentially, where each new model focuses on
+  correcting errors of the previous one.<br><br>
+
+  XGBoost is one of the most powerful algorithms used in competitions
+  and real-world applications.
+  </p>
+
+  <p><strong>Example Question:</strong> Train an XGBoost classifier.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml23">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml23">
+from xgboost import XGBClassifier
+
+model = XGBClassifier()
+
+model.fit(X_train, y_train)
+
+print(model.predict(X_test))
+  </code></pre>
+</div>
+
+<!-- 24. Basic Neural Networks -->
+<div class="card">
+  <div class="card-head">
+    <h3>24. Basic Neural Networks</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Neural Networks are inspired by the human brain and used in deep learning.<br><br>
+
+  They consist of layers:
+  - Input layer
+  - Hidden layers
+  - Output layer<br><br>
+
+  They are used for complex tasks like image recognition, NLP, etc.
+  </p>
+
+  <p><strong>Example Question:</strong> Build a simple neural network.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml24">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml24">
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+
+model = Sequential([
+    Dense(10, activation='relu', input_shape=(X_train.shape[1],)),
+    Dense(1, activation='sigmoid')
+])
+
+model.compile(optimizer='adam', loss='binary_crossentropy')
+
+model.fit(X_train, y_train, epochs=10)
+
+print(model.predict(X_test))
+  </code></pre>
+</div>
+
+<!-- 25. Model Deployment -->
+<div class="card">
+  <div class="card-head">
+    <h3>25. Model Deployment</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Model Deployment means making your trained model usable in real applications.<br><br>
+
+  Instead of just printing predictions in code, you expose the model through:
+  - Web apps (Flask / FastAPI)
+  - APIs
+  - Cloud platforms<br><br>
+
+  Steps:
+  - Train model
+  - Save model
+  - Load model in an app
+  - Take user input and return prediction<br><br>
+
+  This is how real ML systems work.
+  </p>
+
+  <p><strong>Example Question:</strong> Save and load a trained model.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="ml25">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="ml25">
+import joblib
+from sklearn.linear_model import LogisticRegression
+
+# Train model
+model = LogisticRegression()
+model.fit(X_train, y_train)
+
+# Save model
+joblib.dump(model, "model.pkl")
+
+# Load model
+loaded_model = joblib.load("model.pkl")
+
+print(loaded_model.predict(X_test))
+  </code></pre>
+</div>
+
+  </div>
+</main>
+
+<!-- ================= CODE MODAL (MANDATORY) ================= -->
+<div class="code-modal" id="codeModal">
+  <div class="code-modal-box">
+    <button class="close-modal">&times;</button>
+    <pre><code id="modalCode"></code></pre>
+  </div>
+</div>
+
+<!-- ================= SAME JS AS OTHER PAGES ================= -->
+<script src="app.js"></script>
+
+</body>
+</html>

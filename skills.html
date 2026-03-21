@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Skill Roadmaps for Beginners | TechPath</title>
+
+<style>
+
+:root{
+  --bg:#ded5cc;
+  --panel:#bcc7c3;
+  --card:#ffffff;
+  --border:#cfc6be;
+  --text:#2c2a28;
+  --muted:#6a625d;
+  --accent:#7a5a3a;
+  --accent-light:#94704e;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Verdana,sans-serif}
+
+body{
+  background:linear-gradient(140deg,var(--bg),var(--panel));
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+  background:rgba(255,255,255,.78);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #d7cec7;
+  padding:18px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:10;
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+header h1{color:var(--accent);font-size:26px;font-weight:700}
+
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  margin-left:20px;
+  font-weight:600;
+  position:relative;
+  transition:.2s;
+}
+nav a::after{
+  content:'';
+  position:absolute;
+  left:0;bottom:-3px;
+  width:0;height:2px;
+  background:var(--accent);
+  transition:.2s;
+}
+nav a:hover{color:var(--accent-light)}
+nav a:hover::after{width:100%}
+
+/* BACK BUTTON */
+.back-btn{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  padding:10px 20px;
+  border-radius:10px;
+  margin:20px 0 10px 50px;
+  text-decoration:none;
+  font-weight:700;
+  transition:.2s;
+}
+.back-btn:hover{background:var(--accent-light);transform:translateY(-2px)}
+
+/* SEARCH BAR */
+.search-box{
+  max-width:800px;
+  margin:10px auto 0;
+  text-align:center;
+}
+.search-box input{
+  width:95%;
+  padding:12px 14px;
+  font-size:15px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  outline:none;
+}
+
+/* GRID */
+.skill-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+  padding:35px 50px;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* CARDS */
+.skill-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  text-align:center;
+  padding:24px;
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+  transition:.25s;
+  cursor:pointer;
+}
+.skill-card:hover{
+  transform:translateY(-6px);
+}
+
+/* FLOATING ICON ANIMATION */
+.skill-card img{
+  width:64px;
+  height:64px;
+  object-fit:contain;
+  animation:floatIcon 3s ease-in-out infinite;
+  transition:.25s;
+}
+
+@keyframes floatIcon{
+  0%{ transform:translateY(0) }
+  50%{ transform:translateY(-6px) }
+  100%{ transform:translateY(0) }
+}
+
+.skill-card:hover img{
+  animation-duration:2s;
+  transform:scale(1.15);
+}
+
+.skill-card h3{
+  color:var(--accent);
+  margin-top:8px;
+  margin-bottom:6px;
+}
+.skill-card p{
+  color:#4b4743;
+  font-size:14px;
+  margin-bottom:8px;
+}
+
+
+
+.skill-card a{
+  display:inline-block;
+  margin-top:5px;
+  background:var(--accent);
+  color:#fff;
+  padding:7px 14px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.2s;
+}
+.skill-card a:hover{background:var(--accent-light)}
+
+/* FOOTER */
+footer{
+  background:#c9c1b8;
+  color:#3c3631;
+  text-align:center;
+  padding:18px;
+  margin-top:40px;
+}
+
+/* MOBILE */
+@media(max-width:760px){
+  header{flex-direction:column;text-align:center}
+  nav{margin-top:10px}
+  .skill-container{padding:20px}
+}
+
+/* MOBILE IMPROVEMENTS */
+@media (max-width: 480px){
+
+  header{padding:14px 16px}
+
+  .back-btn{
+    margin:16px 10px;
+    width:calc(100% - 20px);
+    text-align:center;
+  }
+
+  .search-box input{
+    width:92%;
+    padding:10px 12px;
+    font-size:14px;
+  }
+
+  .skill-container{
+    padding:16px;
+    gap:18px;
+  }
+
+  .skill-card{padding:18px 14px}
+
+  .skill-card img{
+    width:58px;
+    height:58px;
+  }
+  
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>TechPath</h1>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../career.html">Career Paths</a>
+    <a href="skills.html">Skill Roadmaps</a>
+    <a href="company.html">Company Questions</a>
+    <a href="resources.html">Resources</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<a class="back-btn" href="../index.html">← Back to Home</a>
+
+<!-- SEARCH -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search a skill (HTML, Python, SQL, etc.)">
+</div>
+
+<!-- SKILL CARDS -->
+<section class="skill-container" id="skills">
+
+  <div class="skill-card" data-name="html" data-link="skills/html-roadmap.html">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+    <h3>HTML</h3>
+    <p>Structure web pages from scratch.</p>
+    <a download href="../pdf/HTML_Roadmap.pdf">Download PDF</a>
+  </div>
+
+  <div class="skill-card" data-name="css" data-link="skills/css-roadmap.html">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+    <h3>CSS</h3>
+    <p>Design responsive, modern layouts.</p>
+    <a download href="pdf/CSS_Roadmap.pdf">Download PDF</a>
+  </div>
+
+  <div class="skill-card" data-name="javascript js" data-link="skills/js-roadmap.html">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+    <h3>JavaScript</h3>
+    <p>Add interactivity to websites.</p>
+    <a download href="pdf/JavaScript_Roadmap.pdf">Download PDF</a>
+  </div>
+
+  <div class="skill-card" data-name="python" data-link="skills/python-roadmap.html">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+    <h3>Python</h3>
+    <p>Beginner-friendly programming language.</p>
+    <a download href="pdf/Python_Notes.pdf" download="Python_Roadmap.pdf">Download PDF</a>
+  </div>
+
+  <div class="skill-card" data-name="sql database" data-link="skills/sql-roadmap.html">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
+    <h3>SQL</h3>
+    <p>Manage relational databases.</p>
+    <a download href="pdf/SQL_Notes.pdf">Download PDF</a>
+  </div>
+
+  <div class="skill-card" data-name="mongodb database nosql" data-link="skills/mongodb-roadmap.html">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
+    <h3>MongoDB</h3>
+    <p>NoSQL database for scalable apps.</p>
+    <a download href="pdf/MongoDB_Notes.pdf">Download PDF</a>
+  </div>
+
+  <div class="skill-card" data-name="dsa algorithms" data-link="skills/dsa-roadmap.html">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codepen/codepen-original.svg">
+    <h3>DSA</h3>
+    <p>Data structures & algorithms.</p>
+    <a download href="pdf/dsa.pdf">Download PDF</a>
+  </div>
+
+  <div class="skill-card" data-name="dbms database systems" data-link="skills/dbms-roadmap.html">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg">
+    <h3>DBMS</h3>
+    <p>Core database management concepts.</p>
+    <a download href="pdf/dbms.pdf">Download PDF</a>
+  </div>
+
+  <div class="skill-card" data-name="c" data-link="skills/c-roadmap.html">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg">
+    <h3>C</h3>
+    <p>Programming foundations.</p>
+    <a download href="pdf/C_Notes.pdf">Download PDF</a>
+  </div>  
+
+  <div class="skill-card" data-name="cpp c++" data-link="skills/cpp-roadmap.html">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg">
+    <h3>C++</h3>
+    <p>Advanced programming & OOP.</p>
+    <a download href="pdf/C++_Notes.pdf">Download PDF</a>
+  </div>
+
+  <div class="skill-card" data-name="java" data-link="skills/java-roadmap.html">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
+    <h3>Java</h3>
+    <p>Enterprise application development.</p>
+    <a download href="pdf/Java_Notes_Part1.pdf">Download Part 1</a>
+  </div>
+
+  <div class="skill-card" data-name="node backend" data-link="skills/nodejs-roadmap.html">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
+    <h3>NodeJS</h3>
+    <p>Build backend APIs.</p>
+    <a download href="pdf/Node_Roadmap.pdf">Download PDF</a>
+  </div>
+
+  <div class="skill-card" data-name="ai ml machine learning" data-link="skills/machineLearning-roadmap.html">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg">
+    <h3>AIML</h3>
+    <p>Machine learning fundamentals.</p>
+    <a download href="pdf/Machine_Learning_Roadmap.pdf">Download PDF</a>
+  </div>
+
+  <div class="skill-card" data-name="react web" data-link="skills/reactjs-roadmap.html">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+    <h3>ReactJS</h3>
+    <p>Modern frontend framework.</p>
+    <a download href="pdf/ReactJS_Roadmap.pdf">Download PDF</a>
+  </div>
+
+</section>
+
+<section style="max-width:900px;margin:20px auto;text-align:center;">
+  <h2 style="color:var(--accent)">Learn the Exact Skills Needed for IT Jobs</h2>
+  <p style="color:var(--muted)">Roadmaps guide you step-by-step — basics → projects → interview prep.</p>
+</section>
+
+<footer>
+  Contact: techpath@example.com | © 2025 TechPath
+</footer>
+
+<script>
+  const search = document.getElementById("searchInput");
+  const cards = document.querySelectorAll(".skill-card");
+
+  search.addEventListener("keyup", ()=>{
+    const term = search.value.toLowerCase();
+    cards.forEach(card=>{
+      const name = card.getAttribute("data-name");
+      card.style.display = name.includes(term) ? "block" : "none";
+    });
+  });
+</script>
+
+<script>
+document.querySelectorAll(".skill-card").forEach(card => {
+  card.addEventListener("click", (e) => {
+
+    if (e.target.tagName === "A") return;
+
+    const link = card.getAttribute("data-link");
+    if (link) window.location.href = link;
+  });
+});
+</script>
+
+</body>
+</html>

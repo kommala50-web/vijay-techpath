@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MongoDB Full Roadmap - TechPath</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- ======================= NAVBAR ======================= -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">
+      <span class="material-symbols-outlined">terminal</span>
+    </div>
+    <h1 class="brand">TechPath</h1>
+
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#">Courses</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../career.html">Career</a>
+    </nav>
+  </div>
+
+  <div class="topbar-right">
+    <div class="search-wrap">
+      <span class="material-symbols-outlined search-icon">search</span>
+      <input id="searchInput" type="text" placeholder="Search topics..." />
+      <kbd class="kbd">Ctrl K</kbd>
+    </div>
+    <div class="avatar"></div>
+  </div>
+</header>
+
+<!-- ======================= MAIN ======================= -->
+<main class="container">
+
+  <div class="top-actions">
+    <a class="btn btn-secondary" href="../skills.html">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Back to Skills
+    </a>
+
+    <div class="actions-right">
+      <a class="btn btn-ghost" href="../pdf/mongodb.pdf" download>
+        <span class="material-symbols-outlined">download</span>
+        <span class="hide-sm">Download PDF</span>
+      </a>
+
+      <a class="btn btn-ghost" href="../pdf/MongoDB_Notes.pdf" download>
+        <span class="material-symbols-outlined">note</span>
+        <span class="hide-sm">Notes</span>
+      </a>
+
+      <a class="btn btn-ghost" href="https://www.youtube.com/watch?v=ofme2o29ngU" target="_blank">
+        <span class="material-symbols-outlined">play_circle</span>
+        <span class="hide-sm">Video</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ======================= HERO ======================= -->
+  <section class="hero">
+    <h2>MongoDB Full Roadmap</h2>
+    <p>
+      Learn MongoDB from basics to advanced concepts like CRUD operations,
+      aggregation, indexing, and real-world backend integration.
+      Click <b>Show Code</b> to view examples in a popup.
+    </p>
+  </section>
+
+  <!-- ======================= GRID ======================= -->
+  <div class="grid" id="topicsGrid">
+
+    <!-- 🔽 Paste MongoDB cards here -->
+
+    <!-- 1. Introduction to MongoDB -->
+<div class="card">
+  <div class="card-head">
+    <h3>1. Introduction to MongoDB</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  MongoDB is a NoSQL database that stores data in flexible, JSON-like documents.
+  Unlike traditional databases, it does not use tables and rows.<br><br>
+
+  It is designed for:
+  - High performance
+  - Scalability
+  - Flexible schema<br><br>
+
+  Example: Storing user data as documents instead of rows.
+  </p>
+
+  <p><strong>Example Question:</strong> Create a simple document structure.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo1">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo1">
+{
+  name: "Vijay",
+  age: 20,
+  skills: ["C++", "JavaScript"]
+}
+  </code></pre>
+</div>
+
+<!-- 2. NoSQL vs SQL -->
+<div class="card">
+  <div class="card-head">
+    <h3>2. NoSQL vs SQL</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  SQL databases use tables and fixed schemas.
+  NoSQL databases like MongoDB use flexible documents.<br><br>
+
+  SQL:
+  - Structured
+  - Fixed schema<br><br>
+
+  NoSQL:
+  - Flexible schema
+  - Better for large-scale and unstructured data
+  </p>
+
+  <p><strong>Example Question:</strong> Compare SQL row with MongoDB document.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo2">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo2">
+-- SQL (Row)
+id | name | age
+1  | Vijay | 20
+
+// MongoDB (Document)
+{
+  "_id": 1,
+  "name": "Vijay",
+  "age": 20
+}
+  </code></pre>
+</div>
+
+<!-- 3. Installing MongoDB -->
+<div class="card">
+  <div class="card-head">
+    <h3>3. Installing MongoDB & Compass</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  MongoDB can be installed locally or used via MongoDB Atlas (cloud).<br><br>
+
+  Tools:
+  - MongoDB Server → runs database
+  - MongoDB Compass → GUI tool to manage data
+  - mongosh → command-line shell
+  </p>
+
+  <p><strong>Example Question:</strong> Start MongoDB shell.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo3">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo3">
+mongosh
+  </code></pre>
+</div>
+
+<!-- 4. MongoDB Architecture -->
+<div class="card">
+  <div class="card-head">
+    <h3>4. MongoDB Architecture</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  MongoDB organizes data in a hierarchical structure:<br><br>
+
+  - Database → contains collections  
+  - Collection → contains documents  
+  - Document → actual data (JSON-like)<br><br>
+
+  Example: A "users" collection inside a "college" database.
+  </p>
+
+  <p><strong>Example Question:</strong> Show database structure.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo4">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo4">
+use college
+
+db.users.insertOne({
+  name: "Vijay",
+  age: 20
+})
+  </code></pre>
+</div>
+
+<!-- 5. BSON & JSON -->
+<div class="card">
+  <div class="card-head">
+    <h3>5. BSON & JSON Structure</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  MongoDB stores data in BSON (Binary JSON).<br><br>
+
+  JSON:
+  - Human readable<br><br>
+
+  BSON:
+  - Faster storage
+  - Supports more data types (Date, ObjectId)<br><br>
+
+  You write JSON, MongoDB stores BSON internally.
+  </p>
+
+  <p><strong>Example Question:</strong> Insert document with ObjectId.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo5">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo5">
+db.users.insertOne({
+  name: "Vijay",
+  createdAt: new Date()
+})
+  </code></pre>
+</div>
+
+<!-- 6. MongoDB Shell -->
+<div class="card">
+  <div class="card-head">
+    <h3>6. MongoDB Shell (mongosh)</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  mongosh is the interactive shell used to interact with MongoDB.<br><br>
+
+  You can:
+  - Create databases
+  - Insert data
+  - Run queries<br><br>
+
+  It is the fastest way to test MongoDB commands.
+  </p>
+
+  <p><strong>Example Question:</strong> Show all databases.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo6">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo6">
+show dbs
+  </code></pre>
+</div>
+
+<!-- 7. Insert Documents -->
+<div class="card">
+  <div class="card-head">
+    <h3>7. Insert Documents</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Insert data into a collection.<br><br>
+
+  • <b>insertOne()</b> → insert a single document<br>
+  • <b>insertMany()</b> → insert multiple documents<br><br>
+
+  Used when adding new records.
+  </p>
+
+  <p><strong>Example:</strong> Insert a user document.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo7">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo7">
+db.users.insertOne({
+  name: "Vijay",
+  age: 20
+})
+  </code></pre>
+</div>
+
+<!-- 8. Read Documents -->
+<div class="card">
+  <div class="card-head">
+    <h3>8. Read Documents</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Retrieve data from collections.<br><br>
+
+  • <b>find()</b> → get multiple documents<br>
+  • <b>findOne()</b> → get a single document<br><br>
+
+  Can also filter results using conditions.
+  </p>
+
+  <p><strong>Example:</strong> Find users with age 20.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo8">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo8">
+db.users.find({ age: 20 })
+  </code></pre>
+</div>
+
+<!-- 9. Query Operators -->
+<div class="card">
+  <div class="card-head">
+    <h3>9. Query Operators</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Used to filter data with conditions.<br><br>
+
+  • <b>$gt</b> → greater than<br>
+  • <b>$lt</b> → less than<br>
+  • <b>$in</b> → match values in array<br>
+  • <b>$and / $or</b> → combine conditions
+  </p>
+
+  <p><strong>Example:</strong> Find users age > 18.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo9">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo9">
+db.users.find({
+  age: { $gt: 18 }
+})
+  </code></pre>
+</div>
+
+<!-- 10. Update Documents -->
+<div class="card">
+  <div class="card-head">
+    <h3>10. Update Documents</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Modify existing documents.<br><br>
+
+  • <b>updateOne()</b> → update one document<br>
+  • <b>updateMany()</b> → update multiple<br>
+  • <b>$set</b> → change value<br>
+  • <b>$inc</b> → increase value
+  </p>
+
+  <p><strong>Example:</strong> Update user age.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo10">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo10">
+db.users.updateOne(
+  { name: "Vijay" },
+  { $set: { age: 21 } }
+)
+  </code></pre>
+</div>
+
+<!-- 11. Delete Documents -->
+<div class="card">
+  <div class="card-head">
+    <h3>11. Delete Documents</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Remove documents from a collection.<br><br>
+
+  • <b>deleteOne()</b> → remove one document<br>
+  • <b>deleteMany()</b> → remove multiple<br><br>
+
+  Use carefully — deleted data cannot be recovered.
+  </p>
+
+  <p><strong>Example:</strong> Delete a user.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo11">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo11">
+db.users.deleteOne({ name: "Vijay" })
+  </code></pre>
+</div>
+
+<!-- 12. Schema Design -->
+<div class="card">
+  <div class="card-head">
+    <h3>12. Schema Design</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Schema design defines how your data is structured in MongoDB.<br><br>
+
+  • MongoDB is flexible (no fixed schema)<br>
+  • But good structure is still important<br><br>
+
+  Goal:
+  • Keep data simple, efficient, and scalable
+  </p>
+
+  <p><strong>Example:</strong> Store user with nested address.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo12">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo12">
+db.users.insertOne({
+  name: "Vijay",
+  address: {
+    city: "Hyderabad",
+    pincode: 500001
+  }
+})
+  </code></pre>
+</div>
+
+<!-- 13. Embedded vs Referencing -->
+<div class="card">
+  <div class="card-head">
+    <h3>13. Embedded vs Referencing</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Two ways to store related data.<br><br>
+
+  • <b>Embedded</b> → store data inside document<br>
+  • <b>Referencing</b> → store data in separate collections<br><br>
+
+  Use embedded → for fast reads<br>
+  Use referencing → for large or reusable data
+  </p>
+
+  <p><strong>Example:</strong> Embedded user orders.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo13">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo13">
+db.users.insertOne({
+  name: "Vijay",
+  orders: [
+    { item: "Laptop", price: 50000 },
+    { item: "Mouse", price: 500 }
+  ]
+})
+  </code></pre>
+</div>
+
+<!-- 14. Relationships -->
+<div class="card">
+  <div class="card-head">
+    <h3>14. Data Relationships</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Defines how data is connected.<br><br>
+
+  • One-to-One → user ↔ profile<br>
+  • One-to-Many → user → orders<br>
+  • Many-to-Many → students ↔ courses<br><br>
+
+  Choose structure based on use-case.
+  </p>
+
+  <p><strong>Example:</strong> One-to-many relationship.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo14">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo14">
+db.orders.insertOne({
+  userId: 1,
+  item: "Laptop"
+})
+  </code></pre>
+</div>
+
+<!-- 15. Data Validation -->
+<div class="card">
+  <div class="card-head">
+    <h3>15. Data Validation</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Ensures only valid data is stored.<br><br>
+
+  • Prevents wrong or incomplete data<br>
+  • Adds basic rules to collections<br><br>
+
+  Helps maintain data quality in real applications.
+  </p>
+
+  <p><strong>Example:</strong> Validate age field.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo15">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo15">
+db.createCollection("users", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["name", "age"],
+      properties: {
+        age: {
+          bsonType: "int",
+          minimum: 18
+        }
+      }
+    }
+  }
+})
+  </code></pre>
+</div>
+<!-- 16. Projection -->
+<div class="card">
+  <div class="card-head">
+    <h3>16. Projection</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Projection is used to return only required fields.<br><br>
+
+  • Reduces data transfer<br>
+  • Improves performance<br><br>
+
+  Instead of fetching full documents,
+  you select specific fields.
+  </p>
+
+  <p><strong>Example:</strong> Show only name field.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo16">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo16">
+db.users.find(
+  {},
+  { name: 1, _id: 0 }
+)
+  </code></pre>
+</div>
+
+<!-- 17. Sorting & Limiting -->
+<div class="card">
+  <div class="card-head">
+    <h3>17. Sorting & Limiting</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Used to control output results.<br><br>
+
+  • <b>sort()</b> → order data (asc/desc)<br>
+  • <b>limit()</b> → restrict number of results<br>
+  • <b>skip()</b> → skip records (pagination)
+  </p>
+
+  <p><strong>Example:</strong> Get top 2 users by age.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo17">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo17">
+db.users.find()
+  .sort({ age: -1 })
+  .limit(2)
+  </code></pre>
+</div>
+
+<!-- 18. Indexing -->
+<div class="card">
+  <div class="card-head">
+    <h3>18. Indexing</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Indexes improve query performance.<br><br>
+
+  • Without index → full scan (slow)<br>
+  • With index → fast lookup<br><br>
+
+  Types:
+  • Single field<br>
+  • Compound index
+  </p>
+
+  <p><strong>Example:</strong> Create index on age.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo18">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo18">
+db.users.createIndex({ age: 1 })
+  </code></pre>
+</div>
+
+<!-- 19. Text Search & Regex -->
+<div class="card">
+  <div class="card-head">
+    <h3>19. Text Search & Regex</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Used for searching text data.<br><br>
+
+  • <b>$text</b> → full-text search<br>
+  • <b>$regex</b> → pattern matching<br><br>
+
+  Useful for search features (like search bar).
+  </p>
+
+  <p><strong>Example:</strong> Find users with name starting with "V".</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo19">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo19">
+db.users.find({
+  name: { $regex: "^V" }
+})
+  </code></pre>
+</div>
+<!-- 20. Aggregation Pipeline -->
+<div class="card">
+  <div class="card-head">
+    <h3>20. Aggregation Pipeline</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Aggregation processes data step-by-step like a pipeline.<br><br>
+
+  • Each stage transforms data<br>
+  • Output of one stage → input of next<br><br>
+
+  Used for:
+  • Data analysis<br>
+  • Reports<br>
+  • Complex queries
+  </p>
+
+  <p><strong>Example:</strong> Basic pipeline structure.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo20">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo20">
+db.users.aggregate([
+  { $match: { age: { $gt: 18 } } }
+])
+  </code></pre>
+</div>
+
+<!-- 21. $match, $group, $project -->
+<div class="card">
+  <div class="card-head">
+    <h3>21. $match, $group, $project</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Core aggregation stages.<br><br>
+
+  • <b>$match</b> → filter data<br>
+  • <b>$group</b> → group data (like SQL GROUP BY)<br>
+  • <b>$project</b> → reshape fields
+  </p>
+
+  <p><strong>Example:</strong> Count users by age.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo21">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo21">
+db.users.aggregate([
+  {
+    $group: {
+      _id: "$age",
+      count: { $sum: 1 }
+    }
+  }
+])
+  </code></pre>
+</div>
+
+<!-- 22. $sort, $limit, $skip -->
+<div class="card">
+  <div class="card-head">
+    <h3>22. $sort, $limit, $skip</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Control output in aggregation.<br><br>
+
+  • <b>$sort</b> → order data<br>
+  • <b>$limit</b> → restrict results<br>
+  • <b>$skip</b> → pagination
+  </p>
+
+  <p><strong>Example:</strong> Top 2 users by age.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo22">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo22">
+db.users.aggregate([
+  { $sort: { age: -1 } },
+  { $limit: 2 }
+])
+  </code></pre>
+</div>
+
+<!-- 23. $lookup (Join) -->
+<div class="card">
+  <div class="card-head">
+    <h3>23. $lookup (Join)</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Used to join data from another collection.<br><br>
+
+  • Works like SQL JOIN<br>
+  • Combines related documents<br><br>
+
+  Used when data is stored separately.
+  </p>
+
+  <p><strong>Example:</strong> Join users with orders.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo23">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo23">
+db.users.aggregate([
+  {
+    $lookup: {
+      from: "orders",
+      localField: "_id",
+      foreignField: "userId",
+      as: "orders"
+    }
+  }
+])
+  </code></pre>
+</div>
+
+<!-- 24. $unwind -->
+<div class="card">
+  <div class="card-head">
+    <h3>24. $unwind</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Breaks array into separate documents.<br><br>
+
+  • Converts each array item into a document<br>
+  • Useful for processing nested data
+  </p>
+
+  <p><strong>Example:</strong> Unwind orders array.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo24">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo24">
+db.users.aggregate([
+  { $unwind: "$orders" }
+])
+  </code></pre>
+</div>
+
+<!-- 25. Real-world Aggregation -->
+<div class="card">
+  <div class="card-head">
+    <h3>25. Real-world Aggregation</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Combine multiple stages to solve real problems.<br><br>
+
+  Example:
+  • Filter → Group → Sort<br>
+  • Used in dashboards and analytics
+  </p>
+
+  <p><strong>Example:</strong> Count users age > 18 and sort.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo25">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo25">
+db.users.aggregate([
+  { $match: { age: { $gt: 18 } } },
+  {
+    $group: {
+      _id: "$age",
+      count: { $sum: 1 }
+    }
+  },
+  { $sort: { count: -1 } }
+])
+  </code></pre>
+</div>
+<!-- 26. Index Optimization -->
+<div class="card">
+  <div class="card-head">
+    <h3>26. Index Optimization</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Index optimization improves query speed.<br><br>
+
+  • Use indexes on frequently searched fields<br>
+  • Avoid too many indexes (slows writes)<br><br>
+
+  Goal:
+  • Balance read speed and write performance
+  </p>
+
+  <p><strong>Example:</strong> Create compound index.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo26">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo26">
+db.users.createIndex({ name: 1, age: -1 })
+  </code></pre>
+</div>
+
+<!-- 27. Query Performance Analysis -->
+<div class="card">
+  <div class="card-head">
+    <h3>27. Query Performance Analysis</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Analyze how queries are executed.<br><br>
+
+  • <b>explain()</b> shows query plan<br>
+  • Helps identify slow queries<br><br>
+
+  Used to improve performance.
+  </p>
+
+  <p><strong>Example:</strong> Analyze a query.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo27">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo27">
+db.users.find({ age: 20 }).explain("executionStats")
+  </code></pre>
+</div>
+
+<!-- 28. Sharding -->
+<div class="card">
+  <div class="card-head">
+    <h3>28. Sharding</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Sharding splits data across multiple servers.<br><br>
+
+  • Used for very large datasets<br>
+  • Improves scalability<br><br>
+
+  Data is distributed using shard keys.
+  </p>
+
+  <p><strong>Example:</strong> Enable sharding.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo28">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo28">
+sh.enableSharding("mydb")
+  </code></pre>
+</div>
+
+<!-- 29. Replication -->
+<div class="card">
+  <div class="card-head">
+    <h3>29. Replication</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Replication creates multiple copies of data.<br><br>
+
+  • Ensures high availability<br>
+  • Provides backup if server fails<br><br>
+
+  Uses replica sets (primary + secondary).
+  </p>
+
+  <p><strong>Example:</strong> Initiate replica set.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo29">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo29">
+rs.initiate()
+  </code></pre>
+</div>
+<!-- 30. Authentication & Authorization -->
+<div class="card">
+  <div class="card-head">
+    <h3>30. Authentication & Authorization</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Controls who can access the database.<br><br>
+
+  • Authentication → verify user identity<br>
+  • Authorization → control permissions<br><br>
+
+  Prevents unauthorized access to data.
+  </p>
+
+  <p><strong>Example:</strong> Create a database user.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo30">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo30">
+db.createUser({
+  user: "admin",
+  pwd: "password123",
+  roles: [{ role: "readWrite", db: "mydb" }]
+})
+  </code></pre>
+</div>
+
+<!-- 31. Role-Based Access Control -->
+<div class="card">
+  <div class="card-head">
+    <h3>31. Role-Based Access Control</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Assign permissions using roles.<br><br>
+
+  • read → only read data<br>
+  • readWrite → read + write<br>
+  • admin → full control<br><br>
+
+  Helps manage user access efficiently.
+  </p>
+
+  <p><strong>Example:</strong> Assign read-only role.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo31">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo31">
+db.createUser({
+  user: "viewer",
+  pwd: "1234",
+  roles: [{ role: "read", db: "mydb" }]
+})
+  </code></pre>
+</div>
+
+<!-- 32. Backup & Restore -->
+<div class="card">
+  <div class="card-head">
+    <h3>32. Data Backup & Restore</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Protect data from loss.<br><br>
+
+  • Backup → save database copy<br>
+  • Restore → recover data<br><br>
+
+  Essential for production systems.
+  </p>
+
+  <p><strong>Example:</strong> Backup database.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo32">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo32">
+mongodump --db mydb --out backup/
+  </code></pre>
+</div>
+
+<!-- 33. Best Practices -->
+<div class="card">
+  <div class="card-head">
+    <h3>33. Best Practices</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Follow best practices for production systems.<br><br>
+
+  • Use indexes wisely<br>
+  • Avoid large documents<br>
+  • Validate data<br>
+  • Use proper schema design<br><br>
+
+  Helps build scalable and maintainable apps.
+  </p>
+
+  <p><strong>Example:</strong> Create indexed collection.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo33">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo33">
+db.users.createIndex({ email: 1 }, { unique: true })
+  </code></pre>
+</div>
+<!-- 30. Authentication & Authorization -->
+<div class="card">
+  <div class="card-head">
+    <h3>30. Authentication & Authorization</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Controls who can access the database.<br><br>
+
+  • Authentication → verify user identity<br>
+  • Authorization → control permissions<br><br>
+
+  Prevents unauthorized access to data.
+  </p>
+
+  <p><strong>Example:</strong> Create a database user.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo30">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo30">
+db.createUser({
+  user: "admin",
+  pwd: "password123",
+  roles: [{ role: "readWrite", db: "mydb" }]
+})
+  </code></pre>
+</div>
+
+<!-- 31. Role-Based Access Control -->
+<div class="card">
+  <div class="card-head">
+    <h3>31. Role-Based Access Control</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Assign permissions using roles.<br><br>
+
+  • read → only read data<br>
+  • readWrite → read + write<br>
+  • admin → full control<br><br>
+
+  Helps manage user access efficiently.
+  </p>
+
+  <p><strong>Example:</strong> Assign read-only role.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo31">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo31">
+db.createUser({
+  user: "viewer",
+  pwd: "1234",
+  roles: [{ role: "read", db: "mydb" }]
+})
+  </code></pre>
+</div>
+
+<!-- 32. Backup & Restore -->
+<div class="card">
+  <div class="card-head">
+    <h3>32. Data Backup & Restore</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Protect data from loss.<br><br>
+
+  • Backup → save database copy<br>
+  • Restore → recover data<br><br>
+
+  Essential for production systems.
+  </p>
+
+  <p><strong>Example:</strong> Backup database.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo32">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo32">
+mongodump --db mydb --out backup/
+  </code></pre>
+</div>
+
+<!-- 33. Best Practices -->
+<div class="card">
+  <div class="card-head">
+    <h3>33. Best Practices</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Follow best practices for production systems.<br><br>
+
+  • Use indexes wisely<br>
+  • Avoid large documents<br>
+  • Validate data<br>
+  • Use proper schema design<br><br>
+
+  Helps build scalable and maintainable apps.
+  </p>
+
+  <p><strong>Example:</strong> Create indexed collection.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo33">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo33">
+db.users.createIndex({ email: 1 }, { unique: true })
+  </code></pre>
+</div>
+<!-- 38. Transactions -->
+<div class="card">
+  <div class="card-head">
+    <h3>38. Transactions</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Transactions allow multiple operations to run safely as one unit.<br><br>
+
+  • Either all operations succeed<br>
+  • Or none are applied (rollback)<br><br>
+
+  Used in critical operations like payments.
+  </p>
+
+  <p><strong>Example:</strong> Start a transaction.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo38">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo38">
+const session = await mongoose.startSession();
+
+session.startTransaction();
+
+// operations here
+
+await session.commitTransaction();
+  </code></pre>
+</div>
+
+<!-- 39. Change Streams -->
+<div class="card">
+  <div class="card-head">
+    <h3>39. Change Streams</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Change streams listen to real-time database updates.<br><br>
+
+  • Detect inserts, updates, deletes<br>
+  • Used for live apps (notifications, chats)
+  </p>
+
+  <p><strong>Example:</strong> Watch collection changes.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo39">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo39">
+const changeStream = db.collection("users").watch();
+
+changeStream.on("change", (change) => {
+  console.log(change);
+});
+  </code></pre>
+</div>
+
+<!-- 40. GridFS -->
+<div class="card">
+  <div class="card-head">
+    <h3>40. GridFS</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  GridFS is used to store large files in MongoDB.<br><br>
+
+  • Splits files into chunks<br>
+  • Stores them efficiently<br><br>
+
+  Used for images, videos, documents.
+  </p>
+
+  <p><strong>Example:</strong> Upload file (concept).</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo40">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo40">
+// Using GridFS (concept)
+const bucket = new mongoose.mongo.GridFSBucket(db);
+
+const uploadStream = bucket.openUploadStream("file.txt");
+  </code></pre>
+</div>
+
+<!-- 41. MongoDB Atlas -->
+<div class="card">
+  <div class="card-head">
+    <h3>41. MongoDB Atlas (Cloud)</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  MongoDB Atlas is a cloud-hosted database service.<br><br>
+
+  • No local setup required<br>
+  • Easy scaling and backups<br><br>
+
+  Used in real-world applications.
+  </p>
+
+  <p><strong>Example:</strong> Connect to Atlas.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo41">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo41">
+mongoose.connect("your-atlas-connection-string")
+  .then(() => console.log("Connected"))
+  .catch(err => console.log(err));
+  </code></pre>
+</div>
+<!-- 42. Build REST API with MongoDB -->
+<div class="card">
+  <div class="card-head">
+    <h3>42. Build REST API with MongoDB</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Use MongoDB in backend APIs to handle data.<br><br>
+
+  • GET → fetch data<br>
+  • POST → create data<br>
+  • PUT → update data<br>
+  • DELETE → remove data<br><br>
+
+  This connects your database to real applications.
+  </p>
+
+  <p><strong>Example:</strong> Fetch all users.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo42">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo42">
+app.get("/users", async (req, res) => {
+  const users = await User.find();
+  res.json(users);
+});
+  </code></pre>
+</div>
+
+<!-- 43. Authentication System -->
+<div class="card">
+  <div class="card-head">
+    <h3>43. Authentication System</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Build login and signup functionality.<br><br>
+
+  • Store user credentials securely<br>
+  • Hash passwords using bcrypt<br><br>
+
+  Required for any real-world application.
+  </p>
+
+  <p><strong>Example:</strong> Hash a password.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo43">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo43">
+const bcrypt = require("bcrypt");
+
+const hashed = await bcrypt.hash("password123", 10);
+  </code></pre>
+</div>
+
+<!-- 44. Scalable Backend Design -->
+<div class="card">
+  <div class="card-head">
+    <h3>44. Scalable Backend Design</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Design systems that can handle growth.<br><br>
+
+  • Use proper schema design<br>
+  • Optimize queries and indexes<br>
+  • Avoid unnecessary duplication<br><br>
+
+  Ensures performance as users increase.
+  </p>
+
+  <p><strong>Example:</strong> Add index for faster queries.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo44">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo44">
+db.users.createIndex({ email: 1 })
+  </code></pre>
+</div>
+
+<!-- 45. Deployment -->
+<div class="card">
+  <div class="card-head">
+    <h3>45. Deployment</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Deploy your application online.<br><br>
+
+  • Use MongoDB Atlas (cloud database)<br>
+  • Host backend (Render / Railway / AWS)<br><br>
+
+  Makes your app accessible to real users.
+  </p>
+
+  <p><strong>Example:</strong> Connect to Atlas.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="mongo45">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="mongo45">
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("Connected"))
+  .catch(err => console.log(err));
+  </code></pre>
+</div>
+  </div>
+</main>
+
+<!-- ======================= CODE MODAL ======================= -->
+<div class="code-modal" id="codeModal">
+  <div class="code-modal-box">
+    <button class="close-modal">&times;</button>
+    <pre><code id="modalCode"></code></pre>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

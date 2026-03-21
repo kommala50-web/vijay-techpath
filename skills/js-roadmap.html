@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JavaScript Full Roadmap - TechPath</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!-- SAME CSS AS C++ -->
+  <link rel="stylesheet" href="../skills/style.css" />
+</head>
+
+<body>
+
+<!-- ======================= NAVBAR ======================= -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">
+      <span class="material-symbols-outlined">terminal</span>
+    </div>
+    <h1 class="brand">TechPath</h1>
+
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#">Courses</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../career.html">Career</a>
+    </nav>
+  </div>
+
+  <div class="topbar-right">
+    <div class="search-wrap">
+      <span class="material-symbols-outlined search-icon">search</span>
+      <input id="searchInput" type="text" placeholder="Search topics..." />
+      <kbd class="kbd">Ctrl K</kbd>
+    </div>
+    <div class="avatar"></div>
+  </div>
+</header>
+
+<!-- ======================= MAIN ======================= -->
+<main class="container">
+
+  <!-- Top Buttons -->
+  <div class="top-actions">
+    <a class="btn btn-secondary" href="../skills.html">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Back to Skills
+    </a>
+
+    <div class="actions-right">
+      <a class="btn btn-ghost" href="../pdf/javascript.pdf" download>
+        <span class="material-symbols-outlined">download</span>
+        <span class="hide-sm">Download PDF</span>
+      </a>
+
+      <a class="btn btn-ghost" href="https://www.youtube.com/watch?v=PkZNo7MFNFg" target="_blank">
+        <span class="material-symbols-outlined">play_circle</span>
+        <span class="hide-sm">Video</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ======================= HERO ======================= -->
+  <section class="hero">
+    <h2>JavaScript Full Roadmap</h2>
+    <p>
+      Learn JavaScript from basics to advanced concepts like DOM, async programming,
+      APIs, and performance optimization. Click <b>Show Code</b> to view examples.
+    </p>
+  </section>
+
+  <!-- ======================= GRID ======================= -->
+  <div class="grid" id="topicsGrid">
+
+    <!-- 1 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>1. Introduction to JavaScript</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+
+      <p>
+        JavaScript is the language of the web. It makes websites interactive by
+        responding to user actions, updating content dynamically, and communicating
+        with servers.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="js1">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="js1">
+console.log("Hello JavaScript!");
+      </code></pre>
+    </div>
+
+    <!-- 2 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>2. Variables (let, const)</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+
+      <p>
+        Variables store data in memory. Use <code>let</code> for changeable values
+        and <code>const</code> for fixed values.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="js2">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="js2">
+let name = "Ramesh";
+const age = 20;
+console.log(name, age);
+      </code></pre>
+    </div>
+
+    <!-- 3 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>3. Data Types</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+
+      <p>
+        JavaScript supports strings, numbers, booleans, arrays, objects,
+        null, and undefined.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="js3">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="js3">
+let text = "JS";
+let num = 10;
+let isOk = true;
+let arr = [1,2,3];
+let obj = { lang: "JS" };
+console.log(text, num, isOk, arr, obj);
+      </code></pre>
+    </div>
+
+    <!-- 4 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>4. Operators</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+
+      <p>
+        Operators perform operations on values such as arithmetic, comparison,
+        logical, and ternary operations.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="js4">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="js4">
+let a = 10, b = 5;
+console.log(a + b);
+console.log(a > b);
+console.log(a === "10");
+      </code></pre>
+    </div>
+
+    <!-- 5 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>5. Conditional Statements</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+
+      <p>
+        Conditional statements allow programs to make decisions using if,
+        else if, else, and switch.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="js5">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="js5">
+let marks = 80;
+if (marks >= 75) {
+  console.log("Passed");
+} else {
+  console.log("Failed");
+}
+      </code></pre>
+    </div>
+
+    <!-- 6 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>6. Loops</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+
+      <p>
+        Loops repeat a block of code multiple times.
+        Common loops include for and while.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="js6">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="js6">
+for (let i = 1; i <= 5; i++) {
+  console.log(i);
+}
+      </code></pre>
+    </div>
+
+    <!-- 7 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>7. Functions</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+
+      <p>
+        Functions are reusable blocks of code that perform specific tasks.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="js7">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="js7">
+function add(a, b) {
+  return a + b;
+}
+console.log(add(3, 4));
+      </code></pre>
+    </div>
+
+    <!-- 8 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>8. Arrow Functions</h3>
+        <span class="badge intermediate">Intermediate</span>
+      </div>
+
+      <p>
+        Arrow functions provide shorter syntax and are commonly used in callbacks.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="js8">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="js8">
+const square = n => n * n;
+console.log(square(5));
+      </code></pre>
+    </div>
+
+    <!-- 9 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>9. Arrays</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+
+      <p>
+        Arrays store multiple values in a single variable.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="js9">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="js9">
+let nums = [10, 20, 30];
+nums.push(40);
+console.log(nums);
+      </code></pre>
+    </div>
+
+    <!-- 10 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>10. Objects</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+
+      <p>
+        Objects store data as key-value pairs and represent real-world entities.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="js10">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="js10">
+let user = {
+  name: "Ramesh",
+  age: 20
+};
+console.log(user.name, user.age);
+      </code></pre>
+    </div>
+    <!-- 11. Arrays – Common Methods -->
+     <div class="card">
+      <div class="card-head">
+        <h3>11. Arrays – Common Methods</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+      <p>
+        Arrays store ordered data. JavaScript provides powerful methods like
+        <code>map</code>, <code>filter</code>, <code>reduce</code>, and <code>forEach</code>
+        to process data efficiently.
+      </p>
+      <button class="btn btn-ghost show-code-btn" data-code="js11">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+      <pre style="display:none;"><code id="js11">
+        let nums = [1,2,3,4,5];
+        let doubled = nums.map(n => n*2);
+        let evens = nums.filter(n => n%2===0);
+        console.log(doubled, evens);
+      </code></pre>
+    </div>
+    
+    <!-- 12. Objects & Properties -->
+     <div class="card">
+      <div class="card-head">
+        <h3>12. Objects & Properties</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+      <p>
+        Objects represent real-world entities using key–value pairs.
+        Properties can be accessed using dot or bracket notation.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js12">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js12">
+let student = {
+  name: "Ramesh",
+  age: 20,
+  course: "JS"
+};
+console.log(student.name);
+  </code></pre>
+</div>
+
+<!-- 13. Functions & Scope -->
+<div class="card">
+  <div class="card-head">
+    <h3>13. Functions & Scope</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+  <p>
+    Scope defines where variables are accessible.
+    JavaScript has global, function, and block scope.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js13">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js13">
+let x = 10;
+function test(){
+  let y = 5;
+  console.log(x + y);
+}
+test();
+  </code></pre>
+</div>
+
+<!-- 14. Arrow Functions -->
+<div class="card">
+  <div class="card-head">
+    <h3>14. Arrow Functions</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+  <p>
+    Arrow functions provide a shorter syntax and do not have their own
+    <code>this</code>. They are widely used in callbacks.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js14">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js14">
+const greet = name => "Hello " + name;
+console.log(greet("JS"));
+  </code></pre>
+</div>
+
+<!-- 15. DOM Basics -->
+<div class="card">
+  <div class="card-head">
+    <h3>15. DOM Basics</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+  <p>
+    The DOM represents the webpage as a tree. JavaScript can select and
+    modify elements dynamically.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js15">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js15">
+const title = document.querySelector("h1");
+title.style.color = "orange";
+  </code></pre>
+</div>
+
+<!-- 16. Events -->
+<div class="card">
+  <div class="card-head">
+    <h3>16. Events</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+  <p>
+    Events allow JavaScript to respond to user actions like clicks,
+    typing, and mouse movement.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js16">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js16">
+document.addEventListener("click", () => {
+  console.log("Page clicked");
+});
+  </code></pre>
+</div>
+
+<!-- 17. Callbacks -->
+<div class="card">
+  <div class="card-head">
+    <h3>17. Callbacks</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+  <p>
+    Callbacks are functions passed as arguments to other functions.
+    They are commonly used for async operations.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js17">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js17">
+function process(data, callback){
+  callback(data);
+}
+process("Done", console.log);
+  </code></pre>
+</div>
+
+<!-- 18. Promises -->
+<div class="card">
+  <div class="card-head">
+    <h3>18. Promises</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+  <p>
+    Promises handle asynchronous operations and avoid callback hell.
+    States: pending, fulfilled, rejected.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js18">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js18">
+const p = new Promise(resolve => {
+  setTimeout(() => resolve("Success"), 1000);
+});
+p.then(console.log);
+  </code></pre>
+</div>
+
+<!-- 19. Async / Await -->
+<div class="card">
+  <div class="card-head">
+    <h3>19. Async / Await</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+  <p>
+    Async/await makes asynchronous code easier to read and write,
+    behaving like synchronous code.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js19">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js19">
+async function demo(){
+  return "Async result";
+}
+demo().then(console.log);
+  </code></pre>
+</div>
+
+<!-- 20. Error Handling -->
+<div class="card">
+  <div class="card-head">
+    <h3>20. Error Handling</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+  <p>
+    Errors are handled using <code>try</code>, <code>catch</code>,
+    and <code>finally</code> blocks.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js20">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js20">
+try {
+  throw new Error("Something broke");
+} catch(e) {
+  console.log(e.message);
+}
+  </code></pre>
+</div>
+
+<!-- 21. JSON -->
+<div class="card">
+  <div class="card-head">
+    <h3>21. JSON</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+  <p>
+    JSON (JavaScript Object Notation) is used to store and transfer data.
+    It is commonly used when sending data between browser and server.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js21">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js21">
+let user = { name: "Ramesh", age: 20 };
+let json = JSON.stringify(user);
+let back = JSON.parse(json);
+console.log(back.name);
+  </code></pre>
+</div>
+
+<!-- 22. LocalStorage -->
+<div class="card">
+  <div class="card-head">
+    <h3>22. LocalStorage</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+  <p>
+    LocalStorage stores data in the browser permanently.
+    Data remains even after refreshing or closing the browser.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js22">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js22">
+localStorage.setItem("username", "Ramesh");
+console.log(localStorage.getItem("username"));
+  </code></pre>
+</div>
+
+<!-- 23. SessionStorage -->
+<div class="card">
+  <div class="card-head">
+    <h3>23. SessionStorage</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+  <p>
+    SessionStorage stores data only for one browser tab.
+    Data is cleared when the tab is closed.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js23">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js23">
+sessionStorage.setItem("temp", "123");
+console.log(sessionStorage.getItem("temp"));
+  </code></pre>
+</div>
+
+<!-- 24. Timers -->
+<div class="card">
+  <div class="card-head">
+    <h3>24. Timers</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+  <p>
+    Timers allow delayed or repeated execution.
+    Use <code>setTimeout</code> and <code>setInterval</code>.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js24">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js24">
+setTimeout(() => console.log("Hello after 1s"), 1000);
+  </code></pre>
+</div>
+
+<!-- 25. Regular Expressions -->
+<div class="card">
+  <div class="card-head">
+    <h3>25. Regular Expressions</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+  <p>
+    Regular Expressions are used for pattern matching,
+    validation of emails, passwords, and formats.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js25">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js25">
+let email = "test@example.com";
+let pattern = /^[^@]+@[^@]+\.[a-z]+$/;
+console.log(pattern.test(email));
+  </code></pre>
+</div>
+
+<!-- 26. Modules -->
+<div class="card">
+  <div class="card-head">
+    <h3>26. JavaScript Modules</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+  <p>
+    Modules split code into files using <code>import</code> and <code>export</code>.
+    This improves maintainability and reuse.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js26">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js26">
+// module.js
+export function add(a,b){ return a+b; }
+  </code></pre>
+</div>
+
+<!-- 27. Browser APIs -->
+<div class="card">
+  <div class="card-head">
+    <h3>27. Browser APIs</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+  <p>
+    Browsers provide APIs like Geolocation, Clipboard, Canvas,
+    and Notifications to build rich applications.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js27">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js27">
+navigator.clipboard.writeText("Copied!");
+  </code></pre>
+</div>
+
+<!-- 28. Performance Optimization -->
+<div class="card">
+  <div class="card-head">
+    <h3>28. Performance Optimization</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+  <p>
+    Optimize JavaScript by reducing DOM updates,
+    debouncing events, and minimizing heavy loops.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js28">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js28">
+function debounce(fn, delay){
+  let t;
+  return () => {
+    clearTimeout(t);
+    t = setTimeout(fn, delay);
+  };
+}
+  </code></pre>
+</div>
+
+<!-- 29. Security Basics -->
+<div class="card">
+  <div class="card-head">
+    <h3>29. Security Basics</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+  <p>
+    Prevent XSS by never inserting raw user HTML.
+    Use textContent instead of innerHTML.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js29">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js29">
+let input = "<script>alert(1)</script>";
+document.body.textContent = input;
+  </code></pre>
+</div>
+
+<!-- 30. Best Practices -->
+<div class="card">
+  <div class="card-head">
+    <h3>30. Best Practices</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+  <p>
+    Write clean code: use <code>const</code>,
+    small functions, proper naming, and comments.
+  </p>
+  <button class="btn btn-ghost show-code-btn" data-code="js30">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+  <pre style="display:none;"><code id="js30">
+const MAX_USERS = 100;
+function getUser(){ return "Admin"; }
+  </code></pre>
+</div>
+
+<!-- Mini Project: Todo App -->
+<div class="card">
+  <div class="card-head">
+    <h3>Mini Project: Todo App</h3>
+    <span class="badge advanced">Project</span>
+  </div>
+  <p>
+    This mini project helps you practice DOM manipulation,
+    events, arrays, and localStorage by building a simple Todo app.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="jsTodo">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="jsTodo">
+&lt;input id="task" placeholder="Enter task"&gt;
+&lt;button onclick="addTodo()"&gt;Add&lt;/button&gt;
+&lt;ul id="list"&gt;&lt;/ul&gt;
+
+&lt;script&gt;
+function addTodo(){
+  const task = document.getElementById("task").value;
+  if(!task) return;
+  const li = document.createElement("li");
+  li.textContent = task;
+  document.getElementById("list").appendChild(li);
+  document.getElementById("task").value = "";
+}
+&lt;/script&gt;
+  </code></pre>
+</div>
+
+
+  </div>
+</main>
+
+<!-- ======================= CODE MODAL ======================= -->
+<div class="code-modal" id="codeModal">
+  <div class="code-modal-box">
+    <button class="close-modal">&times;</button>
+    <pre><code id="modalCode"></code></pre>
+  </div>
+</div>
+
+<!-- SAME JS AS C++ -->
+<script src="app.js"></script>
+
+</body>
+</html>

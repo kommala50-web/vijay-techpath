@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Java Full Roadmap - TechPath</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!-- SAME CSS AS C++ -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- ======================= NAVBAR ======================= -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">
+      <span class="material-symbols-outlined">terminal</span>
+    </div>
+    <h1 class="brand">TechPath</h1>
+
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#">Courses</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../career.html">Career</a>
+    </nav>
+  </div>
+
+  <div class="topbar-right">
+    <div class="search-wrap">
+      <span class="material-symbols-outlined search-icon">search</span>
+      <input id="searchInput" type="text" placeholder="Search topics..." />
+      <kbd class="kbd">Ctrl K</kbd>
+    </div>
+    <div class="avatar"></div>
+  </div>
+</header>
+
+<!-- ======================= MAIN ======================= -->
+<main class="container">
+
+  <div class="top-actions">
+    <a class="btn btn-secondary" href="../skills.html">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Back to Skills
+    </a>
+
+    <div class="actions-right">
+      <a class="btn btn-ghost" href="../pdf/java.pdf" download>
+        <span class="material-symbols-outlined">download</span>
+        Download PDF
+      </a>
+
+      <a class="btn btn-ghost" href="../pdf/Java_Notes.pdf" download>
+        <span class="material-symbols-outlined">note</span>
+        Notes
+      </a>
+
+      <a class="btn btn-ghost" href="https://www.youtube.com/watch?v=23HFxAPyJ9U" target="_blank">
+        <span class="material-symbols-outlined">play_circle</span>
+        Video
+      </a>
+    </div>
+  </div>
+
+  <!-- ======================= HERO ======================= -->
+  <section class="hero">
+    <h2>Java Full Roadmap</h2>
+    <p>
+      Learn Java from scratch to advanced concepts like OOP, multithreading,
+      collections, and real-world applications. Click <b>Show Code</b> to view examples.
+    </p>
+  </section>
+
+  <!-- ======================= GRID ======================= -->
+  <div class="grid" id="topicsGrid">
+
+    <!-- 1 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>1. Introduction to Java</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+
+      <p>
+        Java is a high-level, object-oriented programming language developed by Sun Microsystems.
+        It is platform-independent because Java programs run on the JVM (Java Virtual Machine).
+        Java is widely used in web applications, Android apps, enterprise systems, and backend services.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="java1">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="java1">
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!");
+    }
+}
+</code></pre>
+    </div>
+
+    <!-- 2 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>2. Java Setup & Execution</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+
+      <p>
+        To run Java programs, you need to install the JDK (Java Development Kit).
+        Java source code is compiled using <code>javac</code> and executed using the <code>java</code> command.
+        IDEs like IntelliJ, Eclipse, or VS Code simplify development.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="java2">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="java2">
+// Compile
+javac HelloWorld.java
+
+// Run
+java HelloWorld
+</code></pre>
+    </div>
+
+    <!-- 3 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>3. Data Types & Variables</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+
+      <p>
+        Java has primitive data types such as <code>int</code>, <code>double</code>,
+        <code>char</code>, and <code>boolean</code>.
+        Variables store data in memory and must be declared with a type before use.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="java3">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="java3">
+int age = 25;
+double salary = 45000.5;
+char grade = 'A';
+boolean active = true;
+
+System.out.println(age);
+System.out.println(salary);
+System.out.println(grade);
+System.out.println(active);
+</code></pre>
+    </div>
+
+    <!-- 4 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>4. Operators</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+
+      <p>
+        Operators perform operations on variables and values.
+        Java supports arithmetic, relational, logical, bitwise, assignment,
+        and ternary operators for building expressions and conditions.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="java4">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="java4">
+int a = 10, b = 5;
+
+System.out.println(a + b);
+System.out.println(a > b);
+System.out.println(a & b);
+System.out.println((a > b) ? a : b);
+</code></pre>
+    </div>
+
+    <!-- 5 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>5. Control Statements</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+
+      <p>
+        Control statements decide the flow of execution.
+        Java provides <code>if</code>, <code>if-else</code>, <code>switch</code> for decisions
+        and <code>for</code>, <code>while</code>, <code>do-while</code> loops for repetition.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="java5">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="java5">
+for(int i = 1; i <= 5; i++) {
+    if(i == 3) continue;
+    System.out.println(i);
+}
+</code></pre>
+    </div>
+
+    <!-- 6 -->
+    <div class="card">
+      <div class="card-head">
+        <h3>6. Methods (Functions)</h3>
+        <span class="badge beginner">Beginner</span>
+      </div>
+
+      <p>
+        Methods are reusable blocks of code that perform a specific task.
+        They help reduce duplication and make programs easier to read and maintain.
+        Methods can return values and accept parameters.
+      </p>
+
+      <button class="btn btn-ghost show-code-btn" data-code="java6">
+        <span class="material-symbols-outlined">code</span> Show Code
+      </button>
+
+      <pre style="display:none;"><code id="java6">
+public static int sum(int a, int b) {
+    return a + b;
+}
+
+public static void main(String[] args) {
+    System.out.println(sum(5, 3));
+}
+</code></pre>
+    </div>
+
+    <!-- 7. Arrays -->
+<div class="card">
+  <div class="card-head">
+    <h3>7. Arrays</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    Arrays are used to store multiple values of the same data type in a single variable.
+    Java arrays have a fixed size and allow fast access using index positions.
+    They are commonly used for storing lists, tables, and numerical data.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java7">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java7">
+int[] numbers = {1, 2, 3, 4, 5};
+
+for (int n : numbers) {
+    System.out.println(n);
+}
+</code></pre>
+</div>
+
+<!-- 8. Strings -->
+<div class="card">
+  <div class="card-head">
+    <h3>8. Strings</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    Strings are used to store text data in Java.
+    Java provides the <code>String</code> class with built-in methods like
+    <code>length()</code>, <code>substring()</code>, <code>equals()</code>, and <code>concat()</code>.
+    Strings are immutable, meaning their values cannot be changed after creation.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java8">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java8">
+String msg = "Hello";
+String full = msg.concat(" Java");
+
+System.out.println(full);
+System.out.println(full.length());
+</code></pre>
+</div>
+
+<!-- 9. Classes & Objects -->
+<div class="card">
+  <div class="card-head">
+    <h3>9. Classes & Objects</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    Java is an object-oriented language.
+    A class is a blueprint that defines properties and behaviors.
+    An object is an instance of a class created using the <code>new</code> keyword.
+    Classes help organize code and model real-world entities.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java9">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java9">
+class Student {
+    String name;
+    int age;
+
+    void display() {
+        System.out.println(name + " " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.name = "Alice";
+        s.age = 20;
+        s.display();
+    }
+}
+</code></pre>
+</div>
+
+<!-- 10. Inheritance -->
+<div class="card">
+  <div class="card-head">
+    <h3>10. Inheritance</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    Inheritance allows one class to reuse the properties and methods of another class.
+    It is implemented using the <code>extends</code> keyword.
+    Inheritance promotes code reusability and establishes a parent-child relationship.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java10">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java10">
+class Animal {
+    void eat() {
+        System.out.println("Eating...");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Barking...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();
+        d.bark();
+    }
+}
+</code></pre>
+</div>
+
+<!-- 11. Polymorphism -->
+<div class="card">
+  <div class="card-head">
+    <h3>11. Polymorphism</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    Polymorphism allows a method to behave differently based on the object calling it.
+    Java supports method overloading (compile-time polymorphism)
+    and method overriding (runtime polymorphism).
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java11">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java11">
+class Shape {
+    void draw() {
+        System.out.println("Drawing shape");
+    }
+}
+
+class Circle extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing circle");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape s = new Circle();
+        s.draw();
+    }
+}
+</code></pre>
+</div>
+
+<!-- 12. Encapsulation -->
+<div class="card">
+  <div class="card-head">
+    <h3>12. Encapsulation</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    Encapsulation protects data by restricting direct access to class variables.
+    It is achieved using private variables and public getter and setter methods.
+    This improves security and control over data.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java12">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java12">
+class Account {
+    private double balance;
+
+    public void setBalance(double b) {
+        balance = b;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Account acc = new Account();
+        acc.setBalance(5000);
+        System.out.println(acc.getBalance());
+    }
+}
+</code></pre>
+</div>
+
+<!-- 13. Interfaces -->
+<div class="card">
+  <div class="card-head">
+    <h3>13. Interfaces</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    An interface defines a contract that a class must follow.
+    It contains abstract methods only (by default).
+    A class can implement multiple interfaces, which helps achieve multiple inheritance in Java.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java13">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java13">
+interface Vehicle {
+    void move();
+}
+
+class Car implements Vehicle {
+    public void move() {
+        System.out.println("Car is moving");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle v = new Car();
+        v.move();
+    }
+}
+</code></pre>
+</div>
+
+<!-- 14. Abstract Classes -->
+<div class="card">
+  <div class="card-head">
+    <h3>14. Abstract Classes</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    Abstract classes are partially implemented classes.
+    They can have both abstract methods and normal methods.
+    Objects of abstract classes cannot be created directly.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java14">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java14">
+abstract class Shape {
+    abstract void draw();
+}
+
+class Square extends Shape {
+    void draw() {
+        System.out.println("Drawing Square");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape s = new Square();
+        s.draw();
+    }
+}
+</code></pre>
+</div>
+
+<!-- 15. Packages -->
+<div class="card">
+  <div class="card-head">
+    <h3>15. Packages</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    Packages are used to group related classes and interfaces together.
+    They help organize large projects, avoid name conflicts, and improve code readability.
+    Java provides built-in packages like java.util and java.io.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java15">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java15">
+package mypackage;
+
+public class Demo {
+    public void show() {
+        System.out.println("Inside package");
+    }
+}
+</code></pre>
+</div>
+
+<!-- 16. Access Modifiers -->
+<div class="card">
+  <div class="card-head">
+    <h3>16. Access Modifiers</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    Access modifiers control visibility of classes, methods, and variables.
+    Java provides four types: public, private, protected, and default.
+    They help protect data and enforce encapsulation.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java16">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java16">
+class Test {
+    private int x = 10;
+
+    public int getX() {
+        return x;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Test t = new Test();
+        System.out.println(t.getX());
+    }
+}
+</code></pre>
+</div>
+
+<!-- 17. Constructors -->
+<div class="card">
+  <div class="card-head">
+    <h3>17. Constructors</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    Constructors are special methods used to initialize objects.
+    They have the same name as the class and no return type.
+    Constructors are called automatically when an object is created.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java17">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java17">
+class Student {
+    String name;
+
+    Student(String n) {
+        name = n;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student("Rahul");
+        System.out.println(s.name);
+    }
+}
+</code></pre>
+</div>
+
+<!-- 18. this Keyword -->
+<div class="card">
+  <div class="card-head">
+    <h3>18. this Keyword</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    The this keyword refers to the current object.
+    It is used to differentiate instance variables from parameters
+    and to call another constructor of the same class.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java18">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java18">
+class Person {
+    String name;
+
+    Person(String name) {
+        this.name = name;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Person p = new Person("Amit");
+        System.out.println(p.name);
+    }
+}
+</code></pre>
+</div>
+
+<!-- 19. static Keyword -->
+<div class="card">
+  <div class="card-head">
+    <h3>19. static Keyword</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    Static variables and methods belong to the class, not to objects.
+    They are shared among all instances.
+    Static members can be accessed without creating an object.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java19">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java19">
+class Counter {
+    static int count = 0;
+
+    Counter() {
+        count++;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        new Counter();
+        new Counter();
+        System.out.println(Counter.count);
+    }
+}
+</code></pre>
+</div>
+
+<!-- 20. final Keyword -->
+<div class="card">
+  <div class="card-head">
+    <h3>20. final Keyword</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    The final keyword is used to restrict modification.
+    Final variables become constants, final methods cannot be overridden,
+    and final classes cannot be inherited.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java20">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java20">
+final class Constants {
+    static final double PI = 3.14;
+}
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(Constants.PI);
+    }
+}
+</code></pre>
+</div>
+
+<!-- 21. Exception Handling -->
+<div class="card">
+  <div class="card-head">
+    <h3>21. Exception Handling</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    Exception handling allows a program to handle runtime errors gracefully
+    instead of crashing. Java uses try, catch, finally, throw, and throws
+    keywords to manage errors like division by zero or invalid input.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java21">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java21">
+public class Main {
+    public static void main(String[] args) {
+        try {
+            int x = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero");
+        } finally {
+            System.out.println("Program finished");
+        }
+    }
+}
+</code></pre>
+</div>
+
+<!-- 22. Custom Exceptions -->
+<div class="card">
+  <div class="card-head">
+    <h3>22. Custom Exceptions</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    Custom exceptions are user-defined exceptions.
+    They are created by extending the Exception class
+    and are useful for application-specific error handling.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java22">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java22">
+class AgeException extends Exception {
+    AgeException(String msg) {
+        super(msg);
+    }
+}
+
+public class Main {
+    static void checkAge(int age) throws AgeException {
+        if (age < 18)
+            throw new AgeException("Not eligible to vote");
+    }
+
+    public static void main(String[] args) {
+        try {
+            checkAge(16);
+        } catch (AgeException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+</code></pre>
+</div>
+
+<!-- 23. Generics -->
+<div class="card">
+  <div class="card-head">
+    <h3>23. Generics</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    Generics allow writing reusable and type-safe code.
+    They prevent runtime type errors by checking types at compile time.
+    Commonly used in collections like ArrayList and HashMap.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java23">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java23">
+class Box<T> {
+    T value;
+    void set(T value) { this.value = value; }
+    T get() { return value; }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Box<String> box = new Box<>();
+        box.set("Hello");
+        System.out.println(box.get());
+    }
+}
+</code></pre>
+</div>
+
+<!-- 24. Collections Framework -->
+<div class="card">
+  <div class="card-head">
+    <h3>24. Collections Framework</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    The Collections Framework provides ready-made data structures
+    like List, Set, and Map. It helps store, retrieve, and manipulate
+    data efficiently using classes like ArrayList and HashSet.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java24">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java24">
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>();
+        list.add(10);
+        list.add(20);
+        list.add(30);
+
+        for (int x : list)
+            System.out.println(x);
+    }
+}
+</code></pre>
+</div>
+
+<!-- 25. Map Interface -->
+<div class="card">
+  <div class="card-head">
+    <h3>25. Map Interface</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    Map stores data in key-value pairs.
+    Keys are unique, while values can be duplicated.
+    HashMap and TreeMap are commonly used implementations.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java25">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java25">
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Map<String, Integer> map = new HashMap<>();
+        map.put("Math", 90);
+        map.put("Science", 85);
+
+        System.out.println(map.get("Math"));
+    }
+}
+</code></pre>
+</div>
+
+<!-- 26. Multithreading -->
+<div class="card">
+  <div class="card-head">
+    <h3>26. Multithreading</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Multithreading allows multiple tasks to run concurrently.
+    Java supports threads using the Thread class or Runnable interface.
+    It improves performance and responsiveness.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java26">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java26">
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread running");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyThread t = new MyThread();
+        t.start();
+    }
+}
+</code></pre>
+</div>
+
+<!-- 27. Synchronization -->
+<div class="card">
+  <div class="card-head">
+    <h3>27. Synchronization</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Synchronization prevents multiple threads from accessing
+    shared resources at the same time.
+    It avoids data inconsistency and race conditions.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java27">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java27">
+class Counter {
+    int count = 0;
+
+    synchronized void increment() {
+        count++;
+    }
+}
+</code></pre>
+</div>
+
+<!-- 28. File Handling -->
+<div class="card">
+  <div class="card-head">
+    <h3>28. File Handling</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    File handling allows reading and writing data to files.
+    Java provides File, FileReader, FileWriter, and BufferedReader
+    classes for handling files.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java28">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java28">
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        FileWriter fw = new FileWriter("test.txt");
+        fw.write("Hello File");
+        fw.close();
+    }
+}
+</code></pre>
+</div>
+
+<!-- 29. JDBC -->
+<div class="card">
+  <div class="card-head">
+    <h3>29. JDBC</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    JDBC (Java Database Connectivity) allows Java programs
+    to connect and interact with databases.
+    It uses Connection, Statement, and ResultSet interfaces.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java29">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java29">
+import java.sql.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Connection con =
+          DriverManager.getConnection("jdbc:mysql://localhost/db","root","pass");
+        System.out.println("Connected");
+    }
+}
+</code></pre>
+</div>
+
+<!-- 30. Mini Projects -->
+<div class="card">
+  <div class="card-head">
+    <h3>30. Mini Projects</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Mini projects help apply Java concepts in real scenarios.
+    Examples include calculator apps, student management systems,
+    banking applications, and file-based projects.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java30">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java30">
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        System.out.println("Sum = " + (a + b));
+    }
+}
+</code></pre>
+</div>
+
+<!-- 31. Java 8 Features -->
+<div class="card">
+  <div class="card-head">
+    <h3>31. Java 8 Features</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Java 8 introduced major improvements like lambda expressions,
+    Stream API, Optional class, default methods in interfaces,
+    and a new Date & Time API. These features make code shorter,
+    cleaner, and more readable.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java31">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java31">
+interface MathOp {
+    int apply(int a, int b);
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MathOp add = (a, b) -> a + b;
+        System.out.println(add.apply(5, 3));
+    }
+}
+</code></pre>
+</div>
+
+<!-- 32. Lambda Expressions -->
+<div class="card">
+  <div class="card-head">
+    <h3>32. Lambda Expressions</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Lambda expressions provide a short way to write functions.
+    They are mainly used with functional interfaces and
+    are widely used in collections and streams.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java32">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java32">
+Runnable task = () -> System.out.println("Running thread");
+new Thread(task).start();
+</code></pre>
+</div>
+
+<!-- 33. Stream API -->
+<div class="card">
+  <div class="card-head">
+    <h3>33. Stream API</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Stream API allows functional-style operations on collections
+    such as filtering, mapping, and reducing data.
+    It improves readability and performance.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java33">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java33">
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> nums = Arrays.asList(1,2,3,4,5);
+        nums.stream()
+            .filter(n -> n % 2 == 0)
+            .forEach(System.out::println);
+    }
+}
+</code></pre>
+</div>
+
+<!-- 34. Optional Class -->
+<div class="card">
+  <div class="card-head">
+    <h3>34. Optional Class</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Optional is used to avoid NullPointerException.
+    It represents a value that may or may not be present
+    and forces developers to handle null cases safely.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java34">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java34">
+import java.util.Optional;
+
+public class Main {
+    public static void main(String[] args) {
+        Optional<String> name = Optional.of("Java");
+        System.out.println(name.orElse("No Value"));
+    }
+}
+</code></pre>
+</div>
+
+<!-- 35. Date & Time API -->
+<div class="card">
+  <div class="card-head">
+    <h3>35. Date & Time API</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Java 8 introduced a new Date & Time API under java.time package.
+    It fixes problems of old Date class and provides immutable,
+    thread-safe date-time objects.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java35">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java35">
+import java.time.*;
+
+public class Main {
+    public static void main(String[] args) {
+        LocalDate today = LocalDate.now();
+        LocalTime time = LocalTime.now();
+        System.out.println(today + " " + time);
+    }
+}
+</code></pre>
+</div>
+
+<!-- 36. JVM Architecture -->
+<div class="card">
+  <div class="card-head">
+    <h3>36. JVM Architecture</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    JVM (Java Virtual Machine) executes Java bytecode.
+    It consists of Class Loader, Runtime Data Areas,
+    Execution Engine, and Garbage Collector.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java36">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java36">
+// JVM loads .class file
+// Verifies bytecode
+// Executes using JIT compiler
+System.out.println("JVM Internals");
+</code></pre>
+</div>
+
+<!-- 37. Memory Management -->
+<div class="card">
+  <div class="card-head">
+    <h3>37. Memory Management</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Java memory is divided into Stack and Heap.
+    Stack stores method calls and local variables,
+    while Heap stores objects and is managed by GC.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java37">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java37">
+public class Main {
+    public static void main(String[] args) {
+        String s = new String("Hello");
+        s = null; // eligible for garbage collection
+    }
+}
+</code></pre>
+</div>
+
+<!-- 38. Garbage Collection -->
+<div class="card">
+  <div class="card-head">
+    <h3>38. Garbage Collection</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Garbage Collector automatically removes unused objects
+    from heap memory. It helps prevent memory leaks
+    and improves application stability.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java38">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java38">
+public class Main {
+    public static void main(String[] args) {
+        System.gc(); // Suggest GC
+        System.out.println("GC requested");
+    }
+}
+</code></pre>
+</div>
+
+<!-- 39. Design Patterns -->
+<div class="card">
+  <div class="card-head">
+    <h3>39. Design Patterns</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Design patterns are reusable solutions to common
+    software design problems. Examples include Singleton,
+    Factory, Observer, and Strategy patterns.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java39">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java39">
+class Singleton {
+    private static Singleton instance;
+    private Singleton() {}
+    public static Singleton getInstance() {
+        if(instance == null)
+            instance = new Singleton();
+        return instance;
+    }
+}
+</code></pre>
+</div>
+
+<!-- 40. Real-World Applications -->
+<div class="card">
+  <div class="card-head">
+    <h3>40. Real-World Applications</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Java is widely used in enterprise systems, Android apps,
+    banking software, backend services, and large-scale
+    distributed applications.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java40">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java40">
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Java powers enterprise systems");
+    }
+}
+</code></pre>
+</div>
+
+<!-- 41. Networking in Java -->
+<div class="card">
+  <div class="card-head">
+    <h3>41. Networking in Java</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Java provides powerful networking support using the
+    <code>java.net</code> package. It allows programs to communicate
+    over networks using URLs, sockets, and client-server models.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java41">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java41">
+import java.net.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        URL url = new URL("https://example.com");
+        System.out.println("Protocol: " + url.getProtocol());
+        System.out.println("Host: " + url.getHost());
+    }
+}
+</code></pre>
+</div>
+
+<!-- 42. JDBC (Database Connectivity) -->
+<div class="card">
+  <div class="card-head">
+    <h3>42. JDBC (Database Connectivity)</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    JDBC allows Java applications to connect to databases.
+    It uses DriverManager, Connection, Statement, and ResultSet
+    to perform SQL operations.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java42">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java42">
+import java.sql.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Connection con = DriverManager.getConnection(
+            "jdbc:mysql://localhost:3306/testdb",
+            "root",
+            "password"
+        );
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery("SELECT * FROM students");
+
+        while(rs.next()) {
+            System.out.println(rs.getInt(1) + " " + rs.getString(2));
+        }
+        con.close();
+    }
+}
+</code></pre>
+</div>
+
+<!-- 43. File Handling -->
+<div class="card">
+  <div class="card-head">
+    <h3>43. File Handling</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Java provides File, FileReader, FileWriter,
+    BufferedReader, and BufferedWriter classes
+    to read and write files efficiently.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java43">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java43">
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        FileWriter fw = new FileWriter("data.txt");
+        fw.write("Hello File");
+        fw.close();
+
+        BufferedReader br = new BufferedReader(new FileReader("data.txt"));
+        System.out.println(br.readLine());
+        br.close();
+    }
+}
+</code></pre>
+</div>
+
+<!-- 44. Reflection API -->
+<div class="card">
+  <div class="card-head">
+    <h3>44. Reflection API</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Reflection allows inspecting classes, methods,
+    and fields at runtime. It is commonly used in
+    frameworks like Spring and Hibernate.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java44">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java44">
+import java.lang.reflect.*;
+
+class Student {
+    private String name = "TechPath";
+}
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Student s = new Student();
+        Field f = s.getClass().getDeclaredField("name");
+        f.setAccessible(true);
+        System.out.println(f.get(s));
+    }
+}
+</code></pre>
+</div>
+
+<!-- 45. Interview Preparation -->
+<div class="card">
+  <div class="card-head">
+    <h3>45. Interview Preparation</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Java interviews focus on OOP concepts, collections,
+    multithreading, JVM internals, exception handling,
+    and real-world problem solving.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java45">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java45">
+// Common interview question
+// Difference between == and equals()
+String a = new String("Java");
+String b = new String("Java");
+System.out.println(a == b);        // false
+System.out.println(a.equals(b));   // true
+</code></pre>
+</div>
+
+<!-- 46. Mini Projects -->
+<div class="card">
+  <div class="card-head">
+    <h3>46. Mini Projects</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Mini projects help apply Java concepts practically.
+    Examples include calculator, student management system,
+    banking system, chat application, and REST APIs.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="java46">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="java46">
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number: ");
+        int n = sc.nextInt();
+        System.out.println("Square: " + (n * n));
+    }
+}
+</code></pre>
+</div>
+
+
+  </div>
+</main>
+
+
+
+<!-- ======================= CODE MODAL ======================= -->
+<div class="code-modal" id="codeModal">
+  <div class="code-modal-box">
+    <button class="close-modal">&times;</button>
+    <pre><code id="modalCode"></code></pre>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,466 @@
+:root {
+  --primary: #137fec;
+  --bg: #101922;
+  --surface: #1c2127;
+  --border: #283039;
+  --text: #ffffff;
+  --muted: #9dabb9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ======================= Topbar ======================= */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 12px 40px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(16, 25, 34, 0.95);
+  backdrop-filter: blur(12px);
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--primary);
+  display: grid;
+  place-items: center;
+}
+
+.logo span {
+  font-size: 22px;
+}
+
+.brand {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+.nav {
+  display: none;
+  gap: 22px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.9;
+  transition: 0.2s;
+}
+
+.nav a:hover {
+  color: var(--primary);
+}
+
+.nav a.active {
+  color: var(--primary);
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+/* ======================= Search ======================= */
+.search-wrap {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+}
+
+.search-wrap input {
+  width: 100%;
+  padding: 10px 86px 10px 40px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  outline: none;
+  font-size: 14px;
+}
+
+.search-wrap input::placeholder {
+  color: var(--muted);
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: var(--muted);
+}
+
+.kbd {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  background: transparent;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 2px solid var(--border);
+  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQHBvz74iW_wKJ2DTxamvVQF6fTS3_XPxQPy2mKx0aWQM1NnaShNZv7Aqh5JZFRl6jwGzZcs8sGYj11XSRgXfr41dAcF09H_w41zTlSelQ8iGlC1rBbnvoatCICqvrC4TaTqVdFjhWTapEaIfXGbJQZd2Wqpybl9_uYzHPY204M10YNmlmH53earidvdYFGUsWclkmW3QDtI1iS79kUNg_tUSyCoAZL7KGRSzGfcdvS1ULBUBw9fAkxiflz34ZBbWI4l7rMUHSN6A");
+  background-size: cover;
+  background-position: center;
+}
+
+/* ======================= Main Layout ======================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.actions-right {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ======================= Buttons ======================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.btn span {
+  font-size: 18px;
+}
+
+.btn-secondary {
+  background: var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--surface);
+}
+
+.btn-ghost {
+  background: transparent;
+}
+
+.btn-ghost:hover {
+  background: var(--border);
+}
+
+.hide-sm {
+  display: none;
+}
+
+/* ======================= Hero ======================= */
+.hero {
+  padding: 10px 0 18px 0;
+}
+
+.hero h2 {
+  font-size: 42px;
+  margin: 0 0 8px 0;
+  font-weight: 900;
+  letter-spacing: -0.8px;
+}
+
+.hero p {
+  margin: 0;
+  max-width: 720px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ======================= Grid & Cards (2 cards on phone) ======================= */
+.grid {
+  display: grid;
+  gap: 18px;
+  padding-top: 18px;
+
+  /* default = 2 cards on mobile */
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Very small phones → 1 card */
+@media (max-width: 420px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(19, 127, 236, 0.45);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.35);
+}
+
+.card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.card p {
+  margin: 12px 0 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ======================= Badges ======================= */
+.badge {
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 800;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.badge.beginner {
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.12);
+}
+
+.badge.intermediate {
+  color: #60a5fa;
+  background: rgba(96, 165, 250, 0.12);
+}
+
+.badge.advanced {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.12);
+}
+
+/* ======================= Code Dropdown ======================= */
+details {
+  margin-top: 12px;
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  color: var(--primary);
+  font-weight: 800;
+  display: flex;
+  justify-content: flex-end;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+summary:hover {
+  background: var(--border);
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.codebox {
+  margin-top: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #0d1117;
+}
+
+.codebox-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: #161b22;
+  border-bottom: 1px solid var(--border);
+}
+
+.file {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.copy-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.copy-btn:hover {
+  color: var(--text);
+}
+
+pre {
+  margin: 0;
+  padding: 12px;
+  overflow-x: auto;
+  font-size: 13px;
+  color: #d1d5db;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+/* Code scrollbar */
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+pre::-webkit-scrollbar-track {
+  background: #111418;
+}
+pre::-webkit-scrollbar-thumb {
+  background: #3b4754;
+  border-radius: 4px;
+}
+
+/* ======================= Responsive ======================= */
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+  }
+
+  .search-wrap {
+    display: block;
+  }
+
+  .hide-sm {
+    display: inline;
+  }
+
+  .grid {
+  display: grid;
+  gap: 18px;
+  padding-top: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+  
+
+
+
+/* ======================= Code Modal Popup ======================= */
+.code-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s ease;
+  z-index: 999;
+}
+
+.code-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.code-modal-box {
+  background: #0d1117;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  width: min(900px, 92%);
+  max-height: 85vh;
+  overflow: auto;
+  position: relative;
+  padding: 18px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: var(--text);
+}
+
+.code-modal pre {
+  margin-top: 24px;
+  font-size: 14px;
+}
+
+}

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>C++ Full Roadmap - TechPath</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- ======================= NAVBAR ======================= -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">
+      <span class="material-symbols-outlined">terminal</span>
+    </div>
+    <h1 class="brand">TechPath</h1>
+
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#">Courses</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../career.html">Career</a>
+    </nav>
+  </div>
+
+  <div class="topbar-right">
+    <div class="search-wrap">
+      <span class="material-symbols-outlined search-icon">search</span>
+      <input id="searchInput" type="text" placeholder="Search topics..." />
+      <kbd class="kbd">Ctrl K</kbd>
+    </div>
+    <div class="avatar"></div>
+  </div>
+</header>
+
+<!-- ======================= MAIN ======================= -->
+<main class="container">
+
+  <div class="top-actions">
+    <a class="btn btn-secondary" href="../skills.html">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Back to Skills
+    </a>
+
+    <div class="actions-right">
+      <a class="btn btn-ghost" href="../pdf/cpp.pdf" download>
+        <span class="material-symbols-outlined">download</span>
+        <span class="hide-sm">Download PDF</span>
+      </a>
+
+      <a class="btn btn-ghost" href="../pdf/CPP_Notes.pdf" download>
+        <span class="material-symbols-outlined">note</span>
+        <span class="hide-sm">Notes</span>
+      </a>
+
+      <a class="btn btn-ghost" href="https://www.youtube.com/watch?v=irqbmMNs2Bo" target="_blank">
+        <span class="material-symbols-outlined">play_circle</span>
+        <span class="hide-sm">Video</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ======================= HERO ======================= -->
+  <section class="hero">
+    <h2>C++ Full Roadmap</h2>
+    <p>
+      Learn C++ from fundamentals to advanced concepts like OOP, STL, memory
+      management, and modern C++. Click <b>Show Code</b> to view examples in a popup.
+    </p>
+  </section>
+
+  <!-- ======================= GRID ======================= -->
+  <div class="grid" id="topicsGrid">
+
+    <!-- 1. C++ Basics & Setup -->
+<div class="card" data-title="C++ Basics & Setup">
+  <div class="card-head">
+    <h3>1. C++ Basics & Setup</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  C++ is a high-performance, general-purpose language that builds on C. It is used in systems programming, game development, embedded systems, and high-performance applications. A C++ program consists of headers, the <code>main()</code> function, and statements within curly braces. Input/output is performed using <code>cin</code> and <code>cout</code> from the <code>&lt;iostream&gt;</code> library. Comments can be single-line (<code>//</code>) or multi-line (<code>/* */</code>).</p>
+
+  <p><strong>Example Question:</strong> Write a program to input your name and age, then display them using <code>cout</code>.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp1">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="cpp1" class="language-cpp">
+#include <iostream>
+using namespace std;
+
+int main() {
+    string name;
+    int age;
+    cout << "Enter your name: ";
+    cin >> name;
+    cout << "Enter your age: ";
+    cin >> age;
+    cout << "Hello, " << name << "! You are " << age << " years old." << endl;
+    return 0;
+}
+</code></pre>
+</div>
+
+<!-- 2. Data Types & Variables -->
+<div class="card" data-title="Data Types & Variables">
+  <div class="card-head">
+    <h3>2. Data Types & Variables</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Data types specify what kind of data a variable can hold. Common built-in types include <code>int</code>, <code>char</code>, <code>float</code>, <code>double</code>, and <code>bool</code>. Variables must be declared before use. Constants declared with <code>const</code> or <code>constexpr</code> cannot be changed after initialization. Type modifiers control size and range.</p>
+
+  <p><strong>Example Question:</strong> Write a program demonstrating constants and type casting.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp2">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="cpp2" class="language-cpp">
+#include <iostream>
+using namespace std;
+
+int main() {
+    const double PI = 3.14159;
+    int radius = 5;
+    double area = PI * radius * radius;
+    cout << "Area of circle: " << area << endl;
+
+    double num = 7.8;
+    int converted = static_cast<int>(num);
+    cout << "Converted value: " << converted << endl;
+    return 0;
+}
+</code></pre>
+</div>
+
+<!-- 3. Operators -->
+<div class="card" data-title="Operators">
+  <div class="card-head">
+    <h3>3. Operators</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p>
+    Operators are symbols that perform operations on variables and values. C++ supports arithmetic, relational, logical, bitwise, assignment, and conditional operators.
+  </p>
+
+  <ul>
+    <li><b>Arithmetic:</b> +, -, *, /, %</li>
+    <li><b>Relational:</b> ==, !=, &gt;, &lt;, &gt;=, &lt;=</li>
+    <li><b>Logical:</b> &&, ||, !</li>
+    <li><b>Bitwise:</b> &, |, ^, ~, &lt;&lt;, &gt;&gt;</li>
+    <li><b>Ternary:</b> ?:</li>
+  </ul>
+
+  <p><strong>Example Question:</strong> Write a program to demonstrate arithmetic and logical operators.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp3">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="cpp3" class="language-cpp">
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 10, b = 3;
+    cout << "a + b = " << a + b << endl;
+    cout << "(a > b && b > 0) = " << ((a > b) && (b > 0)) << endl;
+    return 0;
+}
+</code></pre>
+</div>
+
+<!-- 4. Control Flow -->
+<div class="card" data-title="Control Flow">
+  <div class="card-head">
+    <h3>4. Control Flow</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    Control flow statements determine the order of execution. Includes if-else, switch, loops, break, and continue.
+  </p>
+
+  <p><strong>Example Question:</strong> Print all even numbers from 1 to 20.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp4">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="cpp4" class="language-cpp">
+#include <iostream>
+using namespace std;
+
+int main() {
+    for(int i = 1; i <= 20; i++) {
+        if(i % 2 == 0)
+            cout << i << " ";
+    }
+    return 0;
+}
+</code></pre>
+</div>
+
+<!-- 5. Functions -->
+<div class="card" data-title="Functions">
+  <div class="card-head">
+    <h3>5. Functions</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    Functions are reusable blocks of code that perform a task. They improve readability and reduce duplication.
+  </p>
+
+  <p><strong>Example Question:</strong> Write a function to calculate factorial using recursion.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp5">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="cpp5" class="language-cpp">
+#include <iostream>
+using namespace std;
+
+int factorial(int n) {
+    if(n <= 1) return 1;
+    return n * factorial(n - 1);
+}
+
+int main() {
+    cout << factorial(5);
+    return 0;
+}
+</code></pre>
+</div>
+
+<!-- 6. Arrays & Strings -->
+<div class="card" data-title="Arrays & Strings">
+  <div class="card-head">
+    <h3>6. Arrays & Strings</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    Arrays store multiple values of the same type in contiguous memory. Strings can be handled using the <code>string</code> class.
+  </p>
+
+  <p><strong>Example Question:</strong> Input numbers into an array and print them.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp6">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="cpp6" class="language-cpp">
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[3] = {1,2,3};
+    for(int i : arr)
+        cout << i << " ";
+    return 0;
+}
+</code></pre>
+</div>
+
+<!-- 7. Pointers -->
+<div class="card" data-title="Pointers">
+  <div class="card-head">
+    <h3>7. Pointers</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Pointers are variables that store the memory address of another variable. They allow direct memory manipulation and efficient data handling. Key concepts include pointer declaration, initialization, pointer arithmetic, pointers to arrays, and pointers to pointers. The <code>nullptr</code> keyword represents a null pointer. Dynamic memory allocation is done using <code>new</code> and <code>delete</code>.</p>
+
+  <p><strong>Example Question:</strong> Write a program to swap two numbers using pointers.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp7">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="cpp7" class="language-cpp">
+#include <iostream>
+using namespace std;
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int x = 10, y = 20;
+    swap(&x, &y);
+    cout << x << " " << y;
+    return 0;
+}
+</code></pre>
+</div>
+
+<!-- 8. References -->
+<div class="card" data-title="References">
+  <div class="card-head">
+    <h3>8. References</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  References are aliases for existing variables. They must be initialized when declared and cannot be null. References simplify pass-by-reference without explicit pointers.</p>
+
+  <p><strong>Example Question:</strong> Increment a number using reference parameters.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp8">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="cpp8" class="language-cpp">
+#include <iostream>
+using namespace std;
+
+void increment(int &x) {
+    x++;
+}
+
+int main() {
+    int a = 5;
+    increment(a);
+    cout << a;
+    return 0;
+}
+</code></pre>
+</div>
+
+<!-- 9. Dynamic Memory & Storage Classes -->
+<div class="card" data-title="Dynamic Memory">
+  <div class="card-head">
+    <h3>9. Dynamic Memory & Storage Classes</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Dynamic memory allocation allows memory to be allocated at runtime using <code>new</code> and released using <code>delete</code>. Storage classes define scope, lifetime, and visibility of variables such as <code>auto</code>, <code>static</code>, <code>extern</code>, and <code>register</code>.</p>
+
+  <p><strong>Example Question:</strong> Create a dynamic array and calculate its sum.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp9">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="cpp9" class="language-cpp">
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, sum = 0;
+    cin >> n;
+    int *arr = new int[n];
+    for(int i=0;i<n;i++) {
+        cin >> arr[i];
+        sum += arr[i];
+    }
+    cout << sum;
+    delete[] arr;
+    return 0;
+}
+</code></pre>
+</div>
+
+<!-- 10. Structures & Enumerations -->
+<div class="card" data-title="Structures & Enumerations">
+  <div class="card-head">
+    <h3>10. Structures & Enumerations</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Structures group different data types under one name. Enumerations define a set of named constants. <code>enum class</code> provides type safety.</p>
+
+  <p><strong>Example Question:</strong> Store and display student information using struct.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp10">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="cpp10" class="language-cpp">
+#include <iostream>
+using namespace std;
+
+struct Student {
+    string name;
+    int age;
+};
+
+int main() {
+    Student s = {"Alice", 20};
+    cout << s.name << " " << s.age;
+    return 0;
+}
+</code></pre>
+</div>
+
+<!-- 11. Object-Oriented Programming -->
+<div class="card" data-title="OOP">
+  <div class="card-head">
+    <h3>11. Object-Oriented Programming (OOP)</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  OOP models real-world entities using classes and objects. Core principles include encapsulation, inheritance, polymorphism, and abstraction.</p>
+
+  <p><strong>Example Question:</strong> Create a base class and override a function in a derived class.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp11">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="cpp11" class="language-cpp">
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    virtual void show() {
+        cout << "Base";
+    }
+};
+
+class Derived : public Base {
+public:
+    void show() override {
+        cout << "Derived";
+    }
+};
+
+int main() {
+    Base* b = new Derived();
+    b->show();
+    delete b;
+    return 0;
+}
+</code></pre>
+</div>
+
+<!-- 12. Operator Overloading -->
+<div class="card" data-title="Operator Overloading">
+  <div class="card-head">
+    <h3>12. Operator Overloading</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+  Operator overloading allows redefining operators for user-defined types. It improves readability and intuitive object interaction.</p>
+
+  <p><strong>Example Question:</strong> Overload the + operator for a class.</p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp12">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="cpp12" class="language-cpp">
+#include <iostream>
+using namespace std;
+
+class Num {
+public:
+    int x;
+    Num(int a) : x(a) {}
+    Num operator+(Num n) {
+        return Num(x + n.x);
+    }
+};
+
+int main() {
+    Num a(5), b(7);
+    Num c = a + b;
+    cout << c.x;
+    return 0;
+}
+</code></pre>
+</div>
+
+<!-- 19. Advanced Topics -->
+<div class="card" data-title="Advanced Topics">
+  <div class="card-head">
+    <h3>19. Advanced Topics</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Advanced C++ topics include namespaces for modular programming, modern type
+    casting (<code>static_cast</code>, <code>dynamic_cast</code>,
+    <code>const_cast</code>, <code>reinterpret_cast</code>), function pointers,
+    virtual tables (vtable), memory management internals (stack vs heap),
+    design patterns, macros, and understanding the compilation process.
+  </p>
+
+  <p>
+    <strong>Example Question:</strong>
+    Use function pointers to perform different mathematical operations.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp19">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;">
+<code id="cpp19">
+#include &lt;iostream&gt;
+using namespace std;
+
+int add(int a, int b) { return a + b; }
+int multiply(int a, int b) { return a * b; }
+
+int main() {
+    int (*operation)(int, int);
+
+    operation = add;
+    cout &lt;&lt; "Add: " &lt;&lt; operation(5, 3) &lt;&lt; endl;
+
+    operation = multiply;
+    cout &lt;&lt; "Multiply: " &lt;&lt; operation(5, 3) &lt;&lt; endl;
+
+    return 0;
+}
+</code>
+  </pre>
+</div>
+
+<!-- 20. Projects / Real-world Applications -->
+<div class="card" data-title="Projects and Applications">
+  <div class="card-head">
+    <h3>20. Projects / Real-world Applications</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p>
+    Building projects helps consolidate C++ concepts and prepares you for
+    real-world problem solving. Common projects include calculators, student
+    management systems, banking applications, inventory systems, games, and
+    modern C++ applications using STL, smart pointers, and OOP.
+  </p>
+
+  <p>
+    <strong>Example Question:</strong>
+    Build a mini calculator using switch-case.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="cpp20">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;">
+<code id="cpp20">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    char op;
+    double a, b;
+
+    cout &lt;&lt; "Enter operator (+, -, *, /): ";
+    cin &gt;&gt; op;
+
+    cout &lt;&lt; "Enter two numbers: ";
+    cin &gt;&gt; a &gt;&gt; b;
+
+    switch(op) {
+        case '+': cout &lt;&lt; a + b; break;
+        case '-': cout &lt;&lt; a - b; break;
+        case '*': cout &lt;&lt; a * b; break;
+        case '/':
+            if(b != 0) cout &lt;&lt; a / b;
+            else cout &lt;&lt; "Division by zero!";
+            break;
+        default:
+            cout &lt;&lt; "Invalid operator";
+    }
+    return 0;
+}
+</code>
+  </pre>
+</div>
+
+<!-- ======================= CODE MODAL ======================= -->
+<div class="code-modal" id="codeModal">
+  <div class="code-modal-box">
+    <button class="close-modal">&times;</button>
+    <pre><code id="modalCode"></code></pre>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

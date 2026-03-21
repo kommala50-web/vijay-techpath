@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Resources - TechPath</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+
+/* SAME THEME */
+:root{
+  --bg:#f7e1d7;
+  --hero1:#e3d5ca;
+  --hero2:#dedbd2;
+  --card:#ffffff;
+  --soft:#f1ebe5;
+  --border:#d7cfc6;
+  --text:#2a2523;
+  --muted:#6b5f59;
+  --accent:#8b5e34;
+  --accent-light:#a47148;
+}
+
+body{
+  background:linear-gradient(135deg,var(--hero1),var(--hero2));
+  color:var(--text);
+}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 50px;
+  background:rgba(255,255,255,.65);
+  backdrop-filter:blur(10px);
+  box-shadow:0 4px 20px rgba(0,0,0,.08);
+}
+
+header h1{
+  color:var(--accent);
+  font-size:28px;
+}
+
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  margin-left:25px;
+  font-weight:600;
+}
+
+nav a:hover{
+  color:var(--accent-light);
+}
+
+/* PATH */
+#currentPath{
+  text-align:center;
+  font-size:18px;
+  margin:30px 0;
+  color:var(--accent);
+  font-weight:600;
+}
+
+/* BUTTONS */
+.back-btn,.home-btn{
+  margin-left:50px;
+  margin-top:20px;
+  background:var(--accent);
+  color:#fff;
+  padding:10px 18px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+}
+
+.back-btn:hover,.home-btn:hover{
+  background:var(--accent-light);
+}
+
+/* CARDS */
+.card-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  max-width:1200px;
+  margin:40px auto;
+  padding:0 20px;
+}
+
+.card{
+  background:var(--card);
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  cursor:pointer;
+  border:1px solid var(--border);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 18px 35px rgba(0,0,0,.12);
+}
+
+.card h3{
+  color:var(--accent);
+}
+
+/* EXTRA SECTIONS */
+.section{
+  max-width:1100px;
+  margin:40px auto;
+  padding:0 20px;
+  text-align:center;
+}
+
+.section h2{
+  color:var(--accent);
+  margin-bottom:20px;
+}
+
+/* FOOTER */
+footer{
+  background:#bfae9f;
+  padding:40px 20px;
+}
+.footer-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+}
+footer h3,footer h4{margin-bottom:10px}
+footer a{text-decoration:none;color:#2a2523}
+footer a:hover{color:var(--accent)}
+.footer-bottom{
+  text-align:center;
+  margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>TechPath</h1>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../career.html">Career Paths</a>
+    <a href="../skills.html">Skill Roadmaps</a>
+    <a href="../company.html">Company Questions</a>
+    <a href="../resources.html">Resources</a>
+  </nav>
+</header>
+
+<button class="home-btn" id="homeBtn" style="display:none;">🏠 Home</button>
+<button class="back-btn" id="backBtn" style="display:none;">← Back</button>
+
+<div id="currentPath"></div>
+
+<section class="card-container" id="cardContainer"></section>
+
+<!-- EXTRA CONTENT -->
+<section class="section">
+  <h2>📊 Resource Overview</h2>
+  <div class="card-container">
+    <div class="card"><h3>120+</h3><p>PDFs</p></div>
+    <div class="card"><h3>25+</h3><p>Subjects</p></div>
+    <div class="card"><h3>4</h3><p>Years</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>🔥 Popular Subjects</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:15px;justify-content:center;">
+    <span class="card">DSA</span>
+    <span class="card">Java</span>
+    <span class="card">DBMS</span>
+    <span class="card">OS</span>
+    <span class="card">COA</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>TechPath</h3>
+      <p>Helping students become placement-ready.</p>
+    </div>
+    <div>
+      <h4>Links</h4>
+      <p><a href="../career.html">Career</a></p>
+      <p><a href="../skills.html">Skills</a></p>
+      <p><a href="../company.html">Companies</a></p>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <p>Notes</p>
+      <p>PYQ</p>
+      <p>Assignments</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>kommala50@gmail.com</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 TechPath — Keep Learning 🚀
+  </div>
+</footer>
+
+<script>
+
+/* DATA */
+const data = {
+  "CSE": {
+
+    "1st_year": {
+      "maths-1": { "Notes": ["unit1.pdf","unit2.pdf","unit3.pdf","unit4.pdf","unit5.pdf"], "PYQ": ["Maths_PYQ.pdf"], "Assignments": ["Assignment-1.pdf","Assignment-2.pdf","Assignment-3.pdf","Assignment-4.pdf","Assignment-5.pdf"], "mids":["mid1.pdf","mid2.pdf",], "question_bank":["question_bank.pdf"] },
+      "engineering-Graphics": { "Notes": ["UNIT-1.pdf","UNIT-2.pdf","UNIT-3.PDF","UNIT4.PDF","UNIT5.PDF"], "PYQ": ["COA_PYQ.pdf"], "Assignments": ["Assignment1.pdf","Assignment2.pdf","Assignment3.pdf","Assignment4.pdf","Assignment5.pdf"], "mids":["mid1.pdf","mid2.pdf"], "question_bank":["question_bank.pdf"] },
+      "Applied-physics": { "Notes": ["UNIT1.pdf","UNIT2.pdf","UNIT3.pdf","UNIT4.pdf","UNIT5.pdf"], "PYQ": ["DE_PYQ.pdf"], "Assignments": ["Assignment1.pdf","Assignment2.pdf","Assignment3.pdf","Assignment4.pdf","Assignment5.pdf"], "mids":["mid1.pdf","mid2.pdf"] ,"question_bank":["question_bank.pdf"]},
+      "BEE": { "Notes": ["UNIT1.pdf","UNIT2.pdf","UNIT3.pdf","UNIT4.pdf","UNIT5.pdf"], "PYQ": ["Java_PYQ.pdf"], "Assignments": ["Assignment1.pdf","Assignment2.pdf","Assignment3.pdf","Assignment4.pdf","Assignment5.pdf"], "mids":["mid1.pdf","mid2.pdf"] },
+      "Maths-2": { "Notes": ["UNIT1.pdf","UNIT2.pdf","UNIT2.1.pdf","UNIT3.pdf","UNIT4.pdf","UNIT5.pdf"], "PYQ": ["DSA_PYQ.pdf"], "Assignments": ["Assignment3.pdf"], "mids":["mid1.pdf","mid2.pdf","sem.pdf","topics.pdf"],"question_bank":["question_bank.pdf"] },
+      "Chemistry": { "Notes": ["unit1.pdf","unit2.pdf","unit2.1.pdf","unit3.pdf","unit4.pdf","unit5.pdf"], "PYQ": ["Maths_PYQ.pdf"], "Assignments": ["Assignment-1.pdf","Assignment-2.pdf","Assignment-3.pdf","Assignment-4.pdf","Assignment-5.pdf"], "mids":["mid1.pdf","mid2.pdf"] ,"question_bank":["question_bank.pdf"] },
+      "EDC": { "Notes": ["UNIT-1.pdf","UNIT-2.pdf","UNIT2.1","UNIT-3.PDF","UNIT4.PDF","UNIT5.PDF"], "PYQ": ["COA_PYQ.pdf"], "Assignments": ["Assignment1.pdf","Assignment2.pdf","Assignment3.pdf","Assignment4.pdf","Assignment5.pdf"], "mids":["mid1.pdf","mid2.pdf"], "QUESTION_BANK":["EDC_Question_Bank.pdf"] },
+      "C-PROGRAM": { "Notes": ["UNIT1.pdf","UNIT2.pdf","UNIT3.pdf","UNIT4.pdf","UNIT5.pdf"], "PYQ": ["DE_PYQ.pdf"], "Assignments": ["Assignment1.pdf","Assignment2.pdf","Assignment3.pdf","Assignment4.pdf","Assignment5.pdf"], "mids":["mid1.pdf","mid2.pdf"] },
+      "english": { "Notes": ["UNIT1.pdf","UNIT2.pdf","UNIT3.pdf","UNIT4.pdf","UNIT5.pdf"], "PYQ": ["Java_PYQ.pdf"], "Assignments": ["Assignment1.pdf","Assignment2.pdf","Assignment3.pdf","Assignment4.pdf","Assignment5.pdf"], "mids":["mid1.pdf","mid2.pdf"] },
+    },
+    
+    "2nd_year": {
+    
+      "Maths": { "Notes": ["unit1.pdf","unit2.pdf","unit3.pdf","unit4.pdf","unit5.pdf"], "PYQ": ["Maths_PYQ.pdf"], "Assignments": ["Assignment-1.pdf","Assignment-2.pdf","Assignment-3.pdf","Assignment-4.pdf","Assignment-5.pdf"], "mids":["mid1.pdf","mid2.pdf"],"question_bank":["question_bank.pdf"] },
+      "COA": { "Notes": ["UNIT-1.pdf","UNIT-2.pdf","UNIT3.PDF","UNIT4.PDF","UNIT5.PDF"], "PYQ": ["COA_PYQ.pdf"], "Assignments": ["Assignment1.pdf","Assignment2.pdf","Assignment3.pdf","Assignment4.pdf","Assignment5.pdf"], "mids":["mid1.pdf","mid1-bits.pdf","mid2.pdf"], "question_bank":["question_bank.pdf"]},
+      "DE": { "Notes": ["UNIT1.pdf","UNIT2.pdf","UNIT3.pdf","UNIT4.pdf","UNIT5.pdf"], "PYQ": ["DE_PYQ.pdf"], "Assignments": ["Assignment1.pdf","Assignment2.pdf","Assignment3.pdf","Assignment4.pdf","Assignment5.pdf"], "mids":["mid1.pdf","mid2.pdf"], "question_bank":["question_bank.pdf"] },
+      "Java": { "Notes": ["UNIT1.pdf","UNIT1-1.pdf","UNIT2.pdf","UNIT2-1.pdf","UNIT2-2.pdf","UNIT3.pdf","UNIT4.pdf","UNIT5.pdf"], "PYQ": ["Java_PYQ.pdf"], "Assignments": ["Assignment1.pdf","Assignment2.pdf","Assignment3.pdf","Assignment4.pdf","Assignment5.pdf"], "mids":["mid1.pdf","mid2.pdf"], "question_bank":["question_bank.pdf"] },
+      "DSA": { "Notes": ["UNIT1.pdf","UNIT2.pdf","UNIT3.pdf","UNIT4.pdf","UNIT5.pdf"], "PYQ": ["DSA_PYQ.pdf"], "Assignments": ["Assignment1.pdf","Assignment2.pdf"], "mids":["mid1.pdf","mid2.pdf"],"question_bank":["question_bank.pdf"] },
+      "COSM": { "Notes": ["UNIT-1.pdf","UNIT-2.pdf","UNIT3.pdf","UNIT4.pdf","UNIT5.pdf"], "PYQ": ["COSM_PYQ.pdf"], "Assignments": ["Assignment1.pdf","Assignment2.pdf"], "mids":["mid1.pdf","mid2.pdf"],"question_bank":["question_bank.pdf"] },
+      "OS": { "Notes": ["UNIT1.pdf","UNIT2.pdf","UNIT3.pdf","UNIT4.pdf","UNIT5.pdf"], "PYQ": ["OS_PYQ.pdf"], "Assignments": ["Assignment1.pdf","Assignment2.pdf"], "mids":["mid1.pdf","mid2.pdf"],"question_bank":["question_bank.pdf"] },
+      "DBMS": { "Notes": ["UNIT1.pdf","UNIT2.pdf","UNIT3.pdf","UNIT4.pdf","UNIT5.pdf"], "PYQ": ["DBMS_PYQ.pdf"], "Assignments": ["Assignment1.pdf","Assignment2.pdf"], "mids":["mid1.pdf","mid2.pdf"],"question_bank":["question_bank.pdf"] },
+      "BUSINESS": { "Notes": ["UNIT1.pdf","UNIT2.pdf","UNIT3.pdf","UNIT4.pdf","UNIT5.pdf"], "PYQ": ["BUSINESS_PYQ.pdf"], "Assignments": ["Assignment1.pdf","Assignment2.pdf"], "mids":["mid1.pdf","mid2.pdf"],"question_bank":["question_bank.pdf"] },
+      "SOFTWARE ENGEENERING": { "Notes": ["UNIT1.pdf","UNIT2.pdf","UNIT3.pdf","UNIT4.pdf","UNIT5.pdf"], "PYQ": ["SOFTEARE_PYQ.pdf"], "Assignments": ["Assignment1.pdf","Assignment2.pdf"], "mids":["mid1.pdf","mid2.pdf"],"question_bank":["question_bank.pdf"] }
+    },
+    
+    "3rd_year": {},
+    "4th_year": {}
+  },
+  "AIML": { "1st_year": {}, "2nd_year": {}, "3rd_year": {}, "4th_year": {} },
+  "Cyber": { "1st_year": {}, "2nd_year": {}, "3rd_year": {}, "4th_year": {} },
+  "ECE": { "1st_year": {}, "2nd_year": {}, "3rd_year": {}, "4th_year": {} },
+  "Mechanical": { "1st_year": {}, "2nd_year": {}, "3rd_year": {}, "4th_year": {} }
+};
+
+let currentLevel='branch';
+let selectedBranch='',selectedYear='',selectedSubject='',selectedType='';
+
+const container=document.getElementById('cardContainer');
+const backBtn=document.getElementById('backBtn');
+const homeBtn=document.getElementById('homeBtn');
+const pathDisplay=document.getElementById('currentPath');
+
+function updatePath(){
+  let p=[];
+  if(selectedBranch)p.push(selectedBranch);
+  if(selectedYear)p.push(selectedYear);
+  if(selectedSubject)p.push(selectedSubject);
+  if(selectedType)p.push(selectedType);
+  pathDisplay.innerHTML=p.join(" → ");
+}
+
+function showCards(levelData,level){
+  container.innerHTML='';
+
+  if(level==='pdfs'){
+    levelData.forEach(pdf=>{
+      const c=document.createElement('div');
+      c.className='card';
+      c.innerHTML=`<h3>${pdf}</h3>`;
+      c.onclick=()=>window.open(`resources/${selectedBranch}/${selectedYear}/${selectedSubject}/${selectedType}/${pdf}`);
+      container.appendChild(c);
+    });
+    currentLevel='pdfs';
+    backBtn.style.display='inline-block';
+    return;
+  }
+
+  for(let key in levelData){
+    const c=document.createElement('div');
+    c.className='card';
+    c.innerHTML=`<h3>${key}</h3>`;
+    c.onclick=()=>{
+      if(level==='branch'){selectedBranch=key;showCards(data[key],'year')}
+      else if(level==='year'){selectedYear=key;showCards(data[selectedBranch][selectedYear],'subject')}
+      else if(level==='subject'){selectedSubject=key;showCards(data[selectedBranch][selectedYear][selectedSubject],'type')}
+      else if(level==='type'){selectedType=key;showCards(data[selectedBranch][selectedYear][selectedSubject][selectedType],'pdfs')}
+      updatePath();
+    };
+    container.appendChild(c);
+  }
+
+  currentLevel=level;
+  backBtn.style.display=(level!=='branch')?'inline-block':'none';
+}
+
+backBtn.onclick=()=>{
+  if(currentLevel==='pdfs')showCards(data[selectedBranch][selectedYear][selectedSubject],'type');
+  else if(currentLevel==='type')showCards(data[selectedBranch][selectedYear],'subject');
+  else if(currentLevel==='subject')showCards(data[selectedBranch],'year');
+  else showCards(data,'branch');
+};
+
+homeBtn.onclick=()=>window.location.href="../index.html";
+
+showCards(data,'branch');
+
+</script>
+
+</body>
+</html>

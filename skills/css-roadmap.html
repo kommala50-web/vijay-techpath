@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CSS Full Roadmap - TechPath</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- ======================= NAVBAR ======================= -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">
+      <span class="material-symbols-outlined">terminal</span>
+    </div>
+    <h1 class="brand">TechPath</h1>
+
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#">Courses</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../career.html">Career</a>
+    </nav>
+  </div>
+
+  <div class="topbar-right">
+    <div class="search-wrap">
+      <span class="material-symbols-outlined search-icon">search</span>
+      <input id="searchInput" type="text" placeholder="Search topics..." />
+      <kbd class="kbd">Ctrl K</kbd>
+    </div>
+    <div class="avatar"></div>
+  </div>
+</header>
+
+<!-- ======================= MAIN ======================= -->
+<main class="container">
+
+  <div class="top-actions">
+    <a class="btn btn-secondary" href="../skills.html">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Back to Skills
+    </a>
+
+    <div class="actions-right">
+      <a class="btn btn-ghost" href="../pdf/CSS_roadmap.pdf" download>
+        <span class="material-symbols-outlined">download</span>
+        <span class="hide-sm">Download PDF</span>
+      </a>
+
+      <a class="btn btn-ghost" href="https://www.youtube.com/watch?v=1Rs2ND1ryYc" target="_blank">
+        <span class="material-symbols-outlined">play_circle</span>
+        <span class="hide-sm">Video</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ======================= HERO ======================= -->
+  <section class="hero">
+    <h2>CSS Full Roadmap</h2>
+    <p>
+      Learn CSS from basics to advanced layout, animation, responsiveness,
+      and modern UI techniques. Click <b>Show Code</b> to view examples.
+    </p>
+  </section>
+
+  <!-- ======================= GRID ======================= -->
+  <div class="grid" id="topicsGrid">
+
+<!-- 1. Introduction to CSS -->
+<div class="card" data-title="Introduction to CSS">
+  <div class="card-head">
+    <h3>1. Introduction to CSS</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    CSS (Cascading Style Sheets) is used to style HTML elements. It controls
+    colors, fonts, layouts, spacing, animations, and responsiveness while
+    separating content from presentation.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css1">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css1">
+body {
+  background-color: lightblue;
+}
+h1 {
+  color: navy;
+}
+  </code></pre>
+</div>
+
+<!-- 2. CSS Syntax & Selectors -->
+<div class="card" data-title="CSS Selectors">
+  <div class="card-head">
+    <h3>2. CSS Syntax & Selectors</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    CSS selectors target HTML elements. Common selectors include element,
+    class, ID, group, and descendant selectors.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css2">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css2">
+h1 { color: red; }
+.intro { font-size: 18px; }
+#main { background-color: yellow; }
+div p { color: green; }
+  </code></pre>
+</div>
+
+<!-- 3. Colors & Backgrounds -->
+<div class="card" data-title="Colors and Backgrounds">
+  <div class="card-head">
+    <h3>3. Colors & Backgrounds</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    CSS supports colors via keywords, HEX, RGB, HSL and backgrounds using
+    images, gradients, size, and positioning.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css3">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css3">
+div {
+  background: linear-gradient(to right, red, yellow);
+}
+  </code></pre>
+</div>
+
+<!-- 4. Fonts & Text -->
+<div class="card" data-title="Fonts and Text">
+  <div class="card-head">
+    <h3>4. Fonts & Text</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    Fonts control typography using font-family, size, weight, spacing,
+    alignment, and decoration.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css4">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css4">
+p {
+  font-family: Arial;
+  font-size: 16px;
+  text-align: center;
+}
+  </code></pre>
+</div>
+
+<!-- 5. Box Model -->
+<div class="card" data-title="Box Model">
+  <div class="card-head">
+    <h3>5. Box Model</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    Every element has content, padding, border, and margin.
+    box-sizing controls width calculation.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css5">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css5">
+div {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 10px;
+  box-sizing: border-box;
+}
+  </code></pre>
+</div>
+
+<!-- 6. Display & Visibility -->
+<div class="card" data-title="Display and Visibility">
+  <div class="card-head">
+    <h3>6. Display & Visibility</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p>
+    display controls layout type, visibility hides elements while
+    preserving space.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css6">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css6">
+.hidden { display: none; }
+.invisible { visibility: hidden; }
+  </code></pre>
+</div>
+
+<!-- 7. Positioning -->
+<div class="card" data-title="Positioning">
+  <div class="card-head">
+    <h3>7. Positioning</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    CSS positioning (static, relative, absolute, fixed, sticky) determines how
+    elements are placed in the document. top, left, right, bottom move positioned
+    elements.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css7">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css7">
+div { position: relative; top: 10px; left: 20px; }
+header { position: fixed; top: 0; width: 100%; }
+</code></pre>
+</div>
+
+<!-- 8. Floating & Clear -->
+<div class="card" data-title="Float & Clear">
+  <div class="card-head">
+    <h3>8. Floating & Clear</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    float positions elements left or right. clear prevents elements from wrapping
+    around floated elements. Used in old layout techniques.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css8">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css8">
+img { float: left; margin: 10px; }
+div::after { content: ""; clear: both; display: table; }
+</code></pre>
+</div>
+
+<!-- 9. Flexbox -->
+<div class="card" data-title="Flexbox">
+  <div class="card-head">
+    <h3>9. Flexbox</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Flexbox is a modern layout system for 1D layouts. Flex containers align items
+    horizontally or vertically using flex-direction, justify-content,
+    align-items, flex-wrap, and more.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css9">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css9">
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.item { flex: 1 1 200px; }
+</code></pre>
+</div>
+
+<!-- 10. Grid -->
+<div class="card" data-title="CSS Grid">
+  <div class="card-head">
+    <h3>10. Grid</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    CSS Grid is for 2D layouts with rows and columns. It offers precise control
+    over placement using grid-template-rows, grid-template-columns, grid-gap,
+    and grid-area.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css10">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css10">
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+.item { background-color: lightblue; }
+</code></pre>
+</div>
+
+<!-- 11. Pseudo-classes & Pseudo-elements -->
+<div class="card" data-title="Pseudo Classes & Elements">
+  <div class="card-head">
+    <h3>11. Pseudo-classes & Pseudo-elements</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Pseudo-classes (:hover, :focus, :nth-child) select states.
+    Pseudo-elements (::before, ::after, ::first-letter) insert content or style
+    parts of elements.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css11">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css11">
+a:hover { color: red; }
+li:nth-child(odd) { background: #eee; }
+p::first-letter { font-size: 24px; color: blue; }
+</code></pre>
+</div>
+
+<!-- 12. Transitions -->
+<div class="card" data-title="Transitions">
+  <div class="card-head">
+    <h3>12. Transitions</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    CSS transitions create smooth animations between property changes,
+    specifying duration, timing-function, and delay.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css12">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css12">
+div {
+  background-color: blue;
+  transition: background-color 0.5s ease;
+}
+div:hover { background-color: green; }
+</code></pre>
+</div>
+
+<!-- 13. Animations -->
+<div class="card" data-title="Animations">
+  <div class="card-head">
+    <h3>13. Animations</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    CSS animations use keyframes to create complex motion. Define @keyframes and
+    use animation property for duration, iteration, and timing.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css13">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css13">
+@keyframes slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(100px); }
+}
+div { animation: slide 2s infinite alternate; }
+</code></pre>
+</div>
+
+<!-- 14. Transforms -->
+<div class="card" data-title="Transforms">
+  <div class="card-head">
+    <h3>14. Transforms</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Transform rotates, scales, skews, and translates elements in 2D or 3D space.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css14">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css14">
+div { transform: rotate(45deg); scale: 1.2; }
+</code></pre>
+</div>
+
+<!-- 15. Filters & Effects -->
+<div class="card" data-title="Filters & Effects">
+  <div class="card-head">
+    <h3>15. Filters & Effects</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    CSS filters adjust images or elements (blur, grayscale, brightness).
+    Shadows and opacity create visual effects.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css15">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css15">
+img { filter: grayscale(50%); }
+div { box-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+p { opacity: 0.8; }
+</code></pre>
+</div>
+
+<!-- 16. Units & Measurements -->
+<div class="card" data-title="Units & Measurements">
+  <div class="card-head">
+    <h3>16. Units & Measurements</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    CSS supports px, em, rem, %, vh, vw, fr, and more for flexible and responsive
+    sizing.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css16">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css16">
+div { width: 50%; font-size: 1.2em; margin: 10px 5vw; }
+</code></pre>
+</div>
+
+<!-- 17. Media Queries (Responsive) -->
+<div class="card" data-title="Media Queries">
+  <div class="card-head">
+    <h3>17. Media Queries (Responsive)</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Media queries adapt layout for different screen sizes, devices, and
+    orientations using @media rules.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css17">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css17">
+@media (max-width: 768px) {
+  .container { flex-direction: column; }
+  body { font-size: 14px; }
+}
+</code></pre>
+</div>
+
+<!-- 18. CSS Variables -->
+<div class="card" data-title="CSS Variables">
+  <div class="card-head">
+    <h3>18. CSS Variables</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    CSS variables (custom properties) allow reusability and easier maintenance.
+    Defined with --name and accessed with var(--name).
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css18">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css18">
+:root {
+  --main-color: #00b4d8;
+}
+p { color: var(--main-color); }
+</code></pre>
+</div>
+
+<!-- 19. Gradients -->
+<div class="card" data-title="Gradients">
+  <div class="card-head">
+    <h3>19. Gradients</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    CSS gradients create smooth color transitions. Linear and radial gradients
+    are commonly used for backgrounds and overlays.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css19">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css19">
+div {
+  background: linear-gradient(to right, red, yellow);
+}
+section {
+  background: radial-gradient(circle, blue, lightblue);
+}
+</code></pre>
+</div>
+
+<!-- 20. Shorthand Properties -->
+<div class="card" data-title="Shorthand Properties">
+  <div class="card-head">
+    <h3>20. Shorthand Properties</h3>
+    <span class="badge beginner">Beginner</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Shorthand combines multiple properties into one, like margin, padding,
+    border, font, background, etc.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css20">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css20">
+div {
+  margin: 10px 20px 30px 40px;
+  padding: 5px 10px;
+  border: 2px solid black;
+}
+</code></pre>
+</div>
+
+<!-- 21. CSS Functions -->
+<div class="card" data-title="CSS Functions">
+  <div class="card-head">
+    <h3>21. CSS Functions</h3>
+    <span class="badge intermediate">Intermediate</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    CSS provides functions like calc(), min(), max(), clamp(), and url()
+    for dynamic values.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css21">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css21">
+div { width: calc(100% - 40px); }
+p { font-size: clamp(14px, 2vw, 20px); }
+</code></pre>
+</div>
+
+<!-- 22. Bonus: Accessibility & Best Practices -->
+<div class="card" data-title="Accessibility & Best Practices">
+  <div class="card-head">
+    <h3>22. Bonus: Accessibility & Best Practices</h3>
+    <span class="badge advanced">Advanced</span>
+  </div>
+
+  <p><strong>Description:</strong><br>
+    Use semantic HTML, proper color contrast, readable fonts, responsive
+    layouts, ARIA attributes, and meaningful focus states for accessibility
+    and SEO.
+  </p>
+
+  <button class="btn btn-ghost show-code-btn" data-code="css22">
+    <span class="material-symbols-outlined">code</span> Show Code
+  </button>
+
+  <pre style="display:none;"><code id="css22">
+button { outline: 2px solid #00b4d8; }
+img { alt: "Description of image"; }
+a { focus { outline: 2px dashed blue; } }
+</code></pre>
+</div>
+
+  </div>
+</main>
+
+
+
+
+
+
+<!-- ======================= CODE MODAL ======================= -->
+<div class="code-modal" id="codeModal">
+  <div class="code-modal-box">
+    <button class="close-modal">&times;</button>
+    <pre><code id="modalCode"></code></pre>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
