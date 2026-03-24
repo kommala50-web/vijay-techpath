@@ -1,314 +1,438 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Career Paths - TechPath</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Career Paths | TechPath</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#ede1ce",
+              "on-primary-fixed-variant": "#625b4d",
+              "secondary-fixed-dim": "#ded3c1",
+              "on-tertiary-container": "#5f594e",
+              "on-surface-variant": "#5c605d",
+              "surface-container-lowest": "#ffffff",
+              "background": "#faf9f7",
+              "surface-container": "#edeeeb",
+              "on-primary": "#fff6ec",
+              "surface-bright": "#faf9f7",
+              "tertiary-fixed": "#f9f0e0",
+              "tertiary": "#645e52",
+              "error-container": "#fe8b70",
+              "error": "#9e422c",
+              "surface-tint": "#655d4f",
+              "surface-container-high": "#e6e9e6",
+              "on-primary-container": "#585143",
+              "secondary-container": "#ede1ce",
+              "primary-fixed": "#ede1cf",
+              "primary": "#655d4f",
+              "on-tertiary-fixed-variant": "#6a6457",
+              "on-secondary-fixed": "#453f31",
+              "inverse-primary": "#efe4d2",
+              "surface-container-low": "#f3f4f1",
+              "error-dim": "#5c1202",
+              "surface": "#faf9f7",
+              "primary-fixed-dim": "#ded3c2",
+              "surface-dim": "#d6dbd7",
+              "secondary-dim": "#5a5244",
+              "on-primary-fixed": "#453f32",
+              "secondary": "#665e4f",
+              "primary-container": "#ede1cf",
+              "inverse-on-surface": "#9d9d9b",
+              "inverse-surface": "#0d0e0e",
+              "on-secondary-container": "#585143",
+              "on-error": "#fff7f6",
+              "on-tertiary-fixed": "#4d473c",
+              "tertiary-container": "#f9f0e0",
+              "on-surface": "#2f3331",
+              "surface-variant": "#e0e3e0",
+              "on-background": "#2f3331",
+              "on-error-container": "#742410",
+              "outline": "#777c79",
+              "primary-dim": "#595244",
+              "tertiary-fixed-dim": "#ebe1d2",
+              "outline-variant": "#afb3b0",
+              "on-tertiary": "#fff8ef",
+              "tertiary-dim": "#585247",
+              "on-secondary-fixed-variant": "#625b4c",
+              "on-secondary": "#fff8f0",
+              "surface-container-highest": "#e0e3e0"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
 <style>
-:root{
-  --bg:#ded5cc;
-  --panel:#bcc7c3;
-  --card:#ffffff;
-  --border:#cfc6be;
-  --text:#2c2a28;
-  --muted:#6a625d;
-  --accent:#7a5a3a;
-  --accent-light:#94704e;
-}
-
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Verdana,sans-serif}
-
-body{
-  background:linear-gradient(140deg,var(--bg),var(--panel));
-  color:var(--text);
-  overflow-x:hidden;
-}
-
-/* HEADER (matches homepage style) */
-header{
-  background:rgba(255,255,255,.75);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid #ddd2c9;
-  color:var(--accent);
-  padding:18px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:sticky;
-  top:0;
-  z-index:10;
-  box-shadow:0 6px 18px rgba(0,0,0,.08);
-}
-header h1{font-size:26px;font-weight:700}
-
-nav a{
-  color:var(--text);
-  margin-left:20px;
-  text-decoration:none;
-  font-weight:600;
-  position:relative;
-  transition:.2s;
-}
-nav a::after{
-  content:'';
-  position:absolute;
-  left:0;bottom:-3px;
-  width:0;height:2px;
-  background:var(--accent);
-  transition:.2s;
-}
-nav a:hover{color:var(--accent-light)}
-nav a:hover::after{width:100%}
-
-/* PAGE TITLE */
-.page-title{text-align:center;padding:60px 20px 20px}
-.page-title h2{font-size:34px;color:var(--accent);margin-bottom:6px}
-.page-title p{color:var(--muted)}
-
-/* BACK BUTTON */
-.back-btn{
-  display:inline-block;
-  background:var(--accent);
-  color:#fff;
-  padding:10px 20px;
-  border-radius:10px;
-  font-weight:700;
-  text-decoration:none;
-  margin:22px 0 0 60px;
-  transition:.2s;
-}
-.back-btn:hover{background:var(--accent-light);transform:translateY(-2px)}
-
-/* GRID */
-.career-container{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:22px;
-  padding:40px 50px;
-  max-width:1200px;
-  margin:auto;
-}
-
-.career-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:20px;
-  text-decoration:none;
-  color:inherit;
-  box-shadow:0 8px 20px rgba(0,0,0,.06);
-  transition:.22s;
-}
-.career-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 14px 30px rgba(0,0,0,.09);
-}
-
-/* ICON BADGE (highlighted) */
-.icon-badge{
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:rgba(122,90,58,.14);
-  color:var(--accent);
-  font-size:22px;
-  margin-bottom:10px;
-}
-
-.career-card h3{
-  color:var(--accent);
-  font-size:19px;
-  margin-bottom:6px;
-}
-
-.career-card p{font-size:14px;margin:4px 0;color:#4c4743}
-.salary{margin-top:6px;font-weight:700;color:var(--accent-light)}
-
-/* FOOTER */
-footer{
-  background:#c9c1b8;
-  color:#3c3631;
-  text-align:center;
-  padding:18px;
-  margin-top:40px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  header{flex-direction:column;text-align:center}
-  nav{margin-top:10px}
-  .career-container{padding:20px}
-  .page-title{padding:40px 20px 10px}
-}
-</style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .no-line-rule { border: none !important; }
+    </style>
 </head>
-
-<body>
-
-<header>
-  <h1>TechPath</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="career.html">Career Paths</a>
-    <a href="skills.html">Skill Roadmaps</a>
-    <a href="company.html">Company Questions</a>
-    <a href="resources.html">Resources</a>
-    <a href="about.html">About</a>
-  </nav>
+<body class="bg-background font-body text-on-surface-variant antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-[#faf9f7]/10 backdrop-blur-xl shadow-[0_12px_32px_rgba(47,51,49,0.06)] no-line-rule">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-[#4D4639] dark:text-[#fff6ec] font-headline">TechPath</div>
+<div class="hidden md:flex items-center gap-8 font-manrope font-semibold tracking-tight text-sm">
+<a class="text-[#5c605d] hover:text-[#4D4639] transition-colors duration-300" href="index.html">Home</a>
+<a class="text-[#4D4639] border-b-2 border-[#655d4f] pb-1 font-bold" href="career.html">Career Paths</a>
+<a class="text-[#5c605d] hover:text-[#4D4639] transition-colors duration-300" href="skills.html">Skill Roadmaps</a>
+<a class="text-[#5c605d] hover:text-[#4D4639] transition-colors duration-300" href="company.html">Company Questions</a>
+<a class="text-[#5c605d] hover:text-[#4D4639] transition-colors duration-300" href="resources.html">Resources</a>
+<a class="text-[#5c605d] hover:text-[#4D4639] transition-colors duration-300" href="about.html">About</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-md font-manrope font-semibold text-sm hover:bg-primary-dim transition-all active:scale-95">Sign In</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="pt-32 pb-20 px-8">
+<div class="max-w-4xl mx-auto text-center">
+<a class="inline-flex items-center gap-2 text-primary font-semibold text-sm mb-8 hover:opacity-80 transition-opacity" href="index.html">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+                Back to Home
+            </a>
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold text-on-surface tracking-tighter mb-6">
+                Explore IT Career Paths
+            </h1>
+<p class="text-xl text-on-surface-variant leading-relaxed mb-10 max-w-2xl mx-auto">
+                Find your dream role and learn what skills industry-leading companies expect from modern tech professionals.
+            </p>
+<div class="h-1 w-24 bg-gradient-to-r from-primary to-transparent mx-auto rounded-full"></div>
+</div>
+<!-- Decorative subtle gradient glow -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-primary/5 blur-[120px] -z-10 rounded-full"></div>
 </header>
-
-<section class="page-title">
-  <h2>Explore IT Career Paths</h2>
-  <p>Find your dream role and learn what skills companies expect</p>
+<!-- Career Cards Grid -->
+<main class="max-w-7xl mx-auto px-8 py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Software Engineer -->
+<a class="group relative glass-card p-8 rounded-xl shadow-[0_12px_32px_rgba(47,51,49,0.06)] hover:-translate-y-2 transition-all duration-500 overflow-hidden block text-inherit" href="career/software.html">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors"></div>
+<div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-primary-dim flex items-center justify-center text-on-primary mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">Software Engineer</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Designing and building robust software systems and applications that solve complex problems.</p>
+<div class="space-y-4">
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Core Skills</span>
+<p class="text-sm font-semibold text-primary mt-1">Java, Python, C++, Data Structures, Algorithms</p>
+</div>
+<div class="pt-4 border-t border-surface-container-high no-line-rule bg-surface-container-low/30 p-3 rounded-lg">
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Avg. Salary</span>
+<p class="text-lg font-bold text-on-surface">$105k - $165k</p>
+</div>
+</div>
+</a>
+<!-- Frontend Developer -->
+<a class="group relative glass-card p-8 rounded-xl shadow-[0_12px_32px_rgba(47,51,49,0.06)] hover:-translate-y-2 transition-all duration-500 overflow-hidden block text-inherit" href="career/frontend.html">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors"></div>
+<div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-primary-dim flex items-center justify-center text-on-primary mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="web_asset">web_asset</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">Frontend Developer</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Creating beautiful, interactive, and responsive user interfaces for modern web applications.</p>
+<div class="space-y-4">
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Core Skills</span>
+<p class="text-sm font-semibold text-primary mt-1">React, TypeScript, Tailwind CSS, Next.js, Web Vitals</p>
+</div>
+<div class="bg-surface-container-low/30 p-3 rounded-lg">
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Avg. Salary</span>
+<p class="text-lg font-bold text-on-surface">$95k - $150k</p>
+</div>
+</div>
+</a>
+<!-- Backend Developer -->
+<a class="group relative glass-card p-8 rounded-xl shadow-[0_12px_32px_rgba(47,51,49,0.06)] hover:-translate-y-2 transition-all duration-500 overflow-hidden block text-inherit" href="career/backend.html">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors"></div>
+<div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-primary-dim flex items-center justify-center text-on-primary mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">Backend Developer</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Building the server-side logic, databases, and APIs that power the digital world.</p>
+<div class="space-y-4">
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Core Skills</span>
+<p class="text-sm font-semibold text-primary mt-1">Node.js, PostgreSQL, Redis, GraphQL, Docker</p>
+</div>
+<div class="bg-surface-container-low/30 p-3 rounded-lg">
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Avg. Salary</span>
+<p class="text-lg font-bold text-on-surface">$100k - $160k</p>
+</div>
+</div>
+</a>
+<!-- Full Stack Developer -->
+<a class="group relative glass-card p-8 rounded-xl shadow-[0_12px_32px_rgba(47,51,49,0.06)] hover:-translate-y-2 transition-all duration-500 overflow-hidden block text-inherit" href="career/fullstack.html">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors"></div>
+<div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-primary-dim flex items-center justify-center text-on-primary mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">Full Stack Developer</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Bridging the gap between front and back end to deliver complete product experiences.</p>
+<div class="space-y-4">
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Core Skills</span>
+<p class="text-sm font-semibold text-primary mt-1">MERN/T3 Stack, System Design, REST APIs, DevOps</p>
+</div>
+<div class="bg-surface-container-low/30 p-3 rounded-lg">
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Avg. Salary</span>
+<p class="text-lg font-bold text-on-surface">$110k - $175k</p>
+</div>
+</div>
+</a>
+<!-- DevOps Engineer -->
+<a class="group relative glass-card p-8 rounded-xl shadow-[0_12px_32px_rgba(47,51,49,0.06)] hover:-translate-y-2 transition-all duration-500 overflow-hidden block text-inherit" href="career/devops.html">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors"></div>
+<div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-primary-dim flex items-center justify-center text-on-primary mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">DevOps Engineer</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Streamlining development cycles through automation, CI/CD, and infrastructure management.</p>
+<div class="space-y-4">
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Core Skills</span>
+<p class="text-sm font-semibold text-primary mt-1">Kubernetes, Terraform, AWS, Jenkins, Bash Scripting</p>
+</div>
+<div class="bg-surface-container-low/30 p-3 rounded-lg">
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Avg. Salary</span>
+<p class="text-lg font-bold text-on-surface">$120k - $185k</p>
+</div>
+</div>
+</a>
+<!-- Data Scientist -->
+<a class="group relative glass-card p-8 rounded-xl shadow-[0_12px_32px_rgba(47,51,49,0.06)] hover:-translate-y-2 transition-all duration-500 overflow-hidden block text-inherit" href="career/datascientist.html">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors"></div>
+<div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-primary-dim flex items-center justify-center text-on-primary mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">Data Scientist</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Extracting actionable insights from data to drive business decisions and predictions.</p>
+<div class="space-y-4">
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Core Skills</span>
+<p class="text-sm font-semibold text-primary mt-1">Python, R, SQL, Statistics, Pandas, Tableau</p>
+</div>
+<div class="bg-surface-container-low/30 p-3 rounded-lg">
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Avg. Salary</span>
+<p class="text-lg font-bold text-on-surface">$115k - $170k</p>
+</div>
+</div>
+</a>
+<!-- AI / ML Engineer -->
+<a class="group relative glass-card p-8 rounded-xl shadow-[0_12px_32px_rgba(47,51,49,0.06)] hover:-translate-y-2 transition-all duration-500 overflow-hidden block text-inherit" href="career/ai.html">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors"></div>
+<div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-primary-dim flex items-center justify-center text-on-primary mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">AI / ML Engineer</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Designing and implementing intelligent algorithms and machine learning models.</p>
+<div class="space-y-4">
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Core Skills</span>
+<p class="text-sm font-semibold text-primary mt-1">PyTorch, TensorFlow, NLP, Neural Networks</p>
+</div>
+<div class="bg-surface-container-low/30 p-3 rounded-lg">
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Avg. Salary</span>
+<p class="text-lg font-bold text-on-surface">$130k - $210k</p>
+</div>
+</div>
+</a>
+<!-- Mobile App Developer -->
+<a class="group relative glass-card p-8 rounded-xl shadow-[0_12px_32px_rgba(47,51,49,0.06)] hover:-translate-y-2 transition-all duration-500 overflow-hidden block text-inherit" href="career/mobile.html">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors"></div>
+<div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-primary-dim flex items-center justify-center text-on-primary mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="smartphone">smartphone</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">Mobile Developer</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Building native or cross-platform experiences for the devices in everyone's pocket.</p>
+<div class="space-y-4">
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Core Skills</span>
+<p class="text-sm font-semibold text-primary mt-1">Swift, Kotlin, React Native, Flutter, Firebase</p>
+</div>
+<div class="bg-surface-container-low/30 p-3 rounded-lg">
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Avg. Salary</span>
+<p class="text-lg font-bold text-on-surface">$100k - $155k</p>
+</div>
+</div>
+</a>
+<!-- Cloud Engineer -->
+<a class="group relative glass-card p-8 rounded-xl shadow-[0_12px_32px_rgba(47,51,49,0.06)] hover:-translate-y-2 transition-all duration-500 overflow-hidden block text-inherit" href="career/cloud.html">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors"></div>
+<div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-primary-dim flex items-center justify-center text-on-primary mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="cloud">cloud</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">Cloud Engineer</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Managing complex infrastructure and services in highly scalable cloud environments.</p>
+<div class="space-y-4">
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Core Skills</span>
+<p class="text-sm font-semibold text-primary mt-1">AWS/Azure/GCP, Serverless, IAM, Networking</p>
+</div>
+<div class="bg-surface-container-low/30 p-3 rounded-lg">
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Avg. Salary</span>
+<p class="text-lg font-bold text-on-surface">$125k - $190k</p>
+</div>
+</div>
+</a>
+<!-- Security Engineer -->
+<a class="group relative glass-card p-8 rounded-xl shadow-[0_12px_32px_rgba(47,51,49,0.06)] hover:-translate-y-2 transition-all duration-500 overflow-hidden block text-inherit" href="career/security.html">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors"></div>
+<div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-primary-dim flex items-center justify-center text-on-primary mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">Security Engineer</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Protecting systems, networks, and data from sophisticated cyber threats and breaches.</p>
+<div class="space-y-4">
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Core Skills</span>
+<p class="text-sm font-semibold text-primary mt-1">Pen Testing, Cryptography, SIEM, Compliance</p>
+</div>
+<div class="bg-surface-container-low/30 p-3 rounded-lg">
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Avg. Salary</span>
+<p class="text-lg font-bold text-on-surface">$120k - $195k</p>
+</div>
+</div>
+</a>
+<!-- UI / UX Designer -->
+<a class="group relative glass-card p-8 rounded-xl shadow-[0_12px_32px_rgba(47,51,49,0.06)] hover:-translate-y-2 transition-all duration-500 overflow-hidden block text-inherit" href="career/uiux.html">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors"></div>
+<div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-primary-dim flex items-center justify-center text-on-primary mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="palette">palette</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">UI / UX Designer</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Crafting intuitive user journeys and visual interfaces that delight and empower users.</p>
+<div class="space-y-4">
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Core Skills</span>
+<p class="text-sm font-semibold text-primary mt-1">Figma, User Research, Prototyping, Design Systems</p>
+</div>
+<div class="bg-surface-container-low/30 p-3 rounded-lg">
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Avg. Salary</span>
+<p class="text-lg font-bold text-on-surface">$90k - $145k</p>
+</div>
+</div>
+</a>
+<!-- Product Manager -->
+<a class="group relative glass-card p-8 rounded-xl shadow-[0_12px_32px_rgba(47,51,49,0.06)] hover:-translate-y-2 transition-all duration-500 overflow-hidden block text-inherit" href="career/product.html">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors"></div>
+<div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-primary-dim flex items-center justify-center text-on-primary mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">Product Manager</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Defining the product vision and collaborating across teams to deliver value to users.</p>
+<div class="space-y-4">
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Core Skills</span>
+<p class="text-sm font-semibold text-primary mt-1">Agile, Roadmapping, Market Research, Analytics</p>
+</div>
+<div class="bg-surface-container-low/30 p-3 rounded-lg">
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Avg. Salary</span>
+<p class="text-lg font-bold text-on-surface">$110k - $180k</p>
+</div>
+</div>
+</a>
+<!-- Database Administrator -->
+<a class="group relative glass-card p-8 rounded-xl shadow-[0_12px_32px_rgba(47,51,49,0.06)] hover:-translate-y-2 transition-all duration-500 overflow-hidden block text-inherit" href="career/dba.html">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors"></div>
+<div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-primary-dim flex items-center justify-center text-on-primary mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="storage">storage</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">DB Administrator</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Optimizing and securing the data storage systems that underpin every digital platform.</p>
+<div class="space-y-4">
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Core Skills</span>
+<p class="text-sm font-semibold text-primary mt-1">SQL, NoSQL, Optimization, Backup &amp; Recovery</p>
+</div>
+<div class="bg-surface-container-low/30 p-3 rounded-lg">
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Avg. Salary</span>
+<p class="text-lg font-bold text-on-surface">$95k - $150k</p>
+</div>
+</div>
+</a>
+<!-- Solutions Architect -->
+<a class="group relative glass-card p-8 rounded-xl shadow-[0_12px_32px_rgba(47,51,49,0.06)] hover:-translate-y-2 transition-all duration-500 overflow-hidden block text-inherit" href="career/architect.html">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors"></div>
+<div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-primary-dim flex items-center justify-center text-on-primary mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">Solutions Architect</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Designing high-level technical strategies to solve major enterprise business challenges.</p>
+<div class="space-y-4">
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Core Skills</span>
+<p class="text-sm font-semibold text-primary mt-1">Cloud Architecture, Design Patterns, Stakeholder Mgmt</p>
+</div>
+<div class="bg-surface-container-low/30 p-3 rounded-lg">
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Avg. Salary</span>
+<p class="text-lg font-bold text-on-surface">$140k - $220k</p>
+</div>
+</div>
+</a>
+</div>
+</main>
+<!-- Bottom Section -->
+<section class="mt-20 py-24 bg-surface-container-low">
+<div class="max-w-4xl mx-auto px-8 text-center">
+<h2 class="font-headline text-4xl font-extrabold text-on-surface mb-6 tracking-tight">Which IT Career is Right for You?</h2>
+<p class="text-lg text-on-surface-variant mb-12 leading-relaxed">
+                Take our personalized assessment to match your interests, personality, and logical thinking style with the perfect tech path.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-manrope font-bold shadow-lg shadow-primary/20 hover:bg-primary-dim hover:-translate-y-1 transition-all">Start Assessment</button>
+<button class="bg-surface-container-high text-on-surface px-8 py-4 rounded-xl font-manrope font-bold hover:bg-surface-variant transition-all">Download Path Guide</button>
+</div>
+</div>
 </section>
-
-<a href="index.html" class="back-btn">← Back to HOME</a>
-
-<section class="career-container">
-
-  <a href="career/software.html" class="career-card">
-    <div class="icon-badge"><i class="fa-solid fa-code"></i></div>
-    <h3>Software Engineer</h3>
-    <p><b>Role:</b> Build & maintain apps.</p>
-    <p><b>Skills:</b> Java, Python, DSA.</p>
-    <p><b>Example:</b> Banking systems, tools.</p>
-    <span class="salary">₹8–10 LPA</span>
-  </a>
-
-  <a href="career/frontend.html" class="career-card">
-    <div class="icon-badge"><i class="fa-solid fa-display"></i></div>
-    <h3>Frontend Developer</h3>
-    <p><b>Role:</b> Create UI.</p>
-    <p><b>Skills:</b> HTML, CSS, JS, React.</p>
-    <p><b>Example:</b> Responsive websites.</p>
-    <span class="salary">₹6–8 LPA</span>
-  </a>
-
-  <a href="career/backend.html" class="career-card">
-    <div class="icon-badge"><i class="fa-solid fa-server"></i></div>
-    <h3>Backend Developer</h3>
-    <p><b>Role:</b> APIs & databases.</p>
-    <p><b>Skills:</b> Node, Python, SQL.</p>
-    <p><b>Example:</b> Login systems.</p>
-    <span class="salary">₹8–12 LPA</span>
-  </a>
-
-  <a href="career/fullstack.html" class="career-card">
-    <div class="icon-badge"><i class="fa-solid fa-layer-group"></i></div>
-    <h3>Full Stack Developer</h3>
-    <p><b>Role:</b> Frontend + backend.</p>
-    <p><b>Skills:</b> JS, React, Node.</p>
-    <p><b>Example:</b> Complete apps.</p>
-    <span class="salary">₹7–12 LPA</span>
-  </a>
-
-  <a href="career/devops.html" class="career-card">
-    <div class="icon-badge"><i class="fa-solid fa-gears"></i></div>
-    <h3>DevOps Engineer</h3>
-    <p><b>Role:</b> Automate deployments.</p>
-    <p><b>Skills:</b> Docker, CI/CD, Linux.</p>
-    <p><b>Example:</b> Auto-scaling servers.</p>
-    <span class="salary">₹9–15 LPA</span>
-  </a>
-
-  <a href="career/datascientist.html" class="career-card">
-    <div class="icon-badge"><i class="fa-solid fa-chart-line"></i></div>
-    <h3>Data Scientist</h3>
-    <p><b>Role:</b> Analyze & predict.</p>
-    <p><b>Skills:</b> Python, ML, Pandas.</p>
-    <p><b>Example:</b> Trend prediction.</p>
-    <span class="salary">₹10–15 LPA</span>
-  </a>
-
-  <a href="career/ai.html" class="career-card">
-    <div class="icon-badge"><i class="fa-solid fa-brain"></i></div>
-    <h3>AI / ML Engineer</h3>
-    <p><b>Role:</b> Train ML models.</p>
-    <p><b>Skills:</b> TensorFlow, PyTorch.</p>
-    <p><b>Example:</b> Recommendations.</p>
-    <span class="salary">₹12–20 LPA</span>
-  </a>
-
-  <a href="career/mobile.html" class="career-card">
-    <div class="icon-badge"><i class="fa-solid fa-mobile-screen"></i></div>
-    <h3>Mobile App Developer</h3>
-    <p><b>Role:</b> Build mobile apps.</p>
-    <p><b>Skills:</b> Kotlin, Swift, Flutter.</p>
-    <p><b>Example:</b> Chat apps.</p>
-    <span class="salary">₹6–10 LPA</span>
-  </a>
-
-  <a href="career/cloud.html" class="career-card">
-    <div class="icon-badge"><i class="fa-solid fa-cloud"></i></div>
-    <h3>Cloud Engineer</h3>
-    <p><b>Role:</b> Manage cloud systems.</p>
-    <p><b>Skills:</b> AWS, Azure, GCP.</p>
-    <p><b>Example:</b> SaaS hosting.</p>
-    <span class="salary">₹12–20 LPA</span>
-  </a>
-
-  <a href="career/security.html" class="career-card">
-    <div class="icon-badge"><i class="fa-solid fa-shield-halved"></i></div>
-    <h3>Security Engineer</h3>
-    <p><b>Role:</b> Secure systems.</p>
-    <p><b>Skills:</b> Pentesting, Networks.</p>
-    <p><b>Example:</b> Bug hunting.</p>
-    <span class="salary">₹10–18 LPA</span>
-  </a>
-
-  <a href="career/uiux.html" class="career-card">
-    <div class="icon-badge"><i class="fa-solid fa-pen-ruler"></i></div>
-    <h3>UI / UX Designer</h3>
-    <p><b>Role:</b> Design experiences.</p>
-    <p><b>Skills:</b> Figma, prototyping.</p>
-    <p><b>Example:</b> App layouts.</p>
-    <span class="salary">₹6–12 LPA</span>
-  </a>
-
-  <a href="career/product.html" class="career-card">
-    <div class="icon-badge"><i class="fa-solid fa-sitemap"></i></div>
-    <h3>Product Manager</h3>
-    <p><b>Role:</b> Drive product direction.</p>
-    <p><b>Skills:</b> planning, leadership.</p>
-    <p><b>Example:</b> Feature roadmap.</p>
-    <span class="salary">₹15–25 LPA</span>
-  </a>
-
-  <a href="career/dba.html" class="career-card">
-    <div class="icon-badge"><i class="fa-solid fa-database"></i></div>
-    <h3>Database Administrator</h3>
-    <p><b>Role:</b> Maintain databases.</p>
-    <p><b>Skills:</b> SQL, backups.</p>
-    <p><b>Example:</b> Enterprise DBs.</p>
-    <span class="salary">₹7–12 LPA</span>
-  </a>
-
-  <a href="career/architect.html" class="career-card">
-    <div class="icon-badge"><i class="fa-solid fa-diagram-project"></i></div>
-    <h3>Solutions Architect</h3>
-    <p><b>Role:</b> Design systems.</p>
-    <p><b>Skills:</b> architecture, cloud.</p>
-    <p><b>Example:</b> Large platforms.</p>
-    <span class="salary">₹20–35 LPA</span>
-  </a>
-
-</section>
-
-<section style="max-width:900px;margin:25px auto;text-align:center;">
-  <h2 style="color:var(--accent);margin-bottom:10px;">Which IT Career is Right for You?</h2>
-  <p style="color:var(--muted)">Compare roles and choose smart — not blindly.</p>
-</section>
-
-<footer>
-  Contact: kommala50@gmail.com | © 2025 TechPath
+<!-- Footer -->
+<footer class="w-full py-16 px-8 mt-20 bg-[#f3f4f1] dark:bg-[#2f3331]">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+<div class="col-span-2 md:col-span-1">
+<div class="font-manrope font-black text-lg text-[#4D4639] mb-4">TechPath</div>
+<p class="font-inter text-sm leading-relaxed text-[#5c605d]">© 2024 TechPath. The Digital Atelier for modern engineers.</p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-manrope font-bold text-[#4D4639]">Explore</span>
+<a class="text-[#5c605d] hover:text-[#655d4f] transition-colors font-inter text-sm" href="career.html">Career Paths</a>
+<a class="text-[#5c605d] hover:text-[#655d4f] transition-colors font-inter text-sm" href="skills.html">Skills</a>
+<a class="text-[#5c605d] hover:text-[#655d4f] transition-colors font-inter text-sm" href="#">Salaries</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-manrope font-bold text-[#4D4639]">Platform</span>
+<a class="text-[#5c605d] hover:text-[#655d4f] transition-colors font-inter text-sm" href="resources.html">Resources</a>
+<a class="text-[#5c605d] hover:text-[#655d4f] transition-colors font-inter text-sm" href="roadmaps.html">Roadmaps</a>
+<a class="text-[#5c605d] hover:text-[#655d4f] transition-colors font-inter text-sm" href="#">Community</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-manrope font-bold text-[#4D4639]">Contact</span>
+<a class="text-[#5c605d] hover:text-[#655d4f] transition-colors font-inter text-sm" href="#">Help Center</a>
+<a class="text-[#5c605d] hover:text-[#655d4f] transition-colors font-inter text-sm" href="privacy.html">Privacy</a>
+<a class="text-[#5c605d] hover:text-[#655d4f] transition-colors font-inter text-sm" href="terms.html">Terms</a>
+</div>
+</div>
 </footer>
-
-</body>
-</html>
+</body></html>

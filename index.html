@@ -1,261 +1,310 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO -->
-  <title>TechPath - IT Career Roadmaps & Placement Preparation</title>
-
-  <meta name="description" content="TechPath helps students learn IT careers, coding roadmaps, DSA, and placement preparation step-by-step." />
-  <meta name="keywords" content="IT careers, coding roadmap, DSA, placements, techpath" />
-  <meta name="robots" content="index, follow" />
-  <meta name="google-site-verification" content="CYFaFvRq0XmAtZYp8b9bWqKcJ85wCP8ZdJ1Cp1v5WXY" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TechPath | Engineering Career Guide</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#001f26",
+              "surface-container-highest": "#e3e2e0",
+              "primary-container": "#8b5e34",
+              "on-primary-fixed-variant": "#653e17",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#ffe2cd",
+              "tertiary-fixed": "#b4ecfa",
+              "inverse-primary": "#f5bb89",
+              "inverse-surface": "#2f312f",
+              "on-tertiary-fixed-variant": "#0c4e5a",
+              "surface-dim": "#dbdad7",
+              "secondary-fixed-dim": "#dfc1a9",
+              "on-secondary-container": "#78604c",
+              "surface-bright": "#faf9f6",
+              "surface-tint": "#80552c",
+              "on-secondary": "#ffffff",
+              "background": "#faf9f6",
+              "outline-variant": "#d5c3b7",
+              "outline": "#83746a",
+              "primary-fixed-dim": "#f5bb89",
+              "primary-fixed": "#ffdcc1",
+              "on-error-container": "#93000a",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#98cfde",
+              "secondary-fixed": "#fdddc3",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-container": "#b8f0ff",
+              "on-primary-fixed": "#2e1600",
+              "secondary": "#715a46",
+              "surface": "#faf9f6",
+              "on-surface-variant": "#50443b",
+              "inverse-on-surface": "#f2f1ee",
+              "surface-container-high": "#e9e8e5",
+              "surface-variant": "#e3e2e0",
+              "on-secondary-fixed": "#281809",
+              "on-background": "#1a1c1a",
+              "primary": "#6f461f",
+              "secondary-container": "#fdddc3",
+              "tertiary": "#1a5763",
+              "error": "#ba1a1a",
+              "on-secondary-fixed-variant": "#584330",
+              "surface-container": "#efeeeb",
+              "tertiary-container": "#376f7c",
+              "on-error": "#ffffff",
+              "on-surface": "#1a1c1a",
+              "error-container": "#ffdad6",
+              "surface-container-low": "#f4f3f1"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
 <style>
-
-/* Reset */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Inter',sans-serif;
-}
-
-/* COLOR PALETTE */
-:root{
-  --bg:#f7e1d7;
-  --hero1:#e3d5ca;
-  --hero2:#dedbd2;
-  --card:#ffffff;
-  --soft:#f1ebe5;
-  --border:#d7cfc6;
-  --text:#2a2523;
-  --muted:#6b5f59;
-  --accent:#8b5e34;
-  --accent-light:#a47148;
-}
-
-body{
-  background:linear-gradient(135deg,var(--hero1),var(--hero2));
-  color:var(--text);
-}
-
-/* HEADER */
-header{
-  position:sticky;
-  top:0;
-  z-index:10;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 50px;
-  background:rgba(255,255,255,.65);
-  backdrop-filter:blur(10px);
-  box-shadow:0 4px 20px rgba(0,0,0,.08);
-}
-
-header h1{
-  color:var(--accent);
-  font-size:28px;
-}
-
-nav a{
-  color:var(--text);
-  text-decoration:none;
-  margin-left:25px;
-  font-weight:600;
-}
-
-nav a:hover{
-  color:var(--accent);
-}
-
-/* HERO */
-.banner{
-  text-align:center;
-  padding:120px 20px;
-  margin:20px 50px;
-  border-radius:14px;
-  background:linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,.8));
-  box-shadow:0 12px 35px rgba(0,0,0,.1);
-}
-
-.banner h2{
-  font-size:42px;
-  color:var(--accent);
-}
-
-.banner p{
-  margin:10px 0 20px;
-  color:var(--muted);
-}
-
-.banner button{
-  padding:14px 30px;
-  background:var(--accent);
-  color:#fff;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-}
-
-.banner button:hover{
-  background:var(--accent-light);
-}
-
-/* CARDS */
-.quick-links{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-  max-width:1200px;
-  margin:60px auto;
-  padding:0 20px;
-}
-
-.card{
-  background:var(--card);
-  padding:40px 30px;
-  border-radius:20px;
-  text-align:center;
-  border:1px solid var(--border);
-  cursor:pointer;
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 15px 30px rgba(0,0,0,.1);
-}
-
-.card h3{
-  color:var(--accent);
-}
-
-/* INFO SECTION */
-.info{
-  text-align:center;
-  max-width:900px;
-  margin:30px auto;
-  padding:0 20px;
-}
-
-.info h2{
-  color:var(--accent);
-}
-
-/* FEATURED */
-.featured{
-  padding:60px 20px;
-  margin:0 50px;
-  background:var(--soft);
-  border-radius:14px;
-  text-align:center;
-}
-
-.featured-items{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:20px;
-}
-
-.featured-item{
-  background:#fff;
-  padding:15px;
-  border-radius:10px;
-}
-
-/* FOOTER */
-footer{
-  background:#bfae9f;
-  text-align:center;
-  padding:25px;
-  margin-top:50px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  header{
-    flex-direction:column;
-  }
-  .banner{
-    margin:20px;
-  }
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-  <h1>TechPath</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="career.html">Career Paths</a>
-    <a href="skills.html">Skill Roadmaps</a>
-    <a href="company.html">Company Questions</a>
-    <a href="resources.html">Resources</a>
-    <a href="about.html">About</a>
-  </nav>
-</header>
-
-<section class="banner">
-  <h2>Your Complete Guide to IT Careers</h2>
-  <p>From 1st-year → Placement-ready</p>
-  <button onclick="location.href='career.html'">Explore Career Paths</button>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .premium-shadow {
+            box-shadow: 0 12px 40px rgba(26, 28, 26, 0.05);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #6f461f 0%, #8b5e34 100%);
+        }
+        .radial-bg {
+            background: radial-gradient(circle at 50% 50%, #ffffff 0%, #faf9f6 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 border-b border-stone-200/15 bg-stone-50/70 backdrop-blur-md shadow-sm">
+<div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="architecture">architecture</span>
+<span class="text-2xl font-bold tracking-tighter text-stone-900">TechPath</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-orange-800 font-bold border-b-2 border-orange-800 py-1 transition-all duration-300" href="#">Home</a>
+<a class="text-stone-600 hover:text-stone-900 transition-all duration-300" href="career.html">Career Paths</a>
+<a class="text-stone-600 hover:text-stone-900 transition-all duration-300" href="skills.html">Skill Roadmaps</a>
+<a class="text-stone-600 hover:text-stone-900 transition-all duration-300" href="company.html">Company Questions</a>
+<a class="text-stone-600 hover:text-stone-900 transition-all duration-300" href="resources.html">Resources</a>
+<a class="text-stone-600 hover:text-stone-900 transition-all duration-300" href="#">About</a>
+</div>
+<a class="hidden lg:block bg-primary text-on-primary px-6 py-2.5 rounded-full font-semibold text-sm hover:scale-95 duration-200 ease-out transition-all" href="career.html">
+                Explore Career Paths
+            </a>
+<button class="md:hidden p-2 hover:bg-stone-100 rounded-lg">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative overflow-hidden py-24 md:py-36 radial-bg">
+<div class="max-w-7xl mx-auto px-8 relative z-10 text-center">
+<div class="inline-flex items-center gap-2 bg-secondary-container px-4 py-1.5 rounded-full mb-8">
+<span class="material-symbols-outlined text-on-secondary-container text-sm" data-icon="school" data-weight="fill" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="text-xs font-bold uppercase tracking-widest font-label text-on-secondary-container">The Engineering Student's Blueprint</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-6 leading-tight">
+                    Your Complete Guide to <br/>
+<span class="text-primary italic font-medium">IT Careers</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-10 leading-relaxed">
+                    From 1st-year → Placement-ready. Master the technical landscape with curated roadmaps designed for the modern engineer.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="hero-gradient text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:translate-y-[-4px] transition-all duration-300" href="career.html">
+                        Explore Career Paths
+                    </a>
+<button class="bg-surface-container-highest text-on-surface px-10 py-4 rounded-full font-bold text-lg hover:bg-surface-container-high transition-all">
+                        View Roadmaps
+                    </button>
+</div>
+</div>
+<!-- Abstract Background Shapes -->
+<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-primary-fixed/20 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-tertiary-fixed/20 rounded-full blur-[100px]"></div>
 </section>
-
-<section class="quick-links">
-  <div class="card" onclick="location.href='career.html'">
-    <h3>Career Paths</h3>
-    <p>Explore roles & skills</p>
-  </div>
-
-  <div class="card" onclick="location.href='skills.html'">
-    <h3>Skill Roadmaps</h3>
-    <p>Step-by-step learning</p>
-  </div>
-
-  <div class="card" onclick="location.href='company.html'">
-    <h3>Company Questions</h3>
-    <p>Interview prep</p>
-  </div>
-
-  <div class="card" onclick="location.href='resources.html'">
-    <h3>Resources</h3>
-    <p>PDFs & materials</p>
-  </div>
+<!-- Quick Navigation Bento Grid -->
+<section class="py-20 px-8 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Career Paths -->
+<a class="group bg-surface-container-lowest p-8 rounded-xl premium-shadow hover:translate-y-[-8px] transition-all duration-300 border border-outline-variant/5" href="career.html">
+<div class="w-12 h-12 bg-primary-fixed rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="alt_route">alt_route</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Career Paths</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Discover your ideal role in the tech ecosystem.</p>
+</a>
+<!-- Skill Roadmaps -->
+<a class="group bg-surface-container-lowest p-8 rounded-xl premium-shadow hover:translate-y-[-8px] transition-all duration-300 border border-outline-variant/5" href="skills.html">
+<div class="w-12 h-12 bg-tertiary-fixed rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary" data-icon="terminal">terminal</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Skill Roadmaps</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Step-by-step guides to master any modern technology.</p>
+</a>
+<!-- Company Questions -->
+<a class="group bg-surface-container-lowest p-8 rounded-xl premium-shadow hover:translate-y-[-8px] transition-all duration-300 border border-outline-variant/5" href="company.html">
+<div class="w-12 h-12 bg-secondary-fixed rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary" data-icon="quiz">quiz</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Company Questions</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Cracking top-tier interview questions from major firms.</p>
+</a>
+<!-- Resources -->
+<a class="group bg-surface-container-lowest p-8 rounded-xl premium-shadow hover:translate-y-[-8px] transition-all duration-300 border border-outline-variant/5" href="resources.html">
+<div class="w-12 h-12 bg-stone-200 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-stone-700" data-icon="menu_book">menu_book</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Resources</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Handpicked books, courses, and tools for growth.</p>
+</a>
+</div>
 </section>
-
-<section class="info">
-  <h2>What is TechPath?</h2>
-  <p>
-    TechPath helps students understand IT careers and learn the exact skills needed for placements.
-    We simplify Web Development, Data Science, Cybersecurity and more.
-  </p>
+<!-- What is TechPath Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="aspect-video rounded-2xl overflow-hidden premium-shadow relative z-10">
+<img alt="Student working on laptop" class="w-full h-full object-cover" data-alt="Modern bright coworking space where engineering students collaborate on software projects with clean desk setups and minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK8MOzApwQAtYk38Wxir3t_EdK1vc6_qiDCZQh3zPOZ2t0HkO0D_EqoEAme-mLUTKnS7X_NRjIPTcodVQSpFq4ERMhqyhl2ZCeslkGNKvtm_ZndptupLPUdntA_3_WRaCJC5Up0LItBIQthlIaPsZ3m0cne40IyGE8QhJAtzj4w2E1PPHzteF4nUxVAtq0MaLP2xH1Qz-GQ1VhNdl55uQMsFmT33uFU1W2vxVKLEiL9AStmFD7nmEl3iolalyEYq0Amva4t5P83XXA"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-64 h-64 bg-primary-container rounded-2xl -z-0 opacity-10"></div>
+</div>
+<div>
+<h2 class="font-headline text-4xl font-bold mb-6 text-on-surface">What is TechPath?</h2>
+<p class="text-lg text-on-surface-variant mb-8 leading-relaxed">
+                        TechPath is the bridge between academic theory and industry reality. We understand that engineering curriculums often lag behind the fast-paced tech world.
+                    </p>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle">check_circle</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Industry Insights</h4>
+<p class="text-sm text-on-surface-variant">Understand exactly what recruiters at FAANG and startups are looking for.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="verified">verified</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Placement Ready</h4>
+<p class="text-sm text-on-surface-variant">Learn the specific skills, languages, and frameworks required for top placements.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<section class="featured">
-  <h2>Top Companies & Skills</h2>
-  <div class="featured-items">
-    <div class="featured-item">TCS</div>
-    <div class="featured-item">Infosys</div>
-    <div class="featured-item">Wipro</div>
-    <div class="featured-item">Google</div>
-    <div class="featured-item">Java</div>
-    <div class="featured-item">Python</div>
-  </div>
+<!-- Top Companies & Skills Grid -->
+<section class="py-24 px-8 max-w-7xl mx-auto text-center">
+<h2 class="font-headline text-3xl font-bold mb-4">Master In-Demand Tech</h2>
+<p class="text-on-surface-variant mb-16">Trusted by students targeting global leaders.</p>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+<!-- Companies -->
+<div class="group bg-surface-container-lowest p-6 rounded-xl premium-shadow hover:bg-white transition-all">
+<img alt="TCS" class="w-12 h-12 mx-auto mb-4 object-contain grayscale group-hover:grayscale-0 transition-all" data-alt="Minimalist monochromatic logo of Tata Consultancy Services TCS in a professional vector style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1wZXtYSfTxL3aE0zieJhHV_O0k9KLpkDw_kIIfNfu6EKm1DSe51EeZFZ6pMLrxhfkmS3ubvcS8axGeDoYmH9ZZNcL6RV5pF95pxzrOrq7sa22dIwmgZVF-Q1I5u6jReZ4cid2fSym_OF90IuDSxZrXFsIeWny1qTByv-U6hwlzwwH0Ms3Akuq_Na2fnrxo_acpwokhQTmRfHebD4u_nFvR-NGr5E-69SMOxILnjpIJImdm8oE6SDHXuj8tLBVfVEkfZwNLLhDVXC1"/>
+<span class="font-bold text-sm">TCS</span>
+</div>
+<div class="group bg-surface-container-lowest p-6 rounded-xl premium-shadow hover:bg-white transition-all">
+<img alt="Infosys" class="w-12 h-12 mx-auto mb-4 object-contain grayscale group-hover:grayscale-0 transition-all" data-alt="Minimalist monochromatic logo of Infosys in a clean vector style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_A-Q9OqtWROLEsaS3qg80njLgYOlFqasRI_Ti3KZAD9ABptM2QgnQ6ZntUivHRDsY3EVUSs7y5tlddw8ejUu4xQWUa_dyGrGVRqRB3_a7YKKvHfxygOXZkt3SIXc247d-2XMguSwtIuno6FpAnlxItjvxz23clvWNm7y9pZMwSm05jRN3vTcsds2rCizpsfKif43DOguIFbhKHOGL4MRcYuY48oadgQl6RoD5v2IiNYrKfJMNONC-8r0Q6nBz9wIM4mjYg2pcFtis"/>
+<span class="font-bold text-sm">Infosys</span>
+</div>
+<div class="group bg-surface-container-lowest p-6 rounded-xl premium-shadow hover:bg-white transition-all">
+<img alt="Wipro" class="w-12 h-12 mx-auto mb-4 object-contain grayscale group-hover:grayscale-0 transition-all" data-alt="Minimalist monochromatic logo of Wipro in a clean vector style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqKnBkLcXcwkH_xSJYGA14d4nvxk5zAuaeehv3IpamR91Ma-nbpXScvbDvJUrWj6gnsqMOJYnchd_mlFuCAGazYAAS3vc4ObYCx8i83GL4VKUBrsd-lOQNxhOy3Mg5uiKZl4u2gdyNceJVRLhBT7dJ9Hg8pxY6G6FwlfYsrfX3Jpf2ImX2Trh-63b-q64YRwbcBPCx8lJ8tyzDEI_XANlaMzoMTckGFhBeDDrYqR-R-vnXTztQ5kpuzDh9dirXx44Bk_6uV2agEqTV"/>
+<span class="font-bold text-sm">Wipro</span>
+</div>
+<!-- Skills -->
+<div class="group bg-surface-container-lowest p-6 rounded-xl premium-shadow hover:bg-white transition-all">
+<div class="w-12 h-12 mx-auto mb-4 bg-primary-fixed flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="code">code</span>
+</div>
+<span class="font-bold text-sm">Java</span>
+</div>
+<div class="group bg-surface-container-lowest p-6 rounded-xl premium-shadow hover:bg-white transition-all">
+<div class="w-12 h-12 mx-auto mb-4 bg-tertiary-fixed flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="terminal">terminal</span>
+</div>
+<span class="font-bold text-sm">Python</span>
+</div>
+<div class="group bg-surface-container-lowest p-6 rounded-xl premium-shadow hover:bg-white transition-all">
+<div class="w-12 h-12 mx-auto mb-4 bg-secondary-fixed flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="cloud">cloud</span>
+</div>
+<span class="font-bold text-sm">Google</span>
+</div>
+</div>
 </section>
-
-<footer>
-  Contact: kommala50@gmail.com | © 2025 TechPath
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 mt-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-7xl mx-auto">
+<div class="md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="architecture">architecture</span>
+<span class="font-bold text-stone-900 text-xl">TechPath</span>
+</div>
+<p class="text-stone-500 text-sm leading-relaxed mb-6">
+                    Empowering the next generation of engineers with curated paths to professional success.
+                </p>
+<div class="flex gap-4">
+<a class="text-stone-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="brand_awareness">brand_awareness</span>
+</a>
+<a class="text-stone-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="hub">hub</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-stone-900 mb-6 uppercase tracking-wider text-xs">Explore</h4>
+<ul class="space-y-4">
+<li><a class="text-stone-600 hover:text-orange-700 transition-colors text-sm" href="career.html">Career Paths</a></li>
+<li><a class="text-stone-600 hover:text-orange-700 transition-colors text-sm" href="skills.html">Skill Roadmaps</a></li>
+<li><a class="text-stone-600 hover:text-orange-700 transition-colors text-sm" href="company.html">Interview Questions</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-stone-900 mb-6 uppercase tracking-wider text-xs">Platform</h4>
+<ul class="space-y-4">
+<li><a class="text-stone-600 hover:text-orange-700 transition-colors text-sm" href="resources.html">Resources</a></li>
+<li><a class="text-stone-600 hover:text-orange-700 transition-colors text-sm" href="#">About Us</a></li>
+<li><a class="text-stone-600 hover:text-orange-700 transition-colors text-sm" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-stone-900 mb-6 uppercase tracking-wider text-xs">Contact</h4>
+<p class="text-stone-500 text-sm mb-4">Have questions? Reach out to us.</p>
+<a class="text-orange-800 font-bold hover:underline text-sm" href="mailto:contact@techpath.edu">contact@techpath.edu</a>
+</div>
+</div>
+<div class="border-t border-stone-200 py-8 px-12 text-center">
+<p class="font-manrope text-sm text-stone-500">© 2024 TechPath IT Career Guide. All rights reserved.</p>
+</div>
 </footer>
-
-</body>
-</html>
+</body></html>
