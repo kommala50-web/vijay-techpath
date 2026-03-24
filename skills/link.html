@@ -1,0 +1,262 @@
+<!DOCTYPE html><html class="light" lang="en"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Resources | TechPath</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/><style>
+
+body{
+font-family: 'Manrope', sans-serif;
+background:#fafaf5;
+}
+
+.card{
+background:rgba(255,255,255,.7);
+backdrop-filter:blur(14px);
+border-radius:20px;
+padding:30px;
+cursor:pointer;
+transition:.35s;
+border:1px solid #eee;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 25px 60px rgba(0,0,0,.08);
+}
+
+</style></head><body class="text-gray-800"><!-- Navbar --><header class="sticky top-0 z-50 bg-white shadow-sm"><div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"><h1 class="text-xl font-bold text-[#77574d]">TechPath</h1><nav class="space-x-6 hidden md:block"><a href="../index.html" class="hover:text-[#77574d]">Home</a>
+<a href="../career.html" class="hover:text-[#77574d]">Career Paths</a>
+<a href="../skills.html" class="hover:text-[#77574d]">Skill Roadmaps</a>
+<a href="../company.html" class="hover:text-[#77574d]">Company Questions</a>
+<a href="../resources.html" class="text-[#77574d] font-semibold">Resources</a>
+
+</nav></div></header><!-- Hero --><section class="max-w-7xl mx-auto px-6 py-10"><h1 class="text-4xl font-bold text-[#77574d] mb-4">
+Curated Resources
+</h1><div id="currentPath"
+class="text-gray-500 text-lg">
+Resources
+</div></section><!-- Buttons --><div class="max-w-7xl mx-auto px-6 mb-6"><button id="homeBtn"
+class="px-5 py-2 bg-[#77574d] text-white rounded-lg mr-3">
+Home
+</button>
+
+<button id="backBtn"
+class="px-5 py-2 bg-gray-200 rounded-lg">
+Back
+</button>
+
+</div><!-- Cards --><div id="cardContainer"
+class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+</div><!-- Footer --><footer class="mt-20 bg-[#f1ebe5] py-12"><div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8"><div>
+<h3 class="font-bold mb-3">TechPath</h3>
+<p>Helping students become placement ready</p>
+</div><div>
+<h3 class="font-bold mb-3">Links</h3>
+<p>Career</p>
+<p>Skills</p>
+<p>Companies</p>
+</div><div>
+<h3 class="font-bold mb-3">Resources</h3>
+<p>Notes</p>
+<p>PYQ</p>
+<p>Assignments</p>
+</div><div>
+<h3 class="font-bold mb-3">Contact</h3>
+<p>kommala50@gmail.com</p>
+</div></div><div class="text-center mt-10">
+© 2025 TechPath
+</div></footer><script>
+
+
+const data = {
+
+"CSE":{
+
+"1st_year":{
+
+"Maths":{
+
+"Notes":["unit1.pdf","unit2.pdf"],
+
+"PYQ":["maths_pyq.pdf"]
+
+},
+
+"Physics":{
+
+"Notes":["unit1.pdf"]
+
+}
+
+},
+
+"2nd_year":{
+
+"DSA":{
+
+"Notes":["unit1.pdf"]
+
+}
+
+}
+
+},
+
+"AIML":{"1st_year":{}},
+
+"Cyber":{"1st_year":{}},
+
+"ECE":{"1st_year":{}},
+
+"Mechanical":{"1st_year":{}}
+
+};
+
+
+let currentLevel='branch'
+
+let selectedBranch=''
+let selectedYear=''
+let selectedSubject=''
+let selectedType=''
+
+const container=document.getElementById("cardContainer")
+const path=document.getElementById("currentPath")
+
+function updatePath(){
+
+let p=[]
+
+if(selectedBranch)p.push(selectedBranch)
+if(selectedYear)p.push(selectedYear)
+if(selectedSubject)p.push(selectedSubject)
+if(selectedType)p.push(selectedType)
+
+path.innerHTML=p.join(" → ")
+
+}
+
+
+function showCards(levelData,level){
+
+container.innerHTML=''
+
+if(level==="pdfs"){
+
+levelData.forEach(pdf=>{
+
+const card=document.createElement("div")
+
+card.className="card text-center"
+
+card.innerHTML=`
+
+<span class="material-symbols-outlined text-5xl text-[#77574d]">
+picture_as_pdf
+</span>
+
+<h3 class="mt-4 font-bold">${pdf}</h3>
+
+`
+
+card.onclick=()=>{
+
+window.open(`resources/${selectedBranch}/${selectedYear}/${selectedSubject}/${selectedType}/${pdf}`)
+
+}
+
+container.appendChild(card)
+
+})
+
+currentLevel='pdfs'
+
+return
+
+}
+
+
+for(let key in levelData){
+
+const card=document.createElement("div")
+
+card.className="card text-center"
+
+card.innerHTML=`
+
+<span class="material-symbols-outlined text-5xl text-[#77574d]">
+folder
+</span>
+
+<h3 class="mt-4 font-semibold">${key}</h3>
+
+`
+
+card.onclick=()=>{
+
+if(level==="branch"){
+
+selectedBranch=key
+showCards(data[key],"year")
+
+}
+
+else if(level==="year"){
+
+selectedYear=key
+showCards(data[selectedBranch][selectedYear],"subject")
+
+}
+
+else if(level==="subject"){
+
+selectedSubject=key
+showCards(data[selectedBranch][selectedYear][selectedSubject],"type")
+
+}
+
+else if(level==="type"){
+
+selectedType=key
+showCards(data[selectedBranch][selectedYear][selectedSubject][selectedType],"pdfs")
+
+}
+
+updatePath()
+
+}
+
+container.appendChild(card)
+
+}
+
+currentLevel=level
+
+}
+
+
+
+document.getElementById("backBtn").onclick=()=>{
+
+if(currentLevel==="pdfs")
+showCards(data[selectedBranch][selectedYear][selectedSubject],"type")
+
+else if(currentLevel==="type")
+showCards(data[selectedBranch][selectedYear],"subject")
+
+else if(currentLevel==="subject")
+showCards(data[selectedBranch],"year")
+
+else
+showCards(data,"branch")
+
+}
+
+
+document.getElementById("homeBtn").onclick=()=>{
+
+window.location.href="../index.html"
+
+}
+
+showCards(data,"branch")
+
+</script></body></html>

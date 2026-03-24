@@ -1,375 +1,487 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Skill Roadmaps for Beginners | TechPath</title>
-
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Skill Roadmaps | TechPath Atelier</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "surface-tint": "#77574d",
+                "surface": "#fafaf5",
+                "tertiary-fixed": "#faeeea",
+                "inverse-surface": "#0d0f0c",
+                "outline": "#767c74",
+                "on-tertiary-fixed-variant": "#6b6360",
+                "on-tertiary": "#fff7f5",
+                "surface-bright": "#fafaf5",
+                "on-background": "#2e342d",
+                "tertiary-container": "#faeeea",
+                "primary-dim": "#6a4b42",
+                "on-secondary": "#fff7f5",
+                "on-tertiary-fixed": "#4e4644",
+                "on-secondary-fixed": "#4e3b34",
+                "surface-container-highest": "#dee4da",
+                "on-error": "#fff7f6",
+                "tertiary": "#655d5a",
+                "secondary": "#705a52",
+                "on-primary-fixed-variant": "#74544a",
+                "tertiary-fixed-dim": "#ece0dc",
+                "error-container": "#fe8983",
+                "error": "#9f403d",
+                "on-primary-container": "#694b41",
+                "secondary-container": "#fadcd2",
+                "on-primary-fixed": "#553930",
+                "surface-dim": "#d5dcd0",
+                "surface-container-low": "#f3f4ee",
+                "primary-fixed": "#ffdbd0",
+                "tertiary-dim": "#59524f",
+                "primary-fixed-dim": "#f5cbbf",
+                "surface-container-lowest": "#ffffff",
+                "outline-variant": "#aeb4aa",
+                "on-tertiary-container": "#605855",
+                "on-surface": "#2e342d",
+                "surface-variant": "#dee4da",
+                "secondary-fixed": "#fadcd2",
+                "error-dim": "#4e0309",
+                "primary-container": "#ffdbd0",
+                "surface-container-high": "#e5eae0",
+                "inverse-primary": "#fed3c7",
+                "secondary-fixed-dim": "#ebcec4",
+                "on-surface-variant": "#5b6159",
+                "primary": "#77574d",
+                "on-primary": "#fff6f3",
+                "on-secondary-container": "#624d45",
+                "background": "#fafaf5",
+                "secondary-dim": "#634e47",
+                "inverse-on-surface": "#9c9d99",
+                "on-error-container": "#752121",
+                "surface-container": "#ecefe7"
+              },
+              fontFamily: {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
 <style>
-
-:root{
-  --bg:#ded5cc;
-  --panel:#bcc7c3;
-  --card:#ffffff;
-  --border:#cfc6be;
-  --text:#2c2a28;
-  --muted:#6a625d;
-  --accent:#7a5a3a;
-  --accent-light:#94704e;
-}
-
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Verdana,sans-serif}
-
-body{
-  background:linear-gradient(140deg,var(--bg),var(--panel));
-  color:var(--text);
-  overflow-x:hidden;
-}
-
-/* HEADER */
-header{
-  background:rgba(255,255,255,.78);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid #d7cec7;
-  padding:18px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:sticky;
-  top:0;
-  z-index:10;
-  box-shadow:0 6px 18px rgba(0,0,0,.08);
-}
-header h1{color:var(--accent);font-size:26px;font-weight:700}
-
-nav a{
-  color:var(--text);
-  text-decoration:none;
-  margin-left:20px;
-  font-weight:600;
-  position:relative;
-  transition:.2s;
-}
-nav a::after{
-  content:'';
-  position:absolute;
-  left:0;bottom:-3px;
-  width:0;height:2px;
-  background:var(--accent);
-  transition:.2s;
-}
-nav a:hover{color:var(--accent-light)}
-nav a:hover::after{width:100%}
-
-/* BACK BUTTON */
-.back-btn{
-  display:inline-block;
-  background:var(--accent);
-  color:#fff;
-  padding:10px 20px;
-  border-radius:10px;
-  margin:20px 0 10px 50px;
-  text-decoration:none;
-  font-weight:700;
-  transition:.2s;
-}
-.back-btn:hover{background:var(--accent-light);transform:translateY(-2px)}
-
-/* SEARCH BAR */
-.search-box{
-  max-width:800px;
-  margin:10px auto 0;
-  text-align:center;
-}
-.search-box input{
-  width:95%;
-  padding:12px 14px;
-  font-size:15px;
-  border-radius:10px;
-  border:1px solid var(--border);
-  outline:none;
-}
-
-/* GRID */
-.skill-container{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:25px;
-  padding:35px 50px;
-  max-width:1200px;
-  margin:auto;
-}
-
-/* CARDS */
-.skill-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:16px;
-  text-align:center;
-  padding:24px;
-  box-shadow:0 8px 20px rgba(0,0,0,.06);
-  transition:.25s;
-  cursor:pointer;
-}
-.skill-card:hover{
-  transform:translateY(-6px);
-}
-
-/* FLOATING ICON ANIMATION */
-.skill-card img{
-  width:64px;
-  height:64px;
-  object-fit:contain;
-  animation:floatIcon 3s ease-in-out infinite;
-  transition:.25s;
-}
-
-@keyframes floatIcon{
-  0%{ transform:translateY(0) }
-  50%{ transform:translateY(-6px) }
-  100%{ transform:translateY(0) }
-}
-
-.skill-card:hover img{
-  animation-duration:2s;
-  transform:scale(1.15);
-}
-
-.skill-card h3{
-  color:var(--accent);
-  margin-top:8px;
-  margin-bottom:6px;
-}
-.skill-card p{
-  color:#4b4743;
-  font-size:14px;
-  margin-bottom:8px;
-}
-
-
-
-.skill-card a{
-  display:inline-block;
-  margin-top:5px;
-  background:var(--accent);
-  color:#fff;
-  padding:7px 14px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:600;
-  transition:.2s;
-}
-.skill-card a:hover{background:var(--accent-light)}
-
-/* FOOTER */
-footer{
-  background:#c9c1b8;
-  color:#3c3631;
-  text-align:center;
-  padding:18px;
-  margin-top:40px;
-}
-
-/* MOBILE */
-@media(max-width:760px){
-  header{flex-direction:column;text-align:center}
-  nav{margin-top:10px}
-  .skill-container{padding:20px}
-}
-
-/* MOBILE IMPROVEMENTS */
-@media (max-width: 480px){
-
-  header{padding:14px 16px}
-
-  .back-btn{
-    margin:16px 10px;
-    width:calc(100% - 20px);
-    text-align:center;
-  }
-
-  .search-box input{
-    width:92%;
-    padding:10px 12px;
-    font-size:14px;
-  }
-
-  .skill-container{
-    padding:16px;
-    gap:18px;
-  }
-
-  .skill-card{padding:18px 14px}
-
-  .skill-card img{
-    width:58px;
-    height:58px;
-  }
-  
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-  <h1>TechPath</h1>
-
-  <nav>
-    <a href="../index.html">Home</a>
-    <a href="../career.html">Career Paths</a>
-    <a href="skills.html">Skill Roadmaps</a>
-    <a href="company.html">Company Questions</a>
-    <a href="resources.html">Resources</a>
-    <a href="about.html">About</a>
-  </nav>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .premium-shadow {
+            box-shadow: 0 10px 40px -10px rgba(119, 87, 77, 0.08);
+        }
+        .hover-lift {
+            transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1), box-shadow 0.4s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px -15px rgba(119, 87, 77, 0.12);
+        }
+        .floating-icon {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopAppBar -->
+<nav class="sticky top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-900/80 backdrop-blur-xl shadow-sm shadow-stone-200/50">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-orange-900 dark:text-orange-200" data-icon="navigation">navigation</span>
+<span class="text-2xl font-bold tracking-tighter text-stone-900 dark:text-stone-50 font-headline">TechPath</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-orange-700 transition-all" href="index.html">Home</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-orange-700 transition-all" href="career.html">Career Paths</a>
+<a class="text-orange-800 dark:text-orange-300 font-bold border-b-2 border-orange-800 pb-1" href="skills.html">Skill Roadmaps</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-orange-700 transition-all" href="company.html">Company Questions</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-orange-700 transition-all" href="resources.html">Resources</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-orange-700 transition-all" href="about.html">About</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-medium scale-95 active:scale-90 transition-transform">Sign In</button>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-8 py-12">
+<!-- Search & Back Navigation -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-20">
+<a class="flex items-center gap-2 text-primary font-medium group" href="index.html">
+<span class="material-symbols-outlined transition-transform group-hover:-translate-x-1" data-icon="arrow_back">arrow_back</span>
+<span class="font-headline tracking-tight">Back to Home</span>
+</a>
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-highest/30 rounded-2xl border-none focus:ring-2 focus:ring-primary/40 transition-all font-body text-lg premium-shadow" id="roadmapSearch" placeholder="Search skills (e.g. Java, React, SQL...)" type="text"/>
+</div>
+</div>
+<!-- Hero Heading -->
+<header class="mb-16">
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold text-on-surface tracking-tight leading-none mb-6">
+                Curated <span class="text-primary-dim">Skill Roadmaps</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                Expert-designed learning paths to take you from absolute beginner to industry-ready specialist. No fluff, just the essentials.
+            </p>
 </header>
+<!-- Roadmaps Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="roadmapGrid">
+<!-- HTML Roadmap -->
+<div class="roadmap-card group cursor-pointer glass-card p-8 rounded-[2rem] hover-lift premium-shadow" data-name="HTML" onclick="window.location.href='skills/html-roadmap.html'">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 rounded-2xl bg-primary-fixed flex items-center justify-center floating-icon">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="html">html</span>
+</div>
+<button class="p-2 text-outline hover:text-primary transition-colors" onclick="event.stopPropagation();">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 group-hover:text-primary transition-colors">HTML Mastery</h3>
+<p class="text-on-surface-variant mb-8 line-clamp-2">Learn the structural foundation of the web, semantic tags, and modern accessibility standards.</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-label uppercase tracking-widest text-outline">8 Modules</span>
+<button class="text-primary font-semibold flex items-center gap-1 group/btn" onclick="event.stopPropagation();">
+                        Download PDF
+                        <span class="material-symbols-outlined text-sm group-hover/btn:translate-y-1 transition-transform" data-icon="arrow_downward">arrow_downward</span>
+</button>
+</div>
+</div>
+<!-- CSS Roadmap -->
+<div class="roadmap-card group cursor-pointer glass-card p-8 rounded-[2rem] hover-lift premium-shadow" data-name="CSS" onclick="window.location.href='skills/css-roadmap.html'">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 rounded-2xl bg-secondary-fixed flex items-center justify-center floating-icon" style="animation-delay: 0.5s">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="css">css</span>
+</div>
+<button class="p-2 text-outline hover:text-primary transition-colors" onclick="event.stopPropagation();">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 group-hover:text-primary transition-colors">CSS Architecture</h3>
+<p class="text-on-surface-variant mb-8 line-clamp-2">Master Flexbox, Grid, Responsive Design, and modern styling frameworks like Tailwind.</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-label uppercase tracking-widest text-outline">12 Modules</span>
+<button class="text-primary font-semibold flex items-center gap-1 group/btn" onclick="event.stopPropagation();">
+                        Download PDF
+                        <span class="material-symbols-outlined text-sm group-hover/btn:translate-y-1 transition-transform" data-icon="arrow_downward">arrow_downward</span>
+</button>
+</div>
+</div>
+<!-- JS Roadmap -->
+<div class="roadmap-card group cursor-pointer glass-card p-8 rounded-[2rem] hover-lift premium-shadow" data-name="JavaScript JS" onclick="window.location.href='skills/js-roadmap.html'">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 rounded-2xl bg-tertiary-fixed flex items-center justify-center floating-icon" style="animation-delay: 1s">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="javascript">javascript</span>
+</div>
+<button class="p-2 text-outline hover:text-primary transition-colors" onclick="event.stopPropagation();">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 group-hover:text-primary transition-colors">JavaScript Engine</h3>
+<p class="text-on-surface-variant mb-8 line-clamp-2">Deep dive into ES6+, Async/Await, DOM manipulation, and core programming logic.</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-label uppercase tracking-widest text-outline">24 Modules</span>
+<button class="text-primary font-semibold flex items-center gap-1 group/btn" onclick="event.stopPropagation();">
+                        Download PDF
+                        <span class="material-symbols-outlined text-sm group-hover/btn:translate-y-1 transition-transform" data-icon="arrow_downward">arrow_downward</span>
+</button>
+</div>
+</div>
+<!-- Python Roadmap -->
+<div class="roadmap-card group cursor-pointer glass-card p-8 rounded-[2rem] hover-lift premium-shadow" data-name="Python" onclick="window.location.href='skills/python-roadmap.html'">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 rounded-2xl bg-primary-fixed flex items-center justify-center floating-icon">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="terminal">terminal</span>
+</div>
+<button class="p-2 text-outline hover:text-primary transition-colors" onclick="event.stopPropagation();">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 group-hover:text-primary transition-colors">Python Core</h3>
+<p class="text-on-surface-variant mb-8 line-clamp-2">The ultimate guide to automation, data analysis, and backend development with Python.</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-label uppercase tracking-widest text-outline">18 Modules</span>
+<button class="text-primary font-semibold flex items-center gap-1 group/btn" onclick="event.stopPropagation();">
+                        Download PDF
+                        <span class="material-symbols-outlined text-sm group-hover/btn:translate-y-1 transition-transform" data-icon="arrow_downward">arrow_downward</span>
+</button>
+</div>
+</div>
+<!-- ReactJS Roadmap -->
+<div class="roadmap-card group cursor-pointer glass-card p-8 rounded-[2rem] hover-lift premium-shadow" data-name="ReactJS React" onclick="window.location.href='skills/reactjs-roadmap.html'">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 rounded-2xl bg-secondary-fixed flex items-center justify-center floating-icon" style="animation-delay: 0.7s">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="rebase_edit">rebase_edit</span>
+</div>
+<button class="p-2 text-outline hover:text-primary transition-colors" onclick="event.stopPropagation();">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 group-hover:text-primary transition-colors">React Frontend</h3>
+<p class="text-on-surface-variant mb-8 line-clamp-2">Build dynamic SPAs using Hooks, Redux, Context API, and modern ecosystem tools.</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-label uppercase tracking-widest text-outline">20 Modules</span>
+<button class="text-primary font-semibold flex items-center gap-1 group/btn" onclick="event.stopPropagation();">
+                        Download PDF
+                        <span class="material-symbols-outlined text-sm group-hover/btn:translate-y-1 transition-transform" data-icon="arrow_downward">arrow_downward</span>
+</button>
+</div>
+</div>
+<!-- Node Roadmap -->
+<div class="roadmap-card group cursor-pointer glass-card p-8 rounded-[2rem] hover-lift premium-shadow" data-name="NodeJS Node" onclick="window.location.href='skills/nodejs-roadmap.html'">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 rounded-2xl bg-tertiary-fixed flex items-center justify-center floating-icon" style="animation-delay: 1.2s">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="developer_board">developer_board</span>
+</div>
+<button class="p-2 text-outline hover:text-primary transition-colors" onclick="event.stopPropagation();">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 group-hover:text-primary transition-colors">Node.js Backend</h3>
+<p class="text-on-surface-variant mb-8 line-clamp-2">Scaleable server-side JS including Express, Middleware, and API architecture.</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-label uppercase tracking-widest text-outline">15 Modules</span>
+<button class="text-primary font-semibold flex items-center gap-1 group/btn" onclick="event.stopPropagation();">
+                        Download PDF
+                        <span class="material-symbols-outlined text-sm group-hover/btn:translate-y-1 transition-transform" data-icon="arrow_downward">arrow_downward</span>
+</button>
+</div>
+</div>
+<!-- SQL Roadmap -->
+<div class="roadmap-card group cursor-pointer glass-card p-8 rounded-[2rem] hover-lift premium-shadow" data-name="SQL Database" onclick="window.location.href='skills/sql-roadmap.html'">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-highest flex items-center justify-center floating-icon">
+<span class="material-symbols-outlined text-on-surface text-3xl" data-icon="database">database</span>
+</div>
+<button class="p-2 text-outline hover:text-primary transition-colors" onclick="event.stopPropagation();">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 group-hover:text-primary transition-colors">SQL Fundamentals</h3>
+<p class="text-on-surface-variant mb-8 line-clamp-2">Relational database design, complex queries, joins, and optimization techniques.</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-label uppercase tracking-widest text-outline">10 Modules</span>
+<button class="text-primary font-semibold flex items-center gap-1 group/btn" onclick="event.stopPropagation();">
+                        Download PDF
+                        <span class="material-symbols-outlined text-sm group-hover/btn:translate-y-1 transition-transform" data-icon="arrow_downward">arrow_downward</span>
+</button>
+</div>
+</div>
+<!-- DSA Roadmap -->
+<div class="roadmap-card group cursor-pointer glass-card p-8 rounded-[2rem] hover-lift premium-shadow" data-name="DSA Data Structures" onclick="window.location.href='skills/dsa-roadmap.html'">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 rounded-2xl bg-primary-container flex items-center justify-center floating-icon" style="animation-delay: 0.3s">
+<span class="material-symbols-outlined text-primary-dim text-3xl" data-icon="account_tree">account_tree</span>
+</div>
+<button class="p-2 text-outline hover:text-primary transition-colors" onclick="event.stopPropagation();">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 group-hover:text-primary transition-colors">DSA Elite</h3>
+<p class="text-on-surface-variant mb-8 line-clamp-2">Master algorithms and data structures required for FAANG coding interviews.</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-label uppercase tracking-widest text-outline">40 Modules</span>
+<button class="text-primary font-semibold flex items-center gap-1 group/btn" onclick="event.stopPropagation();">
+                        Download PDF
+                        <span class="material-symbols-outlined text-sm group-hover/btn:translate-y-1 transition-transform" data-icon="arrow_downward">arrow_downward</span>
+</button>
+</div>
+</div>
+<!-- AIML Roadmap -->
+<div class="roadmap-card group cursor-pointer glass-card p-8 rounded-[2rem] hover-lift premium-shadow" data-name="AIML Machine Learning AI" onclick="window.location.href='skills/machineLearning-roadmap.html'">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container flex items-center justify-center floating-icon" style="animation-delay: 1.5s">
+<span class="material-symbols-outlined text-secondary-dim text-3xl" data-icon="psychology">psychology</span>
+</div>
+<button class="p-2 text-outline hover:text-primary transition-colors" onclick="event.stopPropagation();">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 group-hover:text-primary transition-colors">AI &amp; ML Path</h3>
+<p class="text-on-surface-variant mb-8 line-clamp-2">Math, statistics, neural networks, and deep learning implementation with PyTorch.</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-label uppercase tracking-widest text-outline">35 Modules</span>
+<button class="text-primary font-semibold flex items-center gap-1 group/btn" onclick="event.stopPropagation();">
+                        Download PDF
+                        <span class="material-symbols-outlined text-sm group-hover/btn:translate-y-1 transition-transform" data-icon="arrow_downward">arrow_downward</span>
+</button>
+</div>
+</div>
+<!-- MongoDB Roadmap -->
+<div class="roadmap-card group cursor-pointer glass-card p-8 rounded-[2rem] hover-lift premium-shadow"
+data-name="MongoDB NoSQL"
+onclick="window.location.href='skills/mongodb-roadmap.html'">
 
-<a class="back-btn" href="../index.html">← Back to Home</a>
-
-<!-- SEARCH -->
-<div class="search-box">
-  <input type="text" id="searchInput" placeholder="Search a skill (HTML, Python, SQL, etc.)">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 rounded-2xl bg-primary-container flex items-center justify-center floating-icon">
+<span class="material-symbols-outlined text-primary text-3xl">storage</span>
+</div>
 </div>
 
-<!-- SKILL CARDS -->
-<section class="skill-container" id="skills">
+<h3 class="text-2xl font-headline font-bold mb-3">MongoDB</h3>
 
-  <div class="skill-card" data-name="html" data-link="skills/html-roadmap.html">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
-    <h3>HTML</h3>
-    <p>Structure web pages from scratch.</p>
-    <a download href="../pdf/HTML_Roadmap.pdf">Download PDF</a>
-  </div>
+<p class="text-on-surface-variant mb-8">
+NoSQL database for scalable applications and modern backend systems.
+</p>
 
-  <div class="skill-card" data-name="css" data-link="skills/css-roadmap.html">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
-    <h3>CSS</h3>
-    <p>Design responsive, modern layouts.</p>
-    <a download href="pdf/CSS_Roadmap.pdf">Download PDF</a>
-  </div>
+<div class="flex justify-between">
+<span class="text-xs">10 Modules</span>
+<span class="text-primary font-semibold">Download PDF</span>
+</div>
 
-  <div class="skill-card" data-name="javascript js" data-link="skills/js-roadmap.html">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
-    <h3>JavaScript</h3>
-    <p>Add interactivity to websites.</p>
-    <a download href="pdf/JavaScript_Roadmap.pdf">Download PDF</a>
-  </div>
+</div>
 
-  <div class="skill-card" data-name="python" data-link="skills/python-roadmap.html">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
-    <h3>Python</h3>
-    <p>Beginner-friendly programming language.</p>
-    <a download href="pdf/Python_Notes.pdf" download="Python_Roadmap.pdf">Download PDF</a>
-  </div>
 
-  <div class="skill-card" data-name="sql database" data-link="skills/sql-roadmap.html">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
-    <h3>SQL</h3>
-    <p>Manage relational databases.</p>
-    <a download href="pdf/SQL_Notes.pdf">Download PDF</a>
-  </div>
+<!-- DBMS -->
+<div class="roadmap-card group cursor-pointer glass-card p-8 rounded-[2rem] hover-lift premium-shadow"
+data-name="DBMS Database"
+onclick="window.location.href='skills/dbms-roadmap.html'">
 
-  <div class="skill-card" data-name="mongodb database nosql" data-link="skills/mongodb-roadmap.html">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
-    <h3>MongoDB</h3>
-    <p>NoSQL database for scalable apps.</p>
-    <a download href="pdf/MongoDB_Notes.pdf">Download PDF</a>
-  </div>
+<div class="w-16 h-16 rounded-2xl bg-secondary-container flex items-center justify-center floating-icon">
+<span class="material-symbols-outlined text-3xl">database</span>
+</div>
 
-  <div class="skill-card" data-name="dsa algorithms" data-link="skills/dsa-roadmap.html">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codepen/codepen-original.svg">
-    <h3>DSA</h3>
-    <p>Data structures & algorithms.</p>
-    <a download href="pdf/dsa.pdf">Download PDF</a>
-  </div>
+<h3 class="text-2xl font-headline font-bold mb-3">DBMS</h3>
 
-  <div class="skill-card" data-name="dbms database systems" data-link="skills/dbms-roadmap.html">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg">
-    <h3>DBMS</h3>
-    <p>Core database management concepts.</p>
-    <a download href="pdf/dbms.pdf">Download PDF</a>
-  </div>
+<p class="text-on-surface-variant mb-8">
+Learn database concepts, normalization and query optimization.
+</p>
 
-  <div class="skill-card" data-name="c" data-link="skills/c-roadmap.html">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg">
-    <h3>C</h3>
-    <p>Programming foundations.</p>
-    <a download href="pdf/C_Notes.pdf">Download PDF</a>
-  </div>  
+<span class="text-primary font-semibold">Download PDF</span>
 
-  <div class="skill-card" data-name="cpp c++" data-link="skills/cpp-roadmap.html">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg">
-    <h3>C++</h3>
-    <p>Advanced programming & OOP.</p>
-    <a download href="pdf/C++_Notes.pdf">Download PDF</a>
-  </div>
+</div>
 
-  <div class="skill-card" data-name="java" data-link="skills/java-roadmap.html">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
-    <h3>Java</h3>
-    <p>Enterprise application development.</p>
-    <a download href="pdf/Java_Notes_Part1.pdf">Download Part 1</a>
-  </div>
 
-  <div class="skill-card" data-name="node backend" data-link="skills/nodejs-roadmap.html">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
-    <h3>NodeJS</h3>
-    <p>Build backend APIs.</p>
-    <a download href="pdf/Node_Roadmap.pdf">Download PDF</a>
-  </div>
+<!-- C -->
+<div class="roadmap-card group cursor-pointer glass-card p-8 rounded-[2rem] hover-lift premium-shadow"
+data-name="C Programming"
+onclick="window.location.href='skills/c-roadmap.html'">
 
-  <div class="skill-card" data-name="ai ml machine learning" data-link="skills/machineLearning-roadmap.html">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg">
-    <h3>AIML</h3>
-    <p>Machine learning fundamentals.</p>
-    <a download href="pdf/Machine_Learning_Roadmap.pdf">Download PDF</a>
-  </div>
+<div class="w-16 h-16 rounded-2xl bg-primary-container flex items-center justify-center floating-icon">
+<span class="material-symbols-outlined text-3xl">memory</span>
+</div>
 
-  <div class="skill-card" data-name="react web" data-link="skills/reactjs-roadmap.html">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-    <h3>ReactJS</h3>
-    <p>Modern frontend framework.</p>
-    <a download href="pdf/ReactJS_Roadmap.pdf">Download PDF</a>
-  </div>
+<h3 class="text-2xl font-headline font-bold mb-3">C Programming</h3>
 
+<p class="text-on-surface-variant mb-8">
+Learn programming fundamentals and memory management.
+</p>
+
+<span class="text-primary font-semibold">Download PDF</span>
+
+</div>
+
+
+<!-- C++ -->
+<div class="roadmap-card group cursor-pointer glass-card p-8 rounded-[2rem] hover-lift premium-shadow"
+data-name="C++ CPP"
+onclick="window.location.href='skills/cpp-roadmap.html'">
+
+<div class="w-16 h-16 rounded-2xl bg-secondary-container flex items-center justify-center floating-icon">
+<span class="material-symbols-outlined text-3xl">code</span>
+</div>
+
+<h3 class="text-2xl font-headline font-bold mb-3">C++</h3>
+
+<p class="text-on-surface-variant mb-8">
+Advanced programming concepts and OOP.
+</p>
+
+<span class="text-primary font-semibold">Download PDF</span>
+
+</div>
+
+
+<!-- Java -->
+<div class="roadmap-card group cursor-pointer glass-card p-8 rounded-[2rem] hover-lift premium-shadow"
+data-name="Java"
+onclick="window.location.href='skills/java-roadmap.html'">
+
+<div class="w-16 h-16 rounded-2xl bg-primary-container flex items-center justify-center floating-icon">
+<span class="material-symbols-outlined text-3xl">coffee</span>
+</div>
+
+<h3 class="text-2xl font-headline font-bold mb-3">Java</h3>
+
+<p class="text-on-surface-variant mb-8">
+Enterprise application development roadmap.
+</p>
+
+<span class="text-primary font-semibold">Download PDF</span>
+
+</div>
+</div>
+<!-- Call to Action Section -->
+<section class="mt-32 p-12 md:p-20 rounded-[3rem] bg-surface-container-low text-center overflow-hidden relative">
+<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary/5 blur-[100px] rounded-full"></div>
+<div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-secondary/5 blur-[100px] rounded-full"></div>
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold text-on-surface mb-6 relative z-10">Learn the Exact Skills Needed for IT Jobs</h2>
+<p class="text-lg text-on-surface-variant max-w-2xl mx-auto mb-10 relative z-10">
+                Stop guessing what to learn. Our roadmaps are updated every quarter based on current industry job descriptions and hiring trends.
+            </p>
+<div class="flex flex-wrap justify-center gap-4 relative z-10">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-xl font-bold hover:bg-primary-dim transition-colors premium-shadow">Start Learning Now</button>
+<button class="bg-surface-container-lowest text-primary px-10 py-4 rounded-xl font-bold hover:bg-white transition-colors premium-shadow">View Career Paths</button>
+</div>
 </section>
-
-<section style="max-width:900px;margin:20px auto;text-align:center;">
-  <h2 style="color:var(--accent)">Learn the Exact Skills Needed for IT Jobs</h2>
-  <p style="color:var(--muted)">Roadmaps guide you step-by-step — basics → projects → interview prep.</p>
-</section>
-
-<footer>
-  Contact: techpath@example.com | © 2025 TechPath
+</main>
+<!-- Footer -->
+<footer class="w-full mt-20 bg-stone-100 dark:bg-stone-950 border-t border-stone-200/30">
+<div class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start">
+<span class="text-lg font-bold text-stone-800 dark:text-stone-200 font-headline mb-2">TechPath Atelier</span>
+<p class="font-body text-xs uppercase tracking-widest text-stone-500">© 2024 TechPath Atelier. All rights reserved.</p>
+</div>
+<div class="flex flex-col items-center gap-4">
+<p class="text-stone-600 font-medium">Connect with us: <a class="text-primary hover:underline" href="mailto:hello@techpath.atelier">hello@techpath.atelier</a></p>
+<div class="flex gap-6">
+<a class="text-xs uppercase tracking-widest text-stone-500 hover:text-stone-900 transition-colors" href="#">Contact</a>
+<a class="text-xs uppercase tracking-widest text-stone-500 hover:text-stone-900 transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs uppercase tracking-widest text-stone-500 hover:text-stone-900 transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
 </footer>
-
 <script>
-  const search = document.getElementById("searchInput");
-  const cards = document.querySelectorAll(".skill-card");
+        // Dynamic Filter Logic
+        const searchInput = document.getElementById('roadmapSearch');
+        const roadmapCards = document.querySelectorAll('.roadmap-card');
 
-  search.addEventListener("keyup", ()=>{
-    const term = search.value.toLowerCase();
-    cards.forEach(card=>{
-      const name = card.getAttribute("data-name");
-      card.style.display = name.includes(term) ? "block" : "none";
-    });
-  });
-</script>
-
-<script>
-document.querySelectorAll(".skill-card").forEach(card => {
-  card.addEventListener("click", (e) => {
-
-    if (e.target.tagName === "A") return;
-
-    const link = card.getAttribute("data-link");
-    if (link) window.location.href = link;
-  });
-});
-</script>
-
-</body>
-</html>
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            roadmapCards.forEach(card => {
+                const skillName = card.getAttribute('data-name').toLowerCase();
+                if (skillName.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body></html>
