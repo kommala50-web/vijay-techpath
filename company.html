@@ -1,426 +1,422 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
+<html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Algorithmic Architect | DSA Dashboard</title>
+<title>Company Wise Questions | TechPath</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "background": "#0b0f14",
-                        "surface": "#121720",
-                        "surface-container": "#121720",
-                        "outline-variant": "#232833",
-                        "primary": "#4be277",
-                        "secondary": "#ffb95f",
-                        "tertiary": "#ffb4ae",
-                        "on-surface": "#e0e2ea",
-                        "on-surface-variant": "#bccbb9"
-                    },
-                    fontFamily: {
-                        "headline": ["Inter"],
-                        "body": ["Inter"]
-                    }
-                }
-            }
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "surface-container": "#eeeee9",
+                "on-secondary": "#ffffff",
+                "surface-container-high": "#e8e8e4",
+                "on-surface": "#1a1c19",
+                "surface-bright": "#fafaf5",
+                "secondary-fixed-dim": "#cbc6c0",
+                "on-tertiary-container": "#c3deda",
+                "on-background": "#1a1c19",
+                "outline": "#827470",
+                "on-primary": "#ffffff",
+                "on-surface-variant": "#504441",
+                "inverse-surface": "#2f312e",
+                "on-primary-fixed-variant": "#5d4037",
+                "secondary-fixed": "#e7e1dc",
+                "on-error": "#ffffff",
+                "on-secondary-fixed-variant": "#494642",
+                "error": "#ba1a1a",
+                "surface-container-low": "#f4f4ef",
+                "primary-container": "#77574d",
+                "secondary-container": "#e4dfd9",
+                "on-secondary-fixed": "#1d1b18",
+                "surface-tint": "#77574d",
+                "on-primary-container": "#facfc2",
+                "on-primary-fixed": "#2c160e",
+                "tertiary-fixed": "#cde8e4",
+                "outline-variant": "#d4c3be",
+                "tertiary": "#334b48",
+                "primary-fixed": "#ffdbd0",
+                "surface-dim": "#dadad6",
+                "primary": "#5d4037",
+                "on-tertiary": "#ffffff",
+                "surface": "#fafaf5",
+                "on-tertiary-fixed": "#051f1d",
+                "surface-container-lowest": "#ffffff",
+                "secondary": "#615e59",
+                "on-tertiary-fixed-variant": "#334b49",
+                "surface-variant": "#e2e3de",
+                "primary-fixed-dim": "#e7bdb1",
+                "surface-container-highest": "#e2e3de",
+                "background": "#fafaf5",
+                "on-secondary-container": "#65625e",
+                "tertiary-fixed-dim": "#b1ccc8",
+                "inverse-primary": "#e7bdb1",
+                "tertiary-container": "#4a6360",
+                "inverse-on-surface": "#f1f1ec",
+                "error-container": "#ffdad6",
+                "on-error-container": "#93000a"
+              },
+              fontFamily: {
+                "headline": ["Manrope"],
+                "body": ["Manrope"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
+            },
+          },
         }
-    </script>
+      </script>
 <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0b0f14; color: #e0e2ea; }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-        .problem-grid {
-            display: grid;
-            grid-template-columns: 48px 1fr 60px 60px 60px 100px 100px 140px 48px;
-            align-items: center;
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
-        @media (max-width: 1024px) {
-            .problem-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1rem;
-            }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .action-btn {
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #1c2025;
-            border-radius: 50%;
-            transition: all 0.2s ease;
-            color: #bccbb9;
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
         }
-        .action-btn:hover {
-            background-color: #232833;
-            color: #e0e2ea;
-            transform: translateY(-1px);
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
-        .company-stack img {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            border: 2px solid #121720;
-            background: white;
-            object-fit: contain;
-        }
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        .accordion-content.open {
-            max-height: 2000px;
-        }
-        .saved .bookmark-icon {
-            font-variation-settings: 'FILL' 1;
-            color: #ffb4ae;
-        }
-        .solved-radio {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #232833;
-            border-radius: 50%;
-            cursor: pointer;
-            position: relative;
-        }
-        .solved-radio.active {
-            border-color: #4be277;
-        }
-        .solved-radio.active::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 10px;
-            height: 10px;
-            background: #4be277;
-            border-radius: 50%;
-        }
-    </style>
-</head>
-<body class="bg-background text-on-surface">
-<!-- SideNavBar -->
-<aside class="fixed left-0 top-0 h-full w-[260px] hidden md:flex flex-col py-6 px-4 bg-[#0b0f14] border-r border-outline-variant z-50">
-<div class="mb-8 px-2">
-<h1 class="text-xl font-bold tracking-tighter text-[#e0e2ea]">Algorithmic Architect</h1>
-<p class="text-xs text-on-surface-variant mt-1 font-medium">Level: Sigma 11</p>
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
+<!-- Floating Gradient Shapes -->
+<div class="fixed top-[-10%] right-[-5%] w-[40vw] h-[40vw] rounded-full bg-primary-fixed/20 blur-[120px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-[-10%] left-[-5%] w-[35vw] h-[35vw] rounded-full bg-secondary-fixed/30 blur-[100px] pointer-events-none -z-10"></div>
+<!-- TopAppBar -->
+<header class="bg-[#ffffffcc] dark:bg-[#1a1c19cc] backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(26,28,25,0.04)] docked full-width top-0 sticky z-[100]">
+<nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#5d4037] dark:text-[#ffdbd0] text-3xl">terminal</span>
+<span class="text-[#5d4037] dark:text-[#ffdbd0] font-black tracking-tighter text-2xl">TechPath</span>
 </div>
-<div class="mb-6 px-2">
-<div class="relative">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
-<input class="w-full bg-[#121720] border-none rounded-md py-2.5 pl-9 pr-4 text-sm focus:ring-1 focus:ring-primary/40 placeholder:text-outline/40" id="sidebarSearch" placeholder="Search Companies..." type="text"/>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#1a1c19]/60 dark:text-[#ffffff]/60 hover:translate-y-[-2px] transition-all duration-300 ease-in-out font-medium" href="index.html">Home</a>
+<a class="text-[#5d4037] dark:text-[#ffdbd0] font-bold hover:translate-y-[-2px] transition-all duration-300 ease-in-out" href="company.html">Companies</a>
+<a class="text-[#1a1c19]/60 dark:text-[#ffffff]/60 hover:translate-y-[-2px] transition-all duration-300 ease-in-out font-medium" href="about.html">About</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border-2 border-primary/10" href="0#">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABoGXmYydB_5Q5EmDaSkd7HGXinkIHX5tRDTD7KcmUhXitUsyv3bEiuXi6N_xf9p220rQRDLcUYB54TCcfW9O5DBkR1U5yxvXwQabOmZvCX9IXFn9AXp11eSq6u4Oep13JpBzDhCt2OEqAgMyD3KuT2kC0_Ngl9QUMZ2XylEs7jNGeJlE26T4eO0gRpyxT8dwmaKRu2Zvz8Uxmv9Z8-x_Gb6XHKpF7UUU6PVmcTjQ3wv9I226y-ZhtSw8qW77cukneuq_SU-kIEmg"/>
+</a>
 </div>
-</div>
-<nav class="flex-1 space-y-1">
-<a class="flex items-center gap-3 px-3 py-2.5 text-primary bg-primary/10 font-bold border-r-4 border-primary rounded-l-md" href="#">
-<span class="material-symbols-outlined">analytics</span>
-<span class="text-sm">DSA Sheet</span>
-</a>
-<a class="flex items-center gap-3 px-3 py-2.5 text-[#bccbb9] hover:text-[#e0e2ea] hover:bg-[#121720] transition-colors rounded-md" href="#">
-<span class="material-symbols-outlined">business_center</span>
-<span class="text-sm">Company Wise Sheets</span>
-</a>
-<a class="flex items-center gap-3 px-3 py-2.5 text-[#bccbb9] hover:text-[#e0e2ea] hover:bg-[#121720] transition-colors rounded-md" href="#">
-<span class="material-symbols-outlined">assignment_ind</span>
-<span class="text-sm">Company Interview</span>
-</a>
-<a class="flex items-center gap-3 px-3 py-2.5 text-[#bccbb9] hover:text-[#e0e2ea] hover:bg-[#121720] transition-colors rounded-md" href="#">
-<span class="material-symbols-outlined">school</span>
-<span class="text-sm">SIGMA 11</span>
-</a>
 </nav>
-<div class="pt-6 border-t border-outline-variant space-y-1">
-<a class="flex items-center gap-3 px-3 py-2.5 text-[#bccbb9] hover:text-[#e0e2ea] hover:bg-[#121720] rounded-md" href="#">
-<span class="material-symbols-outlined">settings</span>
-<span class="text-sm">Settings</span>
-</a>
-<a class="flex items-center gap-3 px-3 py-2.5 text-[#bccbb9] hover:text-[#e0e2ea] hover:bg-[#121720] rounded-md" href="#">
-<span class="material-symbols-outlined">help</span>
-<span class="text-sm">Support</span>
-</a>
-</div>
-</aside>
-<!-- Main Content -->
-<main class="md:ml-[260px] min-h-screen">
-<!-- Top Bar -->
-<header class="sticky top-0 w-full z-40 bg-background/80 backdrop-blur-md border-b border-outline-variant">
-<div class="flex items-center justify-between px-6 py-3 max-w-screen-2xl mx-auto">
-<div class="flex items-center gap-8 flex-1">
-<span class="text-lg font-black text-[#e0e2ea] md:hidden">TDC</span>
-<div class="relative max-w-xl w-full hidden sm:block">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
-<input class="w-full bg-[#121720] border-none rounded-full py-2 pl-11 pr-4 text-sm focus:ring-1 focus:ring-primary/40 placeholder:text-on-surface-variant/40" id="mainSearch" placeholder="Search in sheet: question, company..." type="text"/>
-</div>
-</div>
-<div class="flex items-center gap-6">
-<nav class="hidden lg:flex items-center gap-6">
-<a class="text-[#bccbb9] hover:text-[#e0e2ea] text-sm font-semibold" href="#">Problems</a>
-<a class="text-primary border-b-2 border-primary pb-1 text-sm font-semibold" href="#">Contests</a>
-<a class="text-[#bccbb9] hover:text-[#e0e2ea] text-sm font-semibold" href="#">Discuss</a>
-</nav>
-<div class="flex items-center gap-3">
-<button class="p-2 text-[#bccbb9] hover:bg-white/5 rounded-full"><span class="material-symbols-outlined">notifications</span></button>
-<button class="p-2 text-[#bccbb9] hover:bg-white/5 rounded-full"><span class="material-symbols-outlined">bookmark</span></button>
-<div class="h-8 w-8 rounded-full bg-primary/20 border border-primary/20 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-xl">account_circle</span>
-</div>
-</div>
-</div>
-</div>
 </header>
-<section class="p-6 md:p-10 max-w-[1200px] mx-auto">
-<!-- Progress Header -->
-<div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<main class="max-w-7xl mx-auto px-6 pt-12 pb-24 space-y-24">
+<!-- Hero Section -->
+<section class="relative">
+<div class="glass p-12 md:p-20 rounded-3xl border border-outline-variant/20 shadow-xl overflow-hidden text-center">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-fixed/10 to-transparent pointer-events-none"></div>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">
+                    Company Wise Questions
+                </h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
+                    Prepare smarter with curated interview questions from top tech companies. Master the patterns that matter.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="bg-primary-container text-white px-8 py-4 rounded-3xl font-bold text-lg hover:translate-y-[-2px] shadow-lg shadow-primary/20 transition-all duration-300 active:scale-95">
+                        Browse Companies
+                    </button>
+<button class="glass border border-outline-variant/30 text-primary px-8 py-4 rounded-3xl font-bold text-lg hover:bg-surface-container-lowest transition-all duration-300 active:scale-95">
+                        Start Preparation
+                    </button>
+</div>
+</div>
+</section>
+<!-- Featured (Horizontal Scroll) -->
+<section class="space-y-8">
+<div class="flex justify-between items-end px-2">
 <div>
-<h2 class="text-4xl md:text-5xl font-black tracking-tight text-on-surface mb-2">Striking Back.</h2>
-<p class="text-on-surface-variant font-medium">Your progress on the 180 Questions Sheet</p>
+<span class="label-md uppercase tracking-widest text-primary font-bold opacity-80 mb-2 block">Premium Track</span>
+<h2 class="font-headline text-3xl font-extrabold text-on-surface">Top Tier Companies</h2>
 </div>
-<div class="bg-surface p-6 rounded-xl border border-outline-variant min-w-[240px]">
-<div class="flex items-center justify-between mb-2">
-<span class="text-xs font-bold text-primary uppercase tracking-widest">Progress</span>
-<span class="text-2xl font-black" id="progressText">42/180</span>
-</div>
-<div class="w-full bg-[#232833] h-2 rounded-full overflow-hidden">
-<div class="bg-primary h-full w-[23%]" id="progressBar"></div>
-</div>
-</div>
-</div>
-<!-- Stats Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-<div class="bg-surface p-6 rounded-xl border border-outline-variant">
-<p class="text-xs font-bold text-primary uppercase mb-1">Easy Solved</p>
-<p class="text-3xl font-black">18<span class="text-sm text-on-surface-variant font-medium ml-2">/ 50</span></p>
-</div>
-<div class="bg-surface p-6 rounded-xl border border-outline-variant">
-<p class="text-xs font-bold text-secondary uppercase mb-1">Medium Solved</p>
-<p class="text-3xl font-black">20<span class="text-sm text-on-surface-variant font-medium ml-2">/ 100</span></p>
-</div>
-<div class="bg-surface p-6 rounded-xl border border-outline-variant">
-<p class="text-xs font-bold text-tertiary uppercase mb-1">Hard Solved</p>
-<p class="text-3xl font-black">4<span class="text-sm text-on-surface-variant font-medium ml-2">/ 30</span></p>
-</div>
-</div>
-<!-- Accordion Main -->
-<div class="space-y-4" id="accordionContainer">
-<!-- Day 1 -->
-<div class="accordion-item bg-surface rounded-xl border border-outline-variant overflow-hidden">
-<button class="w-full px-6 py-5 flex items-center justify-between hover:bg-[#1c2025] transition-colors accordion-trigger">
-<div class="flex items-center gap-4">
-<div class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">1</div>
-<h3 class="text-lg font-bold">Day 1 : Array (Part 1)</h3>
-</div>
-<div class="flex items-center gap-4">
-<span class="text-xs font-bold px-3 py-1 bg-primary/20 text-primary rounded-full uppercase">6 Questions</span>
-<span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
-</div>
-</button>
-<div class="accordion-content open px-4 pb-4">
-<div class="space-y-1 mt-2">
-<!-- Header Row (Hidden on mobile) -->
-<div class="problem-grid px-4 py-2 text-[10px] font-bold text-on-surface-variant uppercase tracking-wider hidden lg:grid">
-<span>Status</span>
-<span>Problem Name</span>
-<span class="text-center">Doc</span>
-<span class="text-center">Video</span>
-<span class="text-center">Code</span>
-<span>Diff</span>
-<span>Time</span>
-<span>Companies</span>
-<span class="text-center">Save</span>
-</div>
-<!-- Problem 1 -->
-<div class="problem-row problem-grid p-4 rounded-lg hover:bg-[#1c2025] transition-colors group" data-company="google amazon microsoft" data-name="Majority Element">
-<div class="flex justify-center">
-<div class="solved-radio active"></div>
-</div>
-<div class="font-semibold text-on-surface group-hover:text-primary transition-colors pr-4 truncate">Majority Element</div>
-<div class="flex justify-center"><button class="action-btn"><span class="material-symbols-outlined text-lg">article</span></button></div>
-<div class="flex justify-center"><button class="action-btn"><span class="material-symbols-outlined text-lg">play_circle</span></button></div>
-<div class="flex justify-center"><button class="action-btn"><span class="material-symbols-outlined text-lg">code</span></button></div>
-<div><span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded-full">Easy</span></div>
-<div class="text-xs font-medium text-on-surface-variant">30 Min</div>
-<div class="company-stack flex -space-x-3">
-<img alt="Google" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnTCcLo2XBvo6fMXmrpR5eWK76mJ8sUMsyl9usncSBLjrlNN1r4Mx0_eX5XTjV0Z327ew7J9TlSyLFw6ST-MDRjdFNeFkC6afpwk_tZj5WFZZZg5b8bm155qx-OL_WVmNyg-2h-cU81OdoFCHXzAQyvLnCOLRTPiJdkREtBPWW-4PtXQlFDqeRqeApQZsxAK-4mUWdICJ_vAVNG10TUIYxCJz1O7CFqVEjokjabH-PaKWCwmsXqp6ltIqyTDVTFIGmcj6a6aCHHWZN"/>
-<img alt="Amazon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgiNgncXb7e7MIZJ8HO9O8APpTkZL1xfUMV-i7JUlV_WaBRuRR-N6FiVyinkWdWRZt-RpVZ-nWZImBL0EW-QRcgjICi1uCi9dFEytPUXqr32cDEkFLO7QkuuOs3NzbqOihl8jrZg7mvpu6Jwc4jEhAu7-FzNXiIrjL9ZkypjYBqU5GypY7HGP4_MJlQZ1HosHpJ3JjahK585kSW7srgCOet_4d5mTv1k-2dJMoE6not2OdAQyXZs84nZwAC5ch88Yk1SSYzAnl5zoY"/>
-<div class="w-6 h-6 rounded-full border-2 border-surface bg-[#1c2025] flex items-center justify-center text-[8px] font-bold text-on-surface-variant">+1</div>
-</div>
-<div class="flex justify-center">
-<button class="bookmark-btn text-on-surface-variant transition-colors hover:text-tertiary" data-id="p1">
-<span class="material-symbols-outlined bookmark-icon">bookmark</span>
+<button class="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all">
+                    View all <span class="material-symbols-outlined">arrow_forward</span>
 </button>
 </div>
+<div class="flex gap-6 overflow-x-auto pb-8 hide-scrollbar snap-x px-2">
+<!-- Google Card -->
+<div class="snap-start min-w-[320px] glass p-8 rounded-3xl border border-outline-variant/20 hover:translate-y-[-8px] transition-all duration-500 group shadow-lg">
+<div class="w-16 h-16 rounded-2xl bg-white mb-6 flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-4xl text-primary">google</span>
 </div>
-<!-- Problem 2 -->
-<div class="problem-row problem-grid p-4 rounded-lg hover:bg-[#1c2025] transition-colors group" data-company="microsoft amazon facebook" data-name="Next Permutation">
-<div class="flex justify-center">
-<div class="solved-radio"></div>
-</div>
-<div class="font-semibold text-on-surface group-hover:text-primary transition-colors pr-4 truncate">Next Permutation</div>
-<div class="flex justify-center"><button class="action-btn"><span class="material-symbols-outlined text-lg">article</span></button></div>
-<div class="flex justify-center"><button class="action-btn"><span class="material-symbols-outlined text-lg">play_circle</span></button></div>
-<div class="flex justify-center"><button class="action-btn"><span class="material-symbols-outlined text-lg">code</span></button></div>
-<div><span class="px-3 py-1 bg-secondary/10 text-secondary text-[10px] font-bold uppercase rounded-full">Medium</span></div>
-<div class="text-xs font-medium text-on-surface-variant">45 Min</div>
-<div class="company-stack flex -space-x-3">
-<img alt="Microsoft" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6s0hURCk_RTxCsRKTQXpOdwA4eAHYVCeENJkOCNHnNEixTrQYxII-K8ins1jhQ6rTO3CYERdCr4F6g1UzGfPg2S4HeHy-Op70X1THywVnBw6Pe0gv1Tqmo7TgJxGKtlLITPskQAk9JtYxB4Y5N-T7E0SB48BryDD2ZkV4uI4MuaJ_pvpr8ouqCooB1SIxeolYHfJpXhxygGnJ6mf0x3y6N1hvFPzNwOFL2wAdODDrRXLWfIPCr9MbmaHIJCBXu3WhiuebMrbWkhbI"/>
-<img alt="Amazon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA8aXHiOtep9iGCIyeTYrkLJP5WG4JcJIUuxHCoTOhA3_yqXrrCRCR1WxD4aDgBiRHT8oke3aE9ZEyVtUeHePUa-bH2jlq3wO-YWyq6FJTnHT1UWLXXaryv7sMzbWdnVgxQgpzujp5Oq0jibBhN3mDVEb6rAOOupqM8979ZGnE72Q5M2r6Zu6DXL0gorscOvODZU_Dzmd9RRXmJychUE634Wj2k2chcp2W_21u2TtJ1H4HEZ5__oFfy9d12534D6uGZ_jq5s9jzBNp"/>
-<div class="w-6 h-6 rounded-full border-2 border-surface bg-[#1c2025] flex items-center justify-center text-[8px] font-bold text-on-surface-variant">+1</div>
-</div>
-<div class="flex justify-center">
-<button class="bookmark-btn text-on-surface-variant transition-colors hover:text-tertiary" data-id="p2">
-<span class="material-symbols-outlined bookmark-icon">bookmark</span>
-</button>
+<h3 class="font-headline text-2xl font-bold mb-2">Google</h3>
+<p class="text-on-surface-variant text-sm mb-6">450+ Curated interview questions focused on DSA &amp; Logic.</p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold text-xs bg-primary-fixed/30 px-3 py-1 rounded-full uppercase tracking-tighter">Premium</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
 </div>
 </div>
-<!-- Problem 3 -->
-<div class="problem-row problem-grid p-4 rounded-lg hover:bg-[#1c2025] transition-colors group" data-company="apple adobe" data-name="Pascal's Triangle">
-<div class="flex justify-center">
-<div class="solved-radio"></div>
+<!-- Amazon Card -->
+<div class="snap-start min-w-[320px] glass p-8 rounded-3xl border border-outline-variant/20 hover:translate-y-[-8px] transition-all duration-500 group shadow-lg">
+<div class="w-16 h-16 rounded-2xl bg-white mb-6 flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-4xl text-primary">shopping_bag</span>
 </div>
-<div class="font-semibold text-on-surface group-hover:text-primary transition-colors pr-4 truncate">Pascal's Triangle</div>
-<div class="flex justify-center"><button class="action-btn"><span class="material-symbols-outlined text-lg">article</span></button></div>
-<div class="flex justify-center"><button class="action-btn"><span class="material-symbols-outlined text-lg">play_circle</span></button></div>
-<div class="flex justify-center"><button class="action-btn"><span class="material-symbols-outlined text-lg">code</span></button></div>
-<div><span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded-full">Easy</span></div>
-<div class="text-xs font-medium text-on-surface-variant">20 Min</div>
-<div class="company-stack flex -space-x-3">
-<img alt="Apple" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIcGLd0FsemfBhArwnExpdSBZnWLp8RpLUPXLIuyp_KjbbhZ34b2GSfwwbEPIhC-XG2aEPavVs5jg54OpRysUITBLyC3EFhBJnm8oJoiIstNFflP7w8Lz9C_zgdOaN9bo65RO5MzLywOdYtQdblQOkUV8uTLHGCuExb4OhY1JOEOk1f_tyhz71iW-qdgNrXeKMCS8ZZALqZnHsNfe2qurzH2trq0EI4ql_tWJnlpoY8gWY1BsKlafrPUWoLzIYw6Nb4XNbEL2DJuvu"/>
-<img alt="Adobe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDELkdLwXQ4fIuxvlFtay-6nVrYPPueXm4zn6KlNHGmXQPxyJAcVXix4Ugq3NObzWcfok21osNO-E53ntgShbgXpwD3iZ6O0HC-QG-rUFbJj86GkXo1JIXpsLYLC0NjUmMvHLP65e7eViFZOKuw5plRIUgISH3vN99lTJjZ_-eS5xEMaW3DQdiq1X-E4ygdXJrNMdZxGoWoOokNW9xnCH0wBZceX5IYueEwx2h49mAyPd6NzeVBKGp4YlIqqENm-dSi0NcH_CDZSmoY"/>
-</div>
-<div class="flex justify-center">
-<button class="bookmark-btn text-on-surface-variant transition-colors hover:text-tertiary" data-id="p3">
-<span class="material-symbols-outlined bookmark-icon">bookmark</span>
-</button>
+<h3 class="font-headline text-2xl font-bold mb-2">Amazon</h3>
+<p class="text-on-surface-variant text-sm mb-6">380+ Questions including Leadership Principles.</p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold text-xs bg-primary-fixed/30 px-3 py-1 rounded-full uppercase tracking-tighter">Featured</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
 </div>
 </div>
+<!-- Microsoft Card -->
+<div class="snap-start min-w-[320px] glass p-8 rounded-3xl border border-outline-variant/20 hover:translate-y-[-8px] transition-all duration-500 group shadow-lg">
+<div class="w-16 h-16 rounded-2xl bg-white mb-6 flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-4xl text-primary">window</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-2">Microsoft</h3>
+<p class="text-on-surface-variant text-sm mb-6">Focus on System Design and Backend Engineering.</p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold text-xs bg-primary-fixed/30 px-3 py-1 rounded-full uppercase tracking-tighter">Active</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
 </div>
 </div>
+<!-- Meta Card -->
+<div class="snap-start min-w-[320px] glass p-8 rounded-3xl border border-outline-variant/20 hover:translate-y-[-8px] transition-all duration-500 group shadow-lg">
+<div class="w-16 h-16 rounded-2xl bg-white mb-6 flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-4xl text-primary">diversity_3</span>
 </div>
-<!-- Day 2 -->
-<div class="accordion-item bg-surface rounded-xl border border-outline-variant overflow-hidden opacity-80">
-<button class="w-full px-6 py-5 flex items-center justify-between hover:bg-[#1c2025] transition-colors accordion-trigger">
-<div class="flex items-center gap-4">
-<div class="h-10 w-10 rounded-full bg-[#232833] flex items-center justify-center text-on-surface-variant font-bold">2</div>
-<h3 class="text-lg font-bold">Day 2 : Array (Part 2)</h3>
-</div>
-<div class="flex items-center gap-4">
-<span class="text-xs font-bold px-3 py-1 bg-[#232833] text-on-surface-variant rounded-full uppercase">6 Questions</span>
-<span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
-</div>
-</button>
-<div class="accordion-content px-4 pb-4">
-<div class="p-8 text-center text-on-surface-variant text-sm font-medium">No problems to display for this day yet.</div>
-</div>
-</div>
-<!-- Day 3 -->
-<div class="accordion-item bg-surface rounded-xl border border-outline-variant overflow-hidden opacity-80">
-<button class="w-full px-6 py-5 flex items-center justify-between hover:bg-[#1c2025] transition-colors accordion-trigger">
-<div class="flex items-center gap-4">
-<div class="h-10 w-10 rounded-full bg-[#232833] flex items-center justify-center text-on-surface-variant font-bold">3</div>
-<h3 class="text-lg font-bold">Day 3 : Array (Part 3)</h3>
-</div>
-<div class="flex items-center gap-4">
-<span class="text-xs font-bold px-3 py-1 bg-[#232833] text-on-surface-variant rounded-full uppercase">6 Questions</span>
-<span class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
-</div>
-</button>
-<div class="accordion-content px-4 pb-4">
-<div class="p-8 text-center text-on-surface-variant text-sm font-medium">No problems to display for this day yet.</div>
+<h3 class="font-headline text-2xl font-bold mb-2">Meta</h3>
+<p class="text-on-surface-variant text-sm mb-6">290+ High-frequency algorithmic problems.</p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold text-xs bg-primary-fixed/30 px-3 py-1 rounded-full uppercase tracking-tighter">Hot</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
 </div>
 </div>
 </div>
-<button class="fixed bottom-8 right-8 h-14 w-14 rounded-full bg-gradient-to-tr from-primary to-[#22c55e] text-[#003915] flex items-center justify-center shadow-2xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all z-50">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
-</button>
+</section>
+<!-- Popular Companies Grid -->
+<section class="space-y-12">
+<div class="text-center max-w-3xl mx-auto">
+<h2 class="font-headline text-4xl font-extrabold mb-4">Popular Companies</h2>
+<p class="text-on-surface-variant font-medium">Browse our extensive library of company-specific question sets.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<!-- Grid Item Factory -->
+<div class="glass p-6 rounded-3xl border border-outline-variant/10 hover:bg-surface-container-lowest hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-surface-container-low rounded-xl mb-4 flex items-center justify-center group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary">ios</span>
+</div>
+<span class="font-headline font-bold text-on-surface">Apple</span>
+</div>
+<div class="glass p-6 rounded-3xl border border-outline-variant/10 hover:bg-surface-container-lowest hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-surface-container-low rounded-xl mb-4 flex items-center justify-center group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary">movie</span>
+</div>
+<span class="font-headline font-bold text-on-surface">Netflix</span>
+</div>
+<div class="glass p-6 rounded-3xl border border-outline-variant/10 hover:bg-surface-container-lowest hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-surface-container-low rounded-xl mb-4 flex items-center justify-center group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary">brush</span>
+</div>
+<span class="font-headline font-bold text-on-surface">Adobe</span>
+</div>
+<div class="glass p-6 rounded-3xl border border-outline-variant/10 hover:bg-surface-container-lowest hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-surface-container-low rounded-xl mb-4 flex items-center justify-center group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary">shopping_cart</span>
+</div>
+<span class="font-headline font-bold text-on-surface">Flipkart</span>
+</div>
+<div class="glass p-6 rounded-3xl border border-outline-variant/10 hover:bg-surface-container-lowest hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-surface-container-low rounded-xl mb-4 flex items-center justify-center group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary">payments</span>
+</div>
+<span class="font-headline font-bold text-on-surface">PayPal</span>
+</div>
+<div class="glass p-6 rounded-3xl border border-outline-variant/10 hover:bg-surface-container-lowest hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-surface-container-low rounded-xl mb-4 flex items-center justify-center group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary">account_balance</span>
+</div>
+<span class="font-headline font-bold text-on-surface">Goldman Sachs</span>
+</div>
+<div class="glass p-6 rounded-3xl border border-outline-variant/10 hover:bg-surface-container-lowest hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-surface-container-low rounded-xl mb-4 flex items-center justify-center group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary">corporate_fare</span>
+</div>
+<span class="font-headline font-bold text-on-surface">Infosys</span>
+</div>
+<div class="glass p-6 rounded-3xl border border-outline-variant/10 hover:bg-surface-container-lowest hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-surface-container-low rounded-xl mb-4 flex items-center justify-center group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary">apartment</span>
+</div>
+<span class="font-headline font-bold text-on-surface">TCS</span>
+</div>
+</div>
+</section>
+<!-- Question Categories -->
+<section class="space-y-12">
+<h2 class="font-headline text-4xl font-extrabold text-center">Categories</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="glass p-8 rounded-3xl border border-outline-variant/20 flex gap-6 items-start hover:shadow-lg transition-all duration-300">
+<div class="p-4 bg-primary-fixed/40 rounded-2xl text-primary">
+<span class="material-symbols-outlined text-3xl">data_object</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold mb-2">DSA</h3>
+<p class="text-on-surface-variant text-sm">Arrays, Strings, Dynamic Programming, and Graph Theory essentials.</p>
+</div>
+</div>
+<div class="glass p-8 rounded-3xl border border-outline-variant/20 flex gap-6 items-start hover:shadow-lg transition-all duration-300">
+<div class="p-4 bg-primary-fixed/40 rounded-2xl text-primary">
+<span class="material-symbols-outlined text-3xl">hub</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold mb-2">System Design</h3>
+<p class="text-on-surface-variant text-sm">Scalability, Load Balancing, and Distributed Systems architecture.</p>
+</div>
+</div>
+<div class="glass p-8 rounded-3xl border border-outline-variant/20 flex gap-6 items-start hover:shadow-lg transition-all duration-300">
+<div class="p-4 bg-primary-fixed/40 rounded-2xl text-primary">
+<span class="material-symbols-outlined text-3xl">database</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold mb-2">SQL</h3>
+<p class="text-on-surface-variant text-sm">Complex queries, Optimization, and Database normalization.</p>
+</div>
+</div>
+<div class="glass p-8 rounded-3xl border border-outline-variant/20 flex gap-6 items-start hover:shadow-lg transition-all duration-300">
+<div class="p-4 bg-primary-fixed/40 rounded-2xl text-primary">
+<span class="material-symbols-outlined text-3xl">psychology</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold mb-2">Behavioral</h3>
+<p class="text-on-surface-variant text-sm">Situation-Task-Action-Result (STAR) method preparation.</p>
+</div>
+</div>
+<div class="glass p-8 rounded-3xl border border-outline-variant/20 flex gap-6 items-start hover:shadow-lg transition-all duration-300">
+<div class="p-4 bg-primary-fixed/40 rounded-2xl text-primary">
+<span class="material-symbols-outlined text-3xl">person_search</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold mb-2">HR</h3>
+<p class="text-on-surface-variant text-sm">Common culture-fit questions and negotiation strategies.</p>
+</div>
+</div>
+<div class="glass p-8 rounded-3xl border border-outline-variant/20 flex gap-6 items-start hover:shadow-lg transition-all duration-300">
+<div class="p-4 bg-primary-fixed/40 rounded-2xl text-primary">
+<span class="material-symbols-outlined text-3xl">code</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold mb-2">Coding Rounds</h3>
+<p class="text-on-surface-variant text-sm">Live coding challenges and pair programming etiquette.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Preparation Roadmap -->
+<section class="space-y-12 py-12">
+<h2 class="font-headline text-4xl font-extrabold text-center">Your Success Roadmap</h2>
+<div class="relative flex flex-col md:flex-row justify-between items-center gap-12 max-w-5xl mx-auto px-4">
+<div class="absolute top-1/2 left-0 right-0 h-0.5 bg-primary-fixed hidden md:block -z-10"></div>
+<div class="glass w-full md:w-56 p-8 rounded-3xl border border-outline-variant/20 text-center flex flex-col items-center shadow-lg hover:bg-surface-container-lowest transition-all">
+<div class="w-12 h-12 bg-primary rounded-full text-white flex items-center justify-center font-bold mb-4 shadow-md">1</div>
+<span class="material-symbols-outlined text-primary text-3xl mb-3">search</span>
+<h4 class="font-bold text-sm uppercase tracking-wider mb-2">Choose Company</h4>
+<p class="text-xs text-on-surface-variant">Pick your target role.</p>
+</div>
+<div class="glass w-full md:w-56 p-8 rounded-3xl border border-outline-variant/20 text-center flex flex-col items-center shadow-lg hover:bg-surface-container-lowest transition-all">
+<div class="w-12 h-12 bg-primary rounded-full text-white flex items-center justify-center font-bold mb-4 shadow-md">2</div>
+<span class="material-symbols-outlined text-primary text-3xl mb-3">exercise</span>
+<h4 class="font-bold text-sm uppercase tracking-wider mb-2">Practice</h4>
+<p class="text-xs text-on-surface-variant">Solve real problems.</p>
+</div>
+<div class="glass w-full md:w-56 p-8 rounded-3xl border border-outline-variant/20 text-center flex flex-col items-center shadow-lg hover:bg-surface-container-lowest transition-all">
+<div class="w-12 h-12 bg-primary rounded-full text-white flex items-center justify-center font-bold mb-4 shadow-md">3</div>
+<span class="material-symbols-outlined text-primary text-3xl mb-3">history_edu</span>
+<h4 class="font-bold text-sm uppercase tracking-wider mb-2">Revise</h4>
+<p class="text-xs text-on-surface-variant">Review key concepts.</p>
+</div>
+<div class="glass w-full md:w-56 p-8 rounded-3xl border border-outline-variant/20 text-center flex flex-col items-center shadow-lg hover:bg-surface-container-lowest transition-all">
+<div class="w-12 h-12 bg-primary-container rounded-full text-white flex items-center justify-center font-bold mb-4 shadow-md">4</div>
+<span class="material-symbols-outlined text-primary text-3xl mb-3">celebration</span>
+<h4 class="font-bold text-sm uppercase tracking-wider mb-2">Crack Interview</h4>
+<p class="text-xs text-on-surface-variant">Get the offer letter.</p>
+</div>
+</div>
+</section>
+<!-- Premium CTA -->
+<section class="relative">
+<div class="rounded-[3rem] bg-gradient-to-br from-primary to-primary-container p-1 overflow-hidden shadow-2xl">
+<div class="glass rounded-[2.9rem] p-12 md:p-20 text-center relative overflow-hidden">
+<!-- Glow effect -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[200%] h-full bg-primary/5 blur-[80px] -z-10"></div>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold mb-8 text-on-surface">Start Practicing Company Questions Today</h2>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto mb-12">
+                        Unlock full solutions, video explanations, and mock interview setups.
+                    </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="bg-primary text-white px-10 py-5 rounded-3xl font-bold text-xl hover:shadow-[0_0_20px_rgba(93,64,55,0.4)] transition-all active:scale-95">
+                            Get Full Access
+                        </button>
+</div>
+</div>
+</div>
 </section>
 </main>
-<!-- Mobile Bottom Nav -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full bg-[#0b0f14] py-3 px-6 flex items-center justify-around border-t border-outline-variant z-50">
-<a class="flex flex-col items-center text-primary" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
-<span class="text-[10px] font-bold mt-1">Sheet</span>
+<!-- Footer -->
+<footer class="bg-[#fafaf5] dark:bg-[#1a1c19] w-full px-8 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto tonal-shift">
+<div class="col-span-1 md:col-span-1">
+<span class="text-[#5d4037] font-extrabold text-xl mb-4 block">TechPath</span>
+<p class="font-['Manrope'] text-sm text-[#1a1c19]/70 dark:text-[#ffffff]/70 max-w-[200px]">
+                © 2024 TechPath. The Digital Atelier for Tech Prep.
+            </p>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-[#5d4037]">Resources</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-[#1a1c19]/60 hover:text-[#77574d] transition-colors duration-200 text-sm" href="#">Browse Companies</a>
+<a class="text-[#1a1c19]/60 hover:text-[#77574d] transition-colors duration-200 text-sm" href="#">DSA Guide</a>
+<a class="text-[#1a1c19]/60 hover:text-[#77574d] transition-colors duration-200 text-sm" href="#">System Design</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-[#5d4037]">Community</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-[#1a1c19]/60 hover:text-[#77574d] transition-colors duration-200 text-sm" href="#">Success Stories</a>
+<a class="text-[#1a1c19]/60 hover:text-[#77574d] transition-colors duration-200 text-sm" href="#">Discord Group</a>
+<a class="text-[#1a1c19]/60 hover:text-[#77574d] transition-colors duration-200 text-sm" href="#">Mentorship</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-[#5d4037]">Legal</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-[#1a1c19]/60 hover:text-[#77574d] transition-colors duration-200 text-sm" href="#">Privacy Policy</a>
+<a class="text-[#1a1c19]/60 hover:text-[#77574d] transition-colors duration-200 text-sm" href="#">Terms of Service</a>
+<a class="text-[#1a1c19]/60 hover:text-[#77574d] transition-colors duration-200 text-sm" href="#">Cookie Settings</a>
+</nav>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-[#ffffffcc] backdrop-blur-xl flex justify-around items-center px-4 pb-6 pt-3 shadow-[0_-10px_40px_rgba(0,0,0,0.05)] rounded-t-[1.5rem]">
+<a class="flex flex-col items-center justify-center text-[#1a1c19]/50 dark:text-[#ffffff]/50 px-5 py-2 hover:bg-[#f4f4ef] rounded-[1.25rem] transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-bold mt-1">Home</span>
 </a>
-<a class="flex flex-col items-center text-[#bccbb9]" href="#">
-<span class="material-symbols-outlined">business_center</span>
-<span class="text-[10px] font-medium mt-1">Companies</span>
+<a class="flex flex-col items-center justify-center bg-[#77574d] text-white rounded-[1.25rem] px-5 py-2 transition-all" href="#">
+<span class="material-symbols-outlined">domain</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-bold mt-1">Companies</span>
 </a>
-<a class="flex flex-col items-center text-[#bccbb9]" href="#">
-<span class="material-symbols-outlined">assignment_ind</span>
-<span class="text-[10px] font-medium mt-1">Interview</span>
+<a class="flex flex-col items-center justify-center text-[#1a1c19]/50 dark:text-[#ffffff]/50 px-5 py-2 hover:bg-[#f4f4ef] rounded-[1.25rem] transition-all" href="#">
+<span class="material-symbols-outlined">exercise</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-bold mt-1">Practice</span>
 </a>
-<a class="flex flex-col items-center text-[#bccbb9]" href="#">
-<span class="material-symbols-outlined">school</span>
-<span class="text-[10px] font-medium mt-1">Sigma</span>
+<a class="flex flex-col items-center justify-center text-[#1a1c19]/50 dark:text-[#ffffff]/50 px-5 py-2 hover:bg-[#f4f4ef] rounded-[1.25rem] transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-bold mt-1">Profile</span>
 </a>
 </nav>
-<script>
-    // Accordion Logic
-    document.querySelectorAll('.accordion-trigger').forEach(trigger => {
-        trigger.addEventListener('click', () => {
-            const content = trigger.nextElementSibling;
-            const icon = trigger.querySelector('.material-symbols-outlined:last-child');
-            const isOpen = content.classList.toggle('open');
-            icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
-        });
-    });
-
-    // Search Logic
-    const searchInputs = ['mainSearch', 'sidebarSearch'];
-    searchInputs.forEach(id => {
-        document.getElementById(id).addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase();
-            document.querySelectorAll('.problem-row').forEach(row => {
-                const name = row.getAttribute('data-name').toLowerCase();
-                const companies = row.getAttribute('data-company').toLowerCase();
-                if (name.includes(query) || companies.includes(query)) {
-                    row.style.display = 'grid';
-                } else {
-                    row.style.display = 'none';
-                }
-            });
-        });
-    });
-
-    // Bookmark Persistence Logic
-    const initBookmarks = () => {
-        const saved = JSON.parse(localStorage.getItem('savedProblems') || '[]');
-        document.querySelectorAll('.bookmark-btn').forEach(btn => {
-            const id = btn.getAttribute('data-id');
-            if (saved.includes(id)) {
-                btn.classList.add('saved');
-            }
-            
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                let currentSaved = JSON.parse(localStorage.getItem('savedProblems') || '[]');
-                if (currentSaved.includes(id)) {
-                    currentSaved = currentSaved.filter(i => i !== id);
-                    btn.classList.remove('saved');
-                } else {
-                    currentSaved.push(id);
-                    btn.classList.add('saved');
-                }
-                localStorage.setItem('savedProblems', JSON.stringify(currentSaved));
-            });
-        });
-    };
-
-    // Solved Toggle Logic
-    document.querySelectorAll('.solved-radio').forEach(radio => {
-        radio.addEventListener('click', (e) => {
-            e.stopPropagation();
-            radio.classList.toggle('active');
-        });
-    });
-
-    window.addEventListener('DOMContentLoaded', initBookmarks);
-</script>
 </body></html>
