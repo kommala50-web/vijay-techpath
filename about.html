@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About TechPath | The Architectural Atelier of Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#5d4037",
+              "inverse-surface": "#2f312e",
+              "secondary": "#615e59",
+              "outline-variant": "#d4c3be",
+              "on-tertiary-container": "#c3deda",
+              "on-background": "#1a1c19",
+              "surface-container": "#eeeee9",
+              "surface": "#fafaf5",
+              "on-secondary-fixed": "#1d1b18",
+              "primary-container": "#77574d",
+              "on-secondary-container": "#65625e",
+              "surface-dim": "#dadad6",
+              "surface-variant": "#e2e3de",
+              "surface-container-highest": "#e2e3de",
+              "on-primary-fixed-variant": "#5d4037",
+              "surface-tint": "#77574d",
+              "inverse-primary": "#e7bdb1",
+              "inverse-on-surface": "#f1f1ec",
+              "background": "#fafaf5",
+              "on-primary-fixed": "#2c160e",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed-dim": "#e7bdb1",
+              "on-tertiary-fixed-variant": "#334b49",
+              "tertiary-fixed-dim": "#b1ccc8",
+              "secondary-container": "#e4dfd9",
+              "error-container": "#ffdad6",
+              "surface-container-high": "#e8e8e4",
+              "on-surface": "#1a1c19",
+              "on-secondary-fixed-variant": "#494642",
+              "tertiary-container": "#4a6360",
+              "on-primary": "#ffffff",
+              "tertiary": "#334b48",
+              "secondary-fixed-dim": "#cbc6c0",
+              "on-error": "#ffffff",
+              "on-secondary": "#ffffff",
+              "secondary-fixed": "#e7e1dc",
+              "on-surface-variant": "#504441",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed": "#cde8e4",
+              "outline": "#827470",
+              "on-error-container": "#93000a",
+              "primary-fixed": "#ffdbd0",
+              "on-primary-container": "#facfc2",
+              "on-tertiary-fixed": "#051f1d",
+              "surface-container-low": "#f4f4ef",
+              "error": "#ba1a1a",
+              "surface-bright": "#fafaf5"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Work Sans"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(250, 250, 245, 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .text-gradient {
+background: linear-gradient(135deg, #5d4037 0%, #77574d 100%);
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+color: transparent;
+}
+      .bg-gradient-primary {
+        background: linear-gradient(135deg, #5d4037 0%, #77574d 100%);
+      }
+      .floating-blob {
+        filter: blur(80px);
+        opacity: 0.15;
+        z-index: -1;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fafaf5]/60 dark:bg-[#1a1c19]/60 backdrop-blur-xl no-border bg-gradient-to-b from-[#eeeee9] to-transparent">
+<nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#5d4037] text-2xl" data-icon="architecture">architecture</span>
+<span class="font-headline font-extrabold tracking-tighter text-[#5d4037] text-2xl">TechPath</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-headline text-[#77574d]/70 hover:bg-[#e2e3de]/40 px-3 py-1 rounded-md transition-all" href="index.html">Home</a>
+<a class="font-headline text-[#77574d]/70 hover:bg-[#e2e3de]/40 px-3 py-1 rounded-md transition-all" href="career.html">Career</a>
+<a class="font-headline text-[#77574d]/70 hover:bg-[#e2e3de]/40 px-3 py-1 rounded-md transition-all" href="skills.html">Skills</a>
+<a class="font-headline text-[#5d4037] font-semibold" href="about.html">About</a>
+</div>
+<button class="material-symbols-outlined text-[#5d4037] p-2 hover:bg-[#e2e3de]/40 rounded-full transition-all" data-icon="menu">menu</button>
+</nav>
+</header>
+<main class="relative pt-24 overflow-hidden">
+<!-- Floating Elements -->
+<div class="absolute top-20 left-[-10%] w-[40vw] h-[40vw] rounded-full bg-primary-fixed-dim floating-blob"></div>
+<div class="absolute top-[60%] right-[-10%] w-[35vw] h-[35vw] rounded-full bg-tertiary-fixed-dim floating-blob"></div>
+<!-- Hero Section -->
+<section class="relative px-6 py-20 md:py-32 max-w-7xl mx-auto flex flex-col items-center text-center">
+<div class="glass-card rounded-xl p-8 md:p-16 border border-white/20 shadow-xl max-w-4xl">
+<h1 class="font-headline font-extrabold text-5xl md:text-7xl tracking-tight text-on-surface mb-6 leading-[1.1]">
+                    Crafting the <span class="text-gradient">Engineers of Tomorrow</span>
+</h1>
+<p class="text-secondary font-body text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                    TechPath is an architectural atelier for engineering growth, providing high-precision roadmaps and resources for career mastery.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-gradient-primary text-on-primary px-8 py-4 rounded-md font-semibold shadow-lg hover:scale-105 active:scale-95 transition-all duration-300">
+                        Explore Resources
+                    </button>
+<button class="glass-card border border-outline-variant/30 text-primary px-8 py-4 rounded-md font-semibold hover:bg-surface-variant/40 transition-all duration-300">
+                        Start Learning
+                    </button>
+</div>
+</div>
+</section>
+<!-- Why TechPath Exists -->
+<section class="px-6 py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<h2 class="font-headline font-bold text-4xl tracking-tight text-primary">Why TechPath Exists</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed font-body">
+                        The bridge between academic knowledge and industrial excellence is often fractured. We built TechPath to provide the missing blueprint—a structured, curated environment where precision meets ambition.
+                    </p>
+<div class="space-y-4">
+<div class="flex items-start gap-4 p-4 glass-card rounded-md border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary-container p-2 bg-primary-fixed/20 rounded-full" data-icon="verified">verified</span>
+<div>
+<h4 class="font-bold text-primary">Curated Precision</h4>
+<p class="text-sm text-secondary">Vetted resources that cut through the noise of generic tutorials.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 glass-card rounded-md border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary-container p-2 bg-primary-fixed/20 rounded-full" data-icon="speed">speed</span>
+<div>
+<h4 class="font-bold text-primary">Efficiency First</h4>
+<p class="text-sm text-secondary">Optimized learning paths designed to get you industry-ready faster.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4 pt-8">
+<div class="glass-card p-6 rounded-lg shadow-sm border border-white/40 hover:translate-y-[-8px] transition-transform">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl" data-icon="map">map</span>
+<h3 class="font-bold text-primary">Roadmaps</h3>
+</div>
+<div class="glass-card p-6 rounded-lg shadow-sm border border-white/40 hover:translate-y-[-8px] transition-transform">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl" data-icon="library_books">library_books</span>
+<h3 class="font-bold text-primary">Resources</h3>
+</div>
+</div>
+<div class="space-y-4">
+<div class="glass-card p-6 rounded-lg shadow-sm border border-white/40 hover:translate-y-[-8px] transition-transform">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl" data-icon="quiz">quiz</span>
+<h3 class="font-bold text-primary">Questions</h3>
+</div>
+<div class="glass-card p-6 rounded-lg shadow-sm border border-white/40 hover:translate-y-[-8px] transition-transform">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl" data-icon="work">work</span>
+<h3 class="font-bold text-primary">Careers</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Engineered for Success -->
+<section class="px-6 py-24 max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline font-bold text-4xl tracking-tight text-primary mb-4">Engineered for Success</h2>
+<div class="w-24 h-1 bg-primary-container mx-auto rounded-full"></div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="glass-card p-8 rounded-lg border border-outline-variant/20 hover:shadow-2xl hover:bg-white/80 transition-all duration-300 group">
+<div class="w-12 h-12 rounded-md bg-surface-container-high flex items-center justify-center mb-6 group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="account_tree">account_tree</span>
+</div>
+<h3 class="font-headline font-bold text-xl mb-3 text-on-surface">Structured Learning Paths</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Step-by-step guides from beginner to architecture levels.</p>
+</div>
+<div class="glass-card p-8 rounded-lg border border-outline-variant/20 hover:shadow-2xl hover:bg-white/80 transition-all duration-300 group">
+<div class="w-12 h-12 rounded-md bg-surface-container-high flex items-center justify-center mb-6 group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="handshake">handshake</span>
+</div>
+<h3 class="font-headline font-bold text-xl mb-3 text-on-surface">Placement Focused Resources</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Targeted preparation for top-tier product companies.</p>
+</div>
+<div class="glass-card p-8 rounded-lg border border-outline-variant/20 hover:shadow-2xl hover:bg-white/80 transition-all duration-300 group">
+<div class="w-12 h-12 rounded-md bg-surface-container-high flex items-center justify-center mb-6 group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+</div>
+<h3 class="font-headline font-bold text-xl mb-3 text-on-surface">Company-Wise Questions</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Real-world interview patterns and problem sets.</p>
+</div>
+<div class="glass-card p-8 rounded-lg border border-outline-variant/20 hover:shadow-2xl hover:bg-white/80 transition-all duration-300 group">
+<div class="w-12 h-12 rounded-md bg-surface-container-high flex items-center justify-center mb-6 group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="volunteer_activism">volunteer_activism</span>
+</div>
+<h3 class="font-headline font-bold text-xl mb-3 text-on-surface">Free Learning Platform</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Quality education accessible to every aspiring engineer.</p>
+</div>
+</div>
+</section>
+<!-- Mission & Vision -->
+<section class="px-6 py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto flex flex-col items-center">
+<div class="text-center mb-20 max-w-3xl">
+<h2 class="font-headline font-bold text-3xl mb-6 text-primary">Our Mission</h2>
+<p class="text-2xl md:text-3xl font-light text-on-surface italic leading-snug">
+                        "To democratize elite technical education and bridge the gap between human potential and industrial demand."
+                    </p>
+<div class="mt-8 h-0.5 w-full bg-gradient-to-r from-transparent via-primary-container to-transparent relative overflow-hidden">
+<div class="absolute inset-0 bg-primary-fixed translate-x-full animate-pulse"></div>
+</div>
+</div>
+<div class="w-full glass-card p-10 md:p-16 rounded-xl border border-white/50 bg-gradient-to-br from-[#ffffff]/40 to-[#eeeee9]/40 shadow-inner overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-fixed-dim/20 rounded-full blur-3xl -mr-20 -mt-20"></div>
+<div class="relative z-10 grid md:grid-cols-5 gap-10 items-center">
+<div class="md:col-span-2">
+<h2 class="font-headline font-bold text-4xl mb-6 text-primary">Our Vision</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                                We envision a future where every engineer has a personalized technical path, curated by experts and powered by community wisdom.
+                            </p>
+</div>
+<div class="md:col-span-3 grid grid-cols-2 gap-4">
+<div class="glass-card p-6 rounded-lg text-center border border-white/60 shadow-lg group hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined text-4xl text-primary-container group-hover:text-white mb-2" data-icon="book_5">book_5</span>
+<h4 class="font-bold text-2xl group-hover:text-white">100+</h4>
+<p class="text-xs uppercase tracking-widest text-secondary group-hover:text-white/80">Resources</p>
+</div>
+<div class="glass-card p-6 rounded-lg text-center border border-white/60 shadow-lg group hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined text-4xl text-primary-container group-hover:text-white mb-2" data-icon="psychology">psychology</span>
+<h4 class="font-bold text-2xl group-hover:text-white">20+</h4>
+<p class="text-xs uppercase tracking-widest text-secondary group-hover:text-white/80">Subjects</p>
+</div>
+<div class="glass-card p-6 rounded-lg text-center border border-white/60 shadow-lg group hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined text-4xl text-primary-container group-hover:text-white mb-2" data-icon="rocket_launch">rocket_launch</span>
+<h4 class="font-bold text-2xl group-hover:text-white">5+</h4>
+<p class="text-xs uppercase tracking-widest text-secondary group-hover:text-white/80">Career Paths</p>
+</div>
+<div class="glass-card p-6 rounded-lg text-center border border-white/60 shadow-lg group hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined text-4xl text-primary-container group-hover:text-white mb-2" data-icon="groups">groups</span>
+<h4 class="font-bold text-2xl group-hover:text-white">Active</h4>
+<p class="text-xs uppercase tracking-widest text-secondary group-hover:text-white/80">Community</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Creator Profile -->
+<section class="px-6 py-24 max-w-7xl mx-auto">
+<div class="glass-card rounded-xl p-8 md:p-12 border border-white/60 flex flex-col md:flex-row items-center gap-12 shadow-2xl relative">
+<div class="relative">
+<div class="absolute -inset-4 bg-primary-fixed-dim/30 rounded-full blur-xl animate-pulse"></div>
+<img alt="Vijay, Founder of TechPath" class="relative w-48 h-48 md:w-64 md:h-64 rounded-xl object-cover shadow-xl border-4 border-white" data-alt="professional portrait of a young male software engineer in a modern minimal workspace with soft warm lighting" src="https://lh3.googleusercontent.com/aida/ADBb0ujQiqkNTdHXXhog6SKTo-V0b0SwEsE39QQAaE7bhh1GETO0JibiDE9015kKo2jCny_kTgPHSoOC9fqWHbmYwqQmMr3hwdGk3A-2j14J0Rh6k-WfovyPrCJDoW_tzah_iJyZQp25l1EI1qkvvT4Asdax7jr1LN-dSEX00kSvKLEPzWKAIunpGw8LmH0FWColoBaQ5y2A5bAqKYECeJYqAeNWvkLHXqlV_eaQvpwDsWFO6AYK1zXY2i-XvU9Armxu2_Vyii2G8y6zyQ"/>
+</div>
+<div class="flex-1 text-center md:text-left">
+<span class="bg-primary-fixed/30 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block">The Visionary</span>
+<h2 class="font-headline font-extrabold text-4xl text-primary mb-4">Meet Vijay</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-6">
+                        An engineer with a passion for architectural elegance and career growth. Vijay founded TechPath with a simple goal: to create the most precise and high-impact learning destination for product-based company aspirations.
+                    </p>
+<div class="flex flex-wrap gap-4 justify-center md:justify-start">
+<a class="p-3 glass-card rounded-md hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+</a>
+<a class="p-3 glass-card rounded-md hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-6 py-24">
+<div class="max-w-5xl mx-auto rounded-xl bg-gradient-primary p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+<div class="absolute top-0 left-0 w-full h-full opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+<div class="relative z-10">
+<h2 class="font-headline font-extrabold text-4xl md:text-6xl text-white mb-6 tracking-tight">Ready to map your path?</h2>
+<p class="text-primary-fixed-dim/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-body">
+                        Join thousands of engineers who are mastering their craft through our curated architectural approach.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-white text-primary px-10 py-5 rounded-md font-bold text-lg hover:scale-105 transition-transform shadow-xl">
+                            Explore Resources
+                        </button>
+<button class="bg-primary-container/30 border border-white/20 text-white backdrop-blur-md px-10 py-5 rounded-md font-bold text-lg hover:bg-white/10 transition-colors">
+                            View Skill Roadmaps
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f4f4ef] dark:bg-[#1a1c19] w-full py-16 px-8 border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#5d4037] text-2xl" data-icon="architecture">architecture</span>
+<span class="font-headline text-2xl font-bold text-[#5d4037]">TechPath</span>
+</div>
+<p class="font-body text-sm text-[#77574d] opacity-80 max-w-xs text-center md:text-left">
+                    Precision in Placement. The architectural blueprint for engineering excellence.
+                </p>
+</div>
+<div class="flex gap-8">
+<a class="text-sm font-medium text-[#77574d] hover:text-[#5d4037] transition-colors" href="#">Privacy</a>
+<a class="text-sm font-medium text-[#77574d] hover:text-[#5d4037] transition-colors" href="#">Terms</a>
+<a class="text-sm font-medium text-[#77574d] hover:text-[#5d4037] transition-colors" href="#">Manifesto</a>
+<a class="text-sm font-medium text-[#77574d] hover:text-[#5d4037] transition-colors" href="#">Contact(kommala50@gmail.com)</a>
+</div>
+<p class="text-[#77574d] opacity-60 text-sm">© 2024 TechPath Atelier. Precision in Placement.</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-end pb-6 px-4 bg-[#fafaf5]/80 backdrop-blur-2xl z-50 rounded-t-[2rem] shadow-[0_-1px_20px_rgba(93,64,55,0.05)]">
+<div class="flex flex-col items-center justify-center text-[#77574d] opacity-60">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Work_Sans'] text-[10px] uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#77574d] opacity-60">
+<span class="material-symbols-outlined" data-icon="engineering">engineering</span>
+<span class="font-['Work_Sans'] text-[10px] uppercase tracking-widest mt-1">Talent</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#77574d] opacity-60">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+<span class="font-['Work_Sans'] text-[10px] uppercase tracking-widest mt-1">Placements</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-gradient-to-br from-[#5d4037] to-[#77574d] text-white rounded-full p-3 mb-2 transform -translate-y-2 shadow-lg">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="font-['Work_Sans'] text-[10px] uppercase tracking-widest mt-1">About</span>
+</div>
+</div>
+</body></html>
